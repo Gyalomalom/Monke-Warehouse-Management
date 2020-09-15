@@ -9,3 +9,15 @@ C:\Users\Balomalom\source\repos\Employee Management Alpha 1.0\Employee Managemen
 C:\Users\Balomalom\source\repos\Employee Management Alpha 1.0\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.pdb
 C:\Users\Balomalom\source\repos\Employee Management Alpha 1.0\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Form2.resources
 C:\Users\Balomalom\source\repos\Employee Management Alpha 1.0\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csprojAssemblyReference.cache
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.exe.config
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.exe
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.pdb
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csprojAssemblyReference.cache
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Form1.resources
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Form2.resources
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Properties.Resources.resources
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.GenerateResource.cache
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CoreCompileInputs.cache
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.pdb
+C:\Users\Stork v1.0\Source\Repos\prj-cb02-6-team-monke4\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Stock_information.resources
