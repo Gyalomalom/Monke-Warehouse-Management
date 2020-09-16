@@ -26,7 +26,7 @@ namespace Employee_Management_Alpha_1._0
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            DateTime time = Convert.ToDateTime(dtpEmployee.Value);
+            DateTime time = Convert.ToDateTime(dtpEmployee.Value); //Date time picker
             employeeManagement.AddEmployee(tbFirstName.Text, tbLastName.Text, time, tbBSN.Text,
                 tbPhoneNumber.Text, tbContractType.Text);
             List<string> EmployeeInfo = new List<string>();
