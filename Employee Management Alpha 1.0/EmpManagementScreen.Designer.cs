@@ -33,7 +33,6 @@
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.tbDOB = new System.Windows.Forms.TextBox();
             this.lblDOB = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.tbBSN = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.lbEmployees = new System.Windows.Forms.ListBox();
+            this.dtpEmployee = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnClose
@@ -94,13 +94,6 @@
             this.lblLastName.Size = new System.Drawing.Size(78, 17);
             this.lblLastName.TabIndex = 4;
             this.lblLastName.Text = "Last name:";
-            // 
-            // tbDOB
-            // 
-            this.tbDOB.Location = new System.Drawing.Point(87, 140);
-            this.tbDOB.Name = "tbDOB";
-            this.tbDOB.Size = new System.Drawing.Size(179, 22);
-            this.tbDOB.TabIndex = 7;
             // 
             // lblDOB
             // 
@@ -176,9 +169,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(84, 303);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 14;
-            this.label7.Text = "label7";
+            this.label7.Text = "Salary/H;";
             // 
             // textBox8
             // 
@@ -193,9 +186,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Location = new System.Drawing.Point(84, 349);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.Size = new System.Drawing.Size(140, 17);
             this.label8.TabIndex = 16;
-            this.label8.Text = "label8";
+            this.label8.Text = "Person of contact nr:";
             // 
             // btnAddEmployee
             // 
@@ -220,12 +213,24 @@
             this.lbEmployees.Size = new System.Drawing.Size(471, 420);
             this.lbEmployees.TabIndex = 19;
             // 
+            // dtpEmployee
+            // 
+            this.dtpEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEmployee.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEmployee.Location = new System.Drawing.Point(87, 139);
+            this.dtpEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpEmployee.Name = "dtpEmployee";
+            this.dtpEmployee.Size = new System.Drawing.Size(179, 22);
+            this.dtpEmployee.TabIndex = 20;
+            this.dtpEmployee.Value = new System.DateTime(2020, 6, 5, 0, 0, 0, 0);
+            // 
             // EmpManagementScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
+            this.Controls.Add(this.dtpEmployee);
             this.Controls.Add(this.lbEmployees);
             this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.textBox8);
@@ -238,7 +243,6 @@
             this.Controls.Add(this.tbPhoneNumber);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.tbBSN);
-            this.Controls.Add(this.tbDOB);
             this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.lblLastName);
@@ -259,7 +263,6 @@
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox tbDOB;
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label tbBSN;
@@ -273,5 +276,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.ListBox lbEmployees;
+        private System.Windows.Forms.DateTimePicker dtpEmployee;
     }
 }
