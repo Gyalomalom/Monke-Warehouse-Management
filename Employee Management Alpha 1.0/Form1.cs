@@ -43,7 +43,7 @@ namespace Employee_Management_Alpha_1._0
         #region EmpSub 
         private void BtnModEmp_Click(object sender, EventArgs e) //when programming submenu buttons, always leave hideSubmenus() method as last line of code
         {
-            openChildForm(new Form2()); //create new form object
+            openChildForm(new EmpManagementScreen()); //create new form object
             hideSubmenus();
         }
         
