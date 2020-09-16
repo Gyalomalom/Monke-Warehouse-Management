@@ -22,6 +22,8 @@ namespace Employee_Management_Alpha_1._0
             this.Close(); //closes the form, serves as return button
         }
 
+
+
         private void StockList() // refreshes the stock list
         {
             int b = Form1.Items.Count();
@@ -83,11 +85,11 @@ namespace Employee_Management_Alpha_1._0
 
         private void RemoveItem() // method for manually removing items
         {
-            if(!string.IsNullOrWhiteSpace(tbName.Text))
+            if (!string.IsNullOrWhiteSpace(tbName.Text))
             {
                 string name = tbName.Text;
                 int i = Form1.Items.IndexOf(name);
-                if(Form1.Items.Contains(name))
+                if (Form1.Items.Contains(name))
                 {
                     Form1.Items.RemoveAt(i);
                     Form1.Quantity.RemoveAt(i);
@@ -129,22 +131,22 @@ namespace Employee_Management_Alpha_1._0
                 tbPricePerUnit.Value = 0;
                 tbQuantity.Value = 0;
             }
+        
+
         }
-
-
         private void BtnAddStockItem_Click(object sender, EventArgs e)
         {
             AddItem();
-        }
 
+        }
         private void BtnRemoveStockItem_Click(object sender, EventArgs e)
         {
-            RemoveItem();
+           // RemoveItem();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            Updates();
+           // Updates();
         }
     }
 }

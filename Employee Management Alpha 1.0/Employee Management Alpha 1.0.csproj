@@ -66,6 +66,8 @@
     <Compile Include="Stock information.Designer.cs">
       <DependentUpon>Stock information.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stock management.cs" />
+    <Compile Include="Stock.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

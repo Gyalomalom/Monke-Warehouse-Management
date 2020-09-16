@@ -62,7 +62,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(184, 20);
             this.tbName.TabIndex = 17;
-            this.tbName.TextChanged += new System.EventHandler(this.TbName_TextChanged);
+            //this.tbName.TextChanged += new System.EventHandler(this.TbName_TextChanged);
             // 
             // lblItemName
             // 
@@ -114,7 +114,7 @@
             this.btnAddStockItem.TabIndex = 28;
             this.btnAddStockItem.Text = "Add";
             this.btnAddStockItem.UseVisualStyleBackColor = true;
-            this.btnAddStockItem.Click += new System.EventHandler(this.BtnAddStockItem_Click);
+            //this.btnAddStockItem.Click += new System.EventHandler(this.BtnAddStockItem_Click);
             // 
             // lbStockInfo
             // 
