@@ -42,7 +42,7 @@
             this.btnModStock = new System.Windows.Forms.Button();
             this.btnStockMan = new System.Windows.Forms.Button();
             this.panelEmpSubmenu = new System.Windows.Forms.Panel();
-            this.btnDep = new System.Windows.Forms.Button();
+            this.btnEmployees = new System.Windows.Forms.Button();
             this.btnShift = new System.Windows.Forms.Button();
             this.btnModEmp = new System.Windows.Forms.Button();
             this.btnEmpMan = new System.Windows.Forms.Button();
@@ -268,7 +268,7 @@
             // panelEmpSubmenu
             // 
             this.panelEmpSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.panelEmpSubmenu.Controls.Add(this.btnDep);
+            this.panelEmpSubmenu.Controls.Add(this.btnEmployees);
             this.panelEmpSubmenu.Controls.Add(this.btnShift);
             this.panelEmpSubmenu.Controls.Add(this.btnModEmp);
             this.panelEmpSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -278,22 +278,22 @@
             this.panelEmpSubmenu.TabIndex = 2;
             this.panelEmpSubmenu.Visible = false;
             // 
-            // btnDep
+            // btnEmployees
             // 
-            this.btnDep.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDep.FlatAppearance.BorderSize = 0;
-            this.btnDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDep.ForeColor = System.Drawing.Color.Silver;
-            this.btnDep.Location = new System.Drawing.Point(0, 80);
-            this.btnDep.Name = "btnDep";
-            this.btnDep.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnDep.Size = new System.Drawing.Size(250, 40);
-            this.btnDep.TabIndex = 3;
-            this.btnDep.Text = "Departments";
-            this.btnDep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDep.UseVisualStyleBackColor = true;
-            this.btnDep.Click += new System.EventHandler(this.BtnDep_Click);
+            this.btnEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmployees.FlatAppearance.BorderSize = 0;
+            this.btnEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEmployees.ForeColor = System.Drawing.Color.Silver;
+            this.btnEmployees.Location = new System.Drawing.Point(0, 80);
+            this.btnEmployees.Name = "btnEmployees";
+            this.btnEmployees.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnEmployees.Size = new System.Drawing.Size(250, 40);
+            this.btnEmployees.TabIndex = 3;
+            this.btnEmployees.Text = "Employees";
+            this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmployees.UseVisualStyleBackColor = true;
+            this.btnEmployees.Click += new System.EventHandler(this.BtnDep_Click);
             // 
             // btnShift
             // 
@@ -427,7 +427,7 @@
 
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelEmpSubmenu;
-        private System.Windows.Forms.Button btnDep;
+        private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnShift;
         private System.Windows.Forms.Button btnModEmp;
         private System.Windows.Forms.Button btnEmpMan;
