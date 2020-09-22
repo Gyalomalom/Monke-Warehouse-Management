@@ -17,6 +17,13 @@ namespace Employee_Management_Alpha_1._0
             InitializeComponent();
             
         }
+
+        //Lists for storing stock information data
+        public static List<string> Items = new List<string>();
+        public static List<double> PricePerUnit = new List<double>();
+        public static List<int> Quantity = new List<int>();
+        public static List<int> Amount = new List<int>();
+
         public void hideSubmenus() //method for hiding submenus
         {
             panelStatisticsSubmenu.Visible = false;
@@ -64,6 +71,7 @@ namespace Employee_Management_Alpha_1._0
         #region StockSub
         private void BtnModStock_Click(object sender, EventArgs e)
         {
+            openChildForm(new Stock_information()); // creates and opens stock info
             hideSubmenus();
         }
         #endregion
@@ -115,6 +123,11 @@ namespace Employee_Management_Alpha_1._0
         private void BtnCloseApp_Click(object sender, EventArgs e) //close application
         {
             Application.Exit();
+        }
+
+        private void PanelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
