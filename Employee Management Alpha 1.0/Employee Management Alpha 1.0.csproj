@@ -58,6 +58,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock information.cs">
@@ -66,7 +67,6 @@
     <Compile Include="Stock information.Designer.cs">
       <DependentUpon>Stock information.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock management.cs" />
     <Compile Include="Stock.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

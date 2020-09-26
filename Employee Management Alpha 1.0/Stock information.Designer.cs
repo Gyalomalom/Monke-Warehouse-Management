@@ -39,6 +39,8 @@
             this.tbPricePerUnit = new System.Windows.Forms.NumericUpDown();
             this.tbQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.tbCategory = new System.Windows.Forms.TextBox();
+            this.lblCategory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbPricePerUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).BeginInit();
             this.SuspendLayout();
@@ -58,17 +60,16 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(104, 75);
+            this.tbName.Location = new System.Drawing.Point(104, 50);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(184, 20);
             this.tbName.TabIndex = 17;
-            //this.tbName.TextChanged += new System.EventHandler(this.TbName_TextChanged);
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName.Location = new System.Drawing.Point(16, 76);
+            this.lblItemName.Location = new System.Drawing.Point(16, 51);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(71, 15);
             this.lblItemName.TabIndex = 18;
@@ -78,7 +79,7 @@
             // 
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(16, 105);
+            this.Label4.Location = new System.Drawing.Point(16, 80);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(54, 15);
             this.Label4.TabIndex = 24;
@@ -114,7 +115,7 @@
             this.btnAddStockItem.TabIndex = 28;
             this.btnAddStockItem.Text = "Add";
             this.btnAddStockItem.UseVisualStyleBackColor = true;
-            //this.btnAddStockItem.Click += new System.EventHandler(this.BtnAddStockItem_Click);
+            this.btnAddStockItem.Click += new System.EventHandler(this.BtnAddStockItem_Click_1);
             // 
             // lbStockInfo
             // 
@@ -139,7 +140,7 @@
             // 
             // tbQuantity
             // 
-            this.tbQuantity.Location = new System.Drawing.Point(104, 106);
+            this.tbQuantity.Location = new System.Drawing.Point(104, 81);
             this.tbQuantity.Name = "tbQuantity";
             this.tbQuantity.Size = new System.Drawing.Size(120, 20);
             this.tbQuantity.TabIndex = 34;
@@ -155,12 +156,31 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
+            // tbCategory
+            // 
+            this.tbCategory.Location = new System.Drawing.Point(104, 112);
+            this.tbCategory.Name = "tbCategory";
+            this.tbCategory.Size = new System.Drawing.Size(120, 20);
+            this.tbCategory.TabIndex = 36;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(16, 113);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(58, 15);
+            this.lblCategory.TabIndex = 37;
+            this.lblCategory.Text = "Category:";
+            // 
             // Stock_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(616, 396);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.tbCategory);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.tbPricePerUnit);
@@ -194,5 +214,7 @@
         private System.Windows.Forms.NumericUpDown tbPricePerUnit;
         private System.Windows.Forms.NumericUpDown tbQuantity;
         internal System.Windows.Forms.Button btnUpdate;
+        internal System.Windows.Forms.TextBox tbCategory;
+        internal System.Windows.Forms.Label lblCategory;
     }
 }
