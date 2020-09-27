@@ -54,6 +54,11 @@ namespace Employee_Management_Alpha_1._0
             this.quantity = quantity;
         }
 
+        public int GetId()
+        {
+            return this.id;
+        }
+
         public override string ToString()
         {
             string info = this.id + "\t" + this.name + " \t " + " \t " + this.category + " \t " + " \t " + this.quantity + " \t " + " \t " + this.pricePerUnit + " \t " + "\t" + " \t " + (this.quantity * this.pricePerUnit);

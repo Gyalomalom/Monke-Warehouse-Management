@@ -39,8 +39,8 @@
             this.tbPricePerUnit = new System.Windows.Forms.NumericUpDown();
             this.tbQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.tbCategory = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbPricePerUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             this.lblPricePerUnit.AutoSize = true;
             this.lblPricePerUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPricePerUnit.Location = new System.Drawing.Point(16, 138);
+            this.lblPricePerUnit.Location = new System.Drawing.Point(16, 111);
             this.lblPricePerUnit.Name = "lblPricePerUnit";
             this.lblPricePerUnit.Size = new System.Drawing.Size(82, 15);
             this.lblPricePerUnit.TabIndex = 22;
@@ -98,7 +98,7 @@
             // btnRemoveStockItem
             // 
             this.btnRemoveStockItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveStockItem.Location = new System.Drawing.Point(449, 101);
+            this.btnRemoveStockItem.Location = new System.Drawing.Point(449, 86);
             this.btnRemoveStockItem.Name = "btnRemoveStockItem";
             this.btnRemoveStockItem.Size = new System.Drawing.Size(83, 29);
             this.btnRemoveStockItem.TabIndex = 30;
@@ -109,7 +109,7 @@
             // btnAddStockItem
             // 
             this.btnAddStockItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStockItem.Location = new System.Drawing.Point(449, 66);
+            this.btnAddStockItem.Location = new System.Drawing.Point(449, 51);
             this.btnAddStockItem.Name = "btnAddStockItem";
             this.btnAddStockItem.Size = new System.Drawing.Size(83, 29);
             this.btnAddStockItem.TabIndex = 28;
@@ -128,7 +128,7 @@
             // tbPricePerUnit
             // 
             this.tbPricePerUnit.DecimalPlaces = 2;
-            this.tbPricePerUnit.Location = new System.Drawing.Point(104, 138);
+            this.tbPricePerUnit.Location = new System.Drawing.Point(104, 111);
             this.tbPricePerUnit.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -148,7 +148,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(449, 136);
+            this.btnUpdate.Location = new System.Drawing.Point(449, 121);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(83, 29);
             this.btnUpdate.TabIndex = 35;
@@ -156,22 +156,23 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // tbCategory
-            // 
-            this.tbCategory.Location = new System.Drawing.Point(104, 112);
-            this.tbCategory.Name = "tbCategory";
-            this.tbCategory.Size = new System.Drawing.Size(120, 20);
-            this.tbCategory.TabIndex = 36;
-            // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(16, 113);
+            this.lblCategory.Location = new System.Drawing.Point(16, 144);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(58, 15);
             this.lblCategory.TabIndex = 37;
             this.lblCategory.Text = "Category:";
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(103, 142);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbCategory.TabIndex = 38;
             // 
             // Stock_information
             // 
@@ -179,8 +180,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(616, 396);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.lblCategory);
-            this.Controls.Add(this.tbCategory);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.tbPricePerUnit);
@@ -194,6 +195,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "Stock_information";
             this.Text = "Stock_information";
+            this.Load += new System.EventHandler(this.Stock_information_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbPricePerUnit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).EndInit();
             this.ResumeLayout(false);
@@ -210,11 +212,11 @@
         internal System.Windows.Forms.Label lblPricePerUnit;
         internal System.Windows.Forms.Button btnRemoveStockItem;
         internal System.Windows.Forms.Button btnAddStockItem;
-        private System.Windows.Forms.ListBox lbStockInfo;
         private System.Windows.Forms.NumericUpDown tbPricePerUnit;
         private System.Windows.Forms.NumericUpDown tbQuantity;
         internal System.Windows.Forms.Button btnUpdate;
-        internal System.Windows.Forms.TextBox tbCategory;
         internal System.Windows.Forms.Label lblCategory;
+        public System.Windows.Forms.ListBox lbStockInfo;
+        public System.Windows.Forms.ComboBox cbCategory;
     }
 }

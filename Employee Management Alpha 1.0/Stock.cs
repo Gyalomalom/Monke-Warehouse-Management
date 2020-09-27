@@ -22,11 +22,23 @@ namespace Employee_Management_Alpha_1._0
             return this.Items;
         }
 
-        public void AddStock(string name, int quantity, double pricePerUnit, string category)
+        public void AddStock(string name, int quantity, double pricePerUnit, string category)// method to add stock
         {
             if (!Items.Any(item => item.getName() == name))
             {
                 Items.Add(new Item(name, quantity, pricePerUnit, category));
+
+
+                    if(form.cbCategory.Items.Contains(category)) // checks if the combobox contains the newly entered category
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        form.cbCategory.Items.Add(category); // if it is a new category, it adds that category to the combobox
+                    }
+
+
             }
             else // if the item is already on the list, it adds quantity to that item
             {
@@ -69,23 +81,12 @@ namespace Employee_Management_Alpha_1._0
             return Items.Count();
         }
 
-        public bool RemoveStock(string name)
+        public bool RemoveStock(Item selectedItem)
         {
-            int index;
-
-            for (int i = 0; i < Items.Count; i++)
-            {
-                //form.lbStockInfo.SelectedIndex.ToString
-
-
-
-            }
-
-
-
+           
             foreach (Item i in Items)
             {
-                if (i.getName() == name)
+                if (i.GetId() == selectedItem.GetId())
                 {
                     Items.Remove(i);
                     return true;

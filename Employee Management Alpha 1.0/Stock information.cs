@@ -12,6 +12,7 @@ namespace Employee_Management_Alpha_1._0
 {
     public partial class Stock_information : Form
     {
+        
         Stock stock;
 
         public Stock_information()
@@ -52,7 +53,7 @@ namespace Employee_Management_Alpha_1._0
                 string name = tbName.Text;
                 int quantity = Convert.ToInt32(tbQuantity.Text);
                 double pricePerUnit = Convert.ToDouble(tbPricePerUnit.Text);
-                string category = tbCategory.Text;
+                string category = cbCategory.Text;
 
 
                 stock.AddStock(name, quantity, pricePerUnit, category);
@@ -66,29 +67,31 @@ namespace Employee_Management_Alpha_1._0
             tbName.Text = "";
             tbPricePerUnit.Value = 0;
             tbQuantity.Value = 0;
-            tbCategory.Text = "";
+            cbCategory.Text = "";
 
         }
 
         public void RemoveItem() // method for manually removing items
         {
-            if (!string.IsNullOrWhiteSpace(tbName.Text))
+            if (lbStockInfo.SelectedIndex < 1)
             {
-                string name = tbName.Text;
+                MessageBox.Show("Please select an item first!");
+            }
+            else
+            {
+                Item selectedItem = (Item)lbStockInfo.SelectedItem;
 
-                if (!stock.RemoveStock(name))
+                if (!stock.RemoveStock(selectedItem))
                 {
                     MessageBox.Show("Item is not in the list!");
                 }
                 StockList(); // refresshing
             }
-            else
-            { MessageBox.Show("Please enter an item name first!"); }
 
             tbName.Text = "";
             tbPricePerUnit.Value = 0;
             tbQuantity.Value = 0;
-            tbCategory.Text = "";
+            cbCategory.Text = "";
         }
 
         public void Updates() // method for changing the quantity and price of the items
@@ -111,7 +114,7 @@ namespace Employee_Management_Alpha_1._0
                 tbName.Text = "";
                 tbPricePerUnit.Value = 0;
                 tbQuantity.Value = 0;
-                tbCategory.Text = "";
+                cbCategory.Text = "";
             }
         }
 
@@ -130,5 +133,11 @@ namespace Employee_Management_Alpha_1._0
         {
             AddItem();
         }
+
+        private void Stock_information_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }
