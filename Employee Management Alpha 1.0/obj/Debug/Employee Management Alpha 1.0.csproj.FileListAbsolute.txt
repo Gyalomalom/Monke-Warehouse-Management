@@ -60,7 +60,6 @@ C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CoreCompileInputs.cache
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.pdb
-C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csprojAssemblyReference.cache
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.EmpManagementScreen.resources
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Form1.resources
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddEmployees.resources
@@ -71,3 +70,6 @@ C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.GenerateResource.cache
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.pdb
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.exe.config
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.exe
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.pdb
