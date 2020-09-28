@@ -30,41 +30,41 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.btnCloseApp = new System.Windows.Forms.Button();
             this.panelStatisticsSubmenu = new System.Windows.Forms.Panel();
             this.btnViewStats = new System.Windows.Forms.Button();
-            this.btnStats = new System.Windows.Forms.Button();
             this.panelDepSubmenu = new System.Windows.Forms.Panel();
+            this.btnDepStatus = new System.Windows.Forms.Button();
             this.btnRemoveDep = new System.Windows.Forms.Button();
             this.btnAddDep = new System.Windows.Forms.Button();
-            this.btnDepMan = new System.Windows.Forms.Button();
             this.panelStockSubmenu = new System.Windows.Forms.Panel();
+            this.btnStockInfo = new System.Windows.Forms.Button();
+            this.btnRemoveStock = new System.Windows.Forms.Button();
             this.btnAddStock = new System.Windows.Forms.Button();
-            this.btnStockMan = new System.Windows.Forms.Button();
             this.panelEmpSubmenu = new System.Windows.Forms.Panel();
+            this.btnShitManager = new System.Windows.Forms.Button();
+            this.btnEmpStatus = new System.Windows.Forms.Button();
             this.btnEmpInfo = new System.Windows.Forms.Button();
             this.btnRemoveEmp = new System.Windows.Forms.Button();
             this.btnAddEmp = new System.Windows.Forms.Button();
-            this.btnEmpMan = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pbLogoText = new System.Windows.Forms.PictureBox();
             this.panelLiveFeed = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnEmpStatus = new System.Windows.Forms.Button();
-            this.btnRemoveStock = new System.Windows.Forms.Button();
-            this.btnDepStatus = new System.Windows.Forms.Button();
-            this.btnShitManager = new System.Windows.Forms.Button();
-            this.btnStockInfo = new System.Windows.Forms.Button();
+            this.btnCloseApp = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnDepMan = new System.Windows.Forms.Button();
+            this.btnStockMan = new System.Windows.Forms.Button();
+            this.btnEmpMan = new System.Windows.Forms.Button();
+            this.pbLogoText = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelStatisticsSubmenu.SuspendLayout();
             this.panelDepSubmenu.SuspendLayout();
             this.panelStockSubmenu.SuspendLayout();
             this.panelEmpSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogoText)).BeginInit();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoText)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -83,41 +83,20 @@
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSideMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSideMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(251, 748);
+            this.panelSideMenu.Size = new System.Drawing.Size(188, 608);
             this.panelSideMenu.TabIndex = 0;
-            // 
-            // btnCloseApp
-            // 
-            this.btnCloseApp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCloseApp.FlatAppearance.BorderSize = 0;
-            this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCloseApp.ForeColor = System.Drawing.Color.Silver;
-            this.btnCloseApp.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_exit_48;
-            this.btnCloseApp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCloseApp.Location = new System.Drawing.Point(0, 767);
-            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCloseApp.Name = "btnCloseApp";
-            this.btnCloseApp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCloseApp.Size = new System.Drawing.Size(230, 42);
-            this.btnCloseApp.TabIndex = 2;
-            this.btnCloseApp.Text = "Exit";
-            this.btnCloseApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCloseApp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCloseApp.UseVisualStyleBackColor = true;
-            this.btnCloseApp.Click += new System.EventHandler(this.BtnCloseApp_Click);
             // 
             // panelStatisticsSubmenu
             // 
             this.panelStatisticsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.panelStatisticsSubmenu.Controls.Add(this.btnViewStats);
             this.panelStatisticsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatisticsSubmenu.Location = new System.Drawing.Point(0, 726);
-            this.panelStatisticsSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelStatisticsSubmenu.Location = new System.Drawing.Point(0, 588);
+            this.panelStatisticsSubmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelStatisticsSubmenu.Name = "panelStatisticsSubmenu";
-            this.panelStatisticsSubmenu.Size = new System.Drawing.Size(230, 41);
+            this.panelStatisticsSubmenu.Size = new System.Drawing.Size(171, 33);
             this.panelStatisticsSubmenu.TabIndex = 8;
             this.panelStatisticsSubmenu.Visible = false;
             // 
@@ -129,36 +108,15 @@
             this.btnViewStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnViewStats.ForeColor = System.Drawing.Color.Silver;
             this.btnViewStats.Location = new System.Drawing.Point(0, 0);
-            this.btnViewStats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewStats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnViewStats.Name = "btnViewStats";
-            this.btnViewStats.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnViewStats.Size = new System.Drawing.Size(230, 39);
+            this.btnViewStats.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnViewStats.Size = new System.Drawing.Size(171, 32);
             this.btnViewStats.TabIndex = 0;
             this.btnViewStats.Text = "View Statistics";
             this.btnViewStats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewStats.UseVisualStyleBackColor = true;
             this.btnViewStats.Click += new System.EventHandler(this.BtnViewStats_Click);
-            // 
-            // btnStats
-            // 
-            this.btnStats.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStats.FlatAppearance.BorderSize = 0;
-            this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStats.ForeColor = System.Drawing.Color.Silver;
-            this.btnStats.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_pie_chart_report_50;
-            this.btnStats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStats.Location = new System.Drawing.Point(0, 680);
-            this.btnStats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStats.Name = "btnStats";
-            this.btnStats.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnStats.Size = new System.Drawing.Size(230, 46);
-            this.btnStats.TabIndex = 7;
-            this.btnStats.Text = "Statistics";
-            this.btnStats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStats.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStats.UseVisualStyleBackColor = true;
-            this.btnStats.Click += new System.EventHandler(this.BtnStats_Click);
             // 
             // panelDepSubmenu
             // 
@@ -167,12 +125,29 @@
             this.panelDepSubmenu.Controls.Add(this.btnRemoveDep);
             this.panelDepSubmenu.Controls.Add(this.btnAddDep);
             this.panelDepSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDepSubmenu.Location = new System.Drawing.Point(0, 559);
-            this.panelDepSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDepSubmenu.Location = new System.Drawing.Point(0, 453);
+            this.panelDepSubmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDepSubmenu.Name = "panelDepSubmenu";
-            this.panelDepSubmenu.Size = new System.Drawing.Size(230, 121);
+            this.panelDepSubmenu.Size = new System.Drawing.Size(171, 98);
             this.panelDepSubmenu.TabIndex = 6;
             this.panelDepSubmenu.Visible = false;
+            // 
+            // btnDepStatus
+            // 
+            this.btnDepStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDepStatus.FlatAppearance.BorderSize = 0;
+            this.btnDepStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDepStatus.ForeColor = System.Drawing.Color.Silver;
+            this.btnDepStatus.Location = new System.Drawing.Point(0, 61);
+            this.btnDepStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDepStatus.Name = "btnDepStatus";
+            this.btnDepStatus.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnDepStatus.Size = new System.Drawing.Size(171, 33);
+            this.btnDepStatus.TabIndex = 2;
+            this.btnDepStatus.Text = "Department status";
+            this.btnDepStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepStatus.UseVisualStyleBackColor = true;
             // 
             // btnRemoveDep
             // 
@@ -181,11 +156,11 @@
             this.btnRemoveDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRemoveDep.ForeColor = System.Drawing.Color.Silver;
-            this.btnRemoveDep.Location = new System.Drawing.Point(0, 35);
-            this.btnRemoveDep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveDep.Location = new System.Drawing.Point(0, 28);
+            this.btnRemoveDep.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveDep.Name = "btnRemoveDep";
-            this.btnRemoveDep.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnRemoveDep.Size = new System.Drawing.Size(230, 41);
+            this.btnRemoveDep.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnRemoveDep.Size = new System.Drawing.Size(171, 33);
             this.btnRemoveDep.TabIndex = 1;
             this.btnRemoveDep.Text = "Remove department";
             this.btnRemoveDep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,37 +175,15 @@
             this.btnAddDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddDep.ForeColor = System.Drawing.Color.Silver;
             this.btnAddDep.Location = new System.Drawing.Point(0, 0);
-            this.btnAddDep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddDep.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddDep.Name = "btnAddDep";
-            this.btnAddDep.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnAddDep.Size = new System.Drawing.Size(230, 35);
+            this.btnAddDep.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnAddDep.Size = new System.Drawing.Size(171, 28);
             this.btnAddDep.TabIndex = 0;
             this.btnAddDep.Text = "Add department";
             this.btnAddDep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddDep.UseVisualStyleBackColor = true;
             this.btnAddDep.Click += new System.EventHandler(this.BtnModDep_Click);
-            // 
-            // btnDepMan
-            // 
-            this.btnDepMan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDepMan.FlatAppearance.BorderSize = 0;
-            this.btnDepMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepMan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDepMan.ForeColor = System.Drawing.Color.Silver;
-            this.btnDepMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_unit_50;
-            this.btnDepMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepMan.Location = new System.Drawing.Point(0, 513);
-            this.btnDepMan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDepMan.Name = "btnDepMan";
-            this.btnDepMan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnDepMan.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnDepMan.Size = new System.Drawing.Size(230, 46);
-            this.btnDepMan.TabIndex = 5;
-            this.btnDepMan.Text = "Departments";
-            this.btnDepMan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepMan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDepMan.UseVisualStyleBackColor = true;
-            this.btnDepMan.Click += new System.EventHandler(this.BtnDepMan_Click);
             // 
             // panelStockSubmenu
             // 
@@ -239,12 +192,48 @@
             this.panelStockSubmenu.Controls.Add(this.btnRemoveStock);
             this.panelStockSubmenu.Controls.Add(this.btnAddStock);
             this.panelStockSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStockSubmenu.Location = new System.Drawing.Point(0, 396);
-            this.panelStockSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelStockSubmenu.Location = new System.Drawing.Point(0, 321);
+            this.panelStockSubmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelStockSubmenu.Name = "panelStockSubmenu";
-            this.panelStockSubmenu.Size = new System.Drawing.Size(230, 117);
+            this.panelStockSubmenu.Size = new System.Drawing.Size(171, 95);
             this.panelStockSubmenu.TabIndex = 4;
             this.panelStockSubmenu.Visible = false;
+            // 
+            // btnStockInfo
+            // 
+            this.btnStockInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStockInfo.FlatAppearance.BorderSize = 0;
+            this.btnStockInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStockInfo.ForeColor = System.Drawing.Color.Silver;
+            this.btnStockInfo.Location = new System.Drawing.Point(0, 63);
+            this.btnStockInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStockInfo.Name = "btnStockInfo";
+            this.btnStockInfo.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnStockInfo.Size = new System.Drawing.Size(171, 31);
+            this.btnStockInfo.TabIndex = 2;
+            this.btnStockInfo.Text = "Stock info";
+            this.btnStockInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockInfo.UseVisualStyleBackColor = true;
+            this.btnStockInfo.Click += new System.EventHandler(this.BtnStockInfo_Click);
+            // 
+            // btnRemoveStock
+            // 
+            this.btnRemoveStock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRemoveStock.FlatAppearance.BorderSize = 0;
+            this.btnRemoveStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemoveStock.ForeColor = System.Drawing.Color.Silver;
+            this.btnRemoveStock.Location = new System.Drawing.Point(0, 32);
+            this.btnRemoveStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveStock.Name = "btnRemoveStock";
+            this.btnRemoveStock.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnRemoveStock.Size = new System.Drawing.Size(171, 31);
+            this.btnRemoveStock.TabIndex = 1;
+            this.btnRemoveStock.Text = "Remove stock";
+            this.btnRemoveStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveStock.UseVisualStyleBackColor = true;
+            this.btnRemoveStock.Click += new System.EventHandler(this.BtnRemoveStock_Click);
             // 
             // btnAddStock
             // 
@@ -254,36 +243,15 @@
             this.btnAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddStock.ForeColor = System.Drawing.Color.Silver;
             this.btnAddStock.Location = new System.Drawing.Point(0, 0);
-            this.btnAddStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddStock.Name = "btnAddStock";
-            this.btnAddStock.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnAddStock.Size = new System.Drawing.Size(230, 40);
+            this.btnAddStock.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnAddStock.Size = new System.Drawing.Size(171, 32);
             this.btnAddStock.TabIndex = 0;
             this.btnAddStock.Text = "Add stock";
             this.btnAddStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddStock.UseVisualStyleBackColor = true;
             this.btnAddStock.Click += new System.EventHandler(this.BtnModStock_Click);
-            // 
-            // btnStockMan
-            // 
-            this.btnStockMan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockMan.FlatAppearance.BorderSize = 0;
-            this.btnStockMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockMan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStockMan.ForeColor = System.Drawing.Color.Silver;
-            this.btnStockMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_new_product_50;
-            this.btnStockMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockMan.Location = new System.Drawing.Point(0, 350);
-            this.btnStockMan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStockMan.Name = "btnStockMan";
-            this.btnStockMan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnStockMan.Size = new System.Drawing.Size(230, 46);
-            this.btnStockMan.TabIndex = 3;
-            this.btnStockMan.Text = "Stock";
-            this.btnStockMan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockMan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStockMan.UseVisualStyleBackColor = true;
-            this.btnStockMan.Click += new System.EventHandler(this.BtnStockMan_Click);
             // 
             // panelEmpSubmenu
             // 
@@ -294,12 +262,46 @@
             this.panelEmpSubmenu.Controls.Add(this.btnRemoveEmp);
             this.panelEmpSubmenu.Controls.Add(this.btnAddEmp);
             this.panelEmpSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEmpSubmenu.Location = new System.Drawing.Point(0, 146);
-            this.panelEmpSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelEmpSubmenu.Location = new System.Drawing.Point(0, 118);
+            this.panelEmpSubmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEmpSubmenu.Name = "panelEmpSubmenu";
-            this.panelEmpSubmenu.Size = new System.Drawing.Size(230, 204);
+            this.panelEmpSubmenu.Size = new System.Drawing.Size(171, 166);
             this.panelEmpSubmenu.TabIndex = 2;
             this.panelEmpSubmenu.Visible = false;
+            // 
+            // btnShitManager
+            // 
+            this.btnShitManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnShitManager.FlatAppearance.BorderSize = 0;
+            this.btnShitManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShitManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShitManager.ForeColor = System.Drawing.Color.Silver;
+            this.btnShitManager.Location = new System.Drawing.Point(0, 128);
+            this.btnShitManager.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShitManager.Name = "btnShitManager";
+            this.btnShitManager.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnShitManager.Size = new System.Drawing.Size(171, 32);
+            this.btnShitManager.TabIndex = 5;
+            this.btnShitManager.Text = "Shift manager";
+            this.btnShitManager.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShitManager.UseVisualStyleBackColor = true;
+            // 
+            // btnEmpStatus
+            // 
+            this.btnEmpStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpStatus.FlatAppearance.BorderSize = 0;
+            this.btnEmpStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEmpStatus.ForeColor = System.Drawing.Color.Silver;
+            this.btnEmpStatus.Location = new System.Drawing.Point(0, 96);
+            this.btnEmpStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmpStatus.Name = "btnEmpStatus";
+            this.btnEmpStatus.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnEmpStatus.Size = new System.Drawing.Size(171, 32);
+            this.btnEmpStatus.TabIndex = 4;
+            this.btnEmpStatus.Text = "Employee status";
+            this.btnEmpStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpStatus.UseVisualStyleBackColor = true;
             // 
             // btnEmpInfo
             // 
@@ -308,11 +310,11 @@
             this.btnEmpInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEmpInfo.ForeColor = System.Drawing.Color.Silver;
-            this.btnEmpInfo.Location = new System.Drawing.Point(0, 78);
-            this.btnEmpInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEmpInfo.Location = new System.Drawing.Point(0, 64);
+            this.btnEmpInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmpInfo.Name = "btnEmpInfo";
-            this.btnEmpInfo.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnEmpInfo.Size = new System.Drawing.Size(230, 39);
+            this.btnEmpInfo.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnEmpInfo.Size = new System.Drawing.Size(171, 32);
             this.btnEmpInfo.TabIndex = 3;
             this.btnEmpInfo.Text = "Employee info";
             this.btnEmpInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,11 +328,11 @@
             this.btnRemoveEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRemoveEmp.ForeColor = System.Drawing.Color.Silver;
-            this.btnRemoveEmp.Location = new System.Drawing.Point(0, 39);
-            this.btnRemoveEmp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveEmp.Location = new System.Drawing.Point(0, 32);
+            this.btnRemoveEmp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveEmp.Name = "btnRemoveEmp";
-            this.btnRemoveEmp.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnRemoveEmp.Size = new System.Drawing.Size(230, 39);
+            this.btnRemoveEmp.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnRemoveEmp.Size = new System.Drawing.Size(171, 32);
             this.btnRemoveEmp.TabIndex = 2;
             this.btnRemoveEmp.Text = "Remove employee";
             this.btnRemoveEmp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,15 +347,144 @@
             this.btnAddEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddEmp.ForeColor = System.Drawing.Color.Silver;
             this.btnAddEmp.Location = new System.Drawing.Point(0, 0);
-            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddEmp.Name = "btnAddEmp";
-            this.btnAddEmp.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnAddEmp.Size = new System.Drawing.Size(230, 39);
+            this.btnAddEmp.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnAddEmp.Size = new System.Drawing.Size(171, 32);
             this.btnAddEmp.TabIndex = 1;
             this.btnAddEmp.Text = "Add employee";
             this.btnAddEmp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddEmp.UseVisualStyleBackColor = true;
             this.btnAddEmp.Click += new System.EventHandler(this.BtnModEmp_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pbLogoText);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(171, 81);
+            this.panelLogo.TabIndex = 1;
+            // 
+            // panelLiveFeed
+            // 
+            this.panelLiveFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panelLiveFeed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelLiveFeed.Location = new System.Drawing.Point(188, 498);
+            this.panelLiveFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLiveFeed.Name = "panelLiveFeed";
+            this.panelLiveFeed.Size = new System.Drawing.Size(618, 110);
+            this.panelLiveFeed.TabIndex = 1;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.panelChildForm.Controls.Add(this.pbLogo);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(188, 0);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(618, 498);
+            this.panelChildForm.TabIndex = 0;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelChildForm_Paint);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbLogo.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.moneknotext1;
+            this.pbLogo.Location = new System.Drawing.Point(219, 200);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(209, 164);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
+            // 
+            // btnCloseApp
+            // 
+            this.btnCloseApp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCloseApp.FlatAppearance.BorderSize = 0;
+            this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCloseApp.ForeColor = System.Drawing.Color.Silver;
+            this.btnCloseApp.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_exit_48;
+            this.btnCloseApp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCloseApp.Location = new System.Drawing.Point(0, 621);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCloseApp.Name = "btnCloseApp";
+            this.btnCloseApp.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnCloseApp.Size = new System.Drawing.Size(171, 34);
+            this.btnCloseApp.TabIndex = 2;
+            this.btnCloseApp.Text = "Exit";
+            this.btnCloseApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCloseApp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCloseApp.UseVisualStyleBackColor = true;
+            this.btnCloseApp.Click += new System.EventHandler(this.BtnCloseApp_Click);
+            // 
+            // btnStats
+            // 
+            this.btnStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStats.FlatAppearance.BorderSize = 0;
+            this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStats.ForeColor = System.Drawing.Color.Silver;
+            this.btnStats.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_pie_chart_report_50;
+            this.btnStats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStats.Location = new System.Drawing.Point(0, 551);
+            this.btnStats.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnStats.Size = new System.Drawing.Size(171, 37);
+            this.btnStats.TabIndex = 7;
+            this.btnStats.Text = "Statistics";
+            this.btnStats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStats.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.BtnStats_Click);
+            // 
+            // btnDepMan
+            // 
+            this.btnDepMan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDepMan.FlatAppearance.BorderSize = 0;
+            this.btnDepMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepMan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDepMan.ForeColor = System.Drawing.Color.Silver;
+            this.btnDepMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_unit_50;
+            this.btnDepMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepMan.Location = new System.Drawing.Point(0, 416);
+            this.btnDepMan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDepMan.Name = "btnDepMan";
+            this.btnDepMan.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnDepMan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDepMan.Size = new System.Drawing.Size(171, 37);
+            this.btnDepMan.TabIndex = 5;
+            this.btnDepMan.Text = "Departments";
+            this.btnDepMan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepMan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDepMan.UseVisualStyleBackColor = true;
+            this.btnDepMan.Click += new System.EventHandler(this.BtnDepMan_Click);
+            // 
+            // btnStockMan
+            // 
+            this.btnStockMan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStockMan.FlatAppearance.BorderSize = 0;
+            this.btnStockMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockMan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStockMan.ForeColor = System.Drawing.Color.Silver;
+            this.btnStockMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_new_product_50;
+            this.btnStockMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockMan.Location = new System.Drawing.Point(0, 284);
+            this.btnStockMan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStockMan.Name = "btnStockMan";
+            this.btnStockMan.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnStockMan.Size = new System.Drawing.Size(171, 37);
+            this.btnStockMan.TabIndex = 3;
+            this.btnStockMan.Text = "Stock";
+            this.btnStockMan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockMan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStockMan.UseVisualStyleBackColor = true;
+            this.btnStockMan.Click += new System.EventHandler(this.BtnStockMan_Click);
             // 
             // btnEmpMan
             // 
@@ -364,11 +495,11 @@
             this.btnEmpMan.ForeColor = System.Drawing.Color.Silver;
             this.btnEmpMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_crowd_501;
             this.btnEmpMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpMan.Location = new System.Drawing.Point(0, 100);
-            this.btnEmpMan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEmpMan.Location = new System.Drawing.Point(0, 81);
+            this.btnEmpMan.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpMan.Name = "btnEmpMan";
-            this.btnEmpMan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnEmpMan.Size = new System.Drawing.Size(230, 46);
+            this.btnEmpMan.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnEmpMan.Size = new System.Drawing.Size(171, 37);
             this.btnEmpMan.TabIndex = 1;
             this.btnEmpMan.Text = "Employees";
             this.btnEmpMan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,157 +507,28 @@
             this.btnEmpMan.UseVisualStyleBackColor = true;
             this.btnEmpMan.Click += new System.EventHandler(this.BtnEmpMan_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pbLogoText);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(230, 100);
-            this.panelLogo.TabIndex = 1;
-            // 
             // pbLogoText
             // 
             this.pbLogoText.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.Névtelen_1;
-            this.pbLogoText.Location = new System.Drawing.Point(12, 11);
-            this.pbLogoText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLogoText.Location = new System.Drawing.Point(9, 9);
+            this.pbLogoText.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogoText.Name = "pbLogoText";
-            this.pbLogoText.Size = new System.Drawing.Size(220, 82);
+            this.pbLogoText.Size = new System.Drawing.Size(165, 67);
             this.pbLogoText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogoText.TabIndex = 1;
             this.pbLogoText.TabStop = false;
             // 
-            // panelLiveFeed
-            // 
-            this.panelLiveFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.panelLiveFeed.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelLiveFeed.Location = new System.Drawing.Point(251, 613);
-            this.panelLiveFeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelLiveFeed.Name = "panelLiveFeed";
-            this.panelLiveFeed.Size = new System.Drawing.Size(824, 135);
-            this.panelLiveFeed.TabIndex = 1;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.panelChildForm.Controls.Add(this.pbLogo);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(251, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(824, 613);
-            this.panelChildForm.TabIndex = 0;
-            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelChildForm_Paint);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbLogo.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.moneknotext1;
-            this.pbLogo.Location = new System.Drawing.Point(292, 246);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(209, 164);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
-            // btnEmpStatus
-            // 
-            this.btnEmpStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpStatus.FlatAppearance.BorderSize = 0;
-            this.btnEmpStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEmpStatus.ForeColor = System.Drawing.Color.Silver;
-            this.btnEmpStatus.Location = new System.Drawing.Point(0, 117);
-            this.btnEmpStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEmpStatus.Name = "btnEmpStatus";
-            this.btnEmpStatus.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnEmpStatus.Size = new System.Drawing.Size(230, 39);
-            this.btnEmpStatus.TabIndex = 4;
-            this.btnEmpStatus.Text = "Employee status";
-            this.btnEmpStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpStatus.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveStock
-            // 
-            this.btnRemoveStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRemoveStock.FlatAppearance.BorderSize = 0;
-            this.btnRemoveStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRemoveStock.ForeColor = System.Drawing.Color.Silver;
-            this.btnRemoveStock.Location = new System.Drawing.Point(0, 40);
-            this.btnRemoveStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRemoveStock.Name = "btnRemoveStock";
-            this.btnRemoveStock.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnRemoveStock.Size = new System.Drawing.Size(230, 38);
-            this.btnRemoveStock.TabIndex = 1;
-            this.btnRemoveStock.Text = "Remove stock";
-            this.btnRemoveStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveStock.UseVisualStyleBackColor = true;
-            // 
-            // btnDepStatus
-            // 
-            this.btnDepStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDepStatus.FlatAppearance.BorderSize = 0;
-            this.btnDepStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDepStatus.ForeColor = System.Drawing.Color.Silver;
-            this.btnDepStatus.Location = new System.Drawing.Point(0, 76);
-            this.btnDepStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDepStatus.Name = "btnDepStatus";
-            this.btnDepStatus.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnDepStatus.Size = new System.Drawing.Size(230, 41);
-            this.btnDepStatus.TabIndex = 2;
-            this.btnDepStatus.Text = "Department status";
-            this.btnDepStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepStatus.UseVisualStyleBackColor = true;
-            // 
-            // btnShitManager
-            // 
-            this.btnShitManager.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnShitManager.FlatAppearance.BorderSize = 0;
-            this.btnShitManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShitManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShitManager.ForeColor = System.Drawing.Color.Silver;
-            this.btnShitManager.Location = new System.Drawing.Point(0, 156);
-            this.btnShitManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnShitManager.Name = "btnShitManager";
-            this.btnShitManager.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnShitManager.Size = new System.Drawing.Size(230, 39);
-            this.btnShitManager.TabIndex = 5;
-            this.btnShitManager.Text = "Shift manager";
-            this.btnShitManager.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShitManager.UseVisualStyleBackColor = true;
-            // 
-            // btnStockInfo
-            // 
-            this.btnStockInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockInfo.FlatAppearance.BorderSize = 0;
-            this.btnStockInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStockInfo.ForeColor = System.Drawing.Color.Silver;
-            this.btnStockInfo.Location = new System.Drawing.Point(0, 78);
-            this.btnStockInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStockInfo.Name = "btnStockInfo";
-            this.btnStockInfo.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnStockInfo.Size = new System.Drawing.Size(230, 38);
-            this.btnStockInfo.TabIndex = 2;
-            this.btnStockInfo.Text = "Stock info";
-            this.btnStockInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockInfo.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 748);
+            this.ClientSize = new System.Drawing.Size(806, 608);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelLiveFeed);
             this.Controls.Add(this.panelSideMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1090, 669);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(822, 551);
             this.Name = "Form1";
             this.panelSideMenu.ResumeLayout(false);
             this.panelStatisticsSubmenu.ResumeLayout(false);
@@ -534,10 +536,10 @@
             this.panelStockSubmenu.ResumeLayout(false);
             this.panelEmpSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogoText)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoText)).EndInit();
             this.ResumeLayout(false);
 
         }
