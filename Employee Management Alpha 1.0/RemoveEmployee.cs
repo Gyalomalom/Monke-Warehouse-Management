@@ -5,26 +5,29 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Employee_Management_Alpha_1._0
 {
-    public partial class AddEmployees : Form
+    public partial class RemoveEmployee : Form
     {
-        public AddEmployees()
+        public RemoveEmployee()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close(); //closes the form, serves as return button
+            this.Close();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            int id = Convert.ToInt32(tbID.Text);
+            //RemoveEmployeebyId(id);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Employee_Management_Alpha_1._0
 {
-    partial class EmpManagementScreen
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -45,8 +45,12 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAddEmployee = new System.Windows.Forms.Button();
-            this.lbEmployees = new System.Windows.Forms.ListBox();
             this.dtpEmployee = new System.Windows.Forms.DateTimePicker();
+            this.lbEmployees = new System.Windows.Forms.ListBox();
+            this.tbContactR = new System.Windows.Forms.TextBox();
+            this.tbPosition = new System.Windows.Forms.TextBox();
+            this.tbWorkingH = new System.Windows.Forms.TextBox();
+            this.tbLanguage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -204,15 +208,6 @@
             this.btnAddEmployee.UseVisualStyleBackColor = false;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
-            // lbEmployees
-            // 
-            this.lbEmployees.FormattingEnabled = true;
-            this.lbEmployees.ItemHeight = 16;
-            this.lbEmployees.Location = new System.Drawing.Point(321, 48);
-            this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(471, 420);
-            this.lbEmployees.TabIndex = 19;
-            // 
             // dtpEmployee
             // 
             this.dtpEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,14 +219,55 @@
             this.dtpEmployee.TabIndex = 20;
             this.dtpEmployee.Value = new System.DateTime(2020, 6, 5, 0, 0, 0, 0);
             // 
-            // EmpManagementScreen
+            // lbEmployees
+            // 
+            this.lbEmployees.FormattingEnabled = true;
+            this.lbEmployees.ItemHeight = 16;
+            this.lbEmployees.Location = new System.Drawing.Point(566, 27);
+            this.lbEmployees.Name = "lbEmployees";
+            this.lbEmployees.Size = new System.Drawing.Size(225, 436);
+            this.lbEmployees.TabIndex = 21;
+            // 
+            // tbContactR
+            // 
+            this.tbContactR.Location = new System.Drawing.Point(290, 48);
+            this.tbContactR.Name = "tbContactR";
+            this.tbContactR.Size = new System.Drawing.Size(179, 22);
+            this.tbContactR.TabIndex = 22;
+            // 
+            // tbPosition
+            // 
+            this.tbPosition.Location = new System.Drawing.Point(290, 94);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(179, 22);
+            this.tbPosition.TabIndex = 23;
+            // 
+            // tbWorkingH
+            // 
+            this.tbWorkingH.Location = new System.Drawing.Point(290, 141);
+            this.tbWorkingH.Name = "tbWorkingH";
+            this.tbWorkingH.Size = new System.Drawing.Size(179, 22);
+            this.tbWorkingH.TabIndex = 24;
+            // 
+            // tbLanguage
+            // 
+            this.tbLanguage.Location = new System.Drawing.Point(290, 186);
+            this.tbLanguage.Name = "tbLanguage";
+            this.tbLanguage.Size = new System.Drawing.Size(179, 22);
+            this.tbLanguage.TabIndex = 25;
+            // 
+            // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
-            this.Controls.Add(this.dtpEmployee);
+            this.Controls.Add(this.tbLanguage);
+            this.Controls.Add(this.tbWorkingH);
+            this.Controls.Add(this.tbPosition);
+            this.Controls.Add(this.tbContactR);
             this.Controls.Add(this.lbEmployees);
+            this.Controls.Add(this.dtpEmployee);
             this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label8);
@@ -249,7 +285,7 @@
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.btnClose);
-            this.Name = "EmpManagementScreen";
+            this.Name = "AddEmployee";
             this.Text = "EmpManagementScreen";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -275,7 +311,11 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddEmployee;
-        private System.Windows.Forms.ListBox lbEmployees;
         private System.Windows.Forms.DateTimePicker dtpEmployee;
+        private System.Windows.Forms.ListBox lbEmployees;
+        private System.Windows.Forms.TextBox tbContactR;
+        private System.Windows.Forms.TextBox tbPosition;
+        private System.Windows.Forms.TextBox tbWorkingH;
+        private System.Windows.Forms.TextBox tbLanguage;
     }
 }
