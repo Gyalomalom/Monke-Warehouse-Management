@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="Employee.cs" />
     <Compile Include="Employee_Management.cs" />
-    <Compile Include="EmpManagementScreen.cs" />
+    <Compile Include="EmpManagementScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EmpManagementScreen.Designer.cs">
       <DependentUpon>EmpManagementScreen.cs</DependentUpon>
     </Compile>
@@ -58,6 +60,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployees.Designer.cs">
+      <DependentUpon>AddEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,10 +73,13 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Item.cs" />
-    <Compile Include="LoginForm.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock information.cs">
@@ -84,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployees.resx">
+      <DependentUpon>AddEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -104,6 +118,10 @@
     <EmbeddedResource Include="Stock information.resx">
       <DependentUpon>Stock information.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".vs\Employee Management Alpha 1.0\v16\.suo" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="bin\Debug\Employee Management Alpha 1.0.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,6 +173,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-exit-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Employee Management Alpha 1.0.exe" />
+    <Content Include="bin\Debug\Employee Management Alpha 1.0.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
