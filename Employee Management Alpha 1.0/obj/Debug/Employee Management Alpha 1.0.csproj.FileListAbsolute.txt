@@ -46,3 +46,18 @@ C:\Users\Geraldo\Documents\!fonty\Monke\prj-cb02-6-team-monke-Stock_Management_1
 C:\Users\Geraldo\Documents\!fonty\Monke\prj-cb02-6-team-monke-Stock_Management_1.0\prj-cb02-6-team-monke-Stock_Management_1.0\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.pdb
 C:\Users\Geraldo\Documents\!fonty\Monke\prj-cb02-6-team-monke-Stock_Management_1.0\prj-cb02-6-team-monke-Stock_Management_1.0\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddEmployees.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\prj-cb02-6-team-monke-Stock_Management_1.0\prj-cb02-6-team-monke-Stock_Management_1.0\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.LoginForm.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.exe.config
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.exe
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\bin\Debug\Employee Management Alpha 1.0.pdb
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csprojAssemblyReference.cache
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.EmpManagementScreen.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Form1.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddEmployees.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Form2.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.LoginForm.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Properties.Resources.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Stock_information.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.GenerateResource.cache
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CoreCompileInputs.cache
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.pdb
