@@ -39,8 +39,7 @@
             this.tbPricePerUnit = new System.Windows.Forms.NumericUpDown();
             this.tbQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbPricePerUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).BeginInit();
             this.SuspendLayout();
@@ -50,28 +49,31 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_back_24;
-            this.btnClose.Location = new System.Drawing.Point(9, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 27);
+            this.btnClose.Size = new System.Drawing.Size(43, 33);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(104, 50);
+            this.tbName.Location = new System.Drawing.Point(139, 92);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(184, 20);
+            this.tbName.Size = new System.Drawing.Size(244, 22);
             this.tbName.TabIndex = 17;
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName.Location = new System.Drawing.Point(16, 51);
+            this.lblItemName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblItemName.Location = new System.Drawing.Point(21, 94);
+            this.lblItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(71, 15);
+            this.lblItemName.Size = new System.Drawing.Size(84, 18);
             this.lblItemName.TabIndex = 18;
             this.lblItemName.Text = "Item Name:";
             // 
@@ -79,9 +81,11 @@
             // 
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(16, 80);
+            this.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Label4.Location = new System.Drawing.Point(21, 129);
+            this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(54, 15);
+            this.Label4.Size = new System.Drawing.Size(66, 18);
             this.Label4.TabIndex = 24;
             this.Label4.Text = "Quantity:";
             // 
@@ -89,99 +93,105 @@
             // 
             this.lblPricePerUnit.AutoSize = true;
             this.lblPricePerUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPricePerUnit.Location = new System.Drawing.Point(16, 111);
+            this.lblPricePerUnit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPricePerUnit.Location = new System.Drawing.Point(21, 170);
+            this.lblPricePerUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPricePerUnit.Name = "lblPricePerUnit";
-            this.lblPricePerUnit.Size = new System.Drawing.Size(82, 15);
+            this.lblPricePerUnit.Size = new System.Drawing.Size(98, 18);
             this.lblPricePerUnit.TabIndex = 22;
             this.lblPricePerUnit.Text = "Price per unit:";
             // 
             // btnRemoveStockItem
             // 
+            this.btnRemoveStockItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnRemoveStockItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveStockItem.Location = new System.Drawing.Point(449, 86);
+            this.btnRemoveStockItem.ForeColor = System.Drawing.Color.Silver;
+            this.btnRemoveStockItem.Location = new System.Drawing.Point(599, 124);
+            this.btnRemoveStockItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemoveStockItem.Name = "btnRemoveStockItem";
-            this.btnRemoveStockItem.Size = new System.Drawing.Size(83, 29);
+            this.btnRemoveStockItem.Size = new System.Drawing.Size(111, 36);
             this.btnRemoveStockItem.TabIndex = 30;
             this.btnRemoveStockItem.Text = "Remove";
-            this.btnRemoveStockItem.UseVisualStyleBackColor = true;
+            this.btnRemoveStockItem.UseVisualStyleBackColor = false;
             this.btnRemoveStockItem.Click += new System.EventHandler(this.BtnRemoveStockItem_Click);
             // 
             // btnAddStockItem
             // 
+            this.btnAddStockItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnAddStockItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStockItem.Location = new System.Drawing.Point(449, 51);
+            this.btnAddStockItem.ForeColor = System.Drawing.Color.Silver;
+            this.btnAddStockItem.Location = new System.Drawing.Point(599, 81);
+            this.btnAddStockItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddStockItem.Name = "btnAddStockItem";
-            this.btnAddStockItem.Size = new System.Drawing.Size(83, 29);
+            this.btnAddStockItem.Size = new System.Drawing.Size(111, 36);
             this.btnAddStockItem.TabIndex = 28;
             this.btnAddStockItem.Text = "Add";
-            this.btnAddStockItem.UseVisualStyleBackColor = true;
-            this.btnAddStockItem.Click += new System.EventHandler(this.BtnAddStockItem_Click_1);
+            this.btnAddStockItem.UseVisualStyleBackColor = false;
             // 
             // lbStockInfo
             // 
             this.lbStockInfo.FormattingEnabled = true;
-            this.lbStockInfo.Location = new System.Drawing.Point(19, 223);
+            this.lbStockInfo.ItemHeight = 16;
+            this.lbStockInfo.Location = new System.Drawing.Point(13, 274);
+            this.lbStockInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbStockInfo.Name = "lbStockInfo";
-            this.lbStockInfo.Size = new System.Drawing.Size(575, 134);
+            this.lbStockInfo.Size = new System.Drawing.Size(795, 164);
             this.lbStockInfo.TabIndex = 32;
             // 
             // tbPricePerUnit
             // 
             this.tbPricePerUnit.DecimalPlaces = 2;
-            this.tbPricePerUnit.Location = new System.Drawing.Point(104, 111);
+            this.tbPricePerUnit.Location = new System.Drawing.Point(139, 170);
+            this.tbPricePerUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPricePerUnit.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.tbPricePerUnit.Name = "tbPricePerUnit";
-            this.tbPricePerUnit.Size = new System.Drawing.Size(120, 20);
+            this.tbPricePerUnit.Size = new System.Drawing.Size(160, 22);
             this.tbPricePerUnit.TabIndex = 33;
             // 
             // tbQuantity
             // 
-            this.tbQuantity.Location = new System.Drawing.Point(104, 81);
+            this.tbQuantity.Location = new System.Drawing.Point(139, 130);
+            this.tbQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbQuantity.Name = "tbQuantity";
-            this.tbQuantity.Size = new System.Drawing.Size(120, 20);
+            this.tbQuantity.Size = new System.Drawing.Size(160, 22);
             this.tbQuantity.TabIndex = 34;
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(449, 121);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Silver;
+            this.btnUpdate.Location = new System.Drawing.Point(599, 167);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(83, 29);
+            this.btnUpdate.Size = new System.Drawing.Size(111, 36);
             this.btnUpdate.TabIndex = 35;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // lblCategory
+            // groupBox1
             // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(16, 144);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(58, 15);
-            this.lblCategory.TabIndex = 37;
-            this.lblCategory.Text = "Category:";
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(103, 142);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(121, 21);
-            this.cbCategory.TabIndex = 38;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.groupBox1.ForeColor = System.Drawing.Color.Silver;
+            this.groupBox1.Location = new System.Drawing.Point(13, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(390, 139);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Item details:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Stock_information
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(616, 396);
-            this.Controls.Add(this.cbCategory);
-            this.Controls.Add(this.lblCategory);
+            this.ClientSize = new System.Drawing.Size(821, 487);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.tbPricePerUnit);
@@ -193,9 +203,10 @@
             this.Controls.Add(this.Label4);
             this.Controls.Add(this.lblPricePerUnit);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Stock_information";
             this.Text = "Stock_information";
-            this.Load += new System.EventHandler(this.Stock_information_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbPricePerUnit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).EndInit();
             this.ResumeLayout(false);
@@ -212,11 +223,10 @@
         internal System.Windows.Forms.Label lblPricePerUnit;
         internal System.Windows.Forms.Button btnRemoveStockItem;
         internal System.Windows.Forms.Button btnAddStockItem;
+        private System.Windows.Forms.ListBox lbStockInfo;
         private System.Windows.Forms.NumericUpDown tbPricePerUnit;
         private System.Windows.Forms.NumericUpDown tbQuantity;
         internal System.Windows.Forms.Button btnUpdate;
-        internal System.Windows.Forms.Label lblCategory;
-        public System.Windows.Forms.ListBox lbStockInfo;
-        public System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
