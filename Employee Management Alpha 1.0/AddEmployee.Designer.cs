@@ -287,6 +287,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "AddEmployee";
             this.Text = "EmpManagementScreen";
+            this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
