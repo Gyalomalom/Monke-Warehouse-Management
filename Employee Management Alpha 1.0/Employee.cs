@@ -78,8 +78,25 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
-        //methods
+        public Employee(int id, string first_name, string last_name)
+        {
+            this.id = id;
+            this.first_name = first_name;
+            this.last_name = last_name;
+        }
 
+        public Employee()
+        {
+
+        }
+
+
+
+        //methods
+        public string GetEmployeeInfo()
+        {
+            return $"{this.id} {this.first_name} {this.last_name}";
+        }
 
     }
 }

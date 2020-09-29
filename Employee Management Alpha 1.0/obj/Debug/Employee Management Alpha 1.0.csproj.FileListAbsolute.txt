@@ -76,3 +76,5 @@ C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\bin\
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\bin\Debug\MySql.Data.xml
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe.config
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CopyComplete
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddDepartment.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AllEmployees.resources

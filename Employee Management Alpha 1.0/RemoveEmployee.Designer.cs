@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.lbRemoveEmployee = new System.Windows.Forms.ListBox();
+            this.lbViewEmployees = new System.Windows.Forms.ListBox();
             this.tbID = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -46,18 +46,18 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lbRemoveEmployee
+            // lbViewEmployees
             // 
-            this.lbRemoveEmployee.FormattingEnabled = true;
-            this.lbRemoveEmployee.ItemHeight = 16;
-            this.lbRemoveEmployee.Location = new System.Drawing.Point(374, 89);
-            this.lbRemoveEmployee.Name = "lbRemoveEmployee";
-            this.lbRemoveEmployee.Size = new System.Drawing.Size(334, 260);
-            this.lbRemoveEmployee.TabIndex = 3;
+            this.lbViewEmployees.FormattingEnabled = true;
+            this.lbViewEmployees.ItemHeight = 16;
+            this.lbViewEmployees.Location = new System.Drawing.Point(301, 27);
+            this.lbViewEmployees.Name = "lbViewEmployees";
+            this.lbViewEmployees.Size = new System.Drawing.Size(446, 388);
+            this.lbViewEmployees.TabIndex = 3;
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(121, 89);
+            this.tbID.Location = new System.Drawing.Point(97, 136);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(124, 22);
             this.tbID.TabIndex = 4;
@@ -65,7 +65,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(121, 129);
+            this.btnDelete.Location = new System.Drawing.Point(97, 175);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 39);
             this.btnDelete.TabIndex = 5;
@@ -81,7 +81,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.tbID);
-            this.Controls.Add(this.lbRemoveEmployee);
+            this.Controls.Add(this.lbViewEmployees);
             this.Controls.Add(this.btnClose);
             this.Name = "RemoveEmployee";
             this.Text = "RemoveEmployee";
@@ -93,7 +93,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ListBox lbRemoveEmployee;
+        private System.Windows.Forms.ListBox lbViewEmployees;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Button btnDelete;
     }

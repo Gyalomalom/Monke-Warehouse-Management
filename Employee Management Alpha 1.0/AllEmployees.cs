@@ -5,21 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Employee_Management_Alpha_1._0
 {
-    public partial class RemoveEmployee : Form
+    public partial class AllEmployees : Form
     {
         Employee_Management employeeManagement;
-        public RemoveEmployee()
+        public AllEmployees()
         {
             InitializeComponent();
             UpdateList();
-
         }
 
         private void UpdateList()
@@ -40,6 +37,8 @@ namespace Employee_Management_Alpha_1._0
 
                 }
             }
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -47,11 +46,20 @@ namespace Employee_Management_Alpha_1._0
             this.Close();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnRetrieve_Click(object sender, EventArgs e)
         {
-            string id = tbID.Text;
+            Employee employee;
+            employee = new Employee();
+            employee = employeeManagement.GetEmployeebyID(Convert.ToInt32(tbID.Text));
+            tbFirstName.Text = employee.Firstname;
+            tbLastName.Text = employee.Lastname;
+            //dtpEmployee.Value = employee.date_of_birth;
+        }
 
-            employeeManagement.RemoveEmployeebyId(id);
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            
+            employeeManagement.ChangeEmployeeTest(tbID.Text, tbFirstName.Text, tbLastName.Text);
             UpdateList();
         }
     }

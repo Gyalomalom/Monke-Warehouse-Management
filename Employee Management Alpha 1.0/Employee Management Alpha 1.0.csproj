@@ -53,6 +53,12 @@
     <Compile Include="AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllEmployees.Designer.cs">
+      <DependentUpon>AllEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department Management.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllEmployees.resx">
+      <DependentUpon>AllEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

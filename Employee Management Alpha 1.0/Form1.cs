@@ -51,9 +51,17 @@ namespace Employee_Management_Alpha_1._0
             openChildForm(new AddEmployee()); //create new form object
             hideSubmenus();
         }
-        
-        private void BtnShift_Click(object sender, EventArgs e)
+
+        private void BtnEmpInfo_Click(object sender, EventArgs e)
         {
+            openChildForm(new AllEmployees()); 
+            hideSubmenus();
+        }
+
+        private void BtnRemoveEmp_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RemoveEmployee());
+
             hideSubmenus();
         }
 
