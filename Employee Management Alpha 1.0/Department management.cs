@@ -130,6 +130,8 @@ namespace Employee_Management_Alpha_1._0
                 MessageBox.Show(ex.Message);
             }
         }
+
+     
             
     }
 }

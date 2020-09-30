@@ -226,6 +226,7 @@
             this.Controls.Add(this.btnAddDep);
             this.Name = "AddDepartment";
             this.Text = "AddDepartment";
+            this.Load += new System.EventHandler(this.AddDepartment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

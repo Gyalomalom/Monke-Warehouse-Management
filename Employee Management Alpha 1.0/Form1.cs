@@ -103,6 +103,7 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnAssign_Click(object sender, EventArgs e)
         {
+            openChildForm(new RemoveDepartment());
             hideSubmenus();
         }
         #endregion
