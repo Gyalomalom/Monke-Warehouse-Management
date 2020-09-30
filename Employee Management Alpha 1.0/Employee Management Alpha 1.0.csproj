@@ -62,6 +62,13 @@
     <Compile Include="Department Management.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeStatus.cs" />
+    <Compile Include="EmployeeChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeChangeStatus.Designer.cs">
+      <DependentUpon>EmployeeChangeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee_Management.cs" />
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
@@ -113,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllEmployees.resx">
       <DependentUpon>AllEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeChangeStatus.resx">
+      <DependentUpon>EmployeeChangeStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

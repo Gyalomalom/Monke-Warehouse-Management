@@ -64,6 +64,11 @@ namespace Employee_Management_Alpha_1._0
 
             hideSubmenus();
         }
+        private void BtnEmpStatus_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EmployeeChangeStatus());
+            hideSubmenus();
+        }
 
         private void BtnDep_Click(object sender, EventArgs e)
         {
@@ -81,7 +86,6 @@ namespace Employee_Management_Alpha_1._0
             hideSubmenus();
         }
         #endregion
-
         private void BtnDepMan_Click(object sender, EventArgs e)
         {
             showSubmenus(panelDepSubmenu);

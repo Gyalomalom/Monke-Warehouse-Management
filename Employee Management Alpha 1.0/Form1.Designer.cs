@@ -447,6 +447,7 @@
             this.btnEmpStatus.Text = "Employee status";
             this.btnEmpStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpStatus.UseVisualStyleBackColor = true;
+            this.btnEmpStatus.Click += new System.EventHandler(this.BtnEmpStatus_Click);
             // 
             // btnRemoveStock
             // 

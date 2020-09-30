@@ -39,7 +39,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tbID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRetrieve = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClose
@@ -62,6 +61,7 @@
             this.lbViewEmployees.Name = "lbViewEmployees";
             this.lbViewEmployees.Size = new System.Drawing.Size(380, 452);
             this.lbViewEmployees.TabIndex = 3;
+            this.lbViewEmployees.Click += new System.EventHandler(this.lbViewEmployees_Click);
             // 
             // dtpEmployee
             // 
@@ -138,6 +138,7 @@
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(179, 22);
             this.tbID.TabIndex = 28;
+            this.tbID.TextChanged += new System.EventHandler(this.tbID_TextChanged);
             // 
             // label1
             // 
@@ -149,27 +150,12 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Insert ID of employee to modify:";
             // 
-            // btnRetrieve
-            // 
-            this.btnRetrieve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.btnRetrieve.FlatAppearance.BorderSize = 0;
-            this.btnRetrieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btnRetrieve.ForeColor = System.Drawing.Color.Silver;
-            this.btnRetrieve.Location = new System.Drawing.Point(118, 98);
-            this.btnRetrieve.Name = "btnRetrieve";
-            this.btnRetrieve.Size = new System.Drawing.Size(179, 54);
-            this.btnRetrieve.TabIndex = 30;
-            this.btnRetrieve.Text = "Retrieve data";
-            this.btnRetrieve.UseVisualStyleBackColor = false;
-            this.btnRetrieve.Click += new System.EventHandler(this.btnRetrieve_Click);
-            // 
             // AllEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
-            this.Controls.Add(this.btnRetrieve);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.btnUpdate);
@@ -201,6 +187,5 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRetrieve;
     }
 }
