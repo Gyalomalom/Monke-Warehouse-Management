@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lbViewEmployees = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(7, 203);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(855, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Alexs, we use forms instead of user controls now. UUUUU UUUUU AAAAA";
             // 
             // btnClose
             // 
@@ -54,25 +44,33 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // lbViewEmployees
+            // 
+            this.lbViewEmployees.FormattingEnabled = true;
+            this.lbViewEmployees.ItemHeight = 16;
+            this.lbViewEmployees.Location = new System.Drawing.Point(86, 12);
+            this.lbViewEmployees.Name = "lbViewEmployees";
+            this.lbViewEmployees.Size = new System.Drawing.Size(685, 452);
+            this.lbViewEmployees.TabIndex = 1;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbViewEmployees);
             this.Controls.Add(this.btnClose);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbViewEmployees;
     }
 }

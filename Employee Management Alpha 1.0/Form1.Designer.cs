@@ -317,7 +317,7 @@
             this.btnEmpInfo.Text = "Employee info";
             this.btnEmpInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpInfo.UseVisualStyleBackColor = true;
-            this.btnEmpInfo.Click += new System.EventHandler(this.BtnDep_Click);
+            this.btnEmpInfo.Click += new System.EventHandler(this.BtnEmpInfo_Click);
             // 
             // btnRemoveEmp
             // 
@@ -335,7 +335,7 @@
             this.btnRemoveEmp.Text = "Remove employee";
             this.btnRemoveEmp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoveEmp.UseVisualStyleBackColor = true;
-            this.btnRemoveEmp.Click += new System.EventHandler(this.BtnShift_Click);
+            this.btnRemoveEmp.Click += new System.EventHandler(this.BtnRemoveEmp_Click);
             // 
             // btnAddEmp
             // 
