@@ -143,13 +143,15 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
-        private void BtnRemoveStock_Click(object sender, EventArgs e)
+
+
+        private void BtnRemoveStock_Click_1(object sender, EventArgs e)
         {
             openChildForm(new RemoveStock(stock)); // creates and opens Remove Stock form
             hideSubmenus();
         }
 
-        private void BtnStockInfo_Click(object sender, EventArgs e)
+        private void BtnStockInfo_Click_1(object sender, EventArgs e)
         {
             openChildForm(new Stock_information(stock)); // creates and opens stock info
             hideSubmenus();

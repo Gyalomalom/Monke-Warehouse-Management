@@ -123,12 +123,8 @@ C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bi
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\System.Buffers.dll
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\System.Memory.dll
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\MySql.Data.xml
-C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csprojAssemblyReference.cache
-C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe.config
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddDepartment.resources
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddEmployee.resources
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AllEmployees.resources
