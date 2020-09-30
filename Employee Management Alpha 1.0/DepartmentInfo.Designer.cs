@@ -32,6 +32,7 @@
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDepartmentInfo
@@ -54,8 +55,9 @@
             this.btnUpdateStatus.Name = "btnUpdateStatus";
             this.btnUpdateStatus.Size = new System.Drawing.Size(202, 48);
             this.btnUpdateStatus.TabIndex = 2;
-            this.btnUpdateStatus.Text = "Update status";
+            this.btnUpdateStatus.Text = "Activate";
             this.btnUpdateStatus.UseVisualStyleBackColor = false;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.BtnUpdateStatus_Click);
             // 
             // label1
             // 
@@ -80,12 +82,28 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(521, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 48);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Disable";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // DepartmentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdateStatus);
@@ -102,5 +120,6 @@
         private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemoveDep = new System.Windows.Forms.Button();
             this.lbDepartmentInfo = new System.Windows.Forms.ListBox();
             this.lblDepartments = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnRemoveDep
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(510, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRemoveDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnRemoveDep.FlatAppearance.BorderSize = 0;
+            this.btnRemoveDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemoveDep.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRemoveDep.Location = new System.Drawing.Point(510, 80);
+            this.btnRemoveDep.Name = "btnRemoveDep";
+            this.btnRemoveDep.Size = new System.Drawing.Size(202, 48);
+            this.btnRemoveDep.TabIndex = 0;
+            this.btnRemoveDep.Text = "Remove";
+            this.btnRemoveDep.UseVisualStyleBackColor = false;
+            this.btnRemoveDep.Click += new System.EventHandler(this.Button1_Click);
             // 
             // lbDepartmentInfo
             // 
@@ -89,7 +90,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblDepartments);
             this.Controls.Add(this.lbDepartmentInfo);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemoveDep);
             this.Name = "RemoveDepartment";
             this.Text = "RemoveDepartment";
             this.ResumeLayout(false);
@@ -99,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemoveDep;
         private System.Windows.Forms.ListBox lbDepartmentInfo;
         private System.Windows.Forms.Label lblDepartments;
         private System.Windows.Forms.Button btnClose;

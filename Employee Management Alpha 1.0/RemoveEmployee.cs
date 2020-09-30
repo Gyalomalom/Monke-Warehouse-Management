@@ -15,6 +15,7 @@ namespace Employee_Management_Alpha_1._0
     public partial class RemoveEmployee : Form
     {
         Employee_Management employeeManagement;
+        
         public RemoveEmployee()
         {
             InitializeComponent();
@@ -53,6 +54,11 @@ namespace Employee_Management_Alpha_1._0
 
             employeeManagement.RemoveEmployeebyId(id);
             UpdateList();
+        }
+
+        private void RemoveEmployee_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
