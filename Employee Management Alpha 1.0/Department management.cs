@@ -30,13 +30,13 @@ namespace Employee_Management_Alpha_1._0
 
         public Department FindDepbyID(int id)
         {
-            if(departments.Count != 0)
+            if(FindAllDep().Count > 0)
             {
-                for (int i = 0; i < departments.Count; i++)
+                for (int i = 0; i < FindAllDep().Count; i++)
                 {
-                    if(this.departments[i].Id == id)
+                    if(FindAllDep()[i].id == id)
                     {
-                        return this.departments[i];
+                        return FindAllDep()[i];
                     }
 
                 }
@@ -72,24 +72,19 @@ namespace Employee_Management_Alpha_1._0
         {
             this.department = new Department(name, department_head, address, phone, email, language, id, status);
             this.departments.Add(department);
-            MySqlConnection connection;
-            string connectionString;
-            connectionString = "server = studmysql01.fhict.local; database = dbi360075; uid = dbi360075; password = monke;";
-            connection = new MySqlConnection(connectionString);
 
             try
             {
                 connect.Open();
-                if(connection.State == ConnectionState.Open)
+                if(connect.State == ConnectionState.Open)
                 {
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO department (Name, Head, Address, Phone, Email, Language, ID, Status) VALUES (@Name, @Head, @Address, @Phone, @Email, @Language, @ID, @Status", connection);
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO department (Name, Head, Address, Phone, Email, Language, Status) VALUES (@Name, @Head, @Address, @Phone, @Email, @Language, @Status", connect);
                     cmd.Parameters.AddWithValue("@Name", name);
                     cmd.Parameters.AddWithValue("@Head", department_head);
                     cmd.Parameters.AddWithValue("@Address", address);
                     cmd.Parameters.AddWithValue("@Phone", phone);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Language", language);
-                    cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Parameters.AddWithValue("@Status", "Active");
                     
                     cmd.ExecuteNonQuery();
@@ -99,7 +94,41 @@ namespace Employee_Management_Alpha_1._0
             {
                 MessageBox.Show(expection.Message);
             }
-            connection.Close();
+            connect.Close();
+        }
+
+        public void RemoveDepartment(string id)
+        {
+            string sql = $"DELETE FROM `department` WHERE `department`.`ID` = {id};";
+            MySqlCommand cmd = new MySqlCommand(sql, this.connect);
+            try
+            {
+                connect.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connect.Close();
+
+        }
+        public void UpdateStatus(string id, DepartmentStatus status)
+        {
+            try
+            {
+                connect.Open();
+                if(connect.State == ConnectionState.Open)
+                {
+
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `department` SET `Status` = '{status}' WHERE ID = {id}", this.connect);
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
             
     }

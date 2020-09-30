@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Department Management.cs" />
     <Compile Include="Department.cs" />
+    <Compile Include="DepartmentStatus.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeStatus.cs" />
     <Compile Include="EmployeeChangeStatus.cs">
