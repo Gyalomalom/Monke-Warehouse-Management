@@ -53,9 +53,28 @@
     <Compile Include="AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStock.Designer.cs">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllEmployees.Designer.cs">
+      <DependentUpon>AllEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department Management.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeStatus.cs" />
+    <Compile Include="EmployeeChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeChangeStatus.Designer.cs">
+      <DependentUpon>EmployeeChangeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee_Management.cs" />
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
@@ -91,19 +110,40 @@
     <Compile Include="RemoveEmployee.Designer.cs">
       <DependentUpon>RemoveEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock information.cs">
+    <Compile Include="RemoveStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock information.Designer.cs">
-      <DependentUpon>Stock information.cs</DependentUpon>
+    <Compile Include="RemoveStock.Designer.cs">
+      <DependentUpon>RemoveStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock management.cs" />
     <Compile Include="Stock.cs" />
+    <Compile Include="Stock_information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock_information.Designer.cs">
+      <DependentUpon>Stock_information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock_Management.cs" />
+    <Compile Include="UpdateInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateInformation.Designer.cs">
+      <DependentUpon>UpdateInformation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddDepartment.resx">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStock.resx">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllEmployees.resx">
+      <DependentUpon>AllEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeChangeStatus.resx">
+      <DependentUpon>EmployeeChangeStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -127,8 +167,14 @@
     <EmbeddedResource Include="RemoveEmployee.resx">
       <DependentUpon>RemoveEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock information.resx">
-      <DependentUpon>Stock information.cs</DependentUpon>
+    <EmbeddedResource Include="RemoveStock.resx">
+      <DependentUpon>RemoveStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock_information.resx">
+      <DependentUpon>Stock_information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateInformation.resx">
+      <DependentUpon>UpdateInformation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\Employee Management Alpha 1.0\v16\.suo" />
     <None Include=".vs\slnx.sqlite" />

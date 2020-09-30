@@ -34,23 +34,35 @@
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.tbBSN = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbBSN = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
+            this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbPhoneNumber = new System.Windows.Forms.Label();
             this.tbContractType = new System.Windows.Forms.TextBox();
             this.lblContractType = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbDuration = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbEmergencyNr = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.dtpEmployee = new System.Windows.Forms.DateTimePicker();
-            this.lbEmployees = new System.Windows.Forms.ListBox();
             this.tbContactR = new System.Windows.Forms.TextBox();
             this.tbPosition = new System.Windows.Forms.TextBox();
             this.tbWorkingH = new System.Windows.Forms.TextBox();
             this.tbLanguage = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbCertifications = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbEmergencyN = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbEmployees = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -109,29 +121,29 @@
             this.lblDOB.TabIndex = 6;
             this.lblDOB.Text = "Date of birth:";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(87, 186);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 22);
-            this.textBox4.TabIndex = 9;
-            // 
             // tbBSN
             // 
-            this.tbBSN.AutoSize = true;
-            this.tbBSN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbBSN.Location = new System.Drawing.Point(84, 165);
+            this.tbBSN.Location = new System.Drawing.Point(87, 186);
             this.tbBSN.Name = "tbBSN";
-            this.tbBSN.Size = new System.Drawing.Size(40, 17);
-            this.tbBSN.TabIndex = 8;
-            this.tbBSN.Text = "BSN:";
+            this.tbBSN.Size = new System.Drawing.Size(179, 22);
+            this.tbBSN.TabIndex = 9;
             // 
-            // textBox5
+            // label
             // 
-            this.textBox5.Location = new System.Drawing.Point(87, 232);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(179, 22);
-            this.textBox5.TabIndex = 11;
+            this.label.AutoSize = true;
+            this.label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label.Location = new System.Drawing.Point(84, 165);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(40, 17);
+            this.label.TabIndex = 8;
+            this.label.Text = "BSN:";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(87, 232);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(179, 22);
+            this.tbPhone.TabIndex = 11;
             // 
             // tbPhoneNumber
             // 
@@ -145,7 +157,7 @@
             // 
             // tbContractType
             // 
-            this.tbContractType.Location = new System.Drawing.Point(87, 278);
+            this.tbContractType.Location = new System.Drawing.Point(290, 324);
             this.tbContractType.Name = "tbContractType";
             this.tbContractType.Size = new System.Drawing.Size(179, 22);
             this.tbContractType.TabIndex = 13;
@@ -154,35 +166,35 @@
             // 
             this.lblContractType.AutoSize = true;
             this.lblContractType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblContractType.Location = new System.Drawing.Point(84, 257);
+            this.lblContractType.Location = new System.Drawing.Point(287, 303);
             this.lblContractType.Name = "lblContractType";
             this.lblContractType.Size = new System.Drawing.Size(115, 17);
             this.lblContractType.TabIndex = 12;
             this.lblContractType.Text = "Type of contract:";
             // 
-            // textBox7
+            // tbDuration
             // 
-            this.textBox7.Location = new System.Drawing.Point(87, 324);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(179, 22);
-            this.textBox7.TabIndex = 15;
+            this.tbDuration.Location = new System.Drawing.Point(290, 278);
+            this.tbDuration.Name = "tbDuration";
+            this.tbDuration.Size = new System.Drawing.Size(179, 22);
+            this.tbDuration.TabIndex = 15;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(84, 303);
+            this.label7.Location = new System.Drawing.Point(287, 257);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 17);
+            this.label7.Size = new System.Drawing.Size(117, 17);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Salary/H;";
+            this.label7.Text = "Contract duration";
             // 
-            // textBox8
+            // tbEmergencyNr
             // 
-            this.textBox8.Location = new System.Drawing.Point(87, 370);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(179, 22);
-            this.textBox8.TabIndex = 17;
+            this.tbEmergencyNr.Location = new System.Drawing.Point(87, 370);
+            this.tbEmergencyNr.Name = "tbEmergencyNr";
+            this.tbEmergencyNr.Size = new System.Drawing.Size(179, 22);
+            this.tbEmergencyNr.TabIndex = 17;
             // 
             // label8
             // 
@@ -219,18 +231,9 @@
             this.dtpEmployee.TabIndex = 20;
             this.dtpEmployee.Value = new System.DateTime(2020, 6, 5, 0, 0, 0, 0);
             // 
-            // lbEmployees
-            // 
-            this.lbEmployees.FormattingEnabled = true;
-            this.lbEmployees.ItemHeight = 16;
-            this.lbEmployees.Location = new System.Drawing.Point(566, 27);
-            this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(225, 436);
-            this.lbEmployees.TabIndex = 21;
-            // 
             // tbContactR
             // 
-            this.tbContactR.Location = new System.Drawing.Point(290, 48);
+            this.tbContactR.Location = new System.Drawing.Point(87, 324);
             this.tbContactR.Name = "tbContactR";
             this.tbContactR.Size = new System.Drawing.Size(179, 22);
             this.tbContactR.TabIndex = 22;
@@ -256,12 +259,141 @@
             this.tbLanguage.Size = new System.Drawing.Size(179, 22);
             this.tbLanguage.TabIndex = 25;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(84, 304);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 17);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Contact person relation:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(287, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Position:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(287, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 17);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Working hours (week):";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(287, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 17);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Spoken languages:";
+            // 
+            // tbCertifications
+            // 
+            this.tbCertifications.Location = new System.Drawing.Point(290, 232);
+            this.tbCertifications.Name = "tbCertifications";
+            this.tbCertifications.Size = new System.Drawing.Size(179, 22);
+            this.tbCertifications.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(287, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 17);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Certifications";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(87, 279);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(179, 22);
+            this.tbEmail.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(84, 259);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Email";
+            // 
+            // tbEmergencyN
+            // 
+            this.tbEmergencyN.Location = new System.Drawing.Point(290, 48);
+            this.tbEmergencyN.Name = "tbEmergencyN";
+            this.tbEmergencyN.Size = new System.Drawing.Size(179, 22);
+            this.tbEmergencyN.TabIndex = 35;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(287, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(162, 17);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Person of contact name:";
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Location = new System.Drawing.Point(290, 370);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(179, 22);
+            this.tbAddress.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(287, 349);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 17);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Address:";
+            // 
+            // lbEmployees
+            // 
+            this.lbEmployees.FormattingEnabled = true;
+            this.lbEmployees.ItemHeight = 16;
+            this.lbEmployees.Location = new System.Drawing.Point(566, 27);
+            this.lbEmployees.Name = "lbEmployees";
+            this.lbEmployees.Size = new System.Drawing.Size(225, 436);
+            this.lbEmployees.TabIndex = 21;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
+            this.Controls.Add(this.tbAddress);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tbEmergencyN);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbCertifications);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbLanguage);
             this.Controls.Add(this.tbWorkingH);
             this.Controls.Add(this.tbPosition);
@@ -269,16 +401,16 @@
             this.Controls.Add(this.lbEmployees);
             this.Controls.Add(this.dtpEmployee);
             this.Controls.Add(this.btnAddEmployee);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tbEmergencyNr);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.tbDuration);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbContractType);
             this.Controls.Add(this.lblContractType);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.tbPhoneNumber);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.tbBSN);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.lblLastName);
@@ -301,22 +433,34 @@
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblDOB;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label tbBSN;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbBSN;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label tbPhoneNumber;
         private System.Windows.Forms.TextBox tbContractType;
         private System.Windows.Forms.Label lblContractType;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbDuration;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbEmergencyNr;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.DateTimePicker dtpEmployee;
-        private System.Windows.Forms.ListBox lbEmployees;
         private System.Windows.Forms.TextBox tbContactR;
         private System.Windows.Forms.TextBox tbPosition;
         private System.Windows.Forms.TextBox tbWorkingH;
         private System.Windows.Forms.TextBox tbLanguage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbCertifications;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbEmergencyN;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbAddress;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox lbEmployees;
     }
 }

@@ -27,33 +27,92 @@ namespace Employee_Management_Alpha_1._0
 
         public Employee GetEmployeebyID (int id)
         {
-            if (employees.Count > 0)//For cycle runs into an error if list is empty, so we check it here and skip the cycle if it's empty
+            
+            
+            if (GetAllEmployees().Count > 0)//For cycle runs into an error if list is empty, so we check it here and skip the cycle if it's empty
             {
-                for (int i = 0; i < employees.Count; i++)
+                for (int i = 0; i < GetAllEmployees().Count; i++)
                 {
-                    if (this.employees[i].Id == id)
+                    if (GetAllEmployees()[i].Id == id)
                     {
-                        return this.employees[i];
+                        return GetAllEmployees()[i];
                     }
                 }
             }
             return null;
         }
 
-        public bool RemoveEmployeebyId (int id)
+        public List<Employee> GetAllEmployees ()
         {
-
-            if (GetEmployeebyID(id) == null)
+            employees.Clear();
+            string sql = "SELECT * FROM employee;";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+            
+            while(dr.Read())
             {
-                return false;
+                employees.Add(new Employee(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToString(dr[2]), Convert.ToString(dr[17])));
+            }
+            if (employees.Count() >= 1)
+
+            {
+                conn.Close();
+
+                return employees;
             }
             else
             {
-                employees.Remove(GetEmployeebyID(id));
-                return true;
+                conn.Close();
+
+                return null;
             }
+
         }
 
+        public void RemoveEmployeebyId (string id)
+        {
+            string sql = $"DELETE FROM `employee` WHERE `employee`.`ID` = {id};";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
+
+        public void ChangeEmployeeStatus(string id, EmployeeStatus status)
+        {
+            //this.employee = new Employee(); //instantiate a new object of type employee
+            //this.employees.Add(employee); //add it to list of type employee
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    //MessageBox.Show("Data entered succesfully.");
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `employee` SET `Status` = '{status}' WHERE ID = {id}", connection);
+                    cmd.ExecuteNonQuery();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
         /*public List<string> ReturnBasicEmployeeInfo()
         {
             List<string> info = new List<string>();
@@ -129,7 +188,7 @@ namespace Employee_Management_Alpha_1._0
                 if (connection.State == ConnectionState.Open)
                 {
                     //MessageBox.Show("Data entered succesfully.");
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO employee (FirstName, LastName, DOB, BSN, Position, WorkingHours, PhoneNr, Address, Email, EmergencyC, EmergencyR, EmergencyNr, Certifications, Languages, ContractType, ContractDuration) VALUES (@FirstName, @LastName, @DOB, @BSN, @Position, @WorkingHours, @PhoneNr, @Address, @Email, @EmergencyC, @EmergencyR, @EmergencyNr, @Certifications, @Languages, @ContractType, @ContractDuration)", connection);
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO employee (FirstName, LastName, DOB, BSN, Position, WorkingHours, PhoneNr, Address, Email, EmergencyC, EmergencyR, EmergencyNr, Certifications, Languages, ContractType, ContractDuration, Status) VALUES (@FirstName, @LastName, @DOB, @BSN, @Position, @WorkingHours, @PhoneNr, @Address, @Email, @EmergencyC, @EmergencyR, @EmergencyNr, @Certifications, @Languages, @ContractType, @ContractDuration, @Status)", connection);
                     //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
 
                     cmd.Parameters.AddWithValue("@FirstName", first_name);
@@ -148,6 +207,37 @@ namespace Employee_Management_Alpha_1._0
                     cmd.Parameters.AddWithValue("@Languages", "");
                     cmd.Parameters.AddWithValue("@ContractType", "");
                     cmd.Parameters.AddWithValue("@ContractDuration", "");
+                    cmd.Parameters.AddWithValue("@Status", "Active");
+                    cmd.ExecuteNonQuery();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+        public void ChangeEmployeeTest(string id, string first_name, string last_name)
+        {
+            this.employee = new Employee(first_name, last_name); //instantiate a new object of type employee
+            this.employees.Add(employee); //add it to list of type employee
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    //MessageBox.Show("Data entered succesfully.");
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `employee` SET `FirstName` = '{first_name}', `LastName` = '{last_name}' WHERE ID = {id}", connection);
+                    //, `DOB`, `BSN`, `Position`, `WorkingHours`, `PhoneNr`, `Address`, `Email`, `EmergencyC`, `EmergencyR`, `EmergencyNr`, `Certifications`, `Languages`, `ContractType`, `ContractDuration`
+                    //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
+
                     cmd.ExecuteNonQuery();
 
 

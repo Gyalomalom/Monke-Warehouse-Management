@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_Management_Alpha_1._0
 {
-    class Item
+    public class Item
     {
         //variables
         private static int nextFreeIdNumber = 001;
@@ -44,14 +44,19 @@ namespace Employee_Management_Alpha_1._0
             this.quantity += quantity;
         }
 
-        public void setPricePerUnit(double pricePerUnit)
+        public void SetPricePerUnit(double pricePerUnit)
         {
             this.pricePerUnit = pricePerUnit;
         }
 
-        public void setQuantity(int quantity)
+        public void SetQuantity(int quantity)
         {
             this.quantity = quantity;
+        }
+
+        public void SetCategory(string category)
+        {
+            this.category = category;
         }
 
         public int GetId()

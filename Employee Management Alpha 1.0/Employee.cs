@@ -28,6 +28,7 @@ namespace Employee_Management_Alpha_1._0
         public string languages { get; set; }//primarily relevant for sales reps, cashiers and customer support
         public string contract { get; set; }
         public string duration { get; set; }
+        public string status { get; set; }
 
         //string first_name, string last_name, DateTime date_of_birth, string bsn, string postion, int workinghours, string phoneNr, string address, string email, string emergencyC, string emergencyR, string emergencyNr, string certifications, string languages, string contract, string duratio
         //properties
@@ -66,6 +67,7 @@ namespace Employee_Management_Alpha_1._0
             this.duration = duration;
             this.email = email;
             this.languages = languages;
+            this.status = status;
             
         }
 
@@ -78,8 +80,33 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
-        //methods
+        public Employee(int id, string first_name, string last_name)
+        {
+            this.id = id;
+            this.first_name = first_name;
+            this.last_name = last_name;
+        }
 
+        public Employee()
+        {
+
+        }
+
+        public Employee(int id, string first_name, string last_name, string status)
+        {
+            this.id = id;
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.status = status;
+        }
+
+
+
+        //methods
+        public string GetEmployeeInfo()
+        {
+            return $"{this.id} {this.first_name} {this.last_name} {this.status}";
+        }
 
     }
 }

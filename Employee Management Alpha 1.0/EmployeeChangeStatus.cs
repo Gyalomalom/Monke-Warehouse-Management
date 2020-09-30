@@ -5,21 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Employee_Management_Alpha_1._0
 {
-    public partial class RemoveEmployee : Form
+    public partial class EmployeeChangeStatus : Form
     {
         Employee_Management employeeManagement;
-        public RemoveEmployee()
+        const string pattern = @"([^\s]+)"; //pattern to get the first string before a space
+        Regex rg = new Regex(pattern);
+        public EmployeeChangeStatus()
         {
             InitializeComponent();
             UpdateList();
+        }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void UpdateList()
@@ -40,19 +45,30 @@ namespace Employee_Management_Alpha_1._0
 
                 }
             }
+
+
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            string id = tbID.Text;
-
-            employeeManagement.RemoveEmployeebyId(id);
+            EmployeeStatus myStatus;
+            Enum.TryParse(cbxSelectStatus.SelectedItem.ToString(), out myStatus);
+            employeeManagement.ChangeEmployeeStatus(tbID.Text, myStatus);
             UpdateList();
+        }
+
+        private void lbViewEmployees_Click(object sender, EventArgs e)
+        {
+            if (!(lbViewEmployees.SelectedIndex.Equals(null)))
+            {
+                string ID = lbViewEmployees.SelectedItem.ToString();
+                Match match = Regex.Match(ID, pattern);
+                if (match.Success)
+                {
+                    tbID.Text = match.Value;
+
+                }
+            }
         }
     }
 }
