@@ -14,12 +14,15 @@ namespace Employee_Management_Alpha_1._0
 {
     public partial class Form1 : Form
     {
+        Stock stock;
+
         public Form1()
         {
             InitializeComponent();
+            stock = new Stock();
             
         }
-
+        
 
 
         public void hideSubmenus() //method for hiding submenus
@@ -82,7 +85,7 @@ namespace Employee_Management_Alpha_1._0
         #region StockSub
         private void BtnModStock_Click(object sender, EventArgs e)
         {
-            openChildForm(new Stock_information()); // creates and opens stock info
+            openChildForm(new AddStock(stock)); // creates and opens add stock form
             hideSubmenus();
         }
         #endregion
@@ -138,6 +141,18 @@ namespace Employee_Management_Alpha_1._0
         private void PanelChildForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnRemoveStock_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RemoveStock(stock)); // creates and opens Remove Stock form
+            hideSubmenus();
+        }
+
+        private void BtnStockInfo_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Stock_information(stock)); // creates and opens stock info
+            hideSubmenus();
         }
     }
 }
