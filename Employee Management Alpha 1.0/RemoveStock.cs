@@ -14,10 +14,10 @@ namespace Employee_Management_Alpha_1._0
     {
         Stock stock;
 
-        public RemoveStock(Stock stock)
+        public RemoveStock()
         {
             InitializeComponent();
-            this.stock = stock;
+            
         }
 
         private void StockList() // refreshes the stock list
@@ -60,6 +60,11 @@ namespace Employee_Management_Alpha_1._0
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close(); //closes the form, serves as return button
+        }
+
+        private void RemoveStock_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

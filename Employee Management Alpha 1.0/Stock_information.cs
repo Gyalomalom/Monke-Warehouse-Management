@@ -14,10 +14,10 @@ namespace Employee_Management_Alpha_1._0
     {
         Stock stock;
 
-        public Stock_information(Stock stock)
+        public Stock_information()
         {
             InitializeComponent();
-            this.stock = stock;
+            
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

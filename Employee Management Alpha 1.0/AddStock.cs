@@ -14,10 +14,10 @@ namespace Employee_Management_Alpha_1._0
     {
         Stock stock;
 
-        public AddStock(Stock stock)
+        public AddStock()
         {
             InitializeComponent();
-            this.stock = stock;
+            
         }
 
 
