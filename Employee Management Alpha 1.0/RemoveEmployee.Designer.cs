@@ -85,6 +85,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "RemoveEmployee";
             this.Text = "RemoveEmployee";
+            this.Load += new System.EventHandler(this.RemoveEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
