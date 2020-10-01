@@ -68,7 +68,7 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
-        public void AddDepartment(string name, string department_head, string address, int phone, string email, string language, string status)
+        public void AddDepartment(string name, string department_head, string address, string phone, string email, string language, string status)
         {
             this.department = new Department(name, department_head, address, phone, email, language, status);
             this.departments.Add(department);

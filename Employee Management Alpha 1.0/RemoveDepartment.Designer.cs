@@ -93,6 +93,7 @@
             this.Controls.Add(this.btnRemoveDep);
             this.Name = "RemoveDepartment";
             this.Text = "RemoveDepartment";
+            this.Load += new System.EventHandler(this.RemoveDepartment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
