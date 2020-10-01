@@ -39,9 +39,9 @@
             // 
             this.lbDepartmentInfo.FormattingEnabled = true;
             this.lbDepartmentInfo.ItemHeight = 16;
-            this.lbDepartmentInfo.Location = new System.Drawing.Point(127, 73);
+            this.lbDepartmentInfo.Location = new System.Drawing.Point(70, 73);
             this.lbDepartmentInfo.Name = "lbDepartmentInfo";
-            this.lbDepartmentInfo.Size = new System.Drawing.Size(346, 356);
+            this.lbDepartmentInfo.Size = new System.Drawing.Size(346, 260);
             this.lbDepartmentInfo.TabIndex = 1;
             // 
             // btnUpdateStatus
@@ -51,9 +51,9 @@
             this.btnUpdateStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdateStatus.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdateStatus.Location = new System.Drawing.Point(521, 73);
+            this.btnUpdateStatus.Location = new System.Drawing.Point(70, 366);
             this.btnUpdateStatus.Name = "btnUpdateStatus";
-            this.btnUpdateStatus.Size = new System.Drawing.Size(202, 48);
+            this.btnUpdateStatus.Size = new System.Drawing.Size(161, 48);
             this.btnUpdateStatus.TabIndex = 2;
             this.btnUpdateStatus.Text = "Activate";
             this.btnUpdateStatus.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(124, 30);
+            this.label1.Location = new System.Drawing.Point(66, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 3;
@@ -89,9 +89,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(521, 159);
+            this.button1.Location = new System.Drawing.Point(255, 366);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 48);
+            this.button1.Size = new System.Drawing.Size(161, 48);
             this.button1.TabIndex = 5;
             this.button1.Text = "Disable";
             this.button1.UseVisualStyleBackColor = false;

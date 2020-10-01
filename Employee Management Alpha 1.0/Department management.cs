@@ -53,7 +53,7 @@ namespace Employee_Management_Alpha_1._0
 
             while (rd.Read())
             {
-                departments.Add(new Department(Convert.ToString(rd[0]), Convert.ToString(rd[1]), Convert.ToString(rd[2]), Convert.ToInt32(rd[3]), Convert.ToString(rd[4]), Convert.ToString(rd[5]), Convert.ToInt32(rd[6]), Convert.ToString(rd[7])));
+                departments.Add(new Department(Convert.ToInt32(rd[6]), Convert.ToString(rd[0]), Convert.ToString(rd[7])));
             }
             if(departments.Count() >= 1)
             {
@@ -68,9 +68,9 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
-        public void AddDepartment(string name, string department_head, string address, int phone, string email, string language, int id, string status)
+        public void AddDepartment(string name, string department_head, string address, int phone, string email, string language, string status)
         {
-            this.department = new Department(name, department_head, address, phone, email, language, id, status);
+            this.department = new Department(name, department_head, address, phone, email, language, status);
             this.departments.Add(department);
 
             try

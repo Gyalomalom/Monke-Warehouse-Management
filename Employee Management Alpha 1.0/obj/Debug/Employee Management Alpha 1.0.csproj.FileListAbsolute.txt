@@ -177,3 +177,5 @@ C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Manageme
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\MySql.Data.xml
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CopyComplete
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.DepartmentInfo.resources
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.RemoveDepartment.resources
