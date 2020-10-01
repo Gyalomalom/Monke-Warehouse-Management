@@ -24,6 +24,7 @@ namespace Employee_Management_Alpha_1._0
         public void UpdateInfo()
         {
             departmentManagement = new Department_Management();
+            lbDepartments.Items.Clear();
             if (departmentManagement.FindAllDep() is null)
             {
                 MessageBox.Show("Database is empty.");
@@ -44,8 +45,9 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnAddDep_Click(object sender, EventArgs e)
         {
-            lbDepartments.Items.Clear();
+            
             departmentManagement.AddDepartment(tbName.Text, tbHead.Text, tbAddress.Text, tbPhone.Text, tbEmail.Text, tbLanguage.Text, Convert.ToString(DepartmentStatus.Active));
+            UpdateInfo();
 
         }
 

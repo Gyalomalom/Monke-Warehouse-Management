@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbEmployeeInfo = new System.Windows.Forms.ListBox();
+            this.btnAssignEmp = new System.Windows.Forms.Button();
+            this.lblEmployees = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbDepartmentInfo
@@ -97,12 +100,51 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // lbEmployeeInfo
+            // 
+            this.lbEmployeeInfo.FormattingEnabled = true;
+            this.lbEmployeeInfo.ItemHeight = 16;
+            this.lbEmployeeInfo.Location = new System.Drawing.Point(454, 73);
+            this.lbEmployeeInfo.Name = "lbEmployeeInfo";
+            this.lbEmployeeInfo.Size = new System.Drawing.Size(341, 260);
+            this.lbEmployeeInfo.TabIndex = 6;
+            this.lbEmployeeInfo.SelectedIndexChanged += new System.EventHandler(this.LbEmployees_SelectedIndexChanged);
+            // 
+            // btnAssignEmp
+            // 
+            this.btnAssignEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnAssignEmp.FlatAppearance.BorderSize = 0;
+            this.btnAssignEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAssignEmp.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAssignEmp.Location = new System.Drawing.Point(454, 366);
+            this.btnAssignEmp.Name = "btnAssignEmp";
+            this.btnAssignEmp.Size = new System.Drawing.Size(161, 48);
+            this.btnAssignEmp.TabIndex = 8;
+            this.btnAssignEmp.Text = "Assign";
+            this.btnAssignEmp.UseVisualStyleBackColor = false;
+            this.btnAssignEmp.Click += new System.EventHandler(this.BtnAssignEmp_Click);
+            // 
+            // lblEmployees
+            // 
+            this.lblEmployees.AutoSize = true;
+            this.lblEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployees.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblEmployees.Location = new System.Drawing.Point(450, 30);
+            this.lblEmployees.Name = "lblEmployees";
+            this.lblEmployees.Size = new System.Drawing.Size(91, 20);
+            this.lblEmployees.TabIndex = 10;
+            this.lblEmployees.Text = "Employees";
+            // 
             // DepartmentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
+            this.Controls.Add(this.lblEmployees);
+            this.Controls.Add(this.btnAssignEmp);
+            this.Controls.Add(this.lbEmployeeInfo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
@@ -121,5 +163,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lbEmployeeInfo;
+        private System.Windows.Forms.Button btnAssignEmp;
+        private System.Windows.Forms.Label lblEmployees;
     }
 }
