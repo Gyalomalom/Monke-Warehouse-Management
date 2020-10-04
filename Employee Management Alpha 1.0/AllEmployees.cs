@@ -77,5 +77,10 @@ namespace Employee_Management_Alpha_1._0
             tbFirstName.Text = employee.Firstname;
             tbLastName.Text = employee.Lastname;
         }
+
+        private void AllEmployees_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

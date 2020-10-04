@@ -70,5 +70,10 @@ namespace Employee_Management_Alpha_1._0
                 }
             }
         }
+
+        private void EmployeeChangeStatus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

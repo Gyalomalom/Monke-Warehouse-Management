@@ -37,8 +37,6 @@
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbLanguage = new System.Windows.Forms.TextBox();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -53,7 +51,7 @@
             this.btnAddDep.FlatAppearance.BorderSize = 0;
             this.btnAddDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDep.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddDep.Location = new System.Drawing.Point(153, 404);
+            this.btnAddDep.Location = new System.Drawing.Point(153, 348);
             this.btnAddDep.Name = "btnAddDep";
             this.btnAddDep.Size = new System.Drawing.Size(179, 40);
             this.btnAddDep.TabIndex = 0;
@@ -121,23 +119,6 @@
             this.tbLanguage.Name = "tbLanguage";
             this.tbLanguage.Size = new System.Drawing.Size(179, 22);
             this.tbLanguage.TabIndex = 8;
-            // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(153, 342);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(179, 22);
-            this.tbID.TabIndex = 9;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblID.Location = new System.Drawing.Point(29, 342);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 17);
-            this.lblID.TabIndex = 10;
-            this.lblID.Text = "ID";
             // 
             // lblLanguage
             // 
@@ -213,8 +194,6 @@
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblLanguage);
-            this.Controls.Add(this.lblID);
-            this.Controls.Add(this.tbID);
             this.Controls.Add(this.tbLanguage);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.tbPhone);
@@ -226,6 +205,7 @@
             this.Controls.Add(this.btnAddDep);
             this.Name = "AddDepartment";
             this.Text = "AddDepartment";
+            this.Load += new System.EventHandler(this.AddDepartment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,8 +222,6 @@
         private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbLanguage;
-        private System.Windows.Forms.TextBox tbID;
-        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhone;

@@ -126,6 +126,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "EmployeeChangeStatus";
             this.Text = "EmployeeStatusChange";
+            this.Load += new System.EventHandler(this.EmployeeChangeStatus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
