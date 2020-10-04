@@ -31,27 +31,27 @@
             this.lbStockInfo = new System.Windows.Forms.ListBox();
             this.btnRemoveStockItem = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbStockInfo
             // 
             this.lbStockInfo.FormattingEnabled = true;
-            this.lbStockInfo.Location = new System.Drawing.Point(9, 172);
+            this.lbStockInfo.ItemHeight = 16;
+            this.lbStockInfo.Location = new System.Drawing.Point(12, 212);
+            this.lbStockInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbStockInfo.Name = "lbStockInfo";
-            this.lbStockInfo.Size = new System.Drawing.Size(597, 212);
+            this.lbStockInfo.Size = new System.Drawing.Size(795, 260);
             this.lbStockInfo.TabIndex = 44;
-            this.lbStockInfo.SelectedIndexChanged += new System.EventHandler(this.LbStockInfo_SelectedIndexChanged);
             // 
             // btnRemoveStockItem
             // 
             this.btnRemoveStockItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnRemoveStockItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveStockItem.ForeColor = System.Drawing.Color.Silver;
-            this.btnRemoveStockItem.Location = new System.Drawing.Point(484, 63);
+            this.btnRemoveStockItem.Location = new System.Drawing.Point(645, 78);
+            this.btnRemoveStockItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemoveStockItem.Name = "btnRemoveStockItem";
-            this.btnRemoveStockItem.Size = new System.Drawing.Size(107, 59);
+            this.btnRemoveStockItem.Size = new System.Drawing.Size(143, 73);
             this.btnRemoveStockItem.TabIndex = 45;
             this.btnRemoveStockItem.Text = "Remove";
             this.btnRemoveStockItem.UseVisualStyleBackColor = false;
@@ -62,45 +62,29 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_back_24;
-            this.btnClose.Location = new System.Drawing.Point(9, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 27);
+            this.btnClose.Size = new System.Drawing.Size(43, 33);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(484, 128);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(107, 20);
-            this.tbID.TabIndex = 46;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(457, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "ID:";
-            // 
             // RemoveStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(616, 396);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbID);
+            this.ClientSize = new System.Drawing.Size(821, 487);
             this.Controls.Add(this.btnRemoveStockItem);
             this.Controls.Add(this.lbStockInfo);
             this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RemoveStock";
             this.Text = "RemoveStock";
+            this.Load += new System.EventHandler(this.RemoveStock_Load);
+            this.Shown += new System.EventHandler(this.RemoveStock_Shown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -109,7 +93,5 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListBox lbStockInfo;
         internal System.Windows.Forms.Button btnRemoveStockItem;
-        private System.Windows.Forms.TextBox tbID;
-        private System.Windows.Forms.Label label1;
     }
 }
