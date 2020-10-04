@@ -12,8 +12,8 @@ namespace Employee_Management_Alpha_1._0
 {
     public partial class UpdateInformation : Form
     {
-        string information;
-        Stock stock;
+        //string information;
+        //Stock stock;
 
         public UpdateInformation(string information, Stock stock)
         {

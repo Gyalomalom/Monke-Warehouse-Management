@@ -64,7 +64,7 @@ namespace Employee_Management_Alpha_1._0
 
         public string ItemInfo()
         {
-            string info = $"{this.id} {this.name} {this.category} {this.quantity} {this.pricePerUnit} {this.quantity * this.pricePerUnit}";
+            string info = $"{this.id} {this.name} {this.category} {this.quantity} {this.pricePerUnit}";
             return info;
         }
 

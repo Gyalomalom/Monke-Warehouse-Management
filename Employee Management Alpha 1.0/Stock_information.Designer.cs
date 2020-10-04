@@ -186,6 +186,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "Stock_information";
             this.Text = "Stock_information";
+            this.Load += new System.EventHandler(this.Stock_information_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.tbNewPricePerUnit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbNewQuantity)).EndInit();
             this.ResumeLayout(false);
