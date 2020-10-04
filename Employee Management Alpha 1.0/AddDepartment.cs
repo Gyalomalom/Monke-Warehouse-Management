@@ -32,5 +32,10 @@ namespace Employee_Management_Alpha_1._0
             departmentManagement.AddDepartment(tbName.Text, tbHead.Text, tbAddress.Text, Convert.ToInt32(tbPhone.Text), tbEmail.Text, tbLanguage.Text, Convert.ToInt32(tbPhone.Text));
 
         }
+
+        private void AddDepartment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

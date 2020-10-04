@@ -169,6 +169,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "AllEmployees";
             this.Text = "AllEmployees";
+            this.Load += new System.EventHandler(this.AllEmployees_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

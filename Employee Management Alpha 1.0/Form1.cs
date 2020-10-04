@@ -85,7 +85,7 @@ namespace Employee_Management_Alpha_1._0
         #region StockSub
         private void BtnModStock_Click(object sender, EventArgs e)
         {
-            openChildForm(new AddStock(stock)); // creates and opens add stock form
+            openChildForm(new AddStock()); // creates and opens add stock form
             hideSubmenus();
         }
         #endregion
@@ -96,6 +96,7 @@ namespace Employee_Management_Alpha_1._0
         #region DepSub
         private void BtnModDep_Click(object sender, EventArgs e)
         {
+            openChildForm(new AddDepartment());
             hideSubmenus();
 
         }
@@ -147,13 +148,13 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnRemoveStock_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new RemoveStock(stock)); // creates and opens Remove Stock form
+            openChildForm(new RemoveStock()); // creates and opens Remove Stock form
             hideSubmenus();
         }
 
         private void BtnStockInfo_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new Stock_information(stock)); // creates and opens stock info
+            openChildForm(new Stock_information()); // creates and opens stock info
             hideSubmenus();
         }
     }

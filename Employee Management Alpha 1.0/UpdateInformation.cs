@@ -18,13 +18,14 @@ namespace Employee_Management_Alpha_1._0
         public UpdateInformation(string information, Stock stock)
         {
             InitializeComponent();
-            this.information = information;
-            lblCurrentItemInfo.Text = $"Current item info: {information}";
-            this.stock = stock;
-            
+            //this.information = information;
+            //lblCurrentItemInfo.Text = $"Current item info: {information}";
+            //this.stock = stock;
+
         }
 
-        
+
+
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -44,15 +45,18 @@ namespace Employee_Management_Alpha_1._0
             int newQuantity = Convert.ToInt32(tbNewQuantity.Value);
             
 
-            if(newName == "" || newCategory == "")
-            {
-                MessageBox.Show("Please enter a name and a category first!");
-            }
-            else
-            {
-                stock.UpdateStock(newName, newQuantity, newPricePerUnit, newCategory);
-                this.Close();
-            }
+            //stock.ChangeItem()
+            
+
+            //if(newName == "" || newCategory == "")
+            //{
+            //    MessageBox.Show("Please enter a name and a category first!");
+            //}
+            //else
+            //{
+            //    stock.UpdateStock(newName, newQuantity, newPricePerUnit, newCategory);
+            //    this.Close();
+            //}
 
             
 
@@ -63,5 +67,6 @@ namespace Employee_Management_Alpha_1._0
         private void UpdateInformation_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
+        
     }
 }

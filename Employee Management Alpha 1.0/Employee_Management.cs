@@ -25,7 +25,7 @@ namespace Employee_Management_Alpha_1._0
 
         //methods
 
-        public Employee GetEmployeebyID (int id)
+        public Employee GetEmployeebyID (int itemId)
         {
             
             
@@ -33,7 +33,7 @@ namespace Employee_Management_Alpha_1._0
             {
                 for (int i = 0; i < GetAllEmployees().Count; i++)
                 {
-                    if (GetAllEmployees()[i].Id == id)
+                    if (GetAllEmployees()[i].Id == itemId)
                     {
                         return GetAllEmployees()[i];
                     }

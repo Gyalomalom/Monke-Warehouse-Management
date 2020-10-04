@@ -14,30 +14,62 @@ namespace Employee_Management_Alpha_1._0
     {
         Stock stock;
 
-        public AddStock(Stock stock)
+        public AddStock()
         {
             InitializeComponent();
-            this.stock = stock;
+            stock = new Stock();
+            UpdateList();
+            
         }
 
-
-        private void StockList() // refreshes the stock list
+        private void UpdateList()
         {
             lbStockInfo.Items.Clear();
-
-
-            string metadata = "ID" + "\t" + "Name" + " \t " + " \t " + "Category" + "\t" + "\t" + "Quantity" + " \t " + " \t " + "Price per unit" + " \t " + " \t " + "Full price";
-            lbStockInfo.Items.Add(metadata);
-
-            foreach (Item itm in stock.GetStock())
+            stock = new Stock();
+            if (stock.GetAllItems() is null)
             {
-                lbStockInfo.Items.Add(itm);
+                MessageBox.Show("The database is empty!");
+                lbStockInfo.Items.Add("The database is empty!");
+            }
+            else
+            {
+                for (int i = 0; i < stock.GetAllItems().Count(); i++)
+                {
+                    lbStockInfo.Items.Add(stock.GetAllItems()[i].ItemInfo());
+                }
             }
         }
 
 
+
+        //private void StockList() // refreshes the stock list
+        //{
+        //    lbStockInfo.Items.Clear();
+
+
+        //    string metadata = "ID" + "\t" + "Name" + " \t " + " \t " + "Category" + "\t" + "\t" + "Quantity" + " \t " + " \t " + "Price per unit" + " \t " + " \t " + "Full price";
+        //    lbStockInfo.Items.Add(metadata);
+
+        //    foreach (Item itm in stock.GetStock())
+        //    {
+        //        lbStockInfo.Items.Add(itm);
+        //    }
+        //}
+
+
         private void BtnAddStockItem_Click(object sender, EventArgs e)
         {
+            string name = tbName.Text;
+            int quantity = Convert.ToInt32(tbQuantity.Text);
+            double pricePerUnit = Convert.ToDouble(tbPricePerUnit.Text);
+            string category = cbCategory.Text;
+
+            lbStockInfo.Items.Clear();
+            stock.AddItem(name, quantity, pricePerUnit, category);
+
+            UpdateList();
+
+            /*
             if (!string.IsNullOrEmpty(tbName.Text))
             {
                 string name = tbName.Text;
@@ -67,11 +99,12 @@ namespace Employee_Management_Alpha_1._0
             tbPricePerUnit.Value = 0;
             tbQuantity.Value = 0;
             cbCategory.Text = "";
+            */
         }
 
         private void AddStock_Shown(object sender, EventArgs e)
         {
-            StockList();
+            //StockList();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -83,5 +116,7 @@ namespace Employee_Management_Alpha_1._0
         {
 
         }
+
+    
     }
 }

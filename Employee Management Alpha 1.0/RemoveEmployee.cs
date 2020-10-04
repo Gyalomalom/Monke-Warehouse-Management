@@ -54,5 +54,10 @@ namespace Employee_Management_Alpha_1._0
             employeeManagement.RemoveEmployeebyId(id);
             UpdateList();
         }
+
+        private void RemoveEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
