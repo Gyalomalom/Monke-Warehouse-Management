@@ -120,35 +120,50 @@ namespace Employee_Management_Alpha_1._0
 
         public void AddShift(int empID, DateTime dateOfShift, Tod tod)
         {
-            this.shift = new Shift(empID, dateOfShift, tod); //instantiate a new object of type shift
-            this.shifts.Add(shift); //add it to list of type employee
-            MySqlConnection connection;
-            string connectionString;
-            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
-            connection = new MySqlConnection(connectionString);
-            try
+            this.GetAllShifts();
+            bool noduplicate = true;
+            foreach (Shift check_shift in shifts)
             {
-                connection.Open();
-                if (connection.State == ConnectionState.Open)
+                if (check_shift.emp_id == empID && check_shift.dateOfShift == dateOfShift && check_shift.tod == tod)
+                    noduplicate = false;
+
+            }
+            if (noduplicate)
+            {
+                this.shift = new Shift(empID, dateOfShift, tod); //instantiate a new object of type shift
+                this.shifts.Add(shift); //add it to list of type employee
+                MySqlConnection connection;
+                string connectionString;
+                connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+                connection = new MySqlConnection(connectionString);
+                try
                 {
-                    //MessageBox.Show("Data entered succesfully.");
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO shift (employeeID, date, tod) VALUES (@employeeID, @date, @tod)", connection);
-                    
-
-                    cmd.Parameters.AddWithValue("@employeeID", empID);
-                    cmd.Parameters.AddWithValue("@date", dateOfShift);
-                    cmd.Parameters.AddWithValue("@tod", tod);
-                    cmd.ExecuteNonQuery();
+                    connection.Open();
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        //MessageBox.Show("Data entered succesfully.");
+                        MySqlCommand cmd = new MySqlCommand("INSERT INTO shift (employeeID, date, tod) VALUES (@employeeID, @date, @tod)", connection);
 
 
+                        cmd.Parameters.AddWithValue("@employeeID", empID);
+                        cmd.Parameters.AddWithValue("@date", dateOfShift);
+                        cmd.Parameters.AddWithValue("@tod", tod);
+                        cmd.ExecuteNonQuery();
+
+
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                connection.Close();
             }
-            connection.Close();
+            else
+            {
+                MessageBox.Show("A duplicate shift exists!");
+            }
         }
 
 
