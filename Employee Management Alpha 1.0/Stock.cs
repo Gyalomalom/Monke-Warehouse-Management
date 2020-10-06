@@ -54,7 +54,7 @@ namespace Employee_Management_Alpha_1._0
             MySqlDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
-            {
+            {/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 newStocks.Add(new Item(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToInt32(dr[2]), Convert.ToDouble(dr[3]), Convert.ToString(dr[4])));
             }
             if (newStocks.Count() >= 1)
@@ -138,12 +138,13 @@ namespace Employee_Management_Alpha_1._0
                 if (connection.State == ConnectionState.Open)
                 {
                     //MessageBox.Show("Data entered succesfully.");
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = '{name}', `Quantity` = '{quantity}' WHERE ID = {id}", connection);
-                    //MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = '{name}', `Quantity` = '{quantity}', 'PricePerUnit' = '{pricePerUnit}', 'Category' = '{category}' WHERE ID = {id}", connection);
+                    //MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = `{name}`, `Quantity` = '{quantity}' WHERE ID = {id}", connection);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = `{name}`, `Quantity` = `{quantity}` ,`PricePerUnit` = `{pricePerUnit}`, `Category` = `{category}` WHERE ID = {id}", connection);
                     //, `DOB`, `BSN`, `Position`, `WorkingHours`, `PhoneNr`, `Address`, `Email`, `EmergencyC`, `EmergencyR`, `EmergencyNr`, `Certifications`, `Languages`, `ContractType`, `ContractDuration`
                     //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
 
                     cmd.ExecuteNonQuery();
+                    
 
 
                 }
