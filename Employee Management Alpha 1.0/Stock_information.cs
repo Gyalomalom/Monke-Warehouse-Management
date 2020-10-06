@@ -55,8 +55,15 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-
-            stock.ChangeItem(tbID.Text, tbNewItemName.Text, Convert.ToInt32(tbNewQuantity.Value), Convert.ToInt32(tbNewPricePerUnit.Value), tbNewCategory.Text);
+            if(tbID.Text == "" ||  tbNewCategory.Text == "" || tbNewItemName.Text == "")
+            {
+                MessageBox.Show("An item should be selected first!");
+            }
+            else
+            {
+                stock.ChangeItem(tbID.Text, tbNewItemName.Text, Convert.ToInt32(tbNewQuantity.Value), Convert.ToInt32(tbNewPricePerUnit.Value), tbNewCategory.Text);
+            }
+           
                 
 
                 StockList(); // refresshing
