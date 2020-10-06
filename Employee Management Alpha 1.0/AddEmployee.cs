@@ -35,8 +35,23 @@ namespace Employee_Management_Alpha_1._0
             lbEmployees.Items.Clear();
             //DateTime time = Convert.ToDateTime(dtpEmployee.Value); //Date time picker
             employeeManagement.AddEmployeeTest(tbFirstName.Text, tbLastName.Text);
-            
-            
+
+            lbEmployees.Items.Clear();
+            employeeManagement = new Employee_Management();
+            if (employeeManagement.GetAllEmployees() is null)
+            {
+                MessageBox.Show("The database is empty!");
+                lbEmployees.Items.Add("The database is empty!");
+            }
+            else
+            {
+                for (int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
+                {
+
+                    lbEmployees.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
+
+                }
+            }
         }
 
         private void AddEmployee_Load(object sender, EventArgs e)

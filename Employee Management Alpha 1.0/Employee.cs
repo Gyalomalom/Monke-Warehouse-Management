@@ -29,6 +29,7 @@ namespace Employee_Management_Alpha_1._0
         public string contract { get; set; }
         public string duration { get; set; }
         public string status { get; set; }
+        public string departmentName { get; set; }
 
         //string first_name, string last_name, DateTime date_of_birth, string bsn, string postion, int workinghours, string phoneNr, string address, string email, string emergencyC, string emergencyR, string emergencyNr, string certifications, string languages, string contract, string duratio
         //properties
@@ -92,12 +93,13 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
-        public Employee(int id, string first_name, string last_name, string status)
+        public Employee(int id, string first_name, string last_name, string status, string departmentName)
         {
             this.id = id;
             this.first_name = first_name;
             this.last_name = last_name;
             this.status = status;
+            this.departmentName = departmentName;
         }
 
 

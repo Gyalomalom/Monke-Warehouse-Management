@@ -139,7 +139,7 @@ namespace Employee_Management_Alpha_1._0
                 {
                     //MessageBox.Show("Data entered succesfully.");
                     //MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = '{name}', `Quantity` = '{quantity}' WHERE ID = {id}", connection);
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = '{name}', `Quantity` = '{quantity}', `PricePerUnit` = '{pricePerUnit}', `Category` = '{category}' WHERE ID = {id}", connection);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = `{name}`, `Quantity` = `{quantity}`, `PricePerUnit` = `{pricePerUnit}`, `Category` = `{category}` WHERE ID = {id}", connection);
                     //, `DOB`, `BSN`, `Position`, `WorkingHours`, `PhoneNr`, `Address`, `Email`, `EmergencyC`, `EmergencyR`, `EmergencyNr`, `Certifications`, `Languages`, `ContractType`, `ContractDuration`
                     //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
 

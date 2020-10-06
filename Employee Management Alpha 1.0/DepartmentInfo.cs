@@ -109,5 +109,43 @@ namespace Employee_Management_Alpha_1._0
                 UpdateEmpList();
             }
         }
+
+        private void lbDepartmentInfo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnViewEmployeesinDepartment_Click(object sender, EventArgs e)
+        {
+            string id = lbDepartmentInfo.SelectedItem.ToString();
+            Match match = Regex.Match(id, pattern);
+
+            if (match.Success)
+            {
+                lbEmployeeInfo.Items.Clear();
+                employeeManagement = new Employee_Management();
+                departmentManagement = new Department_Management();
+                MessageBox.Show($"Loading employees in department with ID: {match.Value}. Loading may take a while, please give it a few seconds.");
+
+                if (employeeManagement.GetAllEmployees() is null)
+                {
+                    MessageBox.Show("Database is empty.");
+                }
+                else
+                {
+                    for (int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
+                        {
+                            if (departmentManagement.FindDepbyID(Convert.ToInt32(match.Value)).Name == employeeManagement.GetAllEmployees()[i].departmentName)
+                        {
+                        lbEmployeeInfo.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
+                    }
+                }
+            }
+            }
+        }
+
+        private void btnViewAllEmployees_Click(object sender, EventArgs e)
+        {
+            UpdateEmpList();
+        }
     }
 }
