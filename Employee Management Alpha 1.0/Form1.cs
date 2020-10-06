@@ -164,5 +164,11 @@ namespace Employee_Management_Alpha_1._0
             openChildForm(new DepartmentInfo());
             hideSubmenus();
         }
+
+        private void btnShitManager_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AddShift());
+            hideSubmenus();
+        }
     }
 }
