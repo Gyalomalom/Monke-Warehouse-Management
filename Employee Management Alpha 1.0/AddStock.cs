@@ -50,7 +50,16 @@ namespace Employee_Management_Alpha_1._0
             string category = cbCategory.Text;
 
             lbStockInfo.Items.Clear();
-            stock.AddItem(name, quantity, pricePerUnit, category);
+
+            if(tbName.Text == "" || tbQuantity.Value == 0 || cbCategory.Text == "")
+            {
+                MessageBox.Show("Please enter the data before adding items!");
+            }
+            else
+            {
+                stock.AddItem(name, quantity, pricePerUnit, category);
+            }
+            
 
 
             StockList();

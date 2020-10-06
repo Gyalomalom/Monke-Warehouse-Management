@@ -48,7 +48,15 @@ namespace Employee_Management_Alpha_1._0
         {
             string id = tbID.Text;
 
-            stock.RemoveItembyId(id);
+            if(tbID.Text == "")
+            {
+                MessageBox.Show("An item must be selected before performing this opperation!");
+            }
+            else
+            {
+                stock.RemoveItembyId(id);
+            }
+            
 
             StockList(); // refresshing
             
