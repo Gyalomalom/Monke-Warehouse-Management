@@ -121,7 +121,7 @@ namespace Employee_Management_Alpha_1._0
                 if(connect.State == ConnectionState.Open)
                 {
 
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE `department` SET `Status` = '{status}' WHERE ID = {id}", this.connect);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `department` SET `Status` = '{status}' WHERE `ID` = {id}", this.connect);
                     cmd.ExecuteNonQuery();
 
                 }
@@ -140,7 +140,7 @@ namespace Employee_Management_Alpha_1._0
                 if (connect.State == ConnectionState.Open)
                 {
 
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE employee SET Department = '{name}' WHERE ID = {id}", this.connect);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `employee` SET `Department` = '{name}' WHERE `ID` = {id}", this.connect);
                     cmd.ExecuteNonQuery();
 
                 }
