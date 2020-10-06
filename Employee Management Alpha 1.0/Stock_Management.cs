@@ -10,6 +10,8 @@ namespace Employee_Management_Alpha_1._0
 {
     class Stock_management
     {
+
+        
         //variables
         private string stockType;
         private List<Stock> newStocks;
@@ -24,8 +26,7 @@ namespace Employee_Management_Alpha_1._0
         //methods
         
 
-        
-        
-        
+
+
     }
 }

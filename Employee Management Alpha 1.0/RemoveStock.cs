@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,9 @@ namespace Employee_Management_Alpha_1._0
 {
     public partial class RemoveStock : Form
     {
+
+        const string pattern = @"([^\s]+)"; //pattern to get the first string before a space
+        Regex rg = new Regex(pattern);
         Stock stock;
 
         public RemoveStock()
@@ -24,32 +28,30 @@ namespace Employee_Management_Alpha_1._0
         {
             lbStockInfo.Items.Clear();
 
-
-            string metadata = "ID" + "\t" + "Name" + " \t " + " \t " + "Category" + "\t" + "\t" + "Quantity" + " \t " + " \t " + "Price per unit" + " \t " + " \t " + "Full price";
-            lbStockInfo.Items.Add(metadata);
-
-            foreach (Item itm in stock.GetStock())
+            stock = new Stock();
+            if(stock.GetAllItems() is null)
             {
-                lbStockInfo.Items.Add(itm);
+                MessageBox.Show("The database is empty!");
+                lbStockInfo.Items.Add("The database is empty!");
             }
+            else
+            {
+                for(int i = 0; i < stock.GetAllItems().Count(); i++)
+                {
+                    lbStockInfo.Items.Add(stock.GetAllItems()[i].ItemInfo());
+                }
+            }
+            
         }
 
         private void BtnRemoveStockItem_Click(object sender, EventArgs e) //Removes selected stock
         {
-            if (lbStockInfo.SelectedIndex < 1)
-            {
-                MessageBox.Show("Please select an item first!");
-            }
-            else
-            {
-                Item selectedItem = (Item)lbStockInfo.SelectedItem;
+            string id = tbID.Text;
 
-                if (!stock.RemoveStock(selectedItem))
-                {
-                    MessageBox.Show("Item is not in the list!");
-                }
-                StockList(); // refresshing
-            }
+            stock.RemoveItembyId(id);
+
+            StockList(); // refresshing
+            
         }
 
         private void RemoveStock_Shown(object sender, EventArgs e)
@@ -65,6 +67,19 @@ namespace Employee_Management_Alpha_1._0
         private void RemoveStock_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LbStockInfo_Click(object sender, EventArgs e)
+        {
+            if(!(lbStockInfo.SelectedIndex.Equals(null)))
+            {
+                string ID = lbStockInfo.SelectedItem.ToString();
+                Match match = Regex.Match(ID, pattern);
+                if(match.Success)
+                {
+                    tbID.Text = match.Value;
+                }
+            }
         }
     }
 }
