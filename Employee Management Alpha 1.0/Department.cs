@@ -14,7 +14,7 @@ namespace Employee_Management_Alpha_1._0
         public string name { get; set; }
         public string department_head { get; set; }
         public string address { get; set; }
-        public int phone { get; set; }
+        public string phone { get; set; }
         public string email { get; set; }
         public string language { get; set; }
         public int id { get; set; }
@@ -34,7 +34,7 @@ namespace Employee_Management_Alpha_1._0
 
         //constructors
 
-        public Department(string name, string department_head, string address, int phone, string email, string language, int id, string status)
+        public Department(string name, string department_head, string address, string phone, string email, string language, string status)
         {
             this.name = name;
             this.department_head = department_head;
@@ -42,15 +42,18 @@ namespace Employee_Management_Alpha_1._0
             this.phone = phone;
             this.email = email;
             this.language = language;
-            this.id = id;
             this.status = status;
             
         }
 
-        public Department(string name, int id)
+
+
+        public Department(int id, string name, string status)
         {
-            this.name = name;
+           
             this.id = id;
+            this.name = name;
+            this.status = status;
         }
 
         public string GetDepInfo()

@@ -158,5 +158,11 @@ namespace Employee_Management_Alpha_1._0
             openChildForm(new Stock_information()); // creates and opens stock info
             hideSubmenus();
         }
+
+        private void BtnDepStatus_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DepartmentInfo());
+            hideSubmenus();
+        }
     }
 }

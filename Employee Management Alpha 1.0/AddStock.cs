@@ -17,7 +17,7 @@ namespace Employee_Management_Alpha_1._0
         public AddStock()
         {
             InitializeComponent();
-            
+            stock = new Stock();
         }
 
 
@@ -25,48 +25,71 @@ namespace Employee_Management_Alpha_1._0
         {
             lbStockInfo.Items.Clear();
 
-
-            string metadata = "ID" + "\t" + "Name" + " \t " + " \t " + "Category" + "\t" + "\t" + "Quantity" + " \t " + " \t " + "Price per unit" + " \t " + " \t " + "Full price";
-            lbStockInfo.Items.Add(metadata);
-
-            foreach (Item itm in stock.GetStock())
+            stock = new Stock();
+            if (stock.GetAllItems() is null)
             {
-                lbStockInfo.Items.Add(itm);
+                MessageBox.Show("The database is empty!");
+                lbStockInfo.Items.Add("The database is empty!");
             }
+            else
+            {
+                for (int i = 0; i < stock.GetAllItems().Count(); i++)
+                {
+                    lbStockInfo.Items.Add(stock.GetAllItems()[i].ItemInfo());
+                }
+            }
+
         }
 
 
         private void BtnAddStockItem_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tbName.Text))
-            {
-                string name = tbName.Text;
-                int quantity = Convert.ToInt32(tbQuantity.Text);
-                double pricePerUnit = Convert.ToDouble(tbPricePerUnit.Text);
-                string category = cbCategory.Text;
+            string name = tbName.Text;
+            int quantity = Convert.ToInt32(tbQuantity.Text);
+            double pricePerUnit = Convert.ToDouble(tbPricePerUnit.Text);
+            string category = cbCategory.Text;
+
+            lbStockInfo.Items.Clear();
+            stock.AddItem(name, quantity, pricePerUnit, category);
 
 
-                if (cbCategory.Items.Contains(category)) // checks if the combobox contains the newly entered category
-                {
-
-                }
-                else
-                {
-                    cbCategory.Items.Add(category); // if it is a new category, it adds that category to the combobox
-                }
-
-                stock.AddStock(name, quantity, pricePerUnit, category);
-                StockList();
-            }
-            else
-            {
-                MessageBox.Show("Please enter name, quantity and price per unit");
-            }
+            StockList();
 
             tbName.Text = "";
-            tbPricePerUnit.Value = 0;
-            tbQuantity.Value = 0;
+            tbQuantity.Text = "";
+            tbPricePerUnit.Text = "";
             cbCategory.Text = "";
+
+
+            //if (!string.IsNullOrEmpty(tbName.Text))
+            //{
+            //    string name = tbName.Text;
+            //    int quantity = Convert.ToInt32(tbQuantity.Text);
+            //    double pricePerUnit = Convert.ToDouble(tbPricePerUnit.Text);
+            //    string category = cbCategory.Text;
+
+
+            //    if (cbCategory.Items.Contains(category)) // checks if the combobox contains the newly entered category
+            //    {
+
+            //    }
+            //    else
+            //    {
+            //        cbCategory.Items.Add(category); // if it is a new category, it adds that category to the combobox
+            //    }
+
+            //    //stock.AddStock(name, quantity, pricePerUnit, category);
+            //    StockList();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please enter name, quantity and price per unit");
+            //}
+
+            //tbName.Text = "";
+            //tbPricePerUnit.Value = 0;
+            //tbQuantity.Value = 0;
+            //cbCategory.Text = "";
         }
 
         private void AddStock_Shown(object sender, EventArgs e)
@@ -81,7 +104,7 @@ namespace Employee_Management_Alpha_1._0
 
         private void AddStock_Load(object sender, EventArgs e)
         {
-
+            StockList();
         }
     }
 }

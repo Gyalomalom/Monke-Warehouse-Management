@@ -14,11 +14,14 @@ namespace Employee_Management_Alpha_1._0
     public partial class DepartmentInfo : Form
     {
         Department_Management departmentManagement;
+        Employee_Management employeeManagement;
         const string pattern = @"([^\s]+)";
+        const string patternName = @"(?<=^(\S+\s){1})\S+";
         public DepartmentInfo()
         {
             InitializeComponent();
-            UpdateList();
+            UpdateDepList();
+            UpdateEmpList();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -26,7 +29,7 @@ namespace Employee_Management_Alpha_1._0
             this.Close();
         }
 
-        private void UpdateList()
+        private void UpdateDepList()
         {
             lbDepartmentInfo.Items.Clear();
             departmentManagement = new Department_Management();
@@ -44,6 +47,23 @@ namespace Employee_Management_Alpha_1._0
                 }
             }
         }
+        private void UpdateEmpList()
+        {
+            lbEmployeeInfo.Items.Clear();
+            employeeManagement = new Employee_Management();
+
+            if(employeeManagement.GetAllEmployees() is null)
+            {
+                MessageBox.Show("Database is empty.");
+            }
+            else
+            {
+                for(int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
+                {
+                    lbEmployeeInfo.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
+                }
+            }
+        }
 
         private void BtnUpdateStatus_Click(object sender, EventArgs e)
         {
@@ -53,7 +73,7 @@ namespace Employee_Management_Alpha_1._0
             if (match.Success)
             {
                 departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Active);
-                UpdateList();
+                UpdateDepList();
             }
         }
 
@@ -61,11 +81,32 @@ namespace Employee_Management_Alpha_1._0
         {
             string id = lbDepartmentInfo.SelectedIndex.ToString();
             Match match = Regex.Match(id, pattern);
+            
 
             if (match.Success)
             {
-                departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Inactive);
-                UpdateList();
+                departmentManagement.UpdateStatus(id, DepartmentStatus.Inactive);
+                UpdateDepList();
+            }
+        }
+
+        private void LbEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAssignEmp_Click(object sender, EventArgs e)
+        {
+            string name = lbDepartmentInfo.SelectedItem.ToString();
+            Match match = Regex.Match(name, patternName);
+            string id = lbEmployeeInfo.SelectedItem.ToString();
+            Match matchid = Regex.Match(id, pattern);
+
+            if (match.Success && matchid.Success)
+            {
+                departmentManagement.AssignEmployee(match.Value, matchid.Value);
+                UpdateDepList();
+                UpdateEmpList();
             }
         }
     }

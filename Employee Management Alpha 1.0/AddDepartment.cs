@@ -17,8 +17,25 @@ namespace Employee_Management_Alpha_1._0
         {
             InitializeComponent();
             departmentManagement = new Department_Management();
-            
+            UpdateInfo();
 
+        }
+
+        public void UpdateInfo()
+        {
+            departmentManagement = new Department_Management();
+            lbDepartments.Items.Clear();
+            if (departmentManagement.FindAllDep() is null)
+            {
+                MessageBox.Show("Database is empty.");
+            }
+            else
+            {
+                for (int i = 0; i < departmentManagement.FindAllDep().Count(); i++)
+                {
+                    lbDepartments.Items.Add(departmentManagement.FindAllDep()[i].GetDepInfo());
+                }
+            }
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -28,8 +45,9 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnAddDep_Click(object sender, EventArgs e)
         {
-            lbDepartments.Items.Clear();
-            departmentManagement.AddDepartment(tbName.Text, tbHead.Text, tbAddress.Text, Convert.ToInt32(tbPhone.Text), tbEmail.Text, tbLanguage.Text, Convert.ToInt32(tbPhone.Text), Convert.ToString(DepartmentStatus.Active));
+            
+            departmentManagement.AddDepartment(tbName.Text, tbHead.Text, tbAddress.Text, tbPhone.Text, tbEmail.Text, tbLanguage.Text, Convert.ToString(DepartmentStatus.Active));
+            UpdateInfo();
 
         }
 
@@ -37,5 +55,10 @@ namespace Employee_Management_Alpha_1._0
         {
 
         }
+
+        //private void AddDepartment_Load(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
