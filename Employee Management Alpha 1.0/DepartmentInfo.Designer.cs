@@ -36,6 +36,8 @@
             this.lbEmployeeInfo = new System.Windows.Forms.ListBox();
             this.btnAssignEmp = new System.Windows.Forms.Button();
             this.lblEmployees = new System.Windows.Forms.Label();
+            this.btnViewAllEmployees = new System.Windows.Forms.Button();
+            this.btnViewEmployeesinDepartment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDepartmentInfo
@@ -46,6 +48,7 @@
             this.lbDepartmentInfo.Name = "lbDepartmentInfo";
             this.lbDepartmentInfo.Size = new System.Drawing.Size(346, 260);
             this.lbDepartmentInfo.TabIndex = 1;
+            this.lbDepartmentInfo.Click += new System.EventHandler(this.lbDepartmentInfo_Click);
             // 
             // btnUpdateStatus
             // 
@@ -136,12 +139,44 @@
             this.lblEmployees.TabIndex = 10;
             this.lblEmployees.Text = "Employees";
             // 
+            // btnViewAllEmployees
+            // 
+            this.btnViewAllEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnViewAllEmployees.FlatAppearance.BorderSize = 0;
+            this.btnViewAllEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewAllEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnViewAllEmployees.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnViewAllEmployees.Location = new System.Drawing.Point(634, 366);
+            this.btnViewAllEmployees.Name = "btnViewAllEmployees";
+            this.btnViewAllEmployees.Size = new System.Drawing.Size(161, 48);
+            this.btnViewAllEmployees.TabIndex = 11;
+            this.btnViewAllEmployees.Text = "View all";
+            this.btnViewAllEmployees.UseVisualStyleBackColor = false;
+            this.btnViewAllEmployees.Click += new System.EventHandler(this.btnViewAllEmployees_Click);
+            // 
+            // btnViewEmployeesinDepartment
+            // 
+            this.btnViewEmployeesinDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnViewEmployeesinDepartment.FlatAppearance.BorderSize = 0;
+            this.btnViewEmployeesinDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewEmployeesinDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnViewEmployeesinDepartment.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnViewEmployeesinDepartment.Location = new System.Drawing.Point(255, 16);
+            this.btnViewEmployeesinDepartment.Name = "btnViewEmployeesinDepartment";
+            this.btnViewEmployeesinDepartment.Size = new System.Drawing.Size(161, 48);
+            this.btnViewEmployeesinDepartment.TabIndex = 12;
+            this.btnViewEmployeesinDepartment.Text = "View employees in selected department";
+            this.btnViewEmployeesinDepartment.UseVisualStyleBackColor = false;
+            this.btnViewEmployeesinDepartment.Click += new System.EventHandler(this.btnViewEmployeesinDepartment_Click);
+            // 
             // DepartmentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
+            this.Controls.Add(this.btnViewEmployeesinDepartment);
+            this.Controls.Add(this.btnViewAllEmployees);
             this.Controls.Add(this.lblEmployees);
             this.Controls.Add(this.btnAssignEmp);
             this.Controls.Add(this.lbEmployeeInfo);
@@ -166,5 +201,7 @@
         private System.Windows.Forms.ListBox lbEmployeeInfo;
         private System.Windows.Forms.Button btnAssignEmp;
         private System.Windows.Forms.Label lblEmployees;
+        private System.Windows.Forms.Button btnViewAllEmployees;
+        private System.Windows.Forms.Button btnViewEmployeesinDepartment;
     }
 }
