@@ -79,13 +79,13 @@ namespace Employee_Management_Alpha_1._0
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string id = lbDepartmentInfo.SelectedIndex.ToString();
+            string id = lbDepartmentInfo.SelectedItem.ToString();
             Match match = Regex.Match(id, pattern);
             
 
             if (match.Success)
             {
-                departmentManagement.UpdateStatus(id, DepartmentStatus.Inactive);
+                departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Inactive);
                 UpdateDepList();
             }
         }
