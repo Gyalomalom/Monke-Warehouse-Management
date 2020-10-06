@@ -45,9 +45,25 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnAddDep_Click(object sender, EventArgs e)
         {
-            
-            departmentManagement.AddDepartment(tbName.Text, tbHead.Text, tbAddress.Text, tbPhone.Text, tbEmail.Text, tbLanguage.Text, Convert.ToString(DepartmentStatus.Active));
-            UpdateInfo();
+            bool errorfound = false;
+            string[] infoFields = new string[6] { tbName.Text, tbHead.Text, tbAddress.Text, tbPhone.Text, tbEmail.Text, tbLanguage.Text };
+            foreach(string Item in infoFields)
+            { if (!(errorfound))
+                if (string.IsNullOrEmpty(Item))
+                {
+                    MessageBox.Show($"One or more fields was empty. Please fill out all the fields.");
+                    errorfound = true;
+                }
+            }
+            if (!(errorfound))
+            {
+                departmentManagement.AddDepartment(tbName.Text, tbHead.Text, tbAddress.Text, tbPhone.Text, tbEmail.Text, tbLanguage.Text, Convert.ToString(DepartmentStatus.Active));
+                UpdateInfo();
+            }
+            else
+            {
+                errorfound = false;
+            }
 
         }
 
