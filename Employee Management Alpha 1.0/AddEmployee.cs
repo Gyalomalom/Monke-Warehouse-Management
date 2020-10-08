@@ -20,6 +20,7 @@ namespace Employee_Management_Alpha_1._0
         {
             InitializeComponent();
             employeeManagement = new Employee_Management();
+            UpdateList();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -27,7 +28,25 @@ namespace Employee_Management_Alpha_1._0
             this.Close();
         }
 
+        private void UpdateList()
+        {
+            lbEmployees.Items.Clear();
+            employeeManagement = new Employee_Management();
+            if (employeeManagement.GetAllEmployees() is null)
+            {
+                MessageBox.Show("The database is empty!");
+                lbEmployees.Items.Add("The database is empty!");
+            }
+            else
+            {
+                for (int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
+                {
 
+                    lbEmployees.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
+
+                }
+            }
+        }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
