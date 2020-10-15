@@ -48,6 +48,7 @@ namespace Employee_Management_Alpha_1._0
             {
                 MessageBox.Show("Incorrect login credentials! Check username/password!");
             }
+            conn.Close();
         }
     }
 }
