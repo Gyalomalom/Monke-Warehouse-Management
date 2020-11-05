@@ -7,37 +7,57 @@ using MySql.Data;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 
 namespace ClockinApp
 {
     class ClockinManager
     {
+        Portread readcard;
+        MySqlConnection connect;
 
-        MySqlConnection connect = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");
+        public ClockinManager()
+        {
+            readcard = new Portread();
+            connect = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");
+        }
 
         public void ClockIn()
         {
-            try
+
+            string line = readcard.ReadCard();
+
+            if (line == "Waiting for card...")
             {
-                connect.Open();
-                if (connect.State == ConnectionState.Open)
+
+            }
+            else
+            {
+
+                try
                 {
-                    string time = DateTime.Now.ToString("HH:mm dd/MM/yyy");
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO clockin (Clockin, Clockout, Status, EmpID) VALUES (@Clockin, @Clockout, @Status, @EmpID)", connect);
-                    cmd.Parameters.AddWithValue("@Clockin", time);
-                    cmd.Parameters.AddWithValue("@Clockout", "na");
-                    cmd.Parameters.AddWithValue("@Status", "Active");
-                    cmd.Parameters.AddWithValue("@EmpID", "na");
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Clocked in at" + DateTime.Now.ToString("HH:mm"));
+                    connect.Open();
+                    if (connect.State == ConnectionState.Open)
+                    {
+                        string time = DateTime.Now.ToString("HH:mm dd/MM/yyy");
+                        MySqlCommand cmd = new MySqlCommand("INSERT INTO clockin (Clockin, Clockout, Status, EmpID) VALUES (@Clockin, @Clockout, @Status, @EmpID)", connect);
+                        cmd.Parameters.AddWithValue("@Clockin", time);
+                        cmd.Parameters.AddWithValue("@Clockout", "na");
+                        cmd.Parameters.AddWithValue("@Status", "Active");
+                        cmd.Parameters.AddWithValue("@EmpID", "na");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Clocked in at" + DateTime.Now.ToString("HH:mm"));
+                    }
                 }
+                catch (Exception expection)
+                {
+                    MessageBox.Show(expection.Message);
+                }
+                connect.Close();
+
             }
-            catch (Exception expection)
-            {
-                MessageBox.Show(expection.Message);
-            }
-            connect.Close();
+            
         }
     }
 }
