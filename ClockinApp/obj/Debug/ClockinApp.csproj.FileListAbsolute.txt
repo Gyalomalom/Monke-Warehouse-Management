@@ -1,0 +1,10 @@
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.exe.config
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.exe
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.pdb
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csprojAssemblyReference.cache
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.Form1.resources
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.Properties.Resources.resources
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.GenerateResource.cache
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CoreCompileInputs.cache
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.pdb

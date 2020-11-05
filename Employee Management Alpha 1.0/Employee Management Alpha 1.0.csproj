@@ -71,7 +71,6 @@
     <Compile Include="AllEmployees.Designer.cs">
       <DependentUpon>AllEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="CardReader.cs" />
     <Compile Include="Department Management.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentInfo.cs">
