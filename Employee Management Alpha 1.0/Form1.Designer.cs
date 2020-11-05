@@ -371,6 +371,7 @@
             this.btnShitManager.Text = "Shift manager";
             this.btnShitManager.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShitManager.UseVisualStyleBackColor = true;
+            this.btnShitManager.Click += new System.EventHandler(this.btnShitManager_Click);
             // 
             // btnEmpStatus
             // 

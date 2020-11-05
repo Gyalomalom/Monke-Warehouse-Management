@@ -183,7 +183,6 @@ C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\ob
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.RemoveDepartment.resources
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\bin\Debug\System.Memory.dll
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.exe.config
-C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddStock.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.DepartmentInfo.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.EmployeeChangeStatus.resources
@@ -196,3 +195,5 @@ C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.RemoveStock.resources
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.UpdateInformation.resources
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CoreCompileInputs.cache
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddShift.resources
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddShift.resources

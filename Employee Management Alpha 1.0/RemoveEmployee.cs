@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace Employee_Management_Alpha_1._0
     public partial class RemoveEmployee : Form
     {
         Employee_Management employeeManagement;
-        
+        const string pattern = @"([^\s]+)"; //pattern to get the first string before a space
+        Regex rg = new Regex(pattern);
         public RemoveEmployee()
         {
             InitializeComponent();
@@ -59,6 +61,20 @@ namespace Employee_Management_Alpha_1._0
         private void RemoveEmployee_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbViewEmployees_Click(object sender, EventArgs e)
+        {
+            if (!(lbViewEmployees.SelectedIndex.Equals(null)))
+            {
+                string ID = lbViewEmployees.SelectedItem.ToString();
+                Match match = Regex.Match(ID, pattern);
+                if (match.Success)
+                {
+                    tbID.Text = match.Value;
+
+                }
+            }
         }
     }
 }

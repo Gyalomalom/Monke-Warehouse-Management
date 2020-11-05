@@ -52,7 +52,7 @@ namespace Employee_Management_Alpha_1._0
             
             while(dr.Read())
             {
-                employees.Add(new Employee(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToString(dr[2]), Convert.ToString(dr[17])));
+                employees.Add(new Employee(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToString(dr[2]), Convert.ToString(dr[17]), Convert.ToString(dr[18])));
             }
             if (employees.Count() >= 1)
 
@@ -250,6 +250,8 @@ namespace Employee_Management_Alpha_1._0
             }
             connection.Close();
         }
+
+
     }
     }
 
