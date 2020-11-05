@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Employee_Management_Alpha_1._0
 {
+    
     public partial class LoginForm : Form
     {
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");
@@ -23,7 +24,7 @@ namespace Employee_Management_Alpha_1._0
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            string sql = "SELECT * FROM login";
+            string sql = "SELECT Email, Password, Position FROM employee";
             bool correct = false;
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
@@ -34,15 +35,18 @@ namespace Employee_Management_Alpha_1._0
                 if(txtUsername.Text == dr[0].ToString() && txtPassword.Text == dr[1].ToString())
                 {
                     correct = true;
+                    MessageBox.Show(dr[2].ToString());
                 }
             }
 
             if (correct)
             {
-                this.Hide();
-                Form1 main = new Form1();
-                main.Closed += (s, args) => this.Close();
-                main.Show();
+               
+                    this.Hide();
+                    Form1 main = new Form1();
+                    main.Closed += (s, args) => this.Close();
+                    main.Show();
+               
             }
             else
             {
