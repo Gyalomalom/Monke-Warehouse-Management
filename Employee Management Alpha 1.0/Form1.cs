@@ -182,5 +182,11 @@ namespace Employee_Management_Alpha_1._0
             openChildForm(new Stock_information()); // creates and opens stock info
             hideSubmenus();
         }
+
+        private void BtnBuyStock_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new BuyStock()); // creates and opens stock info
+            hideSubmenus();
+        }
     }
 }
