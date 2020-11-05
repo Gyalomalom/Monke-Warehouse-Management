@@ -1,0 +1,27 @@
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.exe.config
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.exe
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.pdb
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csprojAssemblyReference.cache
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.Form1.resources
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.Properties.Resources.resources
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.GenerateResource.cache
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CoreCompileInputs.cache
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.pdb
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Employee Management Alpha 1.0.exe
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\MySql.Data.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Google.Protobuf.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Zstandard.Net.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Renci.SshNet.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\System.Buffers.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Employee Management Alpha 1.0.pdb
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Employee Management Alpha 1.0.exe.config
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\MySql.Data.xml
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe.config
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CopyComplete
