@@ -97,7 +97,7 @@
             this.btnCloseApp.ForeColor = System.Drawing.Color.Silver;
             this.btnCloseApp.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_exit_48;
             this.btnCloseApp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCloseApp.Location = new System.Drawing.Point(0, 767);
+            this.btnCloseApp.Location = new System.Drawing.Point(0, 769);
             this.btnCloseApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -114,7 +114,7 @@
             this.panelStatisticsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.panelStatisticsSubmenu.Controls.Add(this.btnViewStats);
             this.panelStatisticsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatisticsSubmenu.Location = new System.Drawing.Point(0, 726);
+            this.panelStatisticsSubmenu.Location = new System.Drawing.Point(0, 728);
             this.panelStatisticsSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelStatisticsSubmenu.Name = "panelStatisticsSubmenu";
             this.panelStatisticsSubmenu.Size = new System.Drawing.Size(230, 41);
@@ -148,7 +148,7 @@
             this.btnStats.ForeColor = System.Drawing.Color.Silver;
             this.btnStats.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_pie_chart_report_50;
             this.btnStats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStats.Location = new System.Drawing.Point(0, 680);
+            this.btnStats.Location = new System.Drawing.Point(0, 682);
             this.btnStats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStats.Name = "btnStats";
             this.btnStats.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -167,7 +167,7 @@
             this.panelDepSubmenu.Controls.Add(this.btnRemoveDep);
             this.panelDepSubmenu.Controls.Add(this.btnAddDep);
             this.panelDepSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDepSubmenu.Location = new System.Drawing.Point(0, 559);
+            this.panelDepSubmenu.Location = new System.Drawing.Point(0, 561);
             this.panelDepSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDepSubmenu.Name = "panelDepSubmenu";
             this.panelDepSubmenu.Size = new System.Drawing.Size(230, 121);
@@ -237,7 +237,7 @@
             this.btnDepMan.ForeColor = System.Drawing.Color.Silver;
             this.btnDepMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_unit_50;
             this.btnDepMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepMan.Location = new System.Drawing.Point(0, 513);
+            this.btnDepMan.Location = new System.Drawing.Point(0, 515);
             this.btnDepMan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDepMan.Name = "btnDepMan";
             this.btnDepMan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -260,7 +260,7 @@
             this.panelStockSubmenu.Location = new System.Drawing.Point(0, 396);
             this.panelStockSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelStockSubmenu.Name = "panelStockSubmenu";
-            this.panelStockSubmenu.Size = new System.Drawing.Size(230, 117);
+            this.panelStockSubmenu.Size = new System.Drawing.Size(230, 119);
             this.panelStockSubmenu.TabIndex = 4;
             this.panelStockSubmenu.Visible = false;
             // 

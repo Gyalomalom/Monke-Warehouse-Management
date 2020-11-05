@@ -25,7 +25,7 @@ namespace ClockinApp
         {
             string message = "Waiting for card...";
 
-            while (port.BytesToRead > 0)
+            if (port.BytesToRead > 0)
             {
                 string line = port.ReadLine();
                 line = line.Trim();

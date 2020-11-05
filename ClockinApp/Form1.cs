@@ -14,18 +14,33 @@ namespace ClockinApp
     public partial class Form1 : Form
     {
         Portread readcard;
+        ClockinManager clockin;
+        
 
         public Form1()
         {
             InitializeComponent();
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
             readcard = new Portread();
+            clockin = new ClockinManager();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
             string line = readcard.ReadCard();
-            listBox1.Items.Add(line);
+
+            if(line== "Waiting for card...")
+            {
+
+            }
+            else
+            {
+                
+                clockin.ClockIn();
+                
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
