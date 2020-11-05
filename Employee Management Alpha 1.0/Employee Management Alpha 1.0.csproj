@@ -71,6 +71,12 @@
     <Compile Include="AllEmployees.Designer.cs">
       <DependentUpon>AllEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuyStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuyStock.Designer.cs">
+      <DependentUpon>BuyStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department Management.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentInfo.cs">
@@ -138,6 +144,7 @@
       <DependentUpon>RemoveStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock.cs" />
+    <Compile Include="StockSales.cs" />
     <Compile Include="Stock_information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllEmployees.resx">
       <DependentUpon>AllEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuyStock.resx">
+      <DependentUpon>BuyStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentInfo.resx">
       <DependentUpon>DepartmentInfo.cs</DependentUpon>
