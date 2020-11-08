@@ -15,8 +15,7 @@ namespace Employee_Management_Alpha_1._0
 
 
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");//sql connector
-
-
+        private List<StockRequestInfo> stockRequestInfos;
         private List<Item> newStocks;
         private Item stock;
         private List<StockSales> newSales;
@@ -26,6 +25,7 @@ namespace Employee_Management_Alpha_1._0
         {
             this.newStocks = new List<Item>();
             this.newSales = new List<StockSales>();
+            this.stockRequestInfos = new List<StockRequestInfo>();
         }
 
 
@@ -48,6 +48,33 @@ namespace Employee_Management_Alpha_1._0
             return null;
         }
 
+
+
+
+        public List<StockRequestInfo> GetAllRequests()
+        {
+            stockRequestInfos.Clear();
+            string sql = "SELECT * FROM stockrequests";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                stockRequestInfos.Add(new StockRequestInfo(Convert.ToString(dr[0])));
+            }
+            if (stockRequestInfos.Count() >= 1)
+            {
+                conn.Close();
+                return stockRequestInfos;
+            }
+            else
+            {
+                conn.Close();
+                return null;
+            }
+        }
+
         public List<StockSales> GetAllSales()
         {
             newSales.Clear();
@@ -59,7 +86,7 @@ namespace Employee_Management_Alpha_1._0
             while (dr.Read())
             {
                 newSales.Add(new StockSales(Convert.ToInt32(dr[0]), Convert.ToInt32(dr[1])));
-                
+
             }
             if (newSales.Count() >= 1)
             {
@@ -72,11 +99,13 @@ namespace Employee_Management_Alpha_1._0
                 return null;
             }
         }
-        
+
+
+
         public List<Item> GetAllItems()
         {
             newStocks.Clear();
-            string sql = "SELECT * FROM itemstock;";
+            string sql = "SELECT * FROM itemstock";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -117,6 +146,8 @@ namespace Employee_Management_Alpha_1._0
             conn.Close();
         }
 
+
+
         public void BuyItem(string id, int quantity, int amount) // at this point, it only decreases the quantity of the item
         {
             MySqlConnection connection;
@@ -146,6 +177,36 @@ namespace Employee_Management_Alpha_1._0
 
 
         }
+
+
+        public void AddStockRequest(string stockInfo)
+        {
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO stockrequests (StockRequest) VALUES (@StockRequest)", connection);
+                    MessageBox.Show(cmd.CommandText);
+
+                    cmd.Parameters.AddWithValue("@StockRequest", stockInfo);
+                    cmd.ExecuteNonQuery();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
 
         public void AddItem(string name, int quantity, double pricePerUnit, string category)
         {

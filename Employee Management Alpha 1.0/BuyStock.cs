@@ -26,15 +26,7 @@ namespace Employee_Management_Alpha_1._0
 
         private void LbStockInfo_Click(object sender, EventArgs e)
         {
-            if (!(lbStockInfo.SelectedIndex.Equals(null)))
-            {
-                string ID = lbStockInfo.SelectedItem.ToString();
-                Match match = Regex.Match(ID, pattern);
-                if (match.Success)
-                {
-                    tbID.Text = match.Value;
-                }
-            }
+           
         }
 
         private void SalesList() // refreshes the sales list
@@ -120,12 +112,23 @@ namespace Employee_Management_Alpha_1._0
         private void BuyStock_Load(object sender, EventArgs e)
         {
             StockList();
-            SalesList();
+            SalesList(); //refreshes both lists before when loading the data
         }
 
         private void Label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close(); //closes the form, serves as return button
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            StockRequest stockRequest = new StockRequest();
+            stockRequest.Show();
         }
     }
     }

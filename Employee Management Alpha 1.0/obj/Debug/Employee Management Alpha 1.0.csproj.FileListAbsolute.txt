@@ -202,3 +202,4 @@ C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Manageme
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddShift.resources
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.AddShift.resources
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.BuyStock.resources
+C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.StockRequest.resources

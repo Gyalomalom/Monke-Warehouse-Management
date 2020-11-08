@@ -34,10 +34,10 @@
             this.btnBuyStock = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbID = new System.Windows.Forms.TextBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lbStockSalesInfo = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAmount)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -111,18 +111,6 @@
             this.tbID.Size = new System.Drawing.Size(93, 20);
             this.tbID.TabIndex = 55;
             // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_back_24;
-            this.btnClose.Location = new System.Drawing.Point(9, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 27);
-            this.btnClose.TabIndex = 57;
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
             // lbStockSalesInfo
             // 
             this.lbStockSalesInfo.FormattingEnabled = true;
@@ -158,6 +146,19 @@
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item details:";
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_back_24;
+            this.btnClose.Location = new System.Drawing.Point(9, 10);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 27);
+            this.btnClose.TabIndex = 57;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // BuyStock
             // 
