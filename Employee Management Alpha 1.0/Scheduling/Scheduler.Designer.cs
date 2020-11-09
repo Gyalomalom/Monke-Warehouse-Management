@@ -28,80 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbGeneralScheduler = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbYear = new System.Windows.Forms.ComboBox();
+            this.cbDepartment = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.gbSunday = new System.Windows.Forms.GroupBox();
+            this.lblDateSun = new System.Windows.Forms.Label();
+            this.pnlEvenSunday = new System.Windows.Forms.Panel();
+            this.pnlNoonSunday = new System.Windows.Forms.Panel();
+            this.pnlMornSunday = new System.Windows.Forms.Panel();
+            this.gbSaturday = new System.Windows.Forms.GroupBox();
+            this.lblDateSat = new System.Windows.Forms.Label();
+            this.pnlEvenSaturday = new System.Windows.Forms.Panel();
+            this.pnlNoonSaturday = new System.Windows.Forms.Panel();
+            this.pnlMornSaturday = new System.Windows.Forms.Panel();
+            this.gbFriday = new System.Windows.Forms.GroupBox();
+            this.lblDateFri = new System.Windows.Forms.Label();
+            this.pnlEvenFriday = new System.Windows.Forms.Panel();
+            this.pnlNoonFriday = new System.Windows.Forms.Panel();
+            this.pnlMornFriday = new System.Windows.Forms.Panel();
+            this.gbThursday = new System.Windows.Forms.GroupBox();
+            this.lblDateThu = new System.Windows.Forms.Label();
+            this.pnlEvenThursday = new System.Windows.Forms.Panel();
+            this.pnlNoonThursday = new System.Windows.Forms.Panel();
+            this.pnlMornThursday = new System.Windows.Forms.Panel();
+            this.gbWednesday = new System.Windows.Forms.GroupBox();
+            this.lblDateWed = new System.Windows.Forms.Label();
+            this.pnlEvenWednesday = new System.Windows.Forms.Panel();
+            this.pnlNoonWednesday = new System.Windows.Forms.Panel();
+            this.pnlMornWednesday = new System.Windows.Forms.Panel();
+            this.gbTuesday = new System.Windows.Forms.GroupBox();
+            this.lblDateTue = new System.Windows.Forms.Label();
+            this.pnlEvenTuesday = new System.Windows.Forms.Panel();
+            this.pnlNoonTuesday = new System.Windows.Forms.Panel();
+            this.pnlMornTuesday = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbCalWeek = new System.Windows.Forms.ComboBox();
+            this.gbMonday = new System.Windows.Forms.GroupBox();
+            this.lblDateMon = new System.Windows.Forms.Label();
+            this.pnlEvenMonday = new System.Windows.Forms.Panel();
+            this.pnlNoonMonday = new System.Windows.Forms.Panel();
             this.pnlMornMonday = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.pnlDates = new System.Windows.Forms.Panel();
+            this.btnLoadSchedule = new System.Windows.Forms.Button();
+            this.gbGeneralScheduler.SuspendLayout();
+            this.gbSunday.SuspendLayout();
+            this.gbSaturday.SuspendLayout();
+            this.gbFriday.SuspendLayout();
+            this.gbThursday.SuspendLayout();
+            this.gbWednesday.SuspendLayout();
+            this.gbTuesday.SuspendLayout();
+            this.gbMonday.SuspendLayout();
+            this.pnlDates.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbGeneralScheduler
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.groupBox8);
-            this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(7, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1366, 493);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Scheduler";
+            this.gbGeneralScheduler.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbGeneralScheduler.Controls.Add(this.btnLoadSchedule);
+            this.gbGeneralScheduler.Controls.Add(this.label6);
+            this.gbGeneralScheduler.Controls.Add(this.cbYear);
+            this.gbGeneralScheduler.Controls.Add(this.cbDepartment);
+            this.gbGeneralScheduler.Controls.Add(this.label5);
+            this.gbGeneralScheduler.Controls.Add(this.label4);
+            this.gbGeneralScheduler.Controls.Add(this.label3);
+            this.gbGeneralScheduler.Controls.Add(this.label2);
+            this.gbGeneralScheduler.Controls.Add(this.label1);
+            this.gbGeneralScheduler.Controls.Add(this.cbCalWeek);
+            this.gbGeneralScheduler.Controls.Add(this.pnlDates);
+            this.gbGeneralScheduler.Location = new System.Drawing.Point(7, 12);
+            this.gbGeneralScheduler.Name = "gbGeneralScheduler";
+            this.gbGeneralScheduler.Size = new System.Drawing.Size(1366, 550);
+            this.gbGeneralScheduler.TabIndex = 0;
+            this.gbGeneralScheduler.TabStop = false;
+            this.gbGeneralScheduler.Text = "Scheduler";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(74, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Year:";
+            // 
+            // cbYear
+            // 
+            this.cbYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Items.AddRange(new object[] {
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"});
+            this.cbYear.Location = new System.Drawing.Point(191, 90);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(64, 24);
+            this.cbYear.TabIndex = 12;
+            // 
+            // cbDepartment
+            // 
+            this.cbDepartment.FormattingEnabled = true;
+            this.cbDepartment.Items.AddRange(new object[] {
+            "Depo",
+            "HR",
+            "Admin"});
+            this.cbDepartment.Location = new System.Drawing.Point(162, 28);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Size = new System.Drawing.Size(93, 24);
+            this.cbDepartment.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(70, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Department:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 250);
+            this.label4.Location = new System.Drawing.Point(3, 307);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 17);
             this.label4.TabIndex = 9;
@@ -110,7 +170,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 356);
+            this.label3.Location = new System.Drawing.Point(5, 413);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 8;
@@ -119,233 +179,311 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 144);
+            this.label2.Location = new System.Drawing.Point(6, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Morning:";
             // 
-            // groupBox8
+            // gbSunday
             // 
-            this.groupBox8.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox8.Controls.Add(this.panel19);
-            this.groupBox8.Controls.Add(this.panel20);
-            this.groupBox8.Controls.Add(this.panel21);
-            this.groupBox8.Location = new System.Drawing.Point(1181, 97);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(178, 390);
-            this.groupBox8.TabIndex = 2;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Sunday";
+            this.gbSunday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbSunday.Controls.Add(this.lblDateSun);
+            this.gbSunday.Controls.Add(this.pnlEvenSunday);
+            this.gbSunday.Controls.Add(this.pnlNoonSunday);
+            this.gbSunday.Controls.Add(this.pnlMornSunday);
+            this.gbSunday.Location = new System.Drawing.Point(1118, 11);
+            this.gbSunday.Name = "gbSunday";
+            this.gbSunday.Size = new System.Drawing.Size(178, 390);
+            this.gbSunday.TabIndex = 2;
+            this.gbSunday.TabStop = false;
+            this.gbSunday.Text = "Sunday";
             // 
-            // panel19
+            // lblDateSun
             // 
-            this.panel19.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel19.Location = new System.Drawing.Point(6, 259);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(164, 100);
-            this.panel19.TabIndex = 1;
+            this.lblDateSun.AutoSize = true;
+            this.lblDateSun.Location = new System.Drawing.Point(6, 24);
+            this.lblDateSun.Name = "lblDateSun";
+            this.lblDateSun.Size = new System.Drawing.Size(54, 17);
+            this.lblDateSun.TabIndex = 14;
+            this.lblDateSun.Text = "label12";
             // 
-            // panel20
+            // pnlEvenSunday
             // 
-            this.panel20.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel20.Location = new System.Drawing.Point(6, 153);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(164, 100);
-            this.panel20.TabIndex = 1;
+            this.pnlEvenSunday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenSunday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenSunday.Name = "pnlEvenSunday";
+            this.pnlEvenSunday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenSunday.TabIndex = 1;
+            this.pnlEvenSunday.Click += new System.EventHandler(this.pnlEvenSunday_Click);
             // 
-            // panel21
+            // pnlNoonSunday
             // 
-            this.panel21.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel21.Location = new System.Drawing.Point(7, 47);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(163, 100);
-            this.panel21.TabIndex = 0;
+            this.pnlNoonSunday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonSunday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonSunday.Name = "pnlNoonSunday";
+            this.pnlNoonSunday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonSunday.TabIndex = 1;
+            this.pnlNoonSunday.Click += new System.EventHandler(this.pnlNoonSunday_Click);
             // 
-            // groupBox7
+            // pnlMornSunday
             // 
-            this.groupBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox7.Controls.Add(this.panel16);
-            this.groupBox7.Controls.Add(this.panel17);
-            this.groupBox7.Controls.Add(this.panel18);
-            this.groupBox7.Location = new System.Drawing.Point(997, 97);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(178, 390);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Saturday";
+            this.pnlMornSunday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMornSunday.Location = new System.Drawing.Point(7, 47);
+            this.pnlMornSunday.Name = "pnlMornSunday";
+            this.pnlMornSunday.Size = new System.Drawing.Size(163, 100);
+            this.pnlMornSunday.TabIndex = 0;
+            this.pnlMornSunday.Click += new System.EventHandler(this.pnlMornSunday_Click);
             // 
-            // panel16
+            // gbSaturday
             // 
-            this.panel16.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel16.Location = new System.Drawing.Point(6, 259);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(164, 100);
-            this.panel16.TabIndex = 1;
+            this.gbSaturday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbSaturday.Controls.Add(this.lblDateSat);
+            this.gbSaturday.Controls.Add(this.pnlEvenSaturday);
+            this.gbSaturday.Controls.Add(this.pnlNoonSaturday);
+            this.gbSaturday.Controls.Add(this.pnlMornSaturday);
+            this.gbSaturday.Location = new System.Drawing.Point(933, 11);
+            this.gbSaturday.Name = "gbSaturday";
+            this.gbSaturday.Size = new System.Drawing.Size(178, 390);
+            this.gbSaturday.TabIndex = 2;
+            this.gbSaturday.TabStop = false;
+            this.gbSaturday.Text = "Saturday";
             // 
-            // panel17
+            // lblDateSat
             // 
-            this.panel17.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel17.Location = new System.Drawing.Point(6, 153);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(164, 100);
-            this.panel17.TabIndex = 1;
+            this.lblDateSat.AutoSize = true;
+            this.lblDateSat.Location = new System.Drawing.Point(6, 24);
+            this.lblDateSat.Name = "lblDateSat";
+            this.lblDateSat.Size = new System.Drawing.Size(54, 17);
+            this.lblDateSat.TabIndex = 13;
+            this.lblDateSat.Text = "label11";
             // 
-            // panel18
+            // pnlEvenSaturday
             // 
-            this.panel18.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel18.Location = new System.Drawing.Point(7, 47);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(163, 100);
-            this.panel18.TabIndex = 0;
+            this.pnlEvenSaturday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenSaturday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenSaturday.Name = "pnlEvenSaturday";
+            this.pnlEvenSaturday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenSaturday.TabIndex = 1;
+            this.pnlEvenSaturday.Click += new System.EventHandler(this.pnlEvenSaturday_Click);
             // 
-            // groupBox6
+            // pnlNoonSaturday
             // 
-            this.groupBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox6.Controls.Add(this.panel13);
-            this.groupBox6.Controls.Add(this.panel14);
-            this.groupBox6.Controls.Add(this.panel15);
-            this.groupBox6.Location = new System.Drawing.Point(813, 97);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(178, 390);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Friday";
+            this.pnlNoonSaturday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonSaturday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonSaturday.Name = "pnlNoonSaturday";
+            this.pnlNoonSaturday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonSaturday.TabIndex = 1;
+            this.pnlNoonSaturday.Click += new System.EventHandler(this.pnlNoonSaturday_Click);
             // 
-            // panel13
+            // pnlMornSaturday
             // 
-            this.panel13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel13.Location = new System.Drawing.Point(6, 259);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(164, 100);
-            this.panel13.TabIndex = 1;
+            this.pnlMornSaturday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMornSaturday.Location = new System.Drawing.Point(7, 47);
+            this.pnlMornSaturday.Name = "pnlMornSaturday";
+            this.pnlMornSaturday.Size = new System.Drawing.Size(163, 100);
+            this.pnlMornSaturday.TabIndex = 0;
+            this.pnlMornSaturday.Click += new System.EventHandler(this.pnlMornSaturday_Click);
             // 
-            // panel14
+            // gbFriday
             // 
-            this.panel14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel14.Location = new System.Drawing.Point(6, 153);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(164, 100);
-            this.panel14.TabIndex = 1;
+            this.gbFriday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbFriday.Controls.Add(this.lblDateFri);
+            this.gbFriday.Controls.Add(this.pnlEvenFriday);
+            this.gbFriday.Controls.Add(this.pnlNoonFriday);
+            this.gbFriday.Controls.Add(this.pnlMornFriday);
+            this.gbFriday.Location = new System.Drawing.Point(749, 11);
+            this.gbFriday.Name = "gbFriday";
+            this.gbFriday.Size = new System.Drawing.Size(178, 390);
+            this.gbFriday.TabIndex = 6;
+            this.gbFriday.TabStop = false;
+            this.gbFriday.Text = "Friday";
             // 
-            // panel15
+            // lblDateFri
             // 
-            this.panel15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel15.Location = new System.Drawing.Point(7, 47);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(163, 100);
-            this.panel15.TabIndex = 0;
+            this.lblDateFri.AutoSize = true;
+            this.lblDateFri.Location = new System.Drawing.Point(6, 24);
+            this.lblDateFri.Name = "lblDateFri";
+            this.lblDateFri.Size = new System.Drawing.Size(54, 17);
+            this.lblDateFri.TabIndex = 12;
+            this.lblDateFri.Text = "label10";
             // 
-            // groupBox5
+            // pnlEvenFriday
             // 
-            this.groupBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox5.Controls.Add(this.panel10);
-            this.groupBox5.Controls.Add(this.panel11);
-            this.groupBox5.Controls.Add(this.panel12);
-            this.groupBox5.Location = new System.Drawing.Point(629, 97);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(178, 390);
-            this.groupBox5.TabIndex = 5;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Thursday";
+            this.pnlEvenFriday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenFriday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenFriday.Name = "pnlEvenFriday";
+            this.pnlEvenFriday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenFriday.TabIndex = 1;
+            this.pnlEvenFriday.Click += new System.EventHandler(this.pnlEvenFriday_Click);
             // 
-            // panel10
+            // pnlNoonFriday
             // 
-            this.panel10.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel10.Location = new System.Drawing.Point(6, 259);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(164, 100);
-            this.panel10.TabIndex = 1;
+            this.pnlNoonFriday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonFriday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonFriday.Name = "pnlNoonFriday";
+            this.pnlNoonFriday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonFriday.TabIndex = 1;
+            this.pnlNoonFriday.Click += new System.EventHandler(this.pnlNoonFriday_Click);
             // 
-            // panel11
+            // pnlMornFriday
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel11.Location = new System.Drawing.Point(6, 153);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(164, 100);
-            this.panel11.TabIndex = 1;
+            this.pnlMornFriday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMornFriday.Location = new System.Drawing.Point(7, 47);
+            this.pnlMornFriday.Name = "pnlMornFriday";
+            this.pnlMornFriday.Size = new System.Drawing.Size(163, 100);
+            this.pnlMornFriday.TabIndex = 0;
+            this.pnlMornFriday.Click += new System.EventHandler(this.pnlMornFriday_Click);
             // 
-            // panel12
+            // gbThursday
             // 
-            this.panel12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel12.Location = new System.Drawing.Point(7, 47);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(163, 100);
-            this.panel12.TabIndex = 0;
+            this.gbThursday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbThursday.Controls.Add(this.lblDateThu);
+            this.gbThursday.Controls.Add(this.pnlEvenThursday);
+            this.gbThursday.Controls.Add(this.pnlNoonThursday);
+            this.gbThursday.Controls.Add(this.pnlMornThursday);
+            this.gbThursday.Location = new System.Drawing.Point(565, 11);
+            this.gbThursday.Name = "gbThursday";
+            this.gbThursday.Size = new System.Drawing.Size(178, 390);
+            this.gbThursday.TabIndex = 5;
+            this.gbThursday.TabStop = false;
+            this.gbThursday.Text = "Thursday";
             // 
-            // groupBox4
+            // lblDateThu
             // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox4.Controls.Add(this.panel7);
-            this.groupBox4.Controls.Add(this.panel8);
-            this.groupBox4.Controls.Add(this.panel9);
-            this.groupBox4.Location = new System.Drawing.Point(445, 97);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(178, 390);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Wednesday";
+            this.lblDateThu.AutoSize = true;
+            this.lblDateThu.Location = new System.Drawing.Point(10, 27);
+            this.lblDateThu.Name = "lblDateThu";
+            this.lblDateThu.Size = new System.Drawing.Size(46, 17);
+            this.lblDateThu.TabIndex = 12;
+            this.lblDateThu.Text = "label9";
             // 
-            // panel7
+            // pnlEvenThursday
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel7.Location = new System.Drawing.Point(6, 259);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(164, 100);
-            this.panel7.TabIndex = 1;
+            this.pnlEvenThursday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenThursday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenThursday.Name = "pnlEvenThursday";
+            this.pnlEvenThursday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenThursday.TabIndex = 1;
+            this.pnlEvenThursday.Click += new System.EventHandler(this.pnlEvenThursday_Click);
             // 
-            // panel8
+            // pnlNoonThursday
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel8.Location = new System.Drawing.Point(6, 153);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(164, 100);
-            this.panel8.TabIndex = 1;
+            this.pnlNoonThursday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonThursday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonThursday.Name = "pnlNoonThursday";
+            this.pnlNoonThursday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonThursday.TabIndex = 1;
+            this.pnlNoonThursday.Click += new System.EventHandler(this.pnlNoonThursday_Click);
             // 
-            // panel9
+            // pnlMornThursday
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel9.Location = new System.Drawing.Point(7, 47);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(163, 100);
-            this.panel9.TabIndex = 0;
+            this.pnlMornThursday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMornThursday.Location = new System.Drawing.Point(7, 47);
+            this.pnlMornThursday.Name = "pnlMornThursday";
+            this.pnlMornThursday.Size = new System.Drawing.Size(163, 100);
+            this.pnlMornThursday.TabIndex = 0;
+            this.pnlMornThursday.Click += new System.EventHandler(this.pnlMornThursday_Click);
             // 
-            // groupBox3
+            // gbWednesday
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.Controls.Add(this.panel4);
-            this.groupBox3.Controls.Add(this.panel5);
-            this.groupBox3.Controls.Add(this.panel6);
-            this.groupBox3.Location = new System.Drawing.Point(261, 97);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(178, 390);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tuesday";
+            this.gbWednesday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbWednesday.Controls.Add(this.lblDateWed);
+            this.gbWednesday.Controls.Add(this.pnlEvenWednesday);
+            this.gbWednesday.Controls.Add(this.pnlNoonWednesday);
+            this.gbWednesday.Controls.Add(this.pnlMornWednesday);
+            this.gbWednesday.Location = new System.Drawing.Point(381, 11);
+            this.gbWednesday.Name = "gbWednesday";
+            this.gbWednesday.Size = new System.Drawing.Size(178, 390);
+            this.gbWednesday.TabIndex = 2;
+            this.gbWednesday.TabStop = false;
+            this.gbWednesday.Text = "Wednesday";
             // 
-            // panel4
+            // lblDateWed
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel4.Location = new System.Drawing.Point(6, 259);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(164, 100);
-            this.panel4.TabIndex = 1;
+            this.lblDateWed.AutoSize = true;
+            this.lblDateWed.Location = new System.Drawing.Point(6, 27);
+            this.lblDateWed.Name = "lblDateWed";
+            this.lblDateWed.Size = new System.Drawing.Size(46, 17);
+            this.lblDateWed.TabIndex = 4;
+            this.lblDateWed.Text = "label8";
             // 
-            // panel5
+            // pnlEvenWednesday
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel5.Location = new System.Drawing.Point(6, 153);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(164, 100);
-            this.panel5.TabIndex = 1;
+            this.pnlEvenWednesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenWednesday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenWednesday.Name = "pnlEvenWednesday";
+            this.pnlEvenWednesday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenWednesday.TabIndex = 1;
+            this.pnlEvenWednesday.Click += new System.EventHandler(this.pnlEvenWednesday_Click);
             // 
-            // panel6
+            // pnlNoonWednesday
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel6.Location = new System.Drawing.Point(7, 47);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(163, 100);
-            this.panel6.TabIndex = 0;
+            this.pnlNoonWednesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonWednesday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonWednesday.Name = "pnlNoonWednesday";
+            this.pnlNoonWednesday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonWednesday.TabIndex = 1;
+            this.pnlNoonWednesday.Click += new System.EventHandler(this.pnlNoonWednesday_Click);
+            // 
+            // pnlMornWednesday
+            // 
+            this.pnlMornWednesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMornWednesday.Location = new System.Drawing.Point(7, 47);
+            this.pnlMornWednesday.Name = "pnlMornWednesday";
+            this.pnlMornWednesday.Size = new System.Drawing.Size(163, 100);
+            this.pnlMornWednesday.TabIndex = 0;
+            this.pnlMornWednesday.Click += new System.EventHandler(this.pnlMornWednesday_Click);
+            // 
+            // gbTuesday
+            // 
+            this.gbTuesday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbTuesday.Controls.Add(this.lblDateTue);
+            this.gbTuesday.Controls.Add(this.pnlEvenTuesday);
+            this.gbTuesday.Controls.Add(this.pnlNoonTuesday);
+            this.gbTuesday.Controls.Add(this.pnlMornTuesday);
+            this.gbTuesday.Location = new System.Drawing.Point(197, 11);
+            this.gbTuesday.Name = "gbTuesday";
+            this.gbTuesday.Size = new System.Drawing.Size(178, 390);
+            this.gbTuesday.TabIndex = 2;
+            this.gbTuesday.TabStop = false;
+            this.gbTuesday.Text = "Tuesday";
+            // 
+            // lblDateTue
+            // 
+            this.lblDateTue.AutoSize = true;
+            this.lblDateTue.Location = new System.Drawing.Point(6, 24);
+            this.lblDateTue.Name = "lblDateTue";
+            this.lblDateTue.Size = new System.Drawing.Size(46, 17);
+            this.lblDateTue.TabIndex = 3;
+            this.lblDateTue.Text = "label7";
+            // 
+            // pnlEvenTuesday
+            // 
+            this.pnlEvenTuesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenTuesday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenTuesday.Name = "pnlEvenTuesday";
+            this.pnlEvenTuesday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenTuesday.TabIndex = 1;
+            this.pnlEvenTuesday.Click += new System.EventHandler(this.pnlEvenTuesday_Click);
+            // 
+            // pnlNoonTuesday
+            // 
+            this.pnlNoonTuesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonTuesday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonTuesday.Name = "pnlNoonTuesday";
+            this.pnlNoonTuesday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonTuesday.TabIndex = 1;
+            this.pnlNoonTuesday.Click += new System.EventHandler(this.pnlNoonTuesday_Click);
+            // 
+            // pnlMornTuesday
+            // 
+            this.pnlMornTuesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMornTuesday.Location = new System.Drawing.Point(7, 47);
+            this.pnlMornTuesday.Name = "pnlMornTuesday";
+            this.pnlMornTuesday.Size = new System.Drawing.Size(163, 100);
+            this.pnlMornTuesday.TabIndex = 0;
+            this.pnlMornTuesday.Click += new System.EventHandler(this.pnlMornTuesday_Click);
             // 
             // label1
             // 
@@ -356,10 +494,10 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Calendar week:";
             // 
-            // comboBox1
+            // cbCalWeek
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbCalWeek.FormattingEnabled = true;
+            this.cbCalWeek.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -412,39 +550,53 @@
             "50",
             "51",
             "52"});
-            this.comboBox1.Location = new System.Drawing.Point(191, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(64, 24);
-            this.comboBox1.TabIndex = 3;
+            this.cbCalWeek.Location = new System.Drawing.Point(191, 61);
+            this.cbCalWeek.Name = "cbCalWeek";
+            this.cbCalWeek.Size = new System.Drawing.Size(64, 24);
+            this.cbCalWeek.TabIndex = 3;
+            this.cbCalWeek.SelectedIndexChanged += new System.EventHandler(this.cbCalWeek_SelectedIndexChanged);
             // 
-            // groupBox2
+            // gbMonday
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.panel3);
-            this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(this.pnlMornMonday);
-            this.groupBox2.Location = new System.Drawing.Point(77, 97);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(178, 390);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Monday";
+            this.gbMonday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbMonday.Controls.Add(this.lblDateMon);
+            this.gbMonday.Controls.Add(this.pnlEvenMonday);
+            this.gbMonday.Controls.Add(this.pnlNoonMonday);
+            this.gbMonday.Controls.Add(this.pnlMornMonday);
+            this.gbMonday.Location = new System.Drawing.Point(13, 11);
+            this.gbMonday.Name = "gbMonday";
+            this.gbMonday.Size = new System.Drawing.Size(178, 390);
+            this.gbMonday.TabIndex = 0;
+            this.gbMonday.TabStop = false;
+            this.gbMonday.Text = "Monday";
+            this.gbMonday.Enter += new System.EventHandler(this.gbMonday_Enter);
             // 
-            // panel3
+            // lblDateMon
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel3.Location = new System.Drawing.Point(6, 259);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(164, 100);
-            this.panel3.TabIndex = 1;
+            this.lblDateMon.AutoSize = true;
+            this.lblDateMon.Location = new System.Drawing.Point(7, 24);
+            this.lblDateMon.Name = "lblDateMon";
+            this.lblDateMon.Size = new System.Drawing.Size(46, 17);
+            this.lblDateMon.TabIndex = 2;
+            this.lblDateMon.Text = "label6";
             // 
-            // panel2
+            // pnlEvenMonday
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Location = new System.Drawing.Point(6, 153);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(164, 100);
-            this.panel2.TabIndex = 1;
+            this.pnlEvenMonday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlEvenMonday.Location = new System.Drawing.Point(6, 259);
+            this.pnlEvenMonday.Name = "pnlEvenMonday";
+            this.pnlEvenMonday.Size = new System.Drawing.Size(164, 100);
+            this.pnlEvenMonday.TabIndex = 1;
+            this.pnlEvenMonday.Click += new System.EventHandler(this.pnlEvenMonday_Click);
+            // 
+            // pnlNoonMonday
+            // 
+            this.pnlNoonMonday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlNoonMonday.Location = new System.Drawing.Point(6, 153);
+            this.pnlNoonMonday.Name = "pnlNoonMonday";
+            this.pnlNoonMonday.Size = new System.Drawing.Size(164, 100);
+            this.pnlNoonMonday.TabIndex = 1;
+            this.pnlNoonMonday.Click += new System.EventHandler(this.pnlNoonMonday_Click);
             // 
             // pnlMornMonday
             // 
@@ -455,85 +607,107 @@
             this.pnlMornMonday.TabIndex = 0;
             this.pnlMornMonday.Click += new System.EventHandler(this.pnlMornMonday_Click);
             // 
-            // label5
+            // pnlDates
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Department:";
+            this.pnlDates.Controls.Add(this.gbMonday);
+            this.pnlDates.Controls.Add(this.gbTuesday);
+            this.pnlDates.Controls.Add(this.gbWednesday);
+            this.pnlDates.Controls.Add(this.gbThursday);
+            this.pnlDates.Controls.Add(this.gbFriday);
+            this.pnlDates.Controls.Add(this.gbSaturday);
+            this.pnlDates.Controls.Add(this.gbSunday);
+            this.pnlDates.Location = new System.Drawing.Point(64, 113);
+            this.pnlDates.Name = "pnlDates";
+            this.pnlDates.Size = new System.Drawing.Size(1296, 407);
+            this.pnlDates.TabIndex = 14;
             // 
-            // comboBox2
+            // btnLoadSchedule
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Depo",
-            "HR",
-            "Admin"});
-            this.comboBox2.Location = new System.Drawing.Point(162, 28);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(93, 24);
-            this.comboBox2.TabIndex = 11;
+            this.btnLoadSchedule.Location = new System.Drawing.Point(261, 90);
+            this.btnLoadSchedule.Name = "btnLoadSchedule";
+            this.btnLoadSchedule.Size = new System.Drawing.Size(178, 23);
+            this.btnLoadSchedule.TabIndex = 15;
+            this.btnLoadSchedule.Text = "Load Schedule";
+            this.btnLoadSchedule.UseVisualStyleBackColor = true;
+            this.btnLoadSchedule.Click += new System.EventHandler(this.btnLoadSchedule_Click);
             // 
             // Scheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 548);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1370, 583);
+            this.Controls.Add(this.gbGeneralScheduler);
             this.Name = "Scheduler";
             this.Text = "Scheduler";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.gbGeneralScheduler.ResumeLayout(false);
+            this.gbGeneralScheduler.PerformLayout();
+            this.gbSunday.ResumeLayout(false);
+            this.gbSunday.PerformLayout();
+            this.gbSaturday.ResumeLayout(false);
+            this.gbSaturday.PerformLayout();
+            this.gbFriday.ResumeLayout(false);
+            this.gbFriday.PerformLayout();
+            this.gbThursday.ResumeLayout(false);
+            this.gbThursday.PerformLayout();
+            this.gbWednesday.ResumeLayout(false);
+            this.gbWednesday.PerformLayout();
+            this.gbTuesday.ResumeLayout(false);
+            this.gbTuesday.PerformLayout();
+            this.gbMonday.ResumeLayout(false);
+            this.gbMonday.PerformLayout();
+            this.pnlDates.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.GroupBox gbGeneralScheduler;
+        private System.Windows.Forms.GroupBox gbSunday;
+        private System.Windows.Forms.Panel pnlEvenSunday;
+        private System.Windows.Forms.Panel pnlNoonSunday;
+        private System.Windows.Forms.Panel pnlMornSunday;
+        private System.Windows.Forms.GroupBox gbSaturday;
+        private System.Windows.Forms.Panel pnlEvenSaturday;
+        private System.Windows.Forms.Panel pnlNoonSaturday;
+        private System.Windows.Forms.Panel pnlMornSaturday;
+        private System.Windows.Forms.GroupBox gbFriday;
+        private System.Windows.Forms.Panel pnlEvenFriday;
+        private System.Windows.Forms.Panel pnlNoonFriday;
+        private System.Windows.Forms.Panel pnlMornFriday;
+        private System.Windows.Forms.GroupBox gbThursday;
+        private System.Windows.Forms.Panel pnlEvenThursday;
+        private System.Windows.Forms.Panel pnlNoonThursday;
+        private System.Windows.Forms.Panel pnlMornThursday;
+        private System.Windows.Forms.GroupBox gbWednesday;
+        private System.Windows.Forms.Panel pnlEvenWednesday;
+        private System.Windows.Forms.Panel pnlNoonWednesday;
+        private System.Windows.Forms.Panel pnlMornWednesday;
+        private System.Windows.Forms.GroupBox gbTuesday;
+        private System.Windows.Forms.Panel pnlEvenTuesday;
+        private System.Windows.Forms.Panel pnlNoonTuesday;
+        private System.Windows.Forms.Panel pnlMornTuesday;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbCalWeek;
+        private System.Windows.Forms.GroupBox gbMonday;
+        private System.Windows.Forms.Panel pnlEvenMonday;
+        private System.Windows.Forms.Panel pnlNoonMonday;
         private System.Windows.Forms.Panel pnlMornMonday;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDateSun;
+        private System.Windows.Forms.Label lblDateSat;
+        private System.Windows.Forms.Label lblDateFri;
+        private System.Windows.Forms.Label lblDateThu;
+        private System.Windows.Forms.Label lblDateWed;
+        private System.Windows.Forms.Label lblDateTue;
+        private System.Windows.Forms.Label lblDateMon;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbYear;
+        private System.Windows.Forms.Panel pnlDates;
+        private System.Windows.Forms.Button btnLoadSchedule;
     }
 }
