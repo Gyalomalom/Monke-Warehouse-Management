@@ -15,15 +15,39 @@ namespace Employee_Management_Alpha_1._0
     public partial class Form1 : Form
     {
         Stock stock;
-
+        public static string loggedUser;
+        
         public Form1()
         {
             InitializeComponent();
             stock = new Stock();
-            
+            loggedUser = LoginForm.userType;
+            MessageBox.Show(loggedUser);
+            userAccess();
+
         }
         
-
+        public void userAccess()
+        {
+            if (loggedUser == "Admin")
+            {
+                btnStockMan.Visible = false;
+            }
+            if(loggedUser == "Management")
+            {
+                btnDepMan.Visible = false;
+                btnEmpMan.Visible = false;
+            }
+            if(loggedUser == "Stock")
+            {
+                btnDepMan.Visible = false;
+                btnEmpMan.Visible = false;
+                btnAddStock.Visible = false;
+                btnBuyStock.Visible = false;
+                btnRemoveStock.Visible = false;
+            }
+        }
+     
 
         public void hideSubmenus() //method for hiding submenus
         {
@@ -46,7 +70,9 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnEmpMan_Click(object sender, EventArgs e) 
         {
-            showSubmenus(panelEmpSubmenu);
+
+            
+                showSubmenus(panelEmpSubmenu);
         }
         #region EmpSub 
         private void BtnModEmp_Click(object sender, EventArgs e) //when programming submenu buttons, always leave hideSubmenus() method as last line of code
