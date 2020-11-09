@@ -170,5 +170,29 @@ namespace Employee_Management_Alpha_1._0
             openChildForm(new AddShift());
             hideSubmenus();
         }
+
+        private void BtnBuyStock_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BuyStock()); // creates and opens stock info
+            hideSubmenus();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Stock_information()); // creates and opens stock info
+            hideSubmenus();
+        }
+
+        private void BtnBuyStock_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new BuyStock()); // creates and opens stock info
+            hideSubmenus();
+        }
+
+        private void BtnStockRequests_Click(object sender, EventArgs e)
+        {
+            openChildForm(new StockRequest()); // creates and opens stock info
+            hideSubmenus();
+        }
     }
 }

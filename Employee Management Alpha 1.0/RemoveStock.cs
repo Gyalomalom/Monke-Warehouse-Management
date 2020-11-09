@@ -17,6 +17,7 @@ namespace Employee_Management_Alpha_1._0
         const string pattern = @"([^\s]+)"; //pattern to get the first string before a space
         Regex rg = new Regex(pattern);
         Stock stock;
+        int Quantity;
 
         public RemoveStock()
         {
@@ -88,6 +89,55 @@ namespace Employee_Management_Alpha_1._0
                     tbID.Text = match.Value;
                 }
             }
+        }
+
+        private void BtnBuyStock_Click(object sender, EventArgs e)
+        {
+            
+            //Item item;
+            //item = new Item();
+            //item = stock.GetItemsById(Convert.ToInt32(tbID.Text));
+            //int Quantity = item.quantity;
+            //int amount = Convert.ToInt32(numUpDownAmount.Value);
+
+            //string id = tbID.Text;
+            
+
+            //if (tbID.Text == "")
+            //{
+            //    MessageBox.Show("An item must be selected before performing this opperation!");
+            //}
+            //else
+            //{
+            //    if(Quantity >= 1)
+            //    {
+            //        stock.BuyItem(id, Quantity, amount);
+            //        string sales = stock.GetSales(Convert.ToInt32(id));
+            //        stock.AddSale(Convert.ToInt32(id), Convert.ToInt32(sales), Convert.ToInt32(numUpDownAmount.Value));
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No more items in stock");
+            //    }
+                
+            //}
+
+            
+            //StockList();
+            //tbID.Text = "";
+            //numUpDownAmount.Value = 1;
+
+
+
+
+        }
+
+        private void TbID_TextChanged(object sender, EventArgs e)
+        {
+            //Item item;
+            //item = new Item();
+            //item = stock.GetItemsById(Convert.ToInt32(tbID.Text));
+            //Quantity = item.quantity;
         }
     }
 }

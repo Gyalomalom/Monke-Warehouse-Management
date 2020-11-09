@@ -31,6 +31,8 @@ namespace Employee_Management_Alpha_1._0
         public string status { get; set; }
         public string departmentName { get; set; }
 
+        public string tag { get; set; }
+
         //string first_name, string last_name, DateTime date_of_birth, string bsn, string postion, int workinghours, string phoneNr, string address, string email, string emergencyC, string emergencyR, string emergencyNr, string certifications, string languages, string contract, string duratio
         //properties
         public int Id
@@ -91,6 +93,12 @@ namespace Employee_Management_Alpha_1._0
         public Employee()
         {
 
+        }
+
+        public Employee(int id)
+        {
+            this.id = id;
+            
         }
 
         public Employee(int id, string first_name, string last_name, string status, string departmentName)
