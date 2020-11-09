@@ -113,5 +113,10 @@ namespace Employee_Management_Alpha_1._0
             tbNewPricePerUnit.Value = Convert.ToDecimal(item.pricePerUnit);
             tbNewQuantity.Text = Convert.ToString(item.quantity);
         }
+
+        private void LblItemName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

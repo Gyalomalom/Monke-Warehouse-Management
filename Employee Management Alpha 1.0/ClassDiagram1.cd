@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Employee_Management_Alpha_1._0.AddDepartment" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wUAAAAGAAGAEQAgAAAKEIABDAAAAAAABEICAEAAAAAA=</HashCode>
+      <FileName>AddDepartment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.AddEmployee" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cAAAFAEAICAAAJAAEACNAAqDAAAASACAEYJECAAoCAA=</HashCode>
+      <FileName>AddEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.AddShift" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAAAAABISAAABCCAgCAABIKAABAUAAAAIAgAAAACAA=</HashCode>
+      <FileName>AddShift.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.AddStock" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAACABECAEBBABAACAAAKKAAAAAYgAAKIAAAAAAAA=</HashCode>
+      <FileName>AddStock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.AllEmployees" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQEAAAJCEAABIQAiCBACgCAAAQUAAAAIIAAAAACAA=</HashCode>
+      <FileName>AllEmployees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Department_Management" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAgABgAACAQAwAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Department Management.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Department" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAggAAAAAAQAAAIEAIAgAAAAAAACAgA=</HashCode>
+      <FileName>Department.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.DepartmentInfo" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEABAAAAACAAURAAGACAAAACIAhIUAACAMAAABAAmAg=</HashCode>
+      <FileName>DepartmentInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Employee" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAEIAAAAAgQgoAAAAASAAQgIkAAAAAIgAAQEASgA=</HashCode>
+      <FileName>Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Employee_Management" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAACIIEAAAAQBAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Employee_Management.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.EmployeeChangeStatus" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAhCEAABIQAiDAACACAAAAUAAAAIAAAAAACAA=</HashCode>
+      <FileName>EmployeeChangeStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Form1" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAiEAghGARQEiiJCCAEgBeAMCAXIKIAkhAAABDgoE=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Form2" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAAAAAACAACACAAAAQAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Form2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Item" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAQAAAAEAACAAAAIgEAECgA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.LoginForm" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAACAAABAAAACAAAACAAQACAAAABAAAABAAAA=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Program" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.RemoveDepartment" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QGAAAAAAACAAIAIAAACAAAACAAAAUAAAAIAAAAAAEIA=</HashCode>
+      <FileName>RemoveDepartment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.RemoveEmployee" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAAAIAAmCAACACAAAAUAAAAIAAAAAACQQ=</HashCode>
+      <FileName>RemoveEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.RemoveStock" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAgCEABBAAAgCAQAECAAAAEIAAAIYAIAAAAAA=</HashCode>
+      <FileName>RemoveStock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Scheduler" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAQAACAAAACAAAAAAAAACAAAQD/AwA=</HashCode>
+      <FileName>Scheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Shift" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAAAAEAAAAAgAAAgAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Shift.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.ShiftManagement" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShiftManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Stock" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQACAACgEQAAIBAAAAAAAAAAAA=</HashCode>
+      <FileName>Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Stock_information" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAACABECEBBAQRBhCAEAEKBAAAEIAAAIIAIAAAAhA=</HashCode>
+      <FileName>Stock_information.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Stock_management" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stock_Management.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.UpdateInformation" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAABECIBAAABBACJEAAKAAAAAAQAAIAACAAAAgA=</HashCode>
+      <FileName>UpdateInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAIAAghAAAAAAREAAABQBAkAAgAAAAAAEAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee_Management_Alpha_1._0.Properties.Settings" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Employee_Management_Alpha_1._0.DepartmentStatus" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>DepartmentStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Employee_Management_Alpha_1._0.EmployeeStatus" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>EmployeeStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Employee_Management_Alpha_1._0.Tod" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAACBAAAAAAA=</HashCode>
+      <FileName>Tod.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

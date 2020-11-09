@@ -40,8 +40,10 @@
             this.tbNewPricePerUnit = new System.Windows.Forms.NumericUpDown();
             this.tbNewQuantity = new System.Windows.Forms.NumericUpDown();
             this.tbNewItemName = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbNewPricePerUnit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbNewQuantity)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbStockInfo
@@ -89,7 +91,7 @@
             // 
             // tbNewCategory
             // 
-            this.tbNewCategory.Location = new System.Drawing.Point(135, 129);
+            this.tbNewCategory.Location = new System.Drawing.Point(129, 106);
             this.tbNewCategory.Name = "tbNewCategory";
             this.tbNewCategory.Size = new System.Drawing.Size(120, 20);
             this.tbNewCategory.TabIndex = 63;
@@ -100,7 +102,7 @@
             this.lblCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCategory.Location = new System.Drawing.Point(38, 129);
+            this.lblCategory.Location = new System.Drawing.Point(32, 106);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(55, 15);
             this.lblCategory.TabIndex = 59;
@@ -109,20 +111,23 @@
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
+            this.lblItemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblItemName.Location = new System.Drawing.Point(38, 51);
+            this.lblItemName.Location = new System.Drawing.Point(32, 28);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(71, 15);
             this.lblItemName.TabIndex = 60;
             this.lblItemName.Text = "Item Name:";
+            this.lblItemName.Click += new System.EventHandler(this.LblItemName_Click);
             // 
             // Label4
             // 
             this.Label4.AutoSize = true;
+            this.Label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Label4.Location = new System.Drawing.Point(39, 76);
+            this.Label4.Location = new System.Drawing.Point(33, 53);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(54, 15);
             this.Label4.TabIndex = 62;
@@ -131,9 +136,10 @@
             // lblPricePerUnit
             // 
             this.lblPricePerUnit.AutoSize = true;
+            this.lblPricePerUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.lblPricePerUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPricePerUnit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPricePerUnit.Location = new System.Drawing.Point(38, 102);
+            this.lblPricePerUnit.Location = new System.Drawing.Point(32, 79);
             this.lblPricePerUnit.Name = "lblPricePerUnit";
             this.lblPricePerUnit.Size = new System.Drawing.Size(82, 15);
             this.lblPricePerUnit.TabIndex = 61;
@@ -142,7 +148,7 @@
             // tbNewPricePerUnit
             // 
             this.tbNewPricePerUnit.DecimalPlaces = 2;
-            this.tbNewPricePerUnit.Location = new System.Drawing.Point(135, 102);
+            this.tbNewPricePerUnit.Location = new System.Drawing.Point(129, 79);
             this.tbNewPricePerUnit.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -154,17 +160,38 @@
             // 
             // tbNewQuantity
             // 
-            this.tbNewQuantity.Location = new System.Drawing.Point(135, 76);
+            this.tbNewQuantity.Location = new System.Drawing.Point(129, 53);
             this.tbNewQuantity.Name = "tbNewQuantity";
             this.tbNewQuantity.Size = new System.Drawing.Size(120, 20);
             this.tbNewQuantity.TabIndex = 57;
             // 
             // tbNewItemName
             // 
-            this.tbNewItemName.Location = new System.Drawing.Point(135, 50);
+            this.tbNewItemName.Location = new System.Drawing.Point(129, 27);
             this.tbNewItemName.Name = "tbNewItemName";
             this.tbNewItemName.Size = new System.Drawing.Size(120, 20);
             this.tbNewItemName.TabIndex = 56;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.groupBox1.Controls.Add(this.tbNewItemName);
+            this.groupBox1.Controls.Add(this.tbNewCategory);
+            this.groupBox1.Controls.Add(this.tbNewQuantity);
+            this.groupBox1.Controls.Add(this.lblCategory);
+            this.groupBox1.Controls.Add(this.tbNewPricePerUnit);
+            this.groupBox1.Controls.Add(this.lblItemName);
+            this.groupBox1.Controls.Add(this.lblPricePerUnit);
+            this.groupBox1.Controls.Add(this.Label4);
+            this.groupBox1.ForeColor = System.Drawing.Color.Silver;
+            this.groupBox1.Location = new System.Drawing.Point(60, 25);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(292, 142);
+            this.groupBox1.TabIndex = 64;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Item details:";
             // 
             // Stock_information
             // 
@@ -172,14 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(616, 396);
-            this.Controls.Add(this.tbNewCategory);
-            this.Controls.Add(this.lblCategory);
-            this.Controls.Add(this.lblItemName);
-            this.Controls.Add(this.Label4);
-            this.Controls.Add(this.lblPricePerUnit);
-            this.Controls.Add(this.tbNewPricePerUnit);
-            this.Controls.Add(this.tbNewQuantity);
-            this.Controls.Add(this.tbNewItemName);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lbStockInfo);
@@ -189,6 +209,8 @@
             this.Load += new System.EventHandler(this.Stock_information_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.tbNewPricePerUnit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbNewQuantity)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +230,6 @@
         private System.Windows.Forms.NumericUpDown tbNewPricePerUnit;
         private System.Windows.Forms.NumericUpDown tbNewQuantity;
         private System.Windows.Forms.TextBox tbNewItemName;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

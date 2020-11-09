@@ -63,7 +63,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_back_24;
             this.btnClose.Location = new System.Drawing.Point(9, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 27);
             this.btnClose.TabIndex = 2;
@@ -76,6 +76,7 @@
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(107, 20);
             this.tbID.TabIndex = 46;
+            this.tbID.TextChanged += new System.EventHandler(this.TbID_TextChanged);
             // 
             // label1
             // 
