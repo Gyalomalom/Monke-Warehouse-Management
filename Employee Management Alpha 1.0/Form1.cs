@@ -22,7 +22,7 @@ namespace Employee_Management_Alpha_1._0
             InitializeComponent();
             stock = new Stock();
             loggedUser = LoginForm.userType;
-            MessageBox.Show(loggedUser);
+            
             userAccess();
 
         }
@@ -163,7 +163,10 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnCloseApp_Click(object sender, EventArgs e) //close application
         {
-            Application.Exit();
+            this.Hide();
+            LoginForm main = new LoginForm();
+            main.Closed += (s, args) => this.Close();
+            main.Show();
         }
 
         private void PanelChildForm_Paint(object sender, PaintEventArgs e)
