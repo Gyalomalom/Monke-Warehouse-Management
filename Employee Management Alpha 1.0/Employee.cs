@@ -30,6 +30,7 @@ namespace Employee_Management_Alpha_1._0
         public string duration { get; set; }
         public string status { get; set; }
         public string departmentName { get; set; }
+        public string password { get; set; }
 
         public string tag { get; set; }
 
@@ -48,6 +49,19 @@ namespace Employee_Management_Alpha_1._0
         public string Lastname
         {
             get { return this.last_name; }
+        }
+
+        public string Email
+        {
+            get { return this.email; }
+        }
+        public string Position
+        {
+            get { return this.postion; }
+        }
+        public string Password
+        {
+            get { return this.password; }
         }
 
         //constructors

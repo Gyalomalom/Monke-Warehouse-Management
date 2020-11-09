@@ -72,6 +72,20 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
+        /*public string GetEmployeeAccount(string email, string password)
+        {
+            if (GetAllEmployees().Count > 0)//For cycle runs into an error if list is empty, so we check it here and skip the cycle if it's empty
+            {
+                for (int i = 0; i < GetAllEmployees().Count; i++)
+                {
+                    if (GetAllEmployees()[i].email == email && GetAllEmployees()[i].password == password)
+                    {
+                        return GetAllEmployees()[i].postion;
+                    }
+                }
+            }
+            return null;
+        }*/
 
         public void RemoveEmployeebyId (string id)
         {
