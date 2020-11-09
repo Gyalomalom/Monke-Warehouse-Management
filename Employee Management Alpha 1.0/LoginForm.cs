@@ -61,5 +61,10 @@ namespace Employee_Management_Alpha_1._0
             }
             conn.Close();
         }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

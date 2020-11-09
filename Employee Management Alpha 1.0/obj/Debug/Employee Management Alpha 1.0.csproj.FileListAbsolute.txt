@@ -205,7 +205,5 @@ C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\ob
 C:\Users\Stork v1.0\Source\Repos\PROJECTPERFECT\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.StockRequest.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.BuyStock.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.StockRequest.resources
-C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.BuyStock.resources
-C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.ScheduleListForm.resources
-C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Scheduler.resources
-C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.StockRequest.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.ScheduleListForm.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.Scheduler.resources
