@@ -100,7 +100,7 @@
             this.gbGeneralScheduler.Controls.Add(this.label1);
             this.gbGeneralScheduler.Controls.Add(this.cbCalWeek);
             this.gbGeneralScheduler.Controls.Add(this.pnlDates);
-            this.gbGeneralScheduler.Location = new System.Drawing.Point(7, 12);
+            this.gbGeneralScheduler.Location = new System.Drawing.Point(6, 16);
             this.gbGeneralScheduler.Name = "gbGeneralScheduler";
             this.gbGeneralScheduler.Size = new System.Drawing.Size(1366, 550);
             this.gbGeneralScheduler.TabIndex = 0;
