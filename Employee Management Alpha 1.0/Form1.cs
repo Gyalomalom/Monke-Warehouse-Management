@@ -15,15 +15,39 @@ namespace Employee_Management_Alpha_1._0
     public partial class Form1 : Form
     {
         Stock stock;
-
+        public static string loggedUser;
+        
         public Form1()
         {
             InitializeComponent();
             stock = new Stock();
+            loggedUser = LoginForm.userType;
             
+            userAccess();
+
         }
         
-
+        public void userAccess()
+        {
+            if (loggedUser == "Admin")
+            {
+                btnStockMan.Visible = false;
+            }
+            if(loggedUser == "Management")
+            {
+                btnDepMan.Visible = false;
+                btnEmpMan.Visible = false;
+            }
+            if(loggedUser == "Stock")
+            {
+                btnDepMan.Visible = false;
+                btnEmpMan.Visible = false;
+                btnAddStock.Visible = false;
+                btnBuyStock.Visible = false;
+                btnRemoveStock.Visible = false;
+            }
+        }
+     
 
         public void hideSubmenus() //method for hiding submenus
         {
@@ -46,7 +70,9 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnEmpMan_Click(object sender, EventArgs e) 
         {
-            showSubmenus(panelEmpSubmenu);
+
+            
+                showSubmenus(panelEmpSubmenu);
         }
         #region EmpSub 
         private void BtnModEmp_Click(object sender, EventArgs e) //when programming submenu buttons, always leave hideSubmenus() method as last line of code
@@ -137,7 +163,10 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnCloseApp_Click(object sender, EventArgs e) //close application
         {
-            Application.Exit();
+            this.Hide();
+            LoginForm main = new LoginForm();
+            main.Closed += (s, args) => this.Close();
+            main.Show();
         }
 
         private void PanelChildForm_Paint(object sender, PaintEventArgs e)
@@ -167,7 +196,31 @@ namespace Employee_Management_Alpha_1._0
 
         private void btnShitManager_Click(object sender, EventArgs e)
         {
-            openChildForm(new AddShift());
+            openChildForm(new Scheduler());
+            hideSubmenus();
+        }
+
+        private void BtnBuyStock_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BuyStock()); // creates and opens stock info
+            hideSubmenus();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Stock_information()); // creates and opens stock info
+            hideSubmenus();
+        }
+
+        private void BtnBuyStock_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new BuyStock()); // creates and opens stock info
+            hideSubmenus();
+        }
+
+        private void BtnStockRequests_Click(object sender, EventArgs e)
+        {
+            openChildForm(new StockRequest()); // creates and opens stock info
             hideSubmenus();
         }
     }
