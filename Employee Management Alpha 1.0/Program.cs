@@ -16,7 +16,7 @@ namespace Employee_Management_Alpha_1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Scheduler());
         }
     }
 }

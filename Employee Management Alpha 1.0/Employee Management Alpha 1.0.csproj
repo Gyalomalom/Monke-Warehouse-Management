@@ -80,6 +80,18 @@
       <DependentUpon>DepartmentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DepartmentStatus.cs" />
+    <Compile Include="Scheduling\ScheduleListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\ScheduleListForm.Designer.cs">
+      <DependentUpon>ScheduleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\Scheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\Scheduler.Designer.cs">
+      <DependentUpon>Scheduler.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftManagement.cs" />
     <Compile Include="Shift.cs" />
     <Compile Include="Employee.cs" />
@@ -201,6 +213,12 @@
     <EmbeddedResource Include="RemoveStock.resx">
       <DependentUpon>RemoveStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\ScheduleListForm.resx">
+      <DependentUpon>ScheduleListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\Scheduler.resx">
+      <DependentUpon>Scheduler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stock_information.resx">
       <DependentUpon>Stock_information.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +229,7 @@
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\VSWorkspaceState.json" />
     <None Include="bin\Debug\Employee Management Alpha 1.0.exe.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
