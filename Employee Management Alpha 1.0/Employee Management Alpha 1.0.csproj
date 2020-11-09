@@ -86,8 +86,22 @@
       <DependentUpon>DepartmentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DepartmentStatus.cs" />
-    <Compile Include="ShiftManagement.cs" />
-    <Compile Include="Shift.cs" />
+    <Compile Include="Scheduling\ScheduleItem.cs" />
+    <Compile Include="Scheduling\ScheduleListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\ScheduleListForm.Designer.cs">
+      <DependentUpon>ScheduleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\ScheduleManagement.cs" />
+    <Compile Include="Scheduling\Scheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduling\Scheduler.Designer.cs">
+      <DependentUpon>Scheduler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling\ShiftManagement.cs" />
+    <Compile Include="Scheduling\Shift.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeStatus.cs" />
     <Compile Include="EmployeeChangeStatus.cs">
@@ -217,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RemoveStock.resx">
       <DependentUpon>RemoveStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\ScheduleListForm.resx">
+      <DependentUpon>ScheduleListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\Scheduler.resx">
+      <DependentUpon>Scheduler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockRequest.resx">
       <DependentUpon>StockRequest.cs</DependentUpon>
