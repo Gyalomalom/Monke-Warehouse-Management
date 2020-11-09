@@ -38,6 +38,14 @@ namespace Employee_Management_Alpha_1._0
                 btnDepMan.Visible = false;
                 btnEmpMan.Visible = false;
             }
+            if(loggedUser == "Stock")
+            {
+                btnDepMan.Visible = false;
+                btnEmpMan.Visible = false;
+                btnAddStock.Visible = false;
+                btnBuyStock.Visible = false;
+                btnRemoveStock.Visible = false;
+            }
         }
      
 
