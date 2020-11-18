@@ -59,45 +59,39 @@ include_once ('Includes/dbh.inc.php');
         ?>
 
 <div class = "dashwrapper">
-<div class="containerdash">
+<div class="container">
             <br>
             Employee profile
             <br>
             <br>
-            Name: <?php echo $user->get_firstname() . " " . $user->get_lastname(); ?>
+            Name: <?php echo $user->get_firstname(); echo $user->get_lastname(); ?>
             <br>
 			<br>
             Date of birth: <?php echo $user->get_dob(); ?>
             <br>
-			<br>
 			BSN: <?php echo $user->get_bsn(); ?>
             <br>
-			<br>
 			Languages: <?php echo $user->get_languages(); ?>
             <br>
-			<br>
 			Certifications: <?php echo $user->get_certificates(); ?>
             <br>
-			<br>
 			Position: <?php echo $user->get_position(); ?>
             <br>
-			<br>
 			Department: <?php echo $user->get_department(); ?>
             <br>
-			<br>
 			Employement: <?php echo $user->get_ctype(); ?>
             <br>
-			<br>
 			Work hours: <?php echo $user->get_hours(); ?>
             <br>
 </div>
-<div class="containerdash">
+<div class="container">
             <br>
             Contact info
             <br>
 
             <br>
-            Email: <?php echo $user->get_email(); ?>
+            <label for="fname">Email:</label>
+            <input type="text" id="fname" name="fname">
             <br>
 			<br>
             Address: <?php echo $user->get_address(); ?>
@@ -109,22 +103,12 @@ include_once ('Includes/dbh.inc.php');
             Emergency number: <?php echo $user->get_emergencynr(); ?>
             <br>
 			<br>
-            Emergency contact: <?php echo $user->get_emergencyc(); ?>
+            Emergecy contact: <?php echo $user->get_emergencyc(); ?>
             <br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
-			<form action = "updateinfo.php">
-			    <div class="updatebutton">
-        		<button type = "submit" name = "logout" id = "btnupdate">Change information</button>
-				</div>
-            </form>
 </div>
 </div>
 
 
 </body>
-<footer><?php include 'footer.php'; ?></footer>
+
 </html>
