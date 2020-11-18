@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php
 
 require_once('../Classes/User.php');
@@ -32,6 +33,7 @@ $hasMatch = 0;
                     while($row = mysqli_fetch_assoc($result))
                     {
                         $user = new User();
+						$user->set_id($row['ID']);
                         $user->set_firstname($row['FirstName']);
                         $user->set_lastname($row['LastName']);
                         $user->set_email($row['Email']);
@@ -40,9 +42,9 @@ $hasMatch = 0;
                         if (($user->get_email()==($_POST['username'])) and ($user->get_pass()==($_POST['password'])))
                         {
                             
-                            $_SESSION['userid'] = $row['email'];
+                            $_SESSION['userid'] = $row['ID'];
                             $hasMatch = 1;
-							header("Location: ../dashboard.php");
+							header("Location: ../index.php");
 
                         }
                         elseif (($user->get_email()==($_POST['username'])) and !($user->get_pass()==($_POST['password'])))
@@ -58,7 +60,7 @@ $hasMatch = 0;
                 
                }
         ?>
-            <form action="../index.php">
+            <form action="../login.php">
                 <input type="submit" value="Click here to try again!" />
             </form>
         </div>

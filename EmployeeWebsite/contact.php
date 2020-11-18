@@ -1,3 +1,4 @@
+<?php include 'usersession.php'?>
 <html>
 <head>
     <title>Employee dashboard</title>
