@@ -1,3 +1,4 @@
+<?php include_once 'Includes/dbh.inc.php'?>
 <html>
 <head>
     <title>Employee login</title>
