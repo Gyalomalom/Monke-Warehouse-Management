@@ -61,55 +61,55 @@ include_once ('Includes/dbh.inc.php');
 <div class = "dashwrapper">
 <div class="containerdash">
             <br>
-            Employee profile
+            <b>Employee profile</b>
             <br>
             <br>
-            Name: <?php echo $user->get_firstname() . " " . $user->get_lastname(); ?>
-            <br>
-			<br>
-            Date of birth: <?php echo $user->get_dob(); ?>
+            <b>Name:</b> <?php echo $user->get_firstname() . " " . $user->get_lastname(); ?>
             <br>
 			<br>
-			BSN: <?php echo $user->get_bsn(); ?>
+            <b>Date of birth:</b> <?php echo $user->get_dob(); ?>
             <br>
 			<br>
-			Languages: <?php echo $user->get_languages(); ?>
+			<b>BSN:</b> <?php echo $user->get_bsn(); ?>
             <br>
 			<br>
-			Certifications: <?php echo $user->get_certificates(); ?>
+			<b>Languages:</b> <?php echo $user->get_languages(); ?>
             <br>
 			<br>
-			Position: <?php echo $user->get_position(); ?>
+			<b>Certifications:</b> <?php echo $user->get_certificates(); ?>
             <br>
 			<br>
-			Department: <?php echo $user->get_department(); ?>
+			<b>Position:</b> <?php echo $user->get_position(); ?>
             <br>
 			<br>
-			Employement: <?php echo $user->get_ctype(); ?>
+			<b>Department:</b> <?php echo $user->get_department(); ?>
             <br>
 			<br>
-			Work hours: <?php echo $user->get_hours(); ?>
+			<b>Employement:</b> <?php echo $user->get_ctype(); ?>
+            <br>
+			<br>
+			<b>Work hours:</b> <?php echo $user->get_hours(); ?>
             <br>
 </div>
 <div class="containerdash">
             <br>
-            Contact info
+            <b>Contact info</b>
             <br>
 
             <br>
-            Email: <?php echo $user->get_email(); ?>
+            <b>Email:</b> <?php echo $user->get_email(); ?>
             <br>
 			<br>
-            Address: <?php echo $user->get_address(); ?>
+            <b>Address:</b> <?php echo $user->get_address(); ?>
             <br>
 			<br>
-            Phone: <?php echo $user->get_phone(); ?>
+            <b>Phone:</b> <?php echo $user->get_phone(); ?>
             <br>
 			<br>
-            Emergency number: <?php echo $user->get_emergencynr(); ?>
+            <b>Emergency number:</b> <?php echo $user->get_emergencynr(); ?>
             <br>
 			<br>
-            Emergency contact: <?php echo $user->get_emergencyc(); ?>
+            <b>Emergency contact:</b> <?php echo $user->get_emergencyc(); ?>
             <br>
 			<br>
 			<br>
@@ -118,7 +118,7 @@ include_once ('Includes/dbh.inc.php');
 			
 			<form action = "updateinfo.php">
 			    <div class="updatebutton">
-        		<button type = "submit" name = "logout" id = "btnupdate">Change information</button>
+        		<button type = "submit" name = "changeinfo" id = "btnupdate">Change information</button>
 				</div>
             </form>
 </div>

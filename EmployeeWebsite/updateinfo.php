@@ -59,56 +59,77 @@ include_once ('Includes/dbh.inc.php');
         ?>
 
 <div class = "dashwrapper">
-<div class="container">
+<div class="containerdash">
             <br>
-            Employee profile
+            <b>Employee profile</b>
             <br>
             <br>
-            Name: <?php echo $user->get_firstname(); echo $user->get_lastname(); ?>
+            <b>Name:</b> <?php echo $user->get_firstname() . " " . $user->get_lastname(); ?>
             <br>
 			<br>
-            Date of birth: <?php echo $user->get_dob(); ?>
+            <b>Date of birth:</b> <?php echo $user->get_dob(); ?>
             <br>
-			BSN: <?php echo $user->get_bsn(); ?>
+			<br>
+			<b>BSN:</b> <?php echo $user->get_bsn(); ?>
             <br>
-			Languages: <?php echo $user->get_languages(); ?>
+			<br>
+			<b>Languages:</b> <?php echo $user->get_languages(); ?>
             <br>
-			Certifications: <?php echo $user->get_certificates(); ?>
+			<br>
+			<b>Certifications:</b> <?php echo $user->get_certificates(); ?>
             <br>
-			Position: <?php echo $user->get_position(); ?>
+			<br>
+			<b>Position:</b> <?php echo $user->get_position(); ?>
             <br>
-			Department: <?php echo $user->get_department(); ?>
+			<br>
+			<b>Department:</b> <?php echo $user->get_department(); ?>
             <br>
-			Employement: <?php echo $user->get_ctype(); ?>
+			<br>
+			<b>Employement:</b> <?php echo $user->get_ctype(); ?>
             <br>
-			Work hours: <?php echo $user->get_hours(); ?>
+			<br>
+			<b>Work hours:</b> <?php echo $user->get_hours(); ?>
             <br>
 </div>
-<div class="container">
+<div class="containerdash">
             <br>
-            Contact info
+            <b>Contact info</b>
             <br>
-
+            <form action="Handlers/update.php" method="post" enctype="multipart/form-data">
             <br>
-            <label for="fname">Email:</label>
-            <input type="text" id="fname" name="fname">
-            <br>
-			<br>
-            Address: <?php echo $user->get_address(); ?>
+            <label for="email"><b>Email:</b></label>
+            <input type="text" name="email" value = <?php echo $user->get_email(); ?>>
             <br>
 			<br>
-            Phone: <?php echo $user->get_phone(); ?>
+            <label for="address"><b>Address:</b></label>
+            <input type="address" name="address" value = <?php echo $user->get_address(); ?>>
             <br>
 			<br>
-            Emergency number: <?php echo $user->get_emergencynr(); ?>
+            <label for="phone"><b>Phone:</b></label>
+            <input type="text" name="phone" value = <?php echo $user->get_phone(); ?>>
             <br>
 			<br>
-            Emergecy contact: <?php echo $user->get_emergencyc(); ?>
+            <label for="emergencynr"><b>Emergency number:</b></label>
+            <input type="text" name="emergencynr" value = <?php echo $user->get_emergencynr(); ?>>
             <br>
+			<br>
+            <label for="emergencyc"><b>Emergency contact:</b></label>
+            <input type="text" name="emergencyc" value = <?php echo $user->get_emergencyc(); ?>>
+            <br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="updatebutton">
+            <button type = "submit" name = "submit" id = "btnupdate">Save changes</button>
+			</div>
+            </form>
 </div>
 </div>
 
 
 </body>
-
+<footer><?php include 'footer.php'; ?></footer>
 </html>
+
+
