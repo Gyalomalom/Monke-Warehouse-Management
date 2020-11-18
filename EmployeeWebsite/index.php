@@ -35,8 +35,22 @@ include_once ('Includes/dbh.inc.php');
 						$user->set_id($row['ID']);
                         $user->set_firstname($row['FirstName']);
                         $user->set_lastname($row['LastName']);
-                        $user->set_email($row['Email']);
-                        $user->set_pass($row['Password']);
+                        $user->set_phone($row['PhoneNr']);
+						$user->set_address($row['Address']);
+						$user->set_emergencyc($row['EmergencyC']);
+						$user->set_emergencynr($row['EmergencyNr']);
+						$user->set_hours($row['WorkingHours']);
+						$user->set_dob($row['DOB']);
+						$user->set_bsn($row['BSN']);
+						$user->set_position($row['Position']);
+						$user->set_certificates($row['Certifications']);
+						$user->set_languages($row['Languages']);
+						$user->set_ctype($row['ContractType']);
+						$user->set_duration($row['ContractDuration']);
+						$user->set_department($row['Department']);
+						$user->set_shiftpref($row['Shiftpref']);
+						
+                        
 						
                         }                        
                     }              
@@ -46,18 +60,48 @@ include_once ('Includes/dbh.inc.php');
 <div class = "dashwrapper">
 <div class="container">
             <br>
-            User profile
+            Employee profile
             <br>
             <br>
             Name: <?php echo $user->get_firstname(); echo $user->get_lastname(); ?>
             <br>
 			<br>
-            Email: <?php echo $user->get_email(); ?>
+            Date of birth: <?php echo $user->get_dob(); ?>
+            <br>
+			BSN: <?php echo $user->get_bsn(); ?>
+            <br>
+			Languages: <?php echo $user->get_languages(); ?>
+            <br>
+			Certifications: <?php echo $user->get_certificates(); ?>
+            <br>
+			Position: <?php echo $user->get_position(); ?>
+            <br>
+			Department: <?php echo $user->get_department(); ?>
+            <br>
+			Employement: <?php echo $user->get_ctype(); ?>
+            <br>
+			Work hours: <?php echo $user->get_hours(); ?>
             <br>
 </div>
 <div class="container">
-<br>
-            Phone: +4206969
+            <br>
+            Contact info
+            <br>
+
+            <br>
+            Email: <?php echo $user->get_email(); ?>
+            <br>
+			<br>
+            Address: <?php echo $user->get_address(); ?>
+            <br>
+			<br>
+            Phone: <?php echo $user->get_phone(); ?>
+            <br>
+			<br>
+            Emergency number: <?php echo $user->get_emergencynr(); ?>
+            <br>
+			<br>
+            Emergecy contact: <?php echo $user->get_emergencyc(); ?>
             <br>
 </div>
 </div>
