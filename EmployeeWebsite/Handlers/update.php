@@ -10,11 +10,7 @@
 if (isset($_POST['submit'])){
 
 $id = $_SESSION['userid'];
-$email = $_POST['email'];
-$address = $_POST['address'];    
-$phone = $_POST['phone'];	
-$emergencynr = $_POST['emergencynr'];
-$emergencyc = $_POST['emergencyc'];
+$shiftpref = $_POST['shift'];
 
   // Check connection
   if ($conn->connect_error) {
@@ -24,10 +20,10 @@ $emergencyc = $_POST['emergencyc'];
   {
 
   // sql to update a record
-   $sql = "UPDATE employee SET Email = '$email', Address = '$address', PhoneNr = '$phone', EmergencyNr = '$emergencynr', EmergencyC = '$emergencyc' WHERE ID = $id;";
+   $sql = "UPDATE employee SET Shiftpref = '$shiftpref' WHERE ID = $id;";
 
    if ($conn->query($sql) === TRUE) {
-   header("Location: ../index.php");
+   header("Location: ../shift.php");
    } 
    else 
    {

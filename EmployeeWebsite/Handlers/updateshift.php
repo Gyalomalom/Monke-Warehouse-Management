@@ -1,7 +1,6 @@
 <?php include_once ('../Includes/dbh.inc.php'); ?>
 <?php include '../usersession.php'?>
 
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -9,9 +8,9 @@
 
 <?php
 if (isset($_POST['submit'])){
-$id = $_SESSION['userid'];
-$subject = $_POST['subject'];
 
+$id = $_SESSION['userid'];
+$shiftpref = $_POST['shift'];
 
   // Check connection
   if ($conn->connect_error) {
@@ -21,10 +20,10 @@ $subject = $_POST['subject'];
   {
 
   // sql to update a record
-   $sql = "INSERT INTO employee_messages (Empid, Message) VALUES ('$id', '$subject');";
+   $sql = "UPDATE employee SET Shiftpref = '$shiftpref' WHERE ID = $id;";
 
    if ($conn->query($sql) === TRUE) {
-   header("Location: ../contact.php");
+   header("Location: ../shifts.php");
    } 
    else 
    {
