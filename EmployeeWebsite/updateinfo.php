@@ -102,7 +102,7 @@ include_once ('Includes/dbh.inc.php');
             <br>
 			<br>
             <label for="address"><b>Address:</b></label>
-            <input type="address" name="address" value = <?php echo $user->get_address(); ?>>
+            <input type="text" name="address" value = <?php echo $user->get_address(); ?>>
             <br>
 			<br>
             <label for="phone"><b>Phone:</b></label>
