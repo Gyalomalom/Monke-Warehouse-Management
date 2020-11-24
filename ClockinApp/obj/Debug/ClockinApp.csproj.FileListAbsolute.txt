@@ -25,3 +25,28 @@ C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\De
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\MySql.Data.xml
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe.config
 C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CopyComplete
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.exe.config
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.exe
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\ClockinApp.pdb
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Employee Management Alpha 1.0.exe
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Zstandard.Net.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Renci.SshNet.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\System.Memory.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\System.Buffers.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Employee Management Alpha 1.0.pdb
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\bin\Debug\Employee Management Alpha 1.0.exe.config
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csprojAssemblyReference.cache
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe.config
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.Form1.resources
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.Properties.Resources.resources
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.GenerateResource.cache
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CoreCompileInputs.cache
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CopyComplete
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.pdb

@@ -15,35 +15,34 @@ namespace ClockinApp
     class ClockinManager
     {
         Portread readcard;
-        MySqlConnection connect;
+        DBconnect database;
 
         public ClockinManager()
         {
+            database = new DBconnect();
             readcard = new Portread();
-            connect = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");
+            LoadData();
+            
+            
         }
 
-        public int GetID(string tag)
+        private void LoadData()
         {
-            int nul = 0;
-            
-                
-            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM employee WHERE Tag = '{tag}';", connect);
-            MySqlDataReader dr = cmd.ExecuteReader();
+            database.clockins = database.LoadClockins();
+        }
+        
+        public int CheckActive(string tag)
+        {
 
-            if (dr.Read())
-            {
-                int id = Convert.ToInt32(dr[0]);
-                dr.Close();
-                return id;
-            }
-            else
-            {
-
-                return nul;
-            }
-            
-        } 
+                for (int i = 0; i < database.clockins.Count(); i++)
+                {
+                    if (database.clockins[i].tag == tag && database.clockins[i].status == "Active")
+                    {
+                        return database.clockins[i].ID;
+                    }
+                }
+                return 0;        
+        }
 
         public void ClockIn()
         {
@@ -57,28 +56,23 @@ namespace ClockinApp
             else
             {
 
-                try
-                {
-                    connect.Open();
-                    if (connect.State == ConnectionState.Open)
-                    {
-                        int id = GetID(line);
-                        string time = DateTime.Now.ToString("HH:mm dd/MM/yyy");
-                        MySqlCommand cmd = new MySqlCommand("INSERT INTO clockin (Clockin, Clockout, Status, EmpID) VALUES (@Clockin, @Clockout, @Status, @EmpID)", connect);
-                        cmd.Parameters.AddWithValue("@Clockin", time);
-                        cmd.Parameters.AddWithValue("@Clockout", "na");
-                        cmd.Parameters.AddWithValue("@Status", "Active");
-                        cmd.Parameters.AddWithValue("@EmpID", id);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Clocked in at" + DateTime.Now.ToString("HH:mm"));
-                    }
-                }
-                catch (Exception expection)
-                {
-                    MessageBox.Show(expection.Message);
-                }
-                connect.Close();
+                
+                string time = DateTime.Now.ToString("h:mm yyyy-MM-dd");
 
+                if (CheckActive(line) == 0)
+                {
+                    int empid = database.GetID(line);
+                    database.Clockin(time, empid, line);
+                    LoadData();
+                    MessageBox.Show($"Clocked in at {time}");
+                }
+                else
+                {
+                    int id = CheckActive(line);
+                    database.Clockout(id, time);
+                    LoadData();
+                    MessageBox.Show($"Clocked out at {time}");
+                }
             }
             
         }

@@ -53,10 +53,10 @@
     <Compile Include="AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddShift.cs">
+    <Compile Include="Scheduling\AddShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddShift.Designer.cs">
+    <Compile Include="Scheduling\AddShift.Designer.cs">
       <DependentUpon>AddShift.cs</DependentUpon>
     </Compile>
     <Compile Include="AddStock.cs">
@@ -86,20 +86,22 @@
       <DependentUpon>DepartmentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DepartmentStatus.cs" />
-    <Compile Include="DepoRequest.cs">
+    <Compile Include="Scheduling\ScheduleItem.cs" />
+    <Compile Include="Scheduling\ScheduleListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepoRequest.Designer.cs">
-      <DependentUpon>DepoRequest.cs</DependentUpon>
+    <Compile Include="Scheduling\ScheduleListForm.Designer.cs">
+      <DependentUpon>ScheduleListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepoStock.cs">
+    <Compile Include="Scheduling\ScheduleManagement.cs" />
+    <Compile Include="Scheduling\Scheduler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepoStock.Designer.cs">
-      <DependentUpon>DepoStock.cs</DependentUpon>
+    <Compile Include="Scheduling\Scheduler.Designer.cs">
+      <DependentUpon>Scheduler.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftManagement.cs" />
-    <Compile Include="Shift.cs" />
+    <Compile Include="Scheduling\ShiftManagement.cs" />
+    <Compile Include="Scheduling\Shift.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeStatus.cs" />
     <Compile Include="EmployeeChangeStatus.cs">
@@ -184,7 +186,7 @@
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddShift.resx">
+    <EmbeddedResource Include="Scheduling\AddShift.resx">
       <DependentUpon>AddShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStock.resx">
@@ -198,12 +200,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentInfo.resx">
       <DependentUpon>DepartmentInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DepoRequest.resx">
-      <DependentUpon>DepoRequest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DepoStock.resx">
-      <DependentUpon>DepoStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeChangeStatus.resx">
       <DependentUpon>EmployeeChangeStatus.cs</DependentUpon>
@@ -235,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RemoveStock.resx">
       <DependentUpon>RemoveStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\ScheduleListForm.resx">
+      <DependentUpon>ScheduleListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduling\Scheduler.resx">
+      <DependentUpon>Scheduler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockRequest.resx">
       <DependentUpon>StockRequest.cs</DependentUpon>
