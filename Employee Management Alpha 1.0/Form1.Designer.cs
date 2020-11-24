@@ -40,6 +40,7 @@
             this.btnAddDep = new System.Windows.Forms.Button();
             this.btnDepMan = new System.Windows.Forms.Button();
             this.panelStockSubmenu = new System.Windows.Forms.Panel();
+            this.btnStockRequests = new System.Windows.Forms.Button();
             this.btnBuyStock = new System.Windows.Forms.Button();
             this.btnStockInfo = new System.Windows.Forms.Button();
             this.btnRemoveStock = new System.Windows.Forms.Button();
@@ -57,7 +58,8 @@
             this.panelLiveFeed = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnStockRequests = new System.Windows.Forms.Button();
+            this.btnDepoRequests = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelStatisticsSubmenu.SuspendLayout();
             this.panelDepSubmenu.SuspendLayout();
@@ -99,7 +101,7 @@
             this.btnCloseApp.ForeColor = System.Drawing.Color.Silver;
             this.btnCloseApp.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_exit_48;
             this.btnCloseApp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCloseApp.Location = new System.Drawing.Point(0, 693);
+            this.btnCloseApp.Location = new System.Drawing.Point(0, 762);
             this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -116,7 +118,7 @@
             this.panelStatisticsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.panelStatisticsSubmenu.Controls.Add(this.btnViewStats);
             this.panelStatisticsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatisticsSubmenu.Location = new System.Drawing.Point(0, 660);
+            this.panelStatisticsSubmenu.Location = new System.Drawing.Point(0, 729);
             this.panelStatisticsSubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelStatisticsSubmenu.Name = "panelStatisticsSubmenu";
             this.panelStatisticsSubmenu.Size = new System.Drawing.Size(171, 33);
@@ -150,7 +152,7 @@
             this.btnStats.ForeColor = System.Drawing.Color.Silver;
             this.btnStats.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_pie_chart_report_50;
             this.btnStats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStats.Location = new System.Drawing.Point(0, 623);
+            this.btnStats.Location = new System.Drawing.Point(0, 692);
             this.btnStats.Margin = new System.Windows.Forms.Padding(2);
             this.btnStats.Name = "btnStats";
             this.btnStats.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -169,7 +171,7 @@
             this.panelDepSubmenu.Controls.Add(this.btnRemoveDep);
             this.panelDepSubmenu.Controls.Add(this.btnAddDep);
             this.panelDepSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDepSubmenu.Location = new System.Drawing.Point(0, 525);
+            this.panelDepSubmenu.Location = new System.Drawing.Point(0, 594);
             this.panelDepSubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelDepSubmenu.Name = "panelDepSubmenu";
             this.panelDepSubmenu.Size = new System.Drawing.Size(171, 98);
@@ -239,7 +241,7 @@
             this.btnDepMan.ForeColor = System.Drawing.Color.Silver;
             this.btnDepMan.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_unit_50;
             this.btnDepMan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepMan.Location = new System.Drawing.Point(0, 488);
+            this.btnDepMan.Location = new System.Drawing.Point(0, 557);
             this.btnDepMan.Margin = new System.Windows.Forms.Padding(2);
             this.btnDepMan.Name = "btnDepMan";
             this.btnDepMan.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -255,6 +257,8 @@
             // panelStockSubmenu
             // 
             this.panelStockSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.panelStockSubmenu.Controls.Add(this.button2);
+            this.panelStockSubmenu.Controls.Add(this.btnDepoRequests);
             this.panelStockSubmenu.Controls.Add(this.btnStockRequests);
             this.panelStockSubmenu.Controls.Add(this.btnBuyStock);
             this.panelStockSubmenu.Controls.Add(this.btnStockInfo);
@@ -264,9 +268,27 @@
             this.panelStockSubmenu.Location = new System.Drawing.Point(0, 321);
             this.panelStockSubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelStockSubmenu.Name = "panelStockSubmenu";
-            this.panelStockSubmenu.Size = new System.Drawing.Size(171, 167);
+            this.panelStockSubmenu.Size = new System.Drawing.Size(171, 236);
             this.panelStockSubmenu.TabIndex = 4;
             this.panelStockSubmenu.Visible = false;
+            // 
+            // btnStockRequests
+            // 
+            this.btnStockRequests.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStockRequests.FlatAppearance.BorderSize = 0;
+            this.btnStockRequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStockRequests.ForeColor = System.Drawing.Color.Silver;
+            this.btnStockRequests.Location = new System.Drawing.Point(0, 131);
+            this.btnStockRequests.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStockRequests.Name = "btnStockRequests";
+            this.btnStockRequests.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnStockRequests.Size = new System.Drawing.Size(171, 34);
+            this.btnStockRequests.TabIndex = 4;
+            this.btnStockRequests.Text = "Stock Requests";
+            this.btnStockRequests.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockRequests.UseVisualStyleBackColor = true;
+            this.btnStockRequests.Click += new System.EventHandler(this.BtnStockRequests_Click);
             // 
             // btnBuyStock
             // 
@@ -543,23 +565,41 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
-            // btnStockRequests
+            // btnDepoRequests
             // 
-            this.btnStockRequests.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockRequests.FlatAppearance.BorderSize = 0;
-            this.btnStockRequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStockRequests.ForeColor = System.Drawing.Color.Silver;
-            this.btnStockRequests.Location = new System.Drawing.Point(0, 131);
-            this.btnStockRequests.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStockRequests.Name = "btnStockRequests";
-            this.btnStockRequests.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnStockRequests.Size = new System.Drawing.Size(171, 34);
-            this.btnStockRequests.TabIndex = 4;
-            this.btnStockRequests.Text = "Stock Requests";
-            this.btnStockRequests.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockRequests.UseVisualStyleBackColor = true;
-            this.btnStockRequests.Click += new System.EventHandler(this.BtnStockRequests_Click);
+            this.btnDepoRequests.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDepoRequests.FlatAppearance.BorderSize = 0;
+            this.btnDepoRequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepoRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDepoRequests.ForeColor = System.Drawing.Color.Silver;
+            this.btnDepoRequests.Location = new System.Drawing.Point(0, 165);
+            this.btnDepoRequests.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDepoRequests.Name = "btnDepoRequests";
+            this.btnDepoRequests.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnDepoRequests.Size = new System.Drawing.Size(171, 34);
+            this.btnDepoRequests.TabIndex = 5;
+            this.btnDepoRequests.Text = "Depo Requests";
+            this.btnDepoRequests.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepoRequests.UseVisualStyleBackColor = true;
+            this.btnDepoRequests.Click += new System.EventHandler(this.BtnDepoRequests_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.Color.Silver;
+            this.button2.Location = new System.Drawing.Point(0, 199);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(171, 34);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Depo info";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
             // Form1
             // 
@@ -618,6 +658,8 @@
         private System.Windows.Forms.Button btnStockInfo;
         private System.Windows.Forms.Button btnBuyStock;
         private System.Windows.Forms.Button btnStockRequests;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDepoRequests;
     }
 }
 

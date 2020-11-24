@@ -26,7 +26,15 @@ namespace Employee_Management_Alpha_1._0
 
         private void LbStockInfo_Click(object sender, EventArgs e)
         {
-           
+            if (!(lbStockInfo.SelectedIndex.Equals(null)))
+            {
+                string ID = lbStockInfo.SelectedItem.ToString();
+                Match match = Regex.Match(ID, pattern);
+                if (match.Success)
+                {
+                    tbID.Text = match.Value;
+                }
+            }
         }
 
         private void SalesList() // refreshes the sales list
