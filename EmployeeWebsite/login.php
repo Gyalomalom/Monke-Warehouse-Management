@@ -10,7 +10,7 @@
 	<div class="container">
 	
 	<img src="Images/monkeright.png" id="monke">
-	
+	<br>
     <label for="uname"><b>Email</b></label>
     <input type="text" placeholder="Enter email" name="username" required>
 
