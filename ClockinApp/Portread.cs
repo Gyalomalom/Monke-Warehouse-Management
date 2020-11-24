@@ -11,7 +11,7 @@ namespace ClockinApp
     {
         SerialPort port;
 
-        /*public Portread()
+        public Portread()
         {
             if (port == null)
             {
@@ -19,7 +19,7 @@ namespace ClockinApp
                 port.Open();
 
             }
-        }*/
+        }
 
         public string ReadCard()
         {
