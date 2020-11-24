@@ -132,5 +132,10 @@ namespace Employee_Management_Alpha_1._0
             return $"{this.id} {this.first_name} {this.last_name} {this.status}";
         }
 
+        public string GetEmployeeFullName()
+        {
+            return $"{this.id} {this.first_name} {this.last_name}";
+        }
+
     }
 }

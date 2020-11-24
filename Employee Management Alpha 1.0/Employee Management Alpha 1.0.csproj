@@ -53,10 +53,10 @@
     <Compile Include="AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddShift.cs">
+    <Compile Include="Scheduling\AddShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddShift.Designer.cs">
+    <Compile Include="Scheduling\AddShift.Designer.cs">
       <DependentUpon>AddShift.cs</DependentUpon>
     </Compile>
     <Compile Include="AddStock.cs">
@@ -186,7 +186,7 @@
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddShift.resx">
+    <EmbeddedResource Include="Scheduling\AddShift.resx">
       <DependentUpon>AddShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStock.resx">
