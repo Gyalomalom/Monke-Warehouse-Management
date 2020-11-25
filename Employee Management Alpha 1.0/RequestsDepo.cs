@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Employee_Management_Alpha_1._0
 {
-    public partial class DepoRequest : Form
+    public partial class RequestsDepo : Form
     {
         const string pattern = @"([^\s]+)"; //pattern to get the first string before a space
         Regex rg = new Regex(pattern);
@@ -19,7 +19,7 @@ namespace Employee_Management_Alpha_1._0
         Item item;
         int id;
 
-        public DepoRequest()
+        public RequestsDepo()
         {
             InitializeComponent();
         }
@@ -42,49 +42,7 @@ namespace Employee_Management_Alpha_1._0
             }
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
-        }
-
-        private void LbRequests_Click(object sender, EventArgs e)
-        {
-            if (!(lbRequests.SelectedIndex.Equals(null)))
-            {
-                string ID = lbRequests.SelectedItem.ToString();
-                Match match = Regex.Match(ID, pattern);
-                if (match.Success)
-                {
-                    tbID.Text = match.Value;
-                }
-            }
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbID_TextChanged(object sender, EventArgs e)
-        {
-            StockRequestInfo stockRequestInfo;
-            stockRequestInfo = new StockRequestInfo();
-            stockRequestInfo = stock.GetRequestByID(Convert.ToInt32(tbID.Text));
-            numUpDownAmount.Value = stockRequestInfo.Amount;
-
-        }
-
-        private void DepoRequest_Load(object sender, EventArgs e)
-        {
-            RequestList();
-        }
-
-        private void BtnRequestStock_Click(object sender, EventArgs e)
+        private void BtnAcceptRequest_Click(object sender, EventArgs e)
         {
             Item item;
             item = new Item();
@@ -110,6 +68,32 @@ namespace Employee_Management_Alpha_1._0
                     MessageBox.Show("Not enough items in depo!");
                 }
             }
+            RequestList();
+        }
+
+        private void LbRequests_Click(object sender, EventArgs e)
+        {
+            if (!(lbRequests.SelectedIndex.Equals(null)))
+            {
+                string ID = lbRequests.SelectedItem.ToString();
+                Match match = Regex.Match(ID, pattern);
+                if (match.Success)
+                {
+                    tbID.Text = match.Value;
+                }
+            }
+        }
+
+        private void TbID_TextChanged(object sender, EventArgs e)
+        {
+            StockRequestInfo stockRequestInfo;
+            stockRequestInfo = new StockRequestInfo();
+            stockRequestInfo = stock.GetRequestByID(Convert.ToInt32(tbID.Text));
+            numUpDownAmount.Value = stockRequestInfo.Amount;
+        }
+
+        private void RequestsDepo_Load(object sender, EventArgs e)
+        {
             RequestList();
         }
     }

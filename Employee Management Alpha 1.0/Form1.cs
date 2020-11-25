@@ -226,13 +226,23 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnDepoRequests_Click(object sender, EventArgs e)
         {
-            openChildForm(new DepoRequest());
-            hideSubmenus();
+            
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new DepoStock());
+
+        }
+
+        private void BtnDepoRequests_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new RequestsDepo());
+            hideSubmenus();
+        }
+
+        private void BtnDepoInfo_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DepoStocks());
             hideSubmenus();
         }
     }
