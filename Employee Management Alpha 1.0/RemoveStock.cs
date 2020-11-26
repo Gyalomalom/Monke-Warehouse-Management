@@ -56,6 +56,7 @@ namespace Employee_Management_Alpha_1._0
             else
             {
                 stock.RemoveItembyId(id);
+                stock.RemoveDepoItembyId(id);
             }
             
 

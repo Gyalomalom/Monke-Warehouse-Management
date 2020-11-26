@@ -15,17 +15,19 @@ namespace Employee_Management_Alpha_1._0
 
 
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");//sql connector
+        private Item stock;
+        private StockSales stockSales;
         private List<StockRequestInfo> stockRequestInfos;
         private List<Item> newStocks;
-        private Item stock;
         private List<StockSales> newSales;
-        private StockSales stockSales;
+        private List<Item> DepoStock;
 
         public Stock()
         {
             this.newStocks = new List<Item>();
             this.newSales = new List<StockSales>();
             this.stockRequestInfos = new List<StockRequestInfo>();
+            this.DepoStock = new List<Item>();
         }
 
 
@@ -48,6 +50,38 @@ namespace Employee_Management_Alpha_1._0
             return null;
         }
 
+        public Item GetDepoItemsById(int id)
+        {
+
+
+            if (GetAllDepoStock().Count > 0)//For cycle runs into an error if list is empty, so we check it here and skip the cycle if it's empty
+            {
+                for (int i = 0; i < GetAllDepoStock().Count; i++)
+                {
+                    if (GetAllDepoStock()[i].Id == id)
+                    {
+                        return GetAllDepoStock()[i];
+                    }
+                }
+            }
+            return null;
+        }
+
+
+        public StockRequestInfo GetRequestByID(int id)
+        {
+            if (GetAllRequests().Count > 0)
+            {
+                for(int i = 0; i < GetAllRequests().Count; i++)
+                {
+                    if(GetAllRequests()[i].ID == id)
+                    {
+                        return GetAllRequests()[i];
+                    }
+                }
+            }
+            return null;
+        }
 
 
 
@@ -61,7 +95,7 @@ namespace Employee_Management_Alpha_1._0
 
             while (dr.Read())
             {
-                stockRequestInfos.Add(new StockRequestInfo(Convert.ToString(dr[0])));
+                stockRequestInfos.Add(new StockRequestInfo(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToInt32(dr[2])));
             }
             if (stockRequestInfos.Count() >= 1)
             {
@@ -100,7 +134,30 @@ namespace Employee_Management_Alpha_1._0
             }
         }
 
+        public List<Item> GetAllDepoStock()
+        {
+            DepoStock.Clear();
+            string sql = "SELECT * FROM depostock";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
 
+            while (dr.Read())
+            {
+                DepoStock.Add(new Item(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToInt32(dr[2]), Convert.ToDouble(dr[3]), Convert.ToString(dr[4])));
+
+            }
+            if (DepoStock.Count() >= 1)
+            {
+                conn.Close();
+                return DepoStock;
+            }
+            else
+            {
+                conn.Close();
+                return null;
+            }
+        }
 
         public List<Item> GetAllItems()
         {
@@ -146,6 +203,38 @@ namespace Employee_Management_Alpha_1._0
             conn.Close();
         }
 
+        public void RemoveRequestById(int id)
+        {
+            string sql = $"DELETE FROM `stockrequests` WHERE `stockrequests`.`ID` = {id};";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
+
+
+        public void RemoveDepoItembyId(string id)
+        {
+            string sql = $"DELETE FROM `depostock` WHERE `itemstock`.`ID` = {id};";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
 
 
         public void BuyItem(string id, int quantity, int amount) // at this point, it only decreases the quantity of the item
@@ -163,8 +252,6 @@ namespace Employee_Management_Alpha_1._0
                     MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Quantity` = '{quantity - amount}' WHERE ID = {id}", connection);
 
                     cmd.ExecuteNonQuery();
-
-
                 }
             }
             catch (Exception ex)
@@ -173,13 +260,34 @@ namespace Employee_Management_Alpha_1._0
                 MessageBox.Show(ex.Message);
             }
             connection.Close();
-
-
-
         }
 
+        public void AcceptStockRequest(string id, int quantity, int amount)
+        {
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
 
-        public void AddStockRequest(string stockInfo)
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Quantity` = '{quantity + amount}' WHERE ID = {id}", connection);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
+        public void AddStockRequest(int id, string name, int amount)
         {
             MySqlConnection connection;
             string connectionString;
@@ -190,13 +298,13 @@ namespace Employee_Management_Alpha_1._0
                 connection.Open();
                 if (connection.State == ConnectionState.Open)
                 {
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO stockrequests (StockRequest) VALUES (@StockRequest)", connection);
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO stockrequests (ID, Name, Amount) VALUES (@ID, @Name, @Amount)", connection);
                     MessageBox.Show(cmd.CommandText);
 
-                    cmd.Parameters.AddWithValue("@StockRequest", stockInfo);
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Amount", amount);
                     cmd.ExecuteNonQuery();
-
-
                 }
             }
             catch (Exception ex)
@@ -231,8 +339,68 @@ namespace Employee_Management_Alpha_1._0
                     cmd.Parameters.AddWithValue("@PricePerUnit", pricePerUnit);
                     cmd.Parameters.AddWithValue("@Category", category);
                     cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
 
+        public void AddDepoItem(string name, int quantity, double pricePerUnit, string category)
+        {
+            this.stock = new Item(name, quantity, pricePerUnit, category); //instantiate a new object of type employee
+            this.newStocks.Add(stock); //add it to list of type employee
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    //MessageBox.Show("Data entered succesfully.");
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO depostock (Name, Quantity, PricePerUnit, Category) VALUES (@Name, @Quantity, @PricePerUnit, @Category)", connection);
+                    MessageBox.Show(cmd.CommandText);
+                    //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
 
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Quantity", 0);
+                    cmd.Parameters.AddWithValue("@PricePerUnit", pricePerUnit);
+                    cmd.Parameters.AddWithValue("@Category", category);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
+        public void AddItemToDepo(string name, int quantity, double pricePerUnit, string category)
+        {
+            this.stock = new Item(name, quantity, pricePerUnit, category); //instantiate a new object
+            this.DepoStock.Add(stock); //add it to list
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    //MessageBox.Show("Data entered succesfully.");
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO depostock (Name, Quantity, PricePerUnit, Category) VALUES (@Name, @Quantity, @PricePerUnit, @Category)", connection);
+
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Quantity", quantity);
+                    cmd.Parameters.AddWithValue("@PricePerUnit", pricePerUnit);
+                    cmd.Parameters.AddWithValue("@Category", category);
+                    cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
@@ -243,8 +411,87 @@ namespace Employee_Management_Alpha_1._0
             connection.Close();
         }
 
+        public int GetQuantityFromDepo(int id)
+        {
+            string quantity;
+
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            if (connection.State == ConnectionState.Open)
+            {
+
+                MySqlCommand cmd = new MySqlCommand($"SELECT Quantity FROM `depostock` WHERE ID = {id}", connection);
+
+                var dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    quantity = dr.GetString(0);
 
 
+                    //MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Sales` = '{sales + quantity}' WHERE ID = {id}", connection);
+
+                    dr.Close();
+                    connection.Close();
+                    return Convert.ToInt32(quantity);
+
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public string GetQuantity(int id)
+        {
+            string quantity;
+
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            if (connection.State == ConnectionState.Open)
+            {
+
+                MySqlCommand cmd = new MySqlCommand($"SELECT Sales FROM `stock_purchases` WHERE ID = {id}", connection);
+
+                var dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    quantity = dr.GetString(0);
+
+
+                    //MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Sales` = '{sales + quantity}' WHERE ID = {id}", connection);
+
+                    dr.Close();
+                    connection.Close();
+                    return quantity;
+
+                }
+                else
+                {
+                    return "0";
+                }
+
+            }
+            else
+            {
+                return "0";
+            }
+        }
 
         public string GetSales(int id)
         {
@@ -285,25 +532,6 @@ namespace Employee_Management_Alpha_1._0
             {
                 return "0";
             }
-
-
-            //try
-            //{
-            //    connection.Open();
-            //    if (connection.State == ConnectionState.Open)
-            //    {
-
-
-
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message);
-            //}
-            //connection.Close();
-
         }
 
         public void AddSale(int id, int sales, int quantity)
@@ -366,69 +594,93 @@ namespace Employee_Management_Alpha_1._0
             connection.Close();
         }
 
-        /*
-
-        private List<Item> Items = new List<Item>();
-
-        public List<Item> GetStock()
+        public void UpdateStockWithNoQuantity(string id, string name, int quantity, double pricePerUnit, string category)
         {
-            return this.Items;
-        }
-
-        public void AddStock(string name, int quantity, double pricePerUnit, string category)// method to add stock
-        {
-            if (!Items.Any(item => item.getName() == name))
+            this.stock = new Item(name, quantity, pricePerUnit, category); //instantiate a new object of type employee
+            this.newStocks.Add(stock); //add it to list of type employee
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
             {
-                Items.Add(new Item(name, quantity, pricePerUnit, category));
-            }
-            else // if the item is already on the list, it adds quantity to that item
-            {
-                foreach (Item i in Items)
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
                 {
-                    if (i.getName() == name)
-                    {
-                        i.AddQuantity(quantity);
-                        break;
-                    }
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = '{name}', `PricePerUnit` = '{pricePerUnit}', `Category` = '{category}' WHERE ID = {id}", connection);
+
+                    cmd.ExecuteNonQuery();
                 }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
         }
 
-        public void UpdateStock(string name, int quantity, double pricePerUnit, string category)
+        public void UpdateDepoStockWithNoQuantity(string id, string name, int quantity, double pricePerUnit, string category)
         {
+            this.stock = new Item(name, quantity, pricePerUnit, category); //instantiate a new object of type employee
+            this.newStocks.Add(stock); //add it to list of type employee
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
             {
-                foreach (Item i in Items)
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
                 {
-                    i.SetName(name);
-                    i.SetQuantity(quantity);
-                    i.SetPricePerUnit(pricePerUnit);
-                    i.SetCategory(category);
-                    break;
+                    //MessageBox.Show("Data entered succesfully.");
+                    //MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Name` = '{name}', `Quantity` = '{quantity}' WHERE ID = {id}", connection);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `depostock` SET `Name` = '{name}', `PricePerUnit` = '{pricePerUnit}', `Category` = '{category}' WHERE ID = {id}", connection);
+                    //, `DOB`, `BSN`, `Position`, `WorkingHours`, `PhoneNr`, `Address`, `Email`, `EmergencyC`, `EmergencyR`, `EmergencyNr`, `Certifications`, `Languages`, `ContractType`, `ContractDuration`
+                    //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
+
+                    cmd.ExecuteNonQuery();
+
+
                 }
             }
-        }
-
-
-        public int GetStockCount()
-        {
-            return Items.Count();
-        }
-
-        public bool RemoveStock(Item selectedItem)
-        {
-
-            foreach (Item i in Items)
+            catch (Exception ex)
             {
-                if (i.GetId() == selectedItem.GetId())
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
+        public void ChangeDepoItem(string id, string name, int quantity, double pricePerUnit, string category)
+        {
+            this.stock = new Item(name, quantity, pricePerUnit, category); //instantiate a new object of type employee
+            this.newStocks.Add(stock); //add it to list of type employee
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
                 {
-                    Items.Remove(i);
-                    return true;
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `depostock` SET `Name` = '{name}', `Quantity` = '{quantity}', `PricePerUnit` = '{pricePerUnit}', `Category` = '{category}' WHERE ID = {id}", connection);
+
+                    cmd.ExecuteNonQuery();
+
+
                 }
             }
-            return false;
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
         }
 
-    */
+
 
     }
 }

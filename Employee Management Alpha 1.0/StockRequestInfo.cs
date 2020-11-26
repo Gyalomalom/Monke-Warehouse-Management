@@ -8,21 +8,26 @@ namespace Employee_Management_Alpha_1._0
 {
     public class StockRequestInfo
     {
-        public string stockItemInfo { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Amount { get; set; }
 
         public StockRequestInfo()
         {
 
         }
 
-        public StockRequestInfo(string stockItemInfo)
+        public StockRequestInfo(int id, string name, int amount)
         {
-            this.stockItemInfo = stockItemInfo;
+            this.ID = id;
+            this.Name = name;
+            this.Amount = amount;
         }
+
 
         public string StocKRequestInformation()
         {
-            string info = this.stockItemInfo; ;
+            string info = $"{ID} {Name} {Amount}";
             return info;
         }
     }

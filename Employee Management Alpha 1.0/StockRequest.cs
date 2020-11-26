@@ -32,7 +32,6 @@ namespace Employee_Management_Alpha_1._0
             stock = new Stock();
             if (stock.GetAllItems() is null)
             {
-                MessageBox.Show("The database is empty!");
                 lbLowQuantityItems.Items.Add("The database is empty!");
             }
             else
@@ -52,7 +51,6 @@ namespace Employee_Management_Alpha_1._0
             stock = new Stock();
             if (stock.GetAllRequests() is null)
             {
-                MessageBox.Show("The database is empty!");
                 lbRequests.Items.Add("The database is empty!");
             }
             else
@@ -63,15 +61,6 @@ namespace Employee_Management_Alpha_1._0
                 }
             }
         }
-
-
-
-
-
-
-
-
-
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -108,13 +97,21 @@ namespace Employee_Management_Alpha_1._0
                 item = new Item();
                 item = stock.GetItemsById(Convert.ToInt32(tbID.Text));
                 string name = item.name;
+                int amount = Convert.ToInt32(numUpDownAmount.Value);
+                int id = item.id;
                 DateTime now = DateTime.Now;
-                stock.AddStockRequest($"{name}  {now.ToString()}");
+                stock.AddStockRequest(id, name, amount);
             }
 
             tbID.Text = "";
+            numUpDownAmount.Value = 1;
             StockList();
             RequestList();
+        }
+
+        private void LbRequests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
