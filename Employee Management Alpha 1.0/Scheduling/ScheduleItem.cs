@@ -9,11 +9,12 @@ namespace Employee_Management_Alpha_1._0.Scheduling
     public class ScheduleItem
     {
         //attributes
-        private int dateID { get; set; }
-        private int empID { get; set; }
-        private bool morning{ get; set; }
-        private bool afternoon { get; set; }
-        private bool evening { get; set; }
+        public int dateID { get; set; }
+        public int empID { get; set; }
+        public bool morning{ get; set; }
+        public bool afternoon { get; set; }
+        public bool evening { get; set; }
+        public int workhours { get; set; }
 
         //constructor(s)
         public ScheduleItem(int DateID, int EmpID, bool Morning, bool Afternoon, bool Evening)
@@ -24,5 +25,7 @@ namespace Employee_Management_Alpha_1._0.Scheduling
             this.afternoon = Afternoon;
             this.evening = Evening;
         }
+
+
     }
 }

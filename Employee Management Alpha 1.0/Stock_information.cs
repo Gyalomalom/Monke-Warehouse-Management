@@ -62,6 +62,7 @@ namespace Employee_Management_Alpha_1._0
             else
             {
                 stock.ChangeItem(tbID.Text, tbNewItemName.Text, Convert.ToInt32(tbNewQuantity.Value), Convert.ToInt32(tbNewPricePerUnit.Value), tbNewCategory.Text);
+                stock.UpdateDepoStockWithNoQuantity(tbID.Text, tbNewItemName.Text, Convert.ToInt32(tbNewQuantity.Value), Convert.ToInt32(tbNewPricePerUnit.Value), tbNewCategory.Text);
             }
            
                 
@@ -107,7 +108,7 @@ namespace Employee_Management_Alpha_1._0
         {
             Item item;
             item = new Item();
-            item = stock.GetItemsById(Convert.ToInt32(tbID.Text));
+            item = stock.GetDepoItemsById(Convert.ToInt32(tbID.Text));
             tbNewItemName.Text = item.name;
             tbNewCategory.Text = item.category;
             tbNewPricePerUnit.Value = Convert.ToDecimal(item.pricePerUnit);
@@ -117,6 +118,14 @@ namespace Employee_Management_Alpha_1._0
         private void LblItemName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Button25_Click(object sender, EventArgs e)
+        {
         }
     }
 }

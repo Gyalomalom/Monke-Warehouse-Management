@@ -223,5 +223,27 @@ namespace Employee_Management_Alpha_1._0
             openChildForm(new StockRequest()); // creates and opens stock info
             hideSubmenus();
         }
+
+        private void BtnDepoRequests_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnDepoRequests_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new RequestsDepo());
+            hideSubmenus();
+        }
+
+        private void BtnDepoInfo_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DepoStocks());
+            hideSubmenus();
+        }
     }
 }

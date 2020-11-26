@@ -28,7 +28,6 @@ namespace Employee_Management_Alpha_1._0
             stock = new Stock();
             if (stock.GetAllItems() is null)
             {
-                MessageBox.Show("The database is empty!");
                 lbStockInfo.Items.Add("The database is empty!");
             }
             else
@@ -58,6 +57,7 @@ namespace Employee_Management_Alpha_1._0
             else
             {
                 stock.AddItem(name, quantity, pricePerUnit, category);
+                stock.AddDepoItem(name, quantity, pricePerUnit, category);
             }
             
 
