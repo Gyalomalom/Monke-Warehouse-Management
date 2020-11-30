@@ -24,7 +24,7 @@ namespace ClockinApp
             clockin = new ClockinManager();
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e) //timer is disabled by default, 
         {
             lblTime.Text = DateTime.Now.ToString("HH:mm");
             clockin.ClockIn();
