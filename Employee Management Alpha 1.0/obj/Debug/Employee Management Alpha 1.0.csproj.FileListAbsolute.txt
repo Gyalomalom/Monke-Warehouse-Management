@@ -257,3 +257,6 @@ C:\Users\Stork v1.0\Source\Repos\a\prj-cb02-6-team-monke\Employee Management Alp
 C:\Users\Stork v1.0\Source\Repos\a\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Stork v1.0\Source\Repos\a\prj-cb02-6-team-monke\Employee Management Alpha 1.0\bin\Debug\MySql.Data.xml
 C:\Users\Stork v1.0\Source\Repos\a\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee Management Alpha 1.0.csproj.CopyComplete
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\ClockinApp.DepoRequests.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.DepoStocks.resources
+C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.RequestsDepo.resources
