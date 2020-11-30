@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clockin.cs" />
-    <Compile Include="ClockinManager.cs" />
-    <Compile Include="DBconnect.cs" />
+    <Compile Include="Logic\Clockin.cs" />
+    <Compile Include="Logic\ClockinManager.cs" />
+    <Compile Include="Logic\DBconnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Portread.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Logic\Portread.cs" />
+    <Compile Include="Logic\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
