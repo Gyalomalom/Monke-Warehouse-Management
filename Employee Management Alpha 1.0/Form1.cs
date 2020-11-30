@@ -38,7 +38,7 @@ namespace Employee_Management_Alpha_1._0
                 btnDepMan.Visible = false;
                 btnEmpMan.Visible = false;
             }
-            if(loggedUser == "Stock")
+            if(loggedUser == "Stock worker")
             {
                 btnDepMan.Visible = false;
                 btnEmpMan.Visible = false;
