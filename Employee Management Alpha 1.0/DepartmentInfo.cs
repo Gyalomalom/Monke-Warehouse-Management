@@ -135,11 +135,11 @@ namespace Employee_Management_Alpha_1._0
                     for (int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
                         {
                             if (departmentManagement.FindDepbyID(Convert.ToInt32(match.Value)).Name == employeeManagement.GetAllEmployees()[i].departmentName)
-                        {
-                        lbEmployeeInfo.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
-                    }
+                            {
+                                lbEmployeeInfo.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
+                            }
+                        }
                 }
-            }
             }
         }
 
