@@ -52,3 +52,4 @@ C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinAp
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.csproj.CopyComplete
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.exe
 C:\Users\alekn\source\repos\prj-cb02-6-team-monke\ClockinApp\obj\Debug\ClockinApp.pdb
+C:\Users\Balomalom\Desktop\Új mappa (2)\prj-cb02-6-team-monke\ClockinApp\bin\Debug\System.Memory.dll
