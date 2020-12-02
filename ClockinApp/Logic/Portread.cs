@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
+using System.Windows.Forms;
 
 namespace ClockinApp
 {
@@ -15,8 +16,17 @@ namespace ClockinApp
         {
             if (port == null)
             {
-                port = new SerialPort("COM3", 9600);
-                port.Open();
+                try
+                {
+                    port = new SerialPort("COM3", 9600);
+                    port.Open();
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("No device found.");
+                }
+                
 
             }
         }
