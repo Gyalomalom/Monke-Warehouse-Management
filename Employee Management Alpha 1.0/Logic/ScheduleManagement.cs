@@ -185,9 +185,24 @@ namespace Employee_Management_Alpha_1._0.Scheduling
         {
             string sql;
             //morning code
-            sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
+            if (timeofday == "morning")
+            {
+                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
                             VALUES ({date}, {empID}, 1, 0, 0)
                             ON DUPLICATE KEY UPDATE {timeofday} = 1;";
+            }
+            else if (timeofday == "afternoon")
+            {
+                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
+                            VALUES ({date}, {empID}, 0, 1, 0)
+                            ON DUPLICATE KEY UPDATE {timeofday} = 1;";
+            }
+            else
+            {
+                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
+                            VALUES ({date}, {empID}, 0, 0, 1)
+                            ON DUPLICATE KEY UPDATE {timeofday} = 1;";
+            }
 
             
             try
