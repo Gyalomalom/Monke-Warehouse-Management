@@ -192,10 +192,6 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Items.AddRange(new object[] {
-            "Depo",
-            "HR",
-            "Admin"});
             this.cbDepartment.Location = new System.Drawing.Point(162, 28);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(93, 24);

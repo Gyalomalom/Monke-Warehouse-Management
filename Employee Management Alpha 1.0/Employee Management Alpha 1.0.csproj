@@ -53,6 +53,7 @@
     <Compile Include="AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\DBManagement.cs" />
     <Compile Include="Depo.cs">
       <SubType>Form</SubType>
     </Compile>
