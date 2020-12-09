@@ -1,5 +1,4 @@
-﻿using Employee_Management_Alpha_1._0.Scheduling;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Employee_Management_Alpha_1._0.Logic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,8 +29,11 @@ namespace Employee_Management_Alpha_1._0
             InitializeComponent();
             Scheduler.Instance = this;
             cbCalWeek.Text = Convert.ToString(ReturnCurrentCalWeek());
-            cbYear.Text = "2020";
-            cbDepartment.Text = "Cleaning";
+            cbYear.Text = Convert.ToString(ReturnCurrentYear());
+            string[] departments = ReturnDepartmentNames();
+            foreach (string name in departments)
+                cbDepartment.Items.Add(name);
+            cbDepartment.Text = departments[0];
             DepName = cbDepartment.Text;
             LoadSchedule();
         }
@@ -61,20 +64,25 @@ namespace Employee_Management_Alpha_1._0
                 }
             }
         }
-
+        #region ReturnMethods
         public int ReturnCurrentDates()
         {
             return Date;
         }
 
-        public int ReturnToD()
+        public int ReturnSelectedToD()
         {
             return ToD;
         }
 
-        public int ReturnYear()
+        public int ReturnSelectedYear()
         {
             return Convert.ToInt32(cbYear.Text);
+        }
+
+        public int ReturnCurrentYear()
+        {
+            return Convert.ToInt32(DateTime.Now.Year);
         }
         public int ReturnCurrentCalWeek()
         {
@@ -89,21 +97,40 @@ namespace Employee_Management_Alpha_1._0
             return Convert.ToInt32(cbCalWeek.Text);
         }
 
-        public string ReturnDepartmentName()
+        public string ReturnSelectedDepartmentName()
         {
+            DepName = cbDepartment.Text;
             return DepName;
         }
+
+        public string[] ReturnDepartmentNames()
+        {
+            Department_Management department = new Department_Management();
+            List<string> depNames = new List<string>();
+            List<Department> allDeps = department.FindAllDep();
+
+            foreach (Department dep in allDeps)
+            {
+                depNames.Add(dep.Name);
+            }
+
+            return depNames.ToArray();
+
+        }
+        #endregion
 
         public void LoadSchedule()
         {
             ClearShiftLabels();
                 int i = 0;
-                scheduleManagement = new ScheduleManagement(Convert.ToInt32(cbYear.SelectedItem), Convert.ToInt32(cbCalWeek.SelectedItem));
+                scheduleManagement = new ScheduleManagement(Convert.ToInt32(ReturnSelectedYear()), Convert.ToInt32(ReturnSelectedCalWeek()), Scheduler.Instance.ReturnSelectedDepartmentName());
                 employeeManagement = new Employee_Management();
+            List<ScheduleItem> Items = new List<ScheduleItem>();
+            Items = scheduleManagement.ReturnScheduledEmployees();
                 RealDates = new List<int>();
-                int tr = 7 - scheduleManagement.ReturnDatesbyDay().Count();
+                int tr = 7 - scheduleManagement.ReturnDatesbyWeekAndYear().Count();//accounts for start of year when calendar week may be smaller than 7 days
                 int j = 0;
-                int tod = 3;
+                int tod = 3;// number representing time of day, starting from 3 = evening, 2 = noon, 1 = morning
                 try
                 {
 
@@ -113,9 +140,9 @@ namespace Employee_Management_Alpha_1._0
                         {
                             foreach (Label lb in gb.Controls.OfType<Label>())
                             {
-                                lb.Text = String.Format("{0:0000/00/00}", scheduleManagement.ReturnDatesbyDay()[i]);
-                                RealDates.Add(scheduleManagement.ReturnDatesbyDay()[i]);
-                                if (i < scheduleManagement.ReturnDatesbyDay().Count())
+                                lb.Text = String.Format("{0:0000/00/00}", scheduleManagement.ReturnDatesbyWeekAndYear()[i]);
+                                RealDates.Add(scheduleManagement.ReturnDatesbyWeekAndYear()[i]);
+                                if (i < scheduleManagement.ReturnDatesbyWeekAndYear().Count())
                                 {
                                     i++;
                                 }
@@ -137,79 +164,116 @@ namespace Employee_Management_Alpha_1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"{ ex}");
+                    MessageBox.Show($" Error loading dates from server. Please make sure given year is supported.{Environment.NewLine}Full Error: {ex}");
                 }
 
                 try
                 {
-                foreach (GroupBox gb in pnlDates.Controls.OfType<GroupBox>())
-                {
-                    foreach (Panel pnl in gb.Controls.OfType<Panel>())
+                    foreach (GroupBox gb in pnlDates.Controls.OfType<GroupBox>())
                     {
-                        //MessageBox.Show($"Working on panel {pnl.Name}");
-                        foreach (Label label in pnl.Controls.OfType<Label>())
+                        foreach (Panel pnl in gb.Controls.OfType<Panel>())
                         {
-                            if ((RealDates[j] != 0))
+                            //MessageBox.Show($"Working on panel {pnl.Name}");
+                            foreach (Label label in pnl.Controls.OfType<Label>())
                             {
-                                /*insert code to read data for speciifc time of date here*/
-                                //MessageBox.Show($"Parsing date(s): {RealDates[j]} with shift {tod}.");
-                                if (scheduleManagement.ReturnEmployeesByShift(tod, RealDates[j])!=null)
+                                if ((RealDates[j] != 0))
                                 {
-
-
-                                    for (int k = 0; k < scheduleManagement.ReturnEmployeesByShift(tod, RealDates[j]).Count(); k++)
+                                    /*insert code to read data for speciifc time of date here*/
+                                    //MessageBox.Show($"Parsing date(s): {RealDates[j]} with shift {tod}.");
+                                    bool Noshift = true;
+                                    if (Items!=null)
                                     {
-                                        //MessageBox.Show($"For date {RealDates[j]} shift {tod} returning employee with ID {scheduleManagement.ReturnEmployeesByShift(tod, RealDates[j])[k]}");
-                                        label.Text += "ID: "+Convert.ToString(employeeManagement.GetEmployeebyID(scheduleManagement.ReturnEmployeesByShift(tod, RealDates[j])[k]).GetEmployeeFullName()) +Environment.NewLine;
-                                    }
-                                }
-                                else
-                                {
-                                    label.Text = "No shifts found.";
-                                }
-                                if (tod == 1)
-                                {
+                                        if (tod == 1)
+                                        {
+                                        
+                                            foreach (ScheduleItem item in Items)
+                                            {
+                                                if ((item.morning) && (item.dateID == RealDates[j]))
+                                                {
+                                                    label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
+                                                    Noshift = false;
+                                                }
+                                            }
 
-                                    tod = 3;
-                                    j++;
-                                }
-                                else
-                                {
-                                    tod--;
+                                        }
+
+                                        if (tod == 2)
+                                        {
+                                            foreach (ScheduleItem item in Items)
+                                            {
+                                                if ((item.afternoon) && (item.dateID == RealDates[j]))
+                                                {
+                                                    label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
+                                                    Noshift = false;
+                                                }
+                                            }
+
+                                        }
+
+                                        if (tod == 3)
+                                        {
+                                            foreach (ScheduleItem item in Items)
+                                            {
+                                                if ((item.evening) && (item.dateID == RealDates[j]))
+                                                {
+                                                    label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
+                                                    Noshift = false;
+                                                }
+                                            }
+
+                                        }                                   
+                                    }
+                                    else
+                                    {
+                                        label.Text = "No shifts found.";
+                                    }
+                                    if (Noshift == true)
+                                    {
+                                        label.Text = "No shifts found.";
+                                    }
+                                    if (tod == 1)
+                                    {
+
+                                        tod = 3;
+                                        j++;
+                                    }
+                                    else
+                                    {
+                                        tod--;
                                     
-                                }
+                                    }
                                     
                
-                            }
-                            else if (RealDates[j] == 0)
-                            {
-                                //MessageBox.Show($"The real date is{RealDates[j]}");
-                                if (tod == 1)
-                                {
-
-                                    tod = 3;
-                                    j++;
                                 }
-                                else
+                                else if (RealDates[j] == 0)
                                 {
-                                    tod--;
+                                    //MessageBox.Show($"The real date is{RealDates[j]}");
+                                    if (tod == 1)
+                                    {
 
+                                        tod = 3;
+                                        j++;
+                                    }
+                                    else
+                                    {
+                                        tod--;
+
+                                    }
+                                    label.Text = "N/A";
                                 }
-                                label.Text = "N/A";
-                            }
                             
+                            }
                         }
                     }
-                }
 
-            }
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"{ex}");
                 }
             
         }
-
+        #region Individual Panel Handling
         private void pnlMornMonday_Click(object sender, EventArgs e)
         {
             Date = RealDates[0];
@@ -552,6 +616,7 @@ namespace Employee_Management_Alpha_1._0
                 SetDefaultColor();
             }
         }
+        #endregion
 
         private void gbMonday_Enter(object sender, EventArgs e)
         {
