@@ -28,7 +28,7 @@ namespace Employee_Management_Alpha_1._0
         public ScheduleListForm()
         {
             InitializeComponent();
-            string dateFormat = String.Format("{0:0000/00/00}", Scheduler.Instance.ReturnCurrentDates());
+            string dateFormat = String.Format("{0:0000/00/00}", date);
             timeofday = "nothing";
             if (Scheduler.Instance.ReturnSelectedToD() == 1)
                 timeofday = "morning";
@@ -50,7 +50,7 @@ namespace Employee_Management_Alpha_1._0
             List<ScheduleItem> employees = scheduleManagement.ReturnAvailableEmployees(timeofday, date);
             foreach(ScheduleItem item in employees)
             {
-                lbAvailableEmployees.Items.Add($"{item.empID} {item.empName} {item.contracthours}/{item.workhours}");
+                lbAvailableEmployees.Items.Add($"{item.empID} {item.empName} {item.workhours}/{item.contracthours}");
             }
         }
 
@@ -107,14 +107,10 @@ namespace Employee_Management_Alpha_1._0
                         
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Please select an employee.");
-                }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Please select an employee.");
             }
         }
 
@@ -122,7 +118,7 @@ namespace Employee_Management_Alpha_1._0
         {
             try
             {
-                if (!(lbAssignedEmp.SelectedItem.Equals(null)))
+                if (!(lbAssignedEmp.SelectedItem == null))
                 {
                     string ID = lbAssignedEmp.SelectedItem.ToString();
                     Match match = Regex.Match(ID, pattern);
@@ -134,7 +130,7 @@ namespace Employee_Management_Alpha_1._0
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Please select an employee.");
             }
         }
 
@@ -142,7 +138,7 @@ namespace Employee_Management_Alpha_1._0
         {
             if (!(superGlobalIDAssigned == -1))
             {
-                scheduleManagement.RemoveEmployeeFromShift(timeofday, Scheduler.Instance.ReturnCurrentDates(), superGlobalIDAssigned);
+                scheduleManagement.RemoveEmployeeFromShift(timeofday, date, superGlobalIDAssigned);
                 MessageBox.Show("Employee unassigned from shift successfully.");
                 UpdateAssignedEmployees();
                 UpdateListEmployees();
