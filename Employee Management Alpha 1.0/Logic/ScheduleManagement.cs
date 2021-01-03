@@ -13,26 +13,28 @@ namespace Employee_Management_Alpha_1._0.Logic
 {
     public class ScheduleManagement
     {
-        MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");//sql connector
+        protected MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi360075;uid=dbi360075;password=monke;");//sql connector
 
-        int calWeek;
-        int year;
-        string department;
+        protected int calWeek;
+        protected int year;
+        protected string department;
         ScheduleItem sItem;
         
-        //Constructor(s)
-        public ScheduleManagement(int year, int CalendarWeek, string Department)
+       
+        public ScheduleManagement(int year, int CalendarWeek, string department)
         {
             this.year = year;
             this.calWeek = CalendarWeek;
-            this.department = Department;
+            this.department = department;
         }
 
         //methods
         public List<int> ReturnDatesbyWeekAndYear()
         {
             List<int> daysbyDate = new List<int>();
-            string sql = $"SELECT * FROM `time_dimension` WHERE `y` = {year} AND `w` = { calWeek };";
+            string sql = $@"SELECT y, w, id 
+                            FROM time_dimension
+                            WHERE y = '{year}' AND w = '{calWeek}'";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -116,90 +118,7 @@ namespace Employee_Management_Alpha_1._0.Logic
 
             
         }
-        /*following method is overloaded to include a pre-loaded list of scheduled employees to avoid multiple DB connections (and thus speeding up the app)*/
-        public List<ScheduleItem> ReturnEmployeesByShift(List<ScheduleItem> scheduledEmployees, string timeofday, int dateID)
-        {
-            List<ScheduleItem> employees = new List<ScheduleItem>();
-            if (scheduledEmployees != null)
-            {
-                if (timeofday == "morning")
-                {
-                    //morning code
-                    foreach (ScheduleItem e in scheduledEmployees)
-                    {
-                        if (e.dateID == dateID)
-                            if (e.morning)
-                            {
-                                employees.Add(e);
-                            }
-                    }
-                }
-                else if (timeofday == "afternoon")
-                {
-                    //afternoon code
-                    foreach (ScheduleItem e in scheduledEmployees)
-                    {
-                        if (e.dateID == dateID)
-                            if (e.afternoon)
-                            {
-                                employees.Add(e);
-                            }
-                    }
-                }
-                else
-                {
-                    //evening code
-                    foreach (ScheduleItem e in scheduledEmployees)
-                    {
-                        if (e.dateID == dateID)
-                            if (e.evening)
-                            {
-                                employees.Add(e);
-                            }
-                    }
-                }
-
-                return employees;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        /*method to return the shifts an employee has when given a specified date and employee ID, still unfinished*/
-
-        public List<ScheduleItem> ReturnEmployeeShiftsByDate(int DateID, int EmpID)
-        {
-            List<ScheduleItem> employeeWithShifts = new List<ScheduleItem>();
-            string sql = $"SELECT * FROM `schedule` WHERE `DateID` = '{DateID}' AND `EmpID`= '{EmpID}';";
-
-            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
-            conn.Open();
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-
-            while (dr.Read())
-            {
-                employeeWithShifts.Add(new ScheduleItem(Convert.ToInt32(dr["DateID"]), Convert.ToInt32(dr["EmpID"]), Convert.ToBoolean(dr["morning"]), Convert.ToBoolean(dr["afternoon"]), Convert.ToBoolean(dr["evening"])));
-            }
-
-
-            if (employeeWithShifts.Count() >= 1)
-
-            {
-                conn.Close();
-
-                return employeeWithShifts;
-            }
-            else
-            {
-                conn.Close();
-
-                return null;
-            }
-
-        }
+        
 
         
 
@@ -261,7 +180,8 @@ namespace Employee_Management_Alpha_1._0.Logic
                     
                     foreach (ScheduleItem hours in HrsScheduled)
                         if (hours.empID == person.empID)
-                            Available.Add(hours);
+                            if (hours.contracthours - hours.workhours > 0)
+                                Available.Add(hours);
                 }
             }
 

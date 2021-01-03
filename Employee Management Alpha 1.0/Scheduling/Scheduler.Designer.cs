@@ -96,6 +96,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.pnlMornSunday = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnAutoFill = new System.Windows.Forms.Button();
+            this.tbAutoCalWeek = new System.Windows.Forms.TextBox();
             this.gbGeneralScheduler.SuspendLayout();
             this.pnlDates.SuspendLayout();
             this.gbMonday.SuspendLayout();
@@ -131,6 +133,8 @@
             // gbGeneralScheduler
             // 
             this.gbGeneralScheduler.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbGeneralScheduler.Controls.Add(this.tbAutoCalWeek);
+            this.gbGeneralScheduler.Controls.Add(this.btnAutoFill);
             this.gbGeneralScheduler.Controls.Add(this.btnLoadSchedule);
             this.gbGeneralScheduler.Controls.Add(this.label6);
             this.gbGeneralScheduler.Controls.Add(this.cbYear);
@@ -901,6 +905,23 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "///";
             // 
+            // btnAutoFill
+            // 
+            this.btnAutoFill.Location = new System.Drawing.Point(1153, 11);
+            this.btnAutoFill.Name = "btnAutoFill";
+            this.btnAutoFill.Size = new System.Drawing.Size(199, 57);
+            this.btnAutoFill.TabIndex = 16;
+            this.btnAutoFill.Text = "Automatically fill week";
+            this.btnAutoFill.UseVisualStyleBackColor = true;
+            this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
+            // 
+            // tbAutoCalWeek
+            // 
+            this.tbAutoCalWeek.Location = new System.Drawing.Point(1153, 74);
+            this.tbAutoCalWeek.Name = "tbAutoCalWeek";
+            this.tbAutoCalWeek.Size = new System.Drawing.Size(100, 22);
+            this.tbAutoCalWeek.TabIndex = 17;
+            // 
             // Scheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1042,5 +1063,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tbAutoCalWeek;
+        private System.Windows.Forms.Button btnAutoFill;
     }
 }

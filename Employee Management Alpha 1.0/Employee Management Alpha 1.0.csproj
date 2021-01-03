@@ -84,7 +84,9 @@
     <Compile Include="DepoStocks.Designer.cs">
       <DependentUpon>DepoStocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AutoScheduler.cs" />
     <Compile Include="Logic\ManagementItem.cs" />
+    <Compile Include="Logic\ScheduleDay.cs" />
     <Compile Include="RequestsDepo.cs">
       <SubType>Form</SubType>
     </Compile>

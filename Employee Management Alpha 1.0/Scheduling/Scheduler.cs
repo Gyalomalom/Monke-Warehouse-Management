@@ -639,5 +639,11 @@ namespace Employee_Management_Alpha_1._0
         {
             DepName = cbDepartment.Text;
         }
+
+        private void btnAutoFill_Click(object sender, EventArgs e)
+        {
+            AutoScheduler autoSched = new AutoScheduler(ReturnSelectedYear(), ReturnSelectedCalWeek(), ReturnSelectedDepartmentName());
+            autoSched.AutoPopulate();
+        }
     }
 }

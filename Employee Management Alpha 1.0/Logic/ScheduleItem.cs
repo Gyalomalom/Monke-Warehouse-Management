@@ -19,6 +19,10 @@ namespace Employee_Management_Alpha_1._0.Logic
         public int contracthours { get; set; }
 
         //constructor(s)
+        public ScheduleItem()
+        {
+
+        }
         public ScheduleItem(int DateID, int EmpID, bool Morning, bool Afternoon, bool Evening)
         {
             this.dateID = DateID;
@@ -51,6 +55,13 @@ namespace Employee_Management_Alpha_1._0.Logic
             this.empName = Name;
             this.contracthours = HoursContract;
             this.workhours = HoursActual;
+        }
+
+        public ScheduleItem (int EmpID, string Name, int HoursContract)
+        {
+            this.empID = EmpID;
+            this.empName = Name;
+            this.contracthours = HoursContract;
         }
 
 
