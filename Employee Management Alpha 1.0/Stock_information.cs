@@ -127,5 +127,34 @@ namespace Employee_Management_Alpha_1._0
         private void Button25_Click(object sender, EventArgs e)
         {
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            lbStockInfo.Items.Clear();
+            stock = new Stock();
+            stock.SearchItemStock(tbSearchBar.Text);
+
+
+            if (stock.SearchItemStock(tbSearchBar.Text) is null)
+            {
+                lbStockInfo.Items.Add("No items with such name!");
+            }
+            else
+            {
+                for (int i = 0; i < stock.SearchItemStock(tbSearchBar.Text).Count(); i++)
+                {
+                    lbStockInfo.Items.Add(stock.SearchItemStock(tbSearchBar.Text)[i].ItemInfo());
+                }
+            }
+        }
+
+        private void TbSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            if(tbSearchBar.Text == "")
+            {
+                StockList();
+            }
+            
+        }
     }
 }

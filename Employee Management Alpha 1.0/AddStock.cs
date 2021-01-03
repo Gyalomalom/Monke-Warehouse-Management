@@ -59,8 +59,6 @@ namespace Employee_Management_Alpha_1._0
                 stock.AddItem(name, quantity, pricePerUnit, category);
                 stock.AddDepoItem(name, quantity, pricePerUnit, category);
             }
-            
-
 
             StockList();
 
@@ -68,37 +66,6 @@ namespace Employee_Management_Alpha_1._0
             tbQuantity.Text = "";
             tbPricePerUnit.Text = "";
             cbCategory.Text = "";
-
-
-            //if (!string.IsNullOrEmpty(tbName.Text))
-            //{
-            //    string name = tbName.Text;
-            //    int quantity = Convert.ToInt32(tbQuantity.Text);
-            //    double pricePerUnit = Convert.ToDouble(tbPricePerUnit.Text);
-            //    string category = cbCategory.Text;
-
-
-            //    if (cbCategory.Items.Contains(category)) // checks if the combobox contains the newly entered category
-            //    {
-
-            //    }
-            //    else
-            //    {
-            //        cbCategory.Items.Add(category); // if it is a new category, it adds that category to the combobox
-            //    }
-
-            //    //stock.AddStock(name, quantity, pricePerUnit, category);
-            //    StockList();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please enter name, quantity and price per unit");
-            //}
-
-            //tbName.Text = "";
-            //tbPricePerUnit.Value = 0;
-            //tbQuantity.Value = 0;
-            //cbCategory.Text = "";
         }
 
         private void AddStock_Shown(object sender, EventArgs e)
