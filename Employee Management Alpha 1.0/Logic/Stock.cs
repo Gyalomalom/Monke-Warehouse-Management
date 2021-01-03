@@ -137,7 +137,7 @@ namespace Employee_Management_Alpha_1._0
         public List<Item> SearchItemStock(string s)
         {
             newStocks.Clear();
-            string sql = "SELECT * FROM itemstock WHERE Name OR ID LIKE '%" + s + "%'";
+            string sql = "SELECT * FROM itemstock WHERE Name LIKE '%" + s + "%'";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
