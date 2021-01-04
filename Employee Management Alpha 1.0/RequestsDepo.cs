@@ -73,7 +73,7 @@ namespace Employee_Management_Alpha_1._0
 
         private void LbRequests_Click(object sender, EventArgs e)
         {
-            if (!(lbRequests.SelectedIndex.Equals(null)))
+            if (!(lbRequests.SelectedItem == null))
             {
                 string ID = lbRequests.SelectedItem.ToString();
                 Match match = Regex.Match(ID, pattern);

@@ -81,7 +81,7 @@ namespace Employee_Management_Alpha_1._0
 
         private void LbStockInfo_Click(object sender, EventArgs e)
         {
-            if(!(lbStockInfo.SelectedIndex.Equals(null)))
+            if(!(lbStockInfo.SelectedItem == null))
             {
                 string ID = lbStockInfo.SelectedItem.ToString();
                 Match match = Regex.Match(ID, pattern);
@@ -139,6 +139,34 @@ namespace Employee_Management_Alpha_1._0
             //item = new Item();
             //item = stock.GetItemsById(Convert.ToInt32(tbID.Text));
             //Quantity = item.quantity;
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(tbSearchBar.Text == "")
+            {
+                StockList();
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            lbStockInfo.Items.Clear();
+            stock = new Stock();
+            stock.SearchItemStock(tbSearchBar.Text);
+
+
+            if (stock.SearchItemStock(tbSearchBar.Text) is null)
+            {
+                lbStockInfo.Items.Add("No items with such name!");
+            }
+            else
+            {
+                for (int i = 0; i < stock.SearchItemStock(tbSearchBar.Text).Count(); i++)
+                {
+                    lbStockInfo.Items.Add(stock.SearchItemStock(tbSearchBar.Text)[i].ItemInfo());
+                }
+            }
         }
     }
 }
