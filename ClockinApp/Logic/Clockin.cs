@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClockinApp
 {
-    class Clockin
+    public class Clockin
     {
         public int ID { get; set; }
         public string clockin { get; set; }
