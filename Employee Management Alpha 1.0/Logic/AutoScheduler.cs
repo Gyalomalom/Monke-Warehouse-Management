@@ -6,6 +6,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Threading.Tasks;
 using System.Data;
+using System.Diagnostics;
 using Employee_Management_Alpha_1._0.Database;
 using System.Windows.Forms;
 
@@ -173,6 +174,7 @@ namespace Employee_Management_Alpha_1._0.Logic
             
             foreach (int date in allDates)
             {
+                Debug.WriteLine($"parsing {date}");
                 int counter = hoursPerDay; //set default value to counter
                 ScheduleDay dayPlaceholder = null;
                 if(datesWithHours!=null)
@@ -184,6 +186,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                         dayPlaceholder = day;
                     }
                 }
+                //Debug.WriteLine($"Counter {counter} + morning {dayPlaceholder.hoursMorning} + noon {dayPlaceholder.hoursNoon} + eve {dayPlaceholder.hoursEvening} + total {dayPlaceholder.hoursDone}");
                 while (counter > 0) //as long as that specific day still has unfilled hours
                 {
 
@@ -200,6 +203,8 @@ namespace Employee_Management_Alpha_1._0.Logic
                             
                             if (availableEmps.Any())
                             {
+                                Debug.WriteLine("Looking for employees for date: " + date.ToString() + "morn");
+                                Debug.WriteLine(availableEmps[0].empName + date.ToString() + "morning");
                                 ScheduleItem preferredEmployee = availableEmps.FirstOrDefault();
                                 //CHECK IF EMPLOYEE IS ALREADY SCHEDULED TODAY
                                 if (schedTodayExShift != null)
@@ -220,20 +225,23 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 dayPlaceholder.hoursMorning += 4;
                                 counter -= 4;
                             }
-                            else //if there are no available employees, end the process by setting counter to 0
+                            else //if there are no available employees, saturate the shift hours and move on to the next shift;
                             {
-                                counter = 0;
+                                dayPlaceholder.hoursMorning = hoursPerShift;
+                                Debug.WriteLine("No available employees found.");
                             }
                             
                         }
                         else if(dayPlaceholder.hoursNoon < hoursPerShift)
                         {
+                            Debug.WriteLine("Looking for employees for date: " + date.ToString() + "noon");
                             //if employee is available, add them here
                             List<ScheduleItem> availableEmps = this.ReturnAvailableEmployees("afternoon", date);
                             List<ScheduleItem> schedTodayExShift = this.ReturnScheduledEmployeesByDayExlShift(date, "afternoon");
                             
                             if (availableEmps.Any())
                             {
+                                Debug.WriteLine(availableEmps[0].empName + date.ToString() + "noon");
                                 ScheduleItem preferredEmployee = availableEmps.FirstOrDefault();
                                 //CHECK IF EMPLOYEE IS ALREADY SCHEDULED TODAY
                                 if (schedTodayExShift != null)
@@ -254,19 +262,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 dayPlaceholder.hoursNoon += 4;
                                 counter -= 4;
                             }
-                            else //if there are no available employees, end the process by setting counter to 0
+                            else //if there are no available employees, saturate the shift hours and move on to next shift
                             {
-                                counter = 0;
+                                dayPlaceholder.hoursNoon = hoursPerShift;
+                                Debug.WriteLine("No available employees found.");
                             }
                         }
                         else if(dayPlaceholder.hoursEvening < hoursPerShift)
                         {
+                            Debug.WriteLine("Looking for employees for date: " + date.ToString() + "eve");
                             //if employee is available, add them here
                             List<ScheduleItem> availableEmps = this.ReturnAvailableEmployees("evening", date);
                             List<ScheduleItem> schedTodayExShift = this.ReturnScheduledEmployeesByDayExlShift(date, "evening");
                             
                             if (availableEmps.Any())
                             {
+                                Debug.WriteLine(availableEmps[0].empName + date.ToString() + "eve");
                                 ScheduleItem preferredEmployee = availableEmps.FirstOrDefault();
                                 //CHECK IF EMPLOYEE IS ALREADY SCHEDULED TODAY
                                 if (schedTodayExShift != null)
@@ -287,9 +298,10 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 dayPlaceholder.hoursEvening += 4;
                                 counter -= 4;
                             }
-                            else //if there are no available employees, end the process by setting counter to 0
+                            else //since it's the last shift for the day, if there are no available employees, end the process by setting counter to 0
                             {
                                 counter = 0;
+                                Debug.WriteLine("No available employees found.");
                             }
                         }
                     }
@@ -298,12 +310,14 @@ namespace Employee_Management_Alpha_1._0.Logic
                         dayPlaceholder = new ScheduleDay(date, 0, 0, 0, 0);
                         if (dayPlaceholder.hoursMorning < hoursPerShift)
                         {
+                            Debug.WriteLine("Looking for employees for date: " + date.ToString() + "morn");
                             //if employee is available, add them here
                             List<ScheduleItem> availableEmps = this.ReturnAvailableEmployees("morning", date);
                             List<ScheduleItem> schedTodayExShift = this.ReturnScheduledEmployeesByDayExlShift(date, "morning");
                             
                             if (availableEmps.Any())
                             {
+                                Debug.WriteLine(availableEmps[0].empName + date.ToString() + "morn");
                                 ScheduleItem preferredEmployee = availableEmps.FirstOrDefault();
                                 //CHECK IF EMPLOYEE IS ALREADY SCHEDULED TODAY
                                 if (schedTodayExShift != null)
@@ -324,19 +338,23 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 dayPlaceholder.hoursMorning += 4;
                                 counter -= 4;
                             }
-                            else //if there are no available employees, end the process by setting counter to 0
+                            else //if there are no available employees, saturate the shift hours and move on to next shift
                             {
-                                counter = 0;
+                                dayPlaceholder.hoursMorning = hoursPerShift;
+                                Debug.WriteLine("No available employees found.");
                             }
                         }
                         else if (dayPlaceholder.hoursNoon < hoursPerShift)
                         {
+                            Debug.WriteLine("Looking for employees for date: " + date.ToString() + "noon");
+
                             //if employee is available, add them here
                             List<ScheduleItem> availableEmps = this.ReturnAvailableEmployees("afternoon", date);
                             List<ScheduleItem> schedTodayExShift = this.ReturnScheduledEmployeesByDayExlShift(date, "afternoon");
                             
                             if (availableEmps.Any())
                             {
+                                Debug.WriteLine(availableEmps[0].empName + date.ToString() + "noon");
                                 ScheduleItem preferredEmployee = availableEmps.FirstOrDefault();
                                 //CHECK IF EMPLOYEE IS ALREADY SCHEDULED TODAY
                                 if (schedTodayExShift != null)
@@ -357,19 +375,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 dayPlaceholder.hoursNoon += 4;
                                 counter -= 4;
                             }
-                            else //if there are no available employees, end the process by setting counter to 0
+                            else //if there are no available employees, saturate the shift hours and move on to next shift
                             {
-                                counter = 0;
+                                dayPlaceholder.hoursNoon = hoursPerShift;
+                                Debug.WriteLine("No available employees found.");
                             }
                         }
                         else if (dayPlaceholder.hoursEvening < hoursPerShift)
                         {
+                            Debug.WriteLine("Looking for employees for date: " + date.ToString() + "eve");
                             //if employee is available, add them here
                             List<ScheduleItem> availableEmps = this.ReturnAvailableEmployees("evening", date);
                             List<ScheduleItem> schedTodayExShift = this.ReturnScheduledEmployeesByDayExlShift(date, "evening");
                             
                             if (availableEmps.Any())
                             {
+                                Debug.WriteLine(availableEmps[0].empName + date.ToString() + "eve");
                                 ScheduleItem preferredEmployee = availableEmps.FirstOrDefault();
                                 //CHECK IF EMPLOYEE IS ALREADY SCHEDULED TODAY
                                 if (schedTodayExShift != null)
@@ -390,9 +411,10 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 dayPlaceholder.hoursEvening += 4;
                                 counter -= 4;
                             }
-                            else //if there are no available employees, end the process by setting counter to 0
+                            else //since it's the last shift of the day, if there are no available employees, end the process by setting counter to 0
                             {
                                 counter = 0;
+                                Debug.WriteLine("No available employees found.");
                             }
                         }
                     }

@@ -14,7 +14,7 @@ namespace Employee_Management_Alpha_1._0.Logic
         public int hoursEvening { get; set; }
         public int hoursNoon { get; set; }
         //constructors
-        public ScheduleDay(int dateID, int HoursMorning, int hoursNoon, int hoursEvening, int hoursDone)
+        public ScheduleDay(int dateID, int hoursMorning, int hoursNoon, int hoursEvening, int hoursDone)
         {
             this.hoursDone = hoursDone;
             this.dateID = dateID;
