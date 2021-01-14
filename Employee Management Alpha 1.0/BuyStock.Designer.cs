@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbSearchBar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAmount)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -84,12 +87,12 @@
             this.btnBuyStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnBuyStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuyStock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuyStock.Location = new System.Drawing.Point(57, 117);
+            this.btnBuyStock.Location = new System.Drawing.Point(253, 43);
             this.btnBuyStock.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuyStock.Name = "btnBuyStock";
-            this.btnBuyStock.Size = new System.Drawing.Size(174, 41);
+            this.btnBuyStock.Size = new System.Drawing.Size(110, 46);
             this.btnBuyStock.TabIndex = 52;
-            this.btnBuyStock.Text = "Buy";
+            this.btnBuyStock.Text = "Buy selected";
             this.btnBuyStock.UseVisualStyleBackColor = false;
             this.btnBuyStock.Click += new System.EventHandler(this.BtnBuyStock_Click);
             // 
@@ -138,7 +141,7 @@
             this.groupBox1.Controls.Add(this.tbID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.Color.Silver;
-            this.groupBox1.Location = new System.Drawing.Point(57, 11);
+            this.groupBox1.Location = new System.Drawing.Point(75, 16);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -160,12 +163,45 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Silver;
+            this.btnSearch.Location = new System.Drawing.Point(218, 142);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 27);
+            this.btnSearch.TabIndex = 70;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 69;
+            this.label3.Text = "Search Bar";
+            // 
+            // tbSearchBar
+            // 
+            this.tbSearchBar.Location = new System.Drawing.Point(75, 146);
+            this.tbSearchBar.Name = "tbSearchBar";
+            this.tbSearchBar.Size = new System.Drawing.Size(137, 20);
+            this.tbSearchBar.TabIndex = 68;
+            this.tbSearchBar.TextChanged += new System.EventHandler(this.TbSearchBar_TextChanged);
+            // 
             // BuyStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(616, 396);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbSearchBar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbStockSalesInfo);
@@ -195,5 +231,8 @@
         private System.Windows.Forms.ListBox lbStockSalesInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
+        internal System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbSearchBar;
     }
 }

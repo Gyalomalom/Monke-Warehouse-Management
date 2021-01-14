@@ -91,5 +91,33 @@ namespace Employee_Management_Alpha_1._0
             tbNewPricePerUnit.Value = Convert.ToDecimal(item.pricePerUnit);
             tbNewQuantity.Text = Convert.ToString(item.quantity);
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            lbStockInfo.Items.Clear();
+            stock = new Stock();
+            stock.SearchDepoStock(tbSearchBar.Text);
+
+
+            if (stock.SearchDepoStock(tbSearchBar.Text) is null)
+            {
+                lbStockInfo.Items.Add("No items with such name!");
+            }
+            else
+            {
+                for (int i = 0; i < stock.SearchDepoStock(tbSearchBar.Text).Count(); i++)
+                {
+                    lbStockInfo.Items.Add(stock.SearchDepoStock(tbSearchBar.Text)[i].ItemInfo());
+                }
+            }
+        }
+
+        private void TbSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            if(tbSearchBar.Text == "")
+            {
+                StockList();
+            }
+        }
     }
 }
