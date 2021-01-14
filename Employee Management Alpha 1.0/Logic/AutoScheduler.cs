@@ -42,12 +42,12 @@ namespace Employee_Management_Alpha_1._0.Logic
 
         public int GetHoursPerDay()
         {
-            return this.GetAvailableHours() / 7;
+            return (this.GetAvailableHours() / 7)-((this.GetAvailableHours() / 7)%12);
         }
         
         public int GetHoursPerShift()
         {
-            return (this.GetHoursPerDay() / 3);
+            return ((this.GetHoursPerDay() / 3)-((this.GetHoursPerDay() / 3)%4));
         }
 
         public List<ScheduleItem> GetAllEmployees()
@@ -167,7 +167,6 @@ namespace Employee_Management_Alpha_1._0.Logic
             List<int> allDates = this.ReturnDatesbyWeekAndYear();
             List<ScheduleDay> datesWithHours = this.GetScheduleDaysAndHours();
             List < ScheduleItem > employees = this.GetAllEmployees();
-            int hoursPerWeek = this.GetAvailableHours();
             int hoursPerDay = this.GetHoursPerDay();
             int hoursPerShift = this.GetHoursPerShift();
 
@@ -301,7 +300,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                             else //since it's the last shift for the day, if there are no available employees, end the process by setting counter to 0
                             {
                                 counter = 0;
-                                Debug.WriteLine("No available employees found.");
+                                Debug.WriteLine("No available employees found. Exit clause.");
                             }
                         }
                     }
@@ -414,7 +413,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                             else //since it's the last shift of the day, if there are no available employees, end the process by setting counter to 0
                             {
                                 counter = 0;
-                                Debug.WriteLine("No available employees found.");
+                                Debug.WriteLine("No available employees found. Exit clause.");
                             }
                         }
                     }
