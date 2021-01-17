@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ClockinApp
 {
-    class Portread
+    public class Portread
     {
         SerialPort port;
 

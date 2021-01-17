@@ -33,6 +33,9 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.tbID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbSearchBar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbStockInfo
@@ -87,12 +90,45 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "ID:";
             // 
+            // tbSearchBar
+            // 
+            this.tbSearchBar.Location = new System.Drawing.Point(78, 136);
+            this.tbSearchBar.Name = "tbSearchBar";
+            this.tbSearchBar.Size = new System.Drawing.Size(137, 20);
+            this.tbSearchBar.TabIndex = 48;
+            this.tbSearchBar.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Search Bar";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Silver;
+            this.btnSearch.Location = new System.Drawing.Point(221, 132);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 27);
+            this.btnSearch.TabIndex = 50;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
             // RemoveStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(616, 396);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbSearchBar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.btnRemoveStockItem);
@@ -114,5 +150,8 @@
         internal System.Windows.Forms.Button btnRemoveStockItem;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbSearchBar;
+        private System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Button btnSearch;
     }
 }

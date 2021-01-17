@@ -38,6 +38,9 @@
             this.numUpDownAmount = new System.Windows.Forms.NumericUpDown();
             this.tbID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbSearchBar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAmount)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +108,7 @@
             this.groupBox1.Controls.Add(this.tbID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.Color.Silver;
-            this.groupBox1.Location = new System.Drawing.Point(75, 31);
+            this.groupBox1.Location = new System.Drawing.Point(58, 25);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -160,12 +163,45 @@
             this.label1.TabIndex = 56;
             this.label1.Text = "ID:";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Silver;
+            this.btnSearch.Location = new System.Drawing.Point(219, 120);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 27);
+            this.btnSearch.TabIndex = 73;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "Search Bar";
+            // 
+            // tbSearchBar
+            // 
+            this.tbSearchBar.Location = new System.Drawing.Point(76, 124);
+            this.tbSearchBar.Name = "tbSearchBar";
+            this.tbSearchBar.Size = new System.Drawing.Size(137, 20);
+            this.tbSearchBar.TabIndex = 71;
+            this.tbSearchBar.TextChanged += new System.EventHandler(this.TbSearchBar_TextChanged);
+            // 
             // StockRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(616, 396);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbSearchBar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbRequests);
@@ -195,5 +231,8 @@
         private System.Windows.Forms.NumericUpDown numUpDownAmount;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbSearchBar;
     }
 }

@@ -12,10 +12,10 @@ using System.IO.Ports;
 
 namespace ClockinApp
 {
-    class ClockinManager
+    public class ClockinManager
     {
-        Portread readcard;
-        DBconnect database;
+        protected Portread readcard;
+        protected DBconnect database;
 
         public ClockinManager()
         {

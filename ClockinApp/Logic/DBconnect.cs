@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ClockinApp
 {
-    class DBconnect
+    public class DBconnect
     {
 
         public List<Clockin> clockins = new List<Clockin>();

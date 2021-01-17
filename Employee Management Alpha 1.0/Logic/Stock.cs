@@ -134,10 +134,85 @@ namespace Employee_Management_Alpha_1._0
             }
         }
 
+        public List<Item> SearchItemStock(string s)
+        {
+            newStocks.Clear();
+            string sql = "SELECT * FROM itemstock WHERE Name LIKE '%" + s + "%'";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                newStocks.Add(new Item(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToInt32(dr[2]), Convert.ToDouble(dr[3]), Convert.ToString(dr[4])));
+
+            }
+            if (newStocks.Count() >= 1)
+            {
+                conn.Close();
+                return newStocks;
+            }
+            else
+            {
+                conn.Close();
+                return null;
+            }
+        }
+
+        public List<Item> SearchDepoStock(string s)
+        {
+            newStocks.Clear();
+            string sql = "SELECT * FROM depostock WHERE Name LIKE '%" + s + "%'";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                newStocks.Add(new Item(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToInt32(dr[2]), Convert.ToDouble(dr[3]), Convert.ToString(dr[4])));
+
+            }
+            if (newStocks.Count() >= 1)
+            {
+                conn.Close();
+                return newStocks;
+            }
+            else
+            {
+                conn.Close();
+                return null;
+            }
+        }
+
         public List<Item> GetAllDepoStock()
         {
             DepoStock.Clear();
             string sql = "SELECT * FROM depostock";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                DepoStock.Add(new Item(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToInt32(dr[2]), Convert.ToDouble(dr[3]), Convert.ToString(dr[4])));
+
+            }
+            if (DepoStock.Count() >= 1)
+            {
+                conn.Close();
+                return DepoStock;
+            }
+            else
+            {
+                conn.Close();
+                return null;
+            }
+        }
+
+        public List<Item> GetAllDepoStockWithLowQuantity()
+        {
+            DepoStock.Clear();
+            string sql = "SELECT * FROM depostock WHERE Quantity < 15 ORDER BY Quantity DESC";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -249,7 +324,7 @@ namespace Employee_Management_Alpha_1._0
                 connection.Open();
                 if (connection.State == ConnectionState.Open)
                 {
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE `itemstock` SET `Quantity` = '{quantity - amount}' WHERE ID = {id}", connection);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE `depostock` SET `Quantity` = '{quantity + amount}' WHERE ID = {id}", connection);
 
                     cmd.ExecuteNonQuery();
                 }
