@@ -61,34 +61,37 @@
             this.groupBox1.Controls.Add(this.lblPricePerUnit);
             this.groupBox1.Controls.Add(this.Label4);
             this.groupBox1.ForeColor = System.Drawing.Color.Silver;
-            this.groupBox1.Location = new System.Drawing.Point(59, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(79, 14);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(292, 142);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(389, 175);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item details:";
             // 
             // tbNewItemName
             // 
-            this.tbNewItemName.Location = new System.Drawing.Point(129, 27);
+            this.tbNewItemName.Location = new System.Drawing.Point(172, 33);
+            this.tbNewItemName.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewItemName.Name = "tbNewItemName";
-            this.tbNewItemName.Size = new System.Drawing.Size(120, 20);
+            this.tbNewItemName.Size = new System.Drawing.Size(159, 22);
             this.tbNewItemName.TabIndex = 56;
             // 
             // tbNewCategory
             // 
-            this.tbNewCategory.Location = new System.Drawing.Point(129, 106);
+            this.tbNewCategory.Location = new System.Drawing.Point(172, 130);
+            this.tbNewCategory.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewCategory.Name = "tbNewCategory";
-            this.tbNewCategory.Size = new System.Drawing.Size(120, 20);
+            this.tbNewCategory.Size = new System.Drawing.Size(159, 22);
             this.tbNewCategory.TabIndex = 63;
             // 
             // tbNewQuantity
             // 
-            this.tbNewQuantity.Location = new System.Drawing.Point(129, 53);
+            this.tbNewQuantity.Location = new System.Drawing.Point(172, 65);
+            this.tbNewQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewQuantity.Name = "tbNewQuantity";
-            this.tbNewQuantity.Size = new System.Drawing.Size(120, 20);
+            this.tbNewQuantity.Size = new System.Drawing.Size(160, 22);
             this.tbNewQuantity.TabIndex = 57;
             // 
             // lblCategory
@@ -97,23 +100,25 @@
             this.lblCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCategory.Location = new System.Drawing.Point(32, 106);
+            this.lblCategory.Location = new System.Drawing.Point(43, 130);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(55, 15);
+            this.lblCategory.Size = new System.Drawing.Size(68, 18);
             this.lblCategory.TabIndex = 59;
             this.lblCategory.Text = "Category";
             // 
             // tbNewPricePerUnit
             // 
             this.tbNewPricePerUnit.DecimalPlaces = 2;
-            this.tbNewPricePerUnit.Location = new System.Drawing.Point(129, 79);
+            this.tbNewPricePerUnit.Location = new System.Drawing.Point(172, 97);
+            this.tbNewPricePerUnit.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewPricePerUnit.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.tbNewPricePerUnit.Name = "tbNewPricePerUnit";
-            this.tbNewPricePerUnit.Size = new System.Drawing.Size(120, 20);
+            this.tbNewPricePerUnit.Size = new System.Drawing.Size(160, 22);
             this.tbNewPricePerUnit.TabIndex = 58;
             // 
             // lblItemName
@@ -122,9 +127,10 @@
             this.lblItemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblItemName.Location = new System.Drawing.Point(32, 28);
+            this.lblItemName.Location = new System.Drawing.Point(43, 34);
+            this.lblItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(71, 15);
+            this.lblItemName.Size = new System.Drawing.Size(84, 18);
             this.lblItemName.TabIndex = 60;
             this.lblItemName.Text = "Item Name:";
             // 
@@ -134,9 +140,10 @@
             this.lblPricePerUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.lblPricePerUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPricePerUnit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPricePerUnit.Location = new System.Drawing.Point(32, 79);
+            this.lblPricePerUnit.Location = new System.Drawing.Point(43, 97);
+            this.lblPricePerUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPricePerUnit.Name = "lblPricePerUnit";
-            this.lblPricePerUnit.Size = new System.Drawing.Size(82, 15);
+            this.lblPricePerUnit.Size = new System.Drawing.Size(98, 18);
             this.lblPricePerUnit.TabIndex = 61;
             this.lblPricePerUnit.Text = "Price per unit:";
             // 
@@ -146,28 +153,33 @@
             this.Label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Label4.Location = new System.Drawing.Point(33, 53);
+            this.Label4.Location = new System.Drawing.Point(44, 65);
+            this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(54, 15);
+            this.Label4.Size = new System.Drawing.Size(66, 18);
             this.Label4.TabIndex = 62;
             this.Label4.Text = "Quantity:";
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(486, 130);
+            this.tbID.Location = new System.Drawing.Point(648, 160);
+            this.tbID.Margin = new System.Windows.Forms.Padding(4);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(107, 20);
+            this.tbID.Size = new System.Drawing.Size(141, 22);
             this.tbID.TabIndex = 68;
             this.tbID.TextChanged += new System.EventHandler(this.TbID_TextChanged);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Silver;
-            this.btnUpdate.Location = new System.Drawing.Point(486, 64);
+            this.btnUpdate.Location = new System.Drawing.Point(648, 79);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(107, 59);
+            this.btnUpdate.Size = new System.Drawing.Size(141, 73);
             this.btnUpdate.TabIndex = 67;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -176,9 +188,11 @@
             // lbStockInfo
             // 
             this.lbStockInfo.FormattingEnabled = true;
-            this.lbStockInfo.Location = new System.Drawing.Point(11, 186);
+            this.lbStockInfo.ItemHeight = 16;
+            this.lbStockInfo.Location = new System.Drawing.Point(15, 229);
+            this.lbStockInfo.Margin = new System.Windows.Forms.Padding(4);
             this.lbStockInfo.Name = "lbStockInfo";
-            this.lbStockInfo.Size = new System.Drawing.Size(597, 199);
+            this.lbStockInfo.Size = new System.Drawing.Size(795, 244);
             this.lbStockInfo.TabIndex = 66;
             this.lbStockInfo.Click += new System.EventHandler(this.LbStockInfo_Click);
             // 
@@ -187,10 +201,10 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.icons8_back_24;
-            this.btnClose.Location = new System.Drawing.Point(11, 11);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(15, 14);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 27);
+            this.btnClose.Size = new System.Drawing.Size(43, 33);
             this.btnClose.TabIndex = 65;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
@@ -198,11 +212,14 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Silver;
-            this.btnSearch.Location = new System.Drawing.Point(225, 158);
+            this.btnSearch.Location = new System.Drawing.Point(300, 194);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(83, 27);
+            this.btnSearch.Size = new System.Drawing.Size(111, 33);
             this.btnSearch.TabIndex = 72;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -211,26 +228,29 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 165);
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(21, 203);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 71;
             this.label2.Text = "Search Bar";
             // 
             // tbSearchBar
             // 
-            this.tbSearchBar.Location = new System.Drawing.Point(82, 162);
+            this.tbSearchBar.Location = new System.Drawing.Point(109, 199);
+            this.tbSearchBar.Margin = new System.Windows.Forms.Padding(4);
             this.tbSearchBar.Name = "tbSearchBar";
-            this.tbSearchBar.Size = new System.Drawing.Size(137, 20);
+            this.tbSearchBar.Size = new System.Drawing.Size(181, 22);
             this.tbSearchBar.TabIndex = 70;
             this.tbSearchBar.TextChanged += new System.EventHandler(this.TbSearchBar_TextChanged);
             // 
             // DepoStocks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(616, 396);
+            this.ClientSize = new System.Drawing.Size(821, 487);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbSearchBar);
@@ -239,6 +259,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lbStockInfo);
             this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DepoStocks";
             this.Text = "DepoStocks";
             this.Load += new System.EventHandler(this.DepoStocks_Load);

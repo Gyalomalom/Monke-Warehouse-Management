@@ -53,9 +53,9 @@
             // 
             this.lbViewEmployees.FormattingEnabled = true;
             this.lbViewEmployees.ItemHeight = 16;
-            this.lbViewEmployees.Location = new System.Drawing.Point(416, 12);
+            this.lbViewEmployees.Location = new System.Drawing.Point(416, 44);
             this.lbViewEmployees.Name = "lbViewEmployees";
-            this.lbViewEmployees.Size = new System.Drawing.Size(380, 452);
+            this.lbViewEmployees.Size = new System.Drawing.Size(380, 420);
             this.lbViewEmployees.TabIndex = 4;
             this.lbViewEmployees.Click += new System.EventHandler(this.lbViewEmployees_Click);
             // 
@@ -63,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(90, 28);
+            this.label1.Location = new System.Drawing.Point(90, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 17);
             this.label1.TabIndex = 38;
@@ -71,7 +71,7 @@
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(93, 48);
+            this.tbID.Location = new System.Drawing.Point(93, 67);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(179, 22);
             this.tbID.TabIndex = 37;
@@ -80,9 +80,10 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnUpdate.ForeColor = System.Drawing.Color.Silver;
-            this.btnUpdate.Location = new System.Drawing.Point(93, 325);
+            this.btnUpdate.Location = new System.Drawing.Point(93, 410);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(179, 54);
             this.btnUpdate.TabIndex = 36;
@@ -96,7 +97,7 @@
             this.cbxSelectStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cbxSelectStatus.Location = new System.Drawing.Point(93, 248);
+            this.cbxSelectStatus.Location = new System.Drawing.Point(93, 129);
             this.cbxSelectStatus.Name = "cbxSelectStatus";
             this.cbxSelectStatus.Size = new System.Drawing.Size(179, 24);
             this.cbxSelectStatus.TabIndex = 39;
@@ -105,7 +106,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(90, 228);
+            this.label2.Location = new System.Drawing.Point(90, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 40;
