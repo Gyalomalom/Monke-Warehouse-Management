@@ -50,6 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(12, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 17);
@@ -59,6 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(333, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 17);
@@ -107,6 +109,7 @@
             // 
             this.lblIndicatorDate.AutoSize = true;
             this.lblIndicatorDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.lblIndicatorDate.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblIndicatorDate.Location = new System.Drawing.Point(15, 13);
             this.lblIndicatorDate.Name = "lblIndicatorDate";
             this.lblIndicatorDate.Size = new System.Drawing.Size(30, 26);
