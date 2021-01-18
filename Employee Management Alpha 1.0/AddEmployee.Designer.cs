@@ -210,9 +210,10 @@
             // 
             this.btnAddEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnAddEmployee.FlatAppearance.BorderSize = 0;
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnAddEmployee.ForeColor = System.Drawing.Color.Silver;
-            this.btnAddEmployee.Location = new System.Drawing.Point(87, 408);
+            this.btnAddEmployee.Location = new System.Drawing.Point(87, 409);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(179, 54);
             this.btnAddEmployee.TabIndex = 18;

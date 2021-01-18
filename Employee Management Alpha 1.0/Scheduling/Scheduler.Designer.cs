@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbGeneralScheduler = new System.Windows.Forms.GroupBox();
+            this.btnAutoFill = new System.Windows.Forms.Button();
             this.btnLoadSchedule = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cbYear = new System.Windows.Forms.ComboBox();
@@ -96,8 +97,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.pnlMornSunday = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnAutoFill = new System.Windows.Forms.Button();
-            this.tbAutoCalWeek = new System.Windows.Forms.TextBox();
             this.gbGeneralScheduler.SuspendLayout();
             this.pnlDates.SuspendLayout();
             this.gbMonday.SuspendLayout();
@@ -133,7 +132,6 @@
             // gbGeneralScheduler
             // 
             this.gbGeneralScheduler.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbGeneralScheduler.Controls.Add(this.tbAutoCalWeek);
             this.gbGeneralScheduler.Controls.Add(this.btnAutoFill);
             this.gbGeneralScheduler.Controls.Add(this.btnLoadSchedule);
             this.gbGeneralScheduler.Controls.Add(this.label6);
@@ -152,6 +150,17 @@
             this.gbGeneralScheduler.TabIndex = 0;
             this.gbGeneralScheduler.TabStop = false;
             this.gbGeneralScheduler.Text = "Scheduler";
+            this.gbGeneralScheduler.Enter += new System.EventHandler(this.gbGeneralScheduler_Enter);
+            // 
+            // btnAutoFill
+            // 
+            this.btnAutoFill.Location = new System.Drawing.Point(1153, 11);
+            this.btnAutoFill.Name = "btnAutoFill";
+            this.btnAutoFill.Size = new System.Drawing.Size(199, 57);
+            this.btnAutoFill.TabIndex = 16;
+            this.btnAutoFill.Text = "Automatically fill week";
+            this.btnAutoFill.UseVisualStyleBackColor = true;
+            this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
             // 
             // btnLoadSchedule
             // 
@@ -905,23 +914,6 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "///";
             // 
-            // btnAutoFill
-            // 
-            this.btnAutoFill.Location = new System.Drawing.Point(1153, 11);
-            this.btnAutoFill.Name = "btnAutoFill";
-            this.btnAutoFill.Size = new System.Drawing.Size(199, 57);
-            this.btnAutoFill.TabIndex = 16;
-            this.btnAutoFill.Text = "Automatically fill week";
-            this.btnAutoFill.UseVisualStyleBackColor = true;
-            this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
-            // 
-            // tbAutoCalWeek
-            // 
-            this.tbAutoCalWeek.Location = new System.Drawing.Point(1153, 74);
-            this.tbAutoCalWeek.Name = "tbAutoCalWeek";
-            this.tbAutoCalWeek.Size = new System.Drawing.Size(100, 22);
-            this.tbAutoCalWeek.TabIndex = 17;
-            // 
             // Scheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -930,6 +922,9 @@
             this.Controls.Add(this.gbGeneralScheduler);
             this.Name = "Scheduler";
             this.Text = "Scheduler";
+            this.Load += new System.EventHandler(this.Scheduler_Load);
+            this.Enter += new System.EventHandler(this.Scheduler_Enter);
+            this.Leave += new System.EventHandler(this.Scheduler_Leave);
             this.gbGeneralScheduler.ResumeLayout(false);
             this.gbGeneralScheduler.PerformLayout();
             this.pnlDates.ResumeLayout(false);
@@ -1063,7 +1058,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox tbAutoCalWeek;
         private System.Windows.Forms.Button btnAutoFill;
     }
 }

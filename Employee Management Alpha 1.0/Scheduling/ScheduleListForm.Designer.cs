@@ -50,6 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(12, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 17);
@@ -59,6 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(333, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 17);
@@ -67,12 +69,16 @@
             // 
             // btnUnassign
             // 
+            this.btnUnassign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnUnassign.FlatAppearance.BorderSize = 0;
+            this.btnUnassign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnassign.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnUnassign.Location = new System.Drawing.Point(12, 503);
             this.btnUnassign.Name = "btnUnassign";
-            this.btnUnassign.Size = new System.Drawing.Size(114, 36);
+            this.btnUnassign.Size = new System.Drawing.Size(142, 36);
             this.btnUnassign.TabIndex = 3;
             this.btnUnassign.Text = "Unassign";
-            this.btnUnassign.UseVisualStyleBackColor = true;
+            this.btnUnassign.UseVisualStyleBackColor = false;
             this.btnUnassign.Click += new System.EventHandler(this.btnUnassign_Click);
             // 
             // lbAvailableEmployees
@@ -87,18 +93,23 @@
             // 
             // btnAssign
             // 
+            this.btnAssign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnAssign.FlatAppearance.BorderSize = 0;
+            this.btnAssign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssign.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAssign.Location = new System.Drawing.Point(336, 503);
             this.btnAssign.Name = "btnAssign";
-            this.btnAssign.Size = new System.Drawing.Size(114, 36);
+            this.btnAssign.Size = new System.Drawing.Size(138, 36);
             this.btnAssign.TabIndex = 5;
             this.btnAssign.Text = "Assign";
-            this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.UseVisualStyleBackColor = false;
             this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // lblIndicatorDate
             // 
             this.lblIndicatorDate.AutoSize = true;
             this.lblIndicatorDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.lblIndicatorDate.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblIndicatorDate.Location = new System.Drawing.Point(15, 13);
             this.lblIndicatorDate.Name = "lblIndicatorDate";
             this.lblIndicatorDate.Size = new System.Drawing.Size(30, 26);
@@ -109,6 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(670, 567);
             this.Controls.Add(this.lblIndicatorDate);
             this.Controls.Add(this.btnAssign);

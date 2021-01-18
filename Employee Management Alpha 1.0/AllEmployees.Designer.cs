@@ -57,9 +57,9 @@
             // 
             this.lbViewEmployees.FormattingEnabled = true;
             this.lbViewEmployees.ItemHeight = 16;
-            this.lbViewEmployees.Location = new System.Drawing.Point(408, 12);
+            this.lbViewEmployees.Location = new System.Drawing.Point(408, 44);
             this.lbViewEmployees.Name = "lbViewEmployees";
-            this.lbViewEmployees.Size = new System.Drawing.Size(380, 452);
+            this.lbViewEmployees.Size = new System.Drawing.Size(380, 420);
             this.lbViewEmployees.TabIndex = 3;
             this.lbViewEmployees.Click += new System.EventHandler(this.lbViewEmployees_Click);
             // 
@@ -67,7 +67,7 @@
             // 
             this.dtpEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEmployee.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEmployee.Location = new System.Drawing.Point(118, 267);
+            this.dtpEmployee.Location = new System.Drawing.Point(118, 303);
             this.dtpEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpEmployee.Name = "dtpEmployee";
             this.dtpEmployee.Size = new System.Drawing.Size(179, 22);
@@ -78,7 +78,7 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDOB.Location = new System.Drawing.Point(115, 247);
+            this.lblDOB.Location = new System.Drawing.Point(115, 265);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(90, 17);
             this.lblDOB.TabIndex = 25;
@@ -95,7 +95,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLastName.Location = new System.Drawing.Point(115, 201);
+            this.lblLastName.Location = new System.Drawing.Point(115, 188);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(78, 17);
             this.lblLastName.TabIndex = 23;
@@ -103,7 +103,7 @@
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(118, 176);
+            this.tbFirstName.Location = new System.Drawing.Point(118, 150);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(179, 22);
             this.tbFirstName.TabIndex = 22;
@@ -112,7 +112,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFirstName.Location = new System.Drawing.Point(115, 155);
+            this.lblFirstName.Location = new System.Drawing.Point(115, 117);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(78, 17);
             this.lblFirstName.TabIndex = 21;
@@ -122,9 +122,10 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnUpdate.ForeColor = System.Drawing.Color.Silver;
-            this.btnUpdate.Location = new System.Drawing.Point(118, 320);
+            this.btnUpdate.Location = new System.Drawing.Point(118, 410);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(179, 54);
             this.btnUpdate.TabIndex = 27;
@@ -134,7 +135,7 @@
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(118, 70);
+            this.tbID.Location = new System.Drawing.Point(118, 77);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(179, 22);
             this.tbID.TabIndex = 28;
@@ -144,7 +145,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(115, 50);
+            this.label1.Location = new System.Drawing.Point(115, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 17);
             this.label1.TabIndex = 29;

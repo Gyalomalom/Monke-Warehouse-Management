@@ -56,9 +56,9 @@
             // 
             this.lbEmployees.FormattingEnabled = true;
             this.lbEmployees.ItemHeight = 16;
-            this.lbEmployees.Location = new System.Drawing.Point(318, 2);
+            this.lbEmployees.Location = new System.Drawing.Point(318, 34);
             this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(225, 436);
+            this.lbEmployees.Size = new System.Drawing.Size(225, 404);
             this.lbEmployees.TabIndex = 30;
             this.lbEmployees.Click += new System.EventHandler(this.lbEmployees_Click);
             // 
@@ -77,6 +77,7 @@
             // 
             this.btnAddShift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnAddShift.FlatAppearance.BorderSize = 0;
+            this.btnAddShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnAddShift.ForeColor = System.Drawing.Color.Silver;
             this.btnAddShift.Location = new System.Drawing.Point(84, 221);
@@ -101,9 +102,9 @@
             // 
             this.lbShifts.FormattingEnabled = true;
             this.lbShifts.ItemHeight = 16;
-            this.lbShifts.Location = new System.Drawing.Point(549, 1);
+            this.lbShifts.Location = new System.Drawing.Point(549, 33);
             this.lbShifts.Name = "lbShifts";
-            this.lbShifts.Size = new System.Drawing.Size(225, 436);
+            this.lbShifts.Size = new System.Drawing.Size(225, 404);
             this.lbShifts.TabIndex = 31;
             // 
             // label1
@@ -126,7 +127,7 @@
             "Evening"});
             this.cbtod.Location = new System.Drawing.Point(84, 106);
             this.cbtod.Name = "cbtod";
-            this.cbtod.Size = new System.Drawing.Size(128, 24);
+            this.cbtod.Size = new System.Drawing.Size(179, 24);
             this.cbtod.TabIndex = 33;
             // 
             // label2
@@ -143,7 +144,7 @@
             // 
             this.tbEmpID.Location = new System.Drawing.Point(84, 176);
             this.tbEmpID.Name = "tbEmpID";
-            this.tbEmpID.Size = new System.Drawing.Size(128, 22);
+            this.tbEmpID.Size = new System.Drawing.Size(179, 22);
             this.tbEmpID.TabIndex = 35;
             // 
             // AddShift
