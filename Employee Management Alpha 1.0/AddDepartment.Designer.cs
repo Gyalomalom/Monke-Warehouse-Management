@@ -51,7 +51,7 @@
             this.btnAddDep.FlatAppearance.BorderSize = 0;
             this.btnAddDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDep.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddDep.Location = new System.Drawing.Point(153, 348);
+            this.btnAddDep.Location = new System.Drawing.Point(153, 404);
             this.btnAddDep.Name = "btnAddDep";
             this.btnAddDep.Size = new System.Drawing.Size(179, 40);
             this.btnAddDep.TabIndex = 0;

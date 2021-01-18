@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {}
+    "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {
+    "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
+        "projectUniqueName": "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
         "projectName": "AutoSchedulerTests",
-        "projectPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
-        "packagesPath": "C:\\Users\\alekn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\obj\\",
+        "projectPath": "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
+        "packagesPath": "C:\\Users\\Balomalom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\AutoSchedulerTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alekn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Balomalom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,10 +29,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
-                "projectPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
+              "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
+                "projectPath": "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
               }
             }
           }
@@ -42,49 +44,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[2.1.1, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[2.1.1, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[16.7.1, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[1.3.0, )"
-            }
-          },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
+    "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
+      "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj",
+        "projectUniqueName": "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj",
         "projectName": "Employee Management Alpha 1.0",
-        "projectPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
+        "projectPath": "C:\\Users\\Balomalom\\Desktop\\Új mappa (2)\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
       },
       "frameworks": {
         "net472": {}
