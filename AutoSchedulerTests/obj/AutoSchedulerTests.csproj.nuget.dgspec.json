@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {}
+    "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {
+    "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\AutoSchedulerTests\\AutoSchedulerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
+        "projectUniqueName": "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
         "projectName": "AutoSchedulerTests",
-        "projectPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
-        "packagesPath": "C:\\Users\\alekn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\AutoSchedulerTests\\obj\\",
+        "projectPath": "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\AutoSchedulerTests\\AutoSchedulerTests.csproj",
+        "packagesPath": "C:\\Users\\Geraldo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\AutoSchedulerTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alekn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Geraldo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,10 +26,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
-                "projectPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
+              "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
+                "projectPath": "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
               }
             }
           }
@@ -42,7 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -76,15 +74,15 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
+    "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj",
+        "projectUniqueName": "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj",
         "projectName": "Employee Management Alpha 1.0",
-        "projectPath": "C:\\Users\\alekn\\source\\repos\\prj-cb02-6-team-monke\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
+        "projectPath": "C:\\Users\\Geraldo\\Documents\\!fonty\\Monke\\Third\\Employee Management Alpha 1.0\\Employee Management Alpha 1.0.csproj"
       },
       "frameworks": {
         "net472": {}
