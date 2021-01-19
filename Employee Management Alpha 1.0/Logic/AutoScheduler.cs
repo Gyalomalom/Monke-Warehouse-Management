@@ -22,11 +22,13 @@ namespace Employee_Management_Alpha_1._0.Logic
         public int GetAvailableHours()
         {
             int result = 0;
-            string sql = $@"SELECT e.department, FLOOR((SUM(e.WorkingHours))) AS HoursNeeded
+            string sql = $@"SELECT e.Dep, FLOOR((SUM(e.WorkingHours))) AS HoursNeeded
                             FROM (SELECT *
                             FROM employee
-                            WHERE status = 'Active' AND department = '{department}') AS e
-                            GROUP BY e.department;";
+                                 	INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') as d
+                                  	ON employee.ID = d.EmpID
+                            WHERE status = 'Active') AS e
+                            GROUP BY e.Dep;";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -55,9 +57,11 @@ namespace Employee_Management_Alpha_1._0.Logic
 
                 List<ScheduleItem> items = new List<ScheduleItem>();
 
-                string sql = $@"SELECT e.Department, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours
-                            FROM employee as e 
-                            HAVING Status = 'Active' and e.Department = '{department}'";
+                string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours
+                            FROM employee as e
+                            INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') as d
+                            ON e.ID = d.EmpID
+                            HAVING Status = 'Active';";
 
                 MySqlCommand cmd = new MySqlCommand(sql, this.conn);
                 conn.Open();
@@ -85,13 +89,15 @@ namespace Employee_Management_Alpha_1._0.Logic
 
         public List<ScheduleDay> GetScheduleDaysAndHours()
         {
-            string sql = $@"SELECT q.date, q.w, q.Department, q.totalMorning, q.totalAfternoon, q.TotalEvening, q.TotalHours, (
-                                SELECT FLOOR((SUM(e.WorkingHours)/7)) AS ShiftsNeeded
+            string sql = $@"SELECT q.date, q.w, q.Dep, q.totalMorning, q.totalAfternoon, q.TotalEvening, q.TotalHours, (
+                                SELECT FLOOR(SUM(e.WorkingHours)/7) AS ShiftsNeeded
                                 FROM (SELECT *
-                                FROM employee
-                                WHERE status = 'Active' AND department = '{department}') AS e
-                                GROUP BY e.department) AS HoursNeeded
-                            FROM (SELECT td.id AS date, td.w, e.Department, (COALESCE(SUM(s.morning), 0)*4) AS totalMorning, (COALESCE(SUM(s.afternoon), 0) * 4) AS totalAfternoon, (COALESCE(SUM(s.evening), 0) * 4) AS totalEvening, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS TotalHours
+                                FROM employee as c
+                                      INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS l 
+                                    ON (c.ID = l.EmpID)
+                                WHERE c.status = 'Active') AS e
+                                GROUP BY e.Dep) AS HoursNeeded
+                            FROM (SELECT td.id AS date, td.w, d.Dep, (COALESCE(SUM(s.morning), 0)*4) AS totalMorning, (COALESCE(SUM(s.afternoon), 0) * 4) AS totalAfternoon, (COALESCE(SUM(s.evening), 0) * 4) AS totalEvening, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS TotalHours
                                 FROM `schedule` as s
                                 RIGHT JOIN (SELECT y, w, id FROM `time_dimension` WHERE w = '{calWeek}' AND y = '{year}' ) as td
 
@@ -100,8 +106,10 @@ namespace Employee_Management_Alpha_1._0.Logic
                                     INNER JOIN `employee` as e
 
                                     ON(s.EmpID = e.ID)
+                                  	INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (e.ID = d.EmpID)
                                 GROUP BY date
-                             HAVING e.Department = '{department}') as q";
+                             HAVING d.Dep = '{department}') as q";
 
             List<ScheduleDay> days = new List<ScheduleDay>();
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
@@ -131,11 +139,13 @@ namespace Employee_Management_Alpha_1._0.Logic
         public List<ScheduleItem> ReturnScheduledEmployeesByDayExlShift(int date, string timeofday)
         {
             List<ScheduleItem> items = new List<ScheduleItem>();
-            string sql = $@"SELECT td.y, td.w,  e. department, e.Status, td.id, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening
+            string sql = $@"SELECT td.y, td.w,  d.Dep, e.Status, td.id, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening
                             FROM schedule as s 
                             INNER JOIN employee as e ON s.EmpID = e.ID
                             INNER JOIN time_dimension as td on s.DateID = td.id
-                            HAVING e.Status = 'Active' AND td.id = '{date}' AND e.Department = 'Cleaning' AND s.{timeofday} = 0  AND ((s.morning)+(s.afternoon)+(s.evening)>0)";
+                            INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (e.ID = d.EmpID)
+                            HAVING e.Status = 'Active' AND td.id = '{date}' AND d.Dep = 'Cleaning' AND s.{timeofday} = 0  AND ((s.morning)+(s.afternoon)+(s.evening)>0);";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();

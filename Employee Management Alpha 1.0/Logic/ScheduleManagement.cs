@@ -170,6 +170,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 }
                                 wasScheduled = true;
                             }
+
                         }
                         
                     }
@@ -178,10 +179,12 @@ namespace Employee_Management_Alpha_1._0.Logic
                 if (wasScheduled == false)
                 {
                     
-                    foreach (ScheduleItem hours in HrsScheduled)
-                        if (hours.empID == person.empID)
-                            if (hours.contracthours - hours.workhours > 0)
-                                Available.Add(hours);
+                    
+                        foreach (ScheduleItem hours in HrsScheduled)
+                            if (hours.empID == person.empID)
+                                if (hours.contracthours - hours.workhours > 0)                                    
+                                        Available.Add(hours);
+
                 }
             }
 
@@ -192,9 +195,11 @@ namespace Employee_Management_Alpha_1._0.Logic
         {
             List<ScheduleItem> items = new List<ScheduleItem>();
 
-            string sql = $@"SELECT e.Department, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name
-                            FROM employee as e 
-                            HAVING Status = 'Active' and e.Department = '{department}'";
+            string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name
+                            FROM employee as e
+                                INNER JOIN (SELECT Dep, EmpID, DepStatus FROM depemp WHERE Dep = '{department}' AND DepStatus = '1') as d
+                                    ON d.EmpID = e.ID
+                            WHERE Status = 'Active'";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
@@ -295,9 +300,9 @@ namespace Employee_Management_Alpha_1._0.Logic
         {
             List<ScheduleItem> employees = new List<ScheduleItem>();
             ScheduleItem placeholder;
-            string sql = $@"SELECT e.Department, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours AS ShiftsContract, COALESCE(q.ShiftsTotal, 0) AS ShiftsTotal
+            string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours AS ShiftsContract, COALESCE(q.ShiftsTotal, 0) AS ShiftsTotal
                             FROM employee as e
-                            LEFT JOIN (SELECT td.w, s.EmpID, e.Department, e.WorkingHours AS shiftsContract, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS shiftsTotal
+                            LEFT JOIN (SELECT td.w, s.EmpID, d.Dep, e.WorkingHours AS shiftsContract, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS shiftsTotal
                             FROM `schedule` as s
                             INNER JOIN (SELECT y, w, id FROM `time_dimension` WHERE w = '{calWeek}' AND y = '{year}' ) as td
 
@@ -306,10 +311,14 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 INNER JOIN `employee` as e
 
                                 ON(s.EmpID = e.ID)
-                            GROUP BY s.EmpID
-                            HAVING e.Department = '{department}') as q
+                                       
+                                	INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (d.EmpID = e.ID)
+                            GROUP BY s.EmpID) as q
                                 ON(e.ID = q.EmpID)
-                        HAVING e.Department = '{department}' AND e.Status = 'Active'
+                        INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (e.ID = d.EmpID) 
+                        HAVING d.Dep = '{department}' AND e.Status = 'Active'
                         ORDER BY e.ID ASC;";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
@@ -340,11 +349,12 @@ namespace Employee_Management_Alpha_1._0.Logic
         {
             List<ScheduleItem> items = new List<ScheduleItem>();
 
-            string sql = $@"SELECT td.y, td.w, e. department, e.Status, s.DateID, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening
+            string sql = $@"SELECT td.y, td.w, d.Dep, e.Status, s.DateID, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening
                             FROM schedule as s 
                             INNER JOIN employee as e ON s.EmpID = e.ID
+                            INNER JOIN (SELECT * FROM depemp WHERE Dep = '{department}' AND DepStatus = '1') as d ON d.EmpID = e.ID
                             INNER JOIN time_dimension as td on s.DateID = td.id
-                            HAVING e.Status = 'Active' AND td.y = '{year}' AND td.w = '{calWeek}' AND e.Department = '{department}'";
+                            HAVING e.Status = 'Active' AND td.y = '{year}' AND td.w = '{calWeek}'";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();

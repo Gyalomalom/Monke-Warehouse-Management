@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleListForm));
             this.lbAssignedEmp = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -129,9 +130,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbAssignedEmp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScheduleListForm";
-            this.Text = "ScheduleListForm";
+            this.Text = "Shift overview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScheduleListForm_FormClosing);
+            this.Load += new System.EventHandler(this.ScheduleListForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
