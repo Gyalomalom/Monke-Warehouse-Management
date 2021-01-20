@@ -373,8 +373,8 @@ namespace Employee_Management_Alpha_1._0
                 connection.Open();
                 if (connection.State == ConnectionState.Open)
                 {
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO stockrequests (ID, Name, Amount) VALUES (@ID, @Name, @Amount)", connection);
-                    MessageBox.Show(cmd.CommandText);
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO stockrequests (ID, Name, Amount) VALUES (@ID, @Name, @Amount) ON DUPLICATE KEY UPDATE `Amount` = `Amount` + @Amount", connection);
+                    //MessageBox.Show(cmd.CommandText);
 
                     cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Parameters.AddWithValue("@Name", name);
