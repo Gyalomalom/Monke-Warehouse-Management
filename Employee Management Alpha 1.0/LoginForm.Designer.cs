@@ -41,7 +41,6 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbLogo.Image = global::Employee_Management_Alpha_1._0.Properties.Resources.moneknotext1;
             this.pbLogo.Location = new System.Drawing.Point(132, 11);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -141,6 +140,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(496, 440);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
