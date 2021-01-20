@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleListForm));
             this.lbAssignedEmp = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(12, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 17);
@@ -59,6 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(333, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 17);
@@ -107,6 +110,7 @@
             // 
             this.lblIndicatorDate.AutoSize = true;
             this.lblIndicatorDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.lblIndicatorDate.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblIndicatorDate.Location = new System.Drawing.Point(15, 13);
             this.lblIndicatorDate.Name = "lblIndicatorDate";
             this.lblIndicatorDate.Size = new System.Drawing.Size(30, 26);
@@ -126,9 +130,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbAssignedEmp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScheduleListForm";
-            this.Text = "ScheduleListForm";
+            this.Text = "Shift overview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScheduleListForm_FormClosing);
+            this.Load += new System.EventHandler(this.ScheduleListForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

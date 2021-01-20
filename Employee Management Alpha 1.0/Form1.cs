@@ -147,9 +147,10 @@ namespace Employee_Management_Alpha_1._0
         private Form activeForm = null;
         private void openChildForm(Form childForm) //method that creates a new Form object when switching between pages 
         {
-            if(activeForm != null)
-            
+            if (activeForm != null)
+                
                 activeForm.Close(); //close active child form
+                Size = new Size(813, 613);
                 activeForm = childForm; //store active form object
                 childForm.TopLevel = false; //child form will behave like a control
                 childForm.FormBorderStyle = FormBorderStyle.None; //turn off borders
@@ -197,6 +198,7 @@ namespace Employee_Management_Alpha_1._0
         private void btnShitManager_Click(object sender, EventArgs e)
         {
             openChildForm(new Scheduler());
+            Size = new Size(1268, 613);
             hideSubmenus();
         }
 
@@ -244,6 +246,10 @@ namespace Employee_Management_Alpha_1._0
         {
             openChildForm(new DepoStocks());
             hideSubmenus();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
         }
     }
 }

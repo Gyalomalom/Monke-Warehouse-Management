@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading.Tasks;
 using Employee_Management_Alpha_1._0.Logic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Employee_Management_Alpha_1._0
@@ -16,10 +17,11 @@ namespace Employee_Management_Alpha_1._0
     {
         int superGlobalID = -1;
         int superGlobalIDAssigned = -1;
-        static int year = Scheduler.Instance.ReturnSelectedYear();
-        static int calWeek = Scheduler.Instance.ReturnSelectedCalWeek();
-        static string department = Scheduler.Instance.ReturnSelectedDepartmentName();
-        ScheduleManagement scheduleManagement = new ScheduleManagement(year, calWeek, department);
+        int year;
+        int calWeek;
+        string department;
+        ScheduleManagement scheduleManagement;
+        
         string timeofday;
         int date = Scheduler.Instance.ReturnCurrentDates();
         const string pattern = @"([^\s]+)"; //pattern to get the first string before a space
@@ -36,7 +38,11 @@ namespace Employee_Management_Alpha_1._0
                 timeofday = "afternoon";
             else
                 timeofday = "evening";
-
+             year = Scheduler.Instance.ReturnSelectedYear();
+             calWeek = Scheduler.Instance.ReturnSelectedCalWeek();
+             department = Scheduler.Instance.ReturnSelectedDepartmentName();
+            scheduleManagement = new ScheduleManagement(year, calWeek, department);
+            Debug.WriteLine($"{year}   {calWeek}   {department}");
 
             lblIndicatorDate.Text = $"Date: {dateFormat} {Environment.NewLine}Shift: {timeofday}{Environment.NewLine}Department: {department}";
             UpdateAssignedEmployees();
@@ -62,7 +68,7 @@ namespace Employee_Management_Alpha_1._0
             { if(items!=null)
                 foreach (ScheduleItem item in items)
                 {
-
+                      if (item.SchedDep == department)
                       lbAssignedEmp.Items.Add($"{item.empID} {item.empName}");
 
                 }
@@ -77,11 +83,20 @@ namespace Employee_Management_Alpha_1._0
 
         private void ScheduleListForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Set cursor as hourglass
+            Cursor.Current = Cursors.WaitCursor;
+            Application.DoEvents();
             Scheduler.Instance.SetDefaultColor();
+            Scheduler.Instance.LoadSchedule();
+            // Set cursor as default
+            Cursor.Current = Cursors.Default;
+            Application.DoEvents();
         }
 
         private void btnAssign_Click(object sender, EventArgs e)
-        {
+        {   // Set cursor as hourglass
+            Cursor.Current = Cursors.WaitCursor;
+            Application.DoEvents();
             if (!(superGlobalID == -1))
             {
                 scheduleManagement.AddEmployeeToShift(timeofday, Scheduler.Instance.ReturnCurrentDates(), superGlobalID);
@@ -91,6 +106,10 @@ namespace Employee_Management_Alpha_1._0
             }
             else
                 MessageBox.Show("Please select an employee from the lists." + Environment.NewLine + "If you can't see any employees, none are legibile to be assigned");
+
+            // Set cursor as default
+            Cursor.Current = Cursors.Default;
+            Application.DoEvents();
         }
 
         private void lbEmployees_Click(object sender, EventArgs e)
@@ -136,6 +155,9 @@ namespace Employee_Management_Alpha_1._0
 
         private void btnUnassign_Click(object sender, EventArgs e)
         {
+            // Set cursor as hourglass
+            Cursor.Current = Cursors.WaitCursor;
+            Application.DoEvents();
             if (!(superGlobalIDAssigned == -1))
             {
                 scheduleManagement.RemoveEmployeeFromShift(timeofday, date, superGlobalIDAssigned);
@@ -145,7 +167,15 @@ namespace Employee_Management_Alpha_1._0
             }
             else
                 MessageBox.Show("Please select an employee from the lists." + Environment.NewLine + "If you can't see any employees, none are legibile to be assigned");
+            // Set cursor as default
+            Cursor.Current = Cursors.Default;
+            Application.DoEvents();
         }
-    
+
+        private void ScheduleListForm_Load(object sender, EventArgs e)
+        {
+
+            
+        }
     }
 }

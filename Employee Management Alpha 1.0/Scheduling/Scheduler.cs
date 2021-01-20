@@ -51,6 +51,7 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
+
         public void ClearShiftLabels()
         {
             foreach (GroupBox gb in pnlDates.Controls.OfType<GroupBox>())
@@ -188,7 +189,7 @@ namespace Employee_Management_Alpha_1._0
                                         
                                             foreach (ScheduleItem item in Items)
                                             {
-                                                if ((item.morning) && (item.dateID == RealDates[j]))
+                                                if ((item.morning) && (item.dateID == RealDates[j]) && (item.SchedDep == ReturnSelectedDepartmentName()))
                                                 {
                                                     label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
                                                     Noshift = false;
@@ -201,7 +202,7 @@ namespace Employee_Management_Alpha_1._0
                                         {
                                             foreach (ScheduleItem item in Items)
                                             {
-                                                if ((item.afternoon) && (item.dateID == RealDates[j]))
+                                                if ((item.afternoon) && (item.dateID == RealDates[j]) && (item.SchedDep == ReturnSelectedDepartmentName()))
                                                 {
                                                     label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
                                                     Noshift = false;
@@ -214,7 +215,7 @@ namespace Employee_Management_Alpha_1._0
                                         {
                                             foreach (ScheduleItem item in Items)
                                             {
-                                                if ((item.evening) && (item.dateID == RealDates[j]))
+                                                if ((item.evening) && (item.dateID == RealDates[j]) && (item.SchedDep == ReturnSelectedDepartmentName()))
                                                 {
                                                     label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
                                                     Noshift = false;
@@ -631,8 +632,14 @@ namespace Employee_Management_Alpha_1._0
 
         private void btnLoadSchedule_Click(object sender, EventArgs e)
         {
+            // Set cursor as hourglass
+            Cursor.Current = Cursors.WaitCursor;
+            Application.DoEvents();
             LoadSchedule();
-            
+            //set cursor to default
+            Cursor.Current = Cursors.Default;
+            Application.DoEvents();
+
         }
 
         private void cbDepartment_TextUpdate(object sender, EventArgs e)
@@ -642,9 +649,34 @@ namespace Employee_Management_Alpha_1._0
 
         private void btnAutoFill_Click(object sender, EventArgs e)
         {
+            // Set cursor as hourglass
+            Cursor.Current = Cursors.WaitCursor;
+            Application.DoEvents();
+            //initialize scheduler and call appropriate method
             AutoScheduler autoSched = new AutoScheduler(ReturnSelectedYear(), ReturnSelectedCalWeek(), ReturnSelectedDepartmentName());
             autoSched.AutoPopulate();
             LoadSchedule();
+            //set cursor to default
+            Cursor.Current = Cursors.Default;
+            Application.DoEvents();
+        }
+
+        private void Scheduler_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Scheduler_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void gbGeneralScheduler_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Scheduler_Enter(object sender, EventArgs e)
+        {
         }
     }
 }

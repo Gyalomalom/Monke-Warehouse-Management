@@ -17,6 +17,7 @@ namespace Employee_Management_Alpha_1._0.Logic
         public bool evening { get; set; }
         public int workhours { get; set; }
         public int contracthours { get; set; }
+        public string SchedDep { get; set; }
 
         //constructor(s)
         public ScheduleItem()
@@ -32,7 +33,7 @@ namespace Employee_Management_Alpha_1._0.Logic
             this.evening = Evening;
         }
 
-        public ScheduleItem(int DateID, int EmpID, string Name, bool Morning, bool Afternoon, bool Evening)
+        public ScheduleItem(int DateID, int EmpID, string Name, bool Morning, bool Afternoon, bool Evening, string SchedDep)
         {
             this.dateID = DateID;
             this.empID = EmpID;
@@ -40,6 +41,7 @@ namespace Employee_Management_Alpha_1._0.Logic
             this.afternoon = Afternoon;
             this.evening = Evening;
             this.empName = Name;
+            this.SchedDep = SchedDep;
         }
 
         public ScheduleItem(int EmpID, string Name)

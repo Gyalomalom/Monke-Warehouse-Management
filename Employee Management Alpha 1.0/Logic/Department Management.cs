@@ -140,7 +140,9 @@ namespace Employee_Management_Alpha_1._0
                 if (connect.State == ConnectionState.Open)
                 {
 
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE `employee` SET `Department` = '{name}' WHERE `ID` = {id}", this.connect);
+                    MySqlCommand cmd = new MySqlCommand($@"INSERT INTO `depemp` (`Dep`, `EmpID`, `DepStatus`) VALUES ('{name}', '{id}', '1')
+                                                        ON DUPLICATE KEY UPDATE `DepStatus` = '1';", this.connect);
+
                     cmd.ExecuteNonQuery();
 
                 }
@@ -150,6 +152,54 @@ namespace Employee_Management_Alpha_1._0
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        public void UnassignEmployee(string name, string id)
+        {
+            try
+            {
+                connect.Open();
+                if (connect.State == ConnectionState.Open)
+                {
+
+                    MySqlCommand cmd = new MySqlCommand($@"INSERT INTO `depemp` (`Dep`, `EmpID`, `DepStatus`) VALUES ('{name}', '{id}', '0')
+                                                        ON DUPLICATE KEY UPDATE `DepStatus` = '0';", this.connect);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public List<Employee> ReturnEmployeesByDepartment (string name)
+        {
+            List<Employee> employees = new List<Employee>();
+            string sql = $@"SELECT * FROM `depemp`
+                          INNER JOIN employee as e ON(e.ID = EmpID)
+                          WHERE Dep = '{name}' AND DepStatus = '1'";
+            MySqlCommand cmd = new MySqlCommand(sql, this.connect);
+            connect.Open();
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                employees.Add(new Employee(Convert.ToInt32(rd["ID"]), Convert.ToString(rd["FirstName"]), Convert.ToString(rd["LastName"])));
+            }
+            if (departments.Count() >= 1)
+            {
+                connect.Close();
+                return employees;
+            }
+            else
+            {
+                connect.Close();
+                return null;
+            }
         }
 
      

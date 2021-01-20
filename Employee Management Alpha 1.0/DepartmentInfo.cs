@@ -51,42 +51,58 @@ namespace Employee_Management_Alpha_1._0
         {
             lbEmployeeInfo.Items.Clear();
             employeeManagement = new Employee_Management();
+            List<Employee> employees = new List<Employee>();
+            employees = employeeManagement.GetAllActiveEmployees();
 
-            if(employeeManagement.GetAllEmployees() is null)
+            if (employees is null)
             {
                 MessageBox.Show("Database is empty.");
             }
             else
             {
-                for(int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
+                for(int i = 0; i < employees.Count(); i++)
                 {
-                    lbEmployeeInfo.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
+                    lbEmployeeInfo.Items.Add(employees[i].GetEmployeeFullName());
                 }
             }
         }
 
         private void BtnUpdateStatus_Click(object sender, EventArgs e)
         {
-            string id = lbDepartmentInfo.SelectedItem.ToString();
-            Match match = Regex.Match(id, pattern);
-
-            if (match.Success)
+            if (!(lbDepartmentInfo.SelectedItem == null))
             {
-                departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Active);
-                UpdateDepList();
+                string id = lbDepartmentInfo.SelectedItem.ToString();
+                Match match = Regex.Match(id, pattern);
+
+                if (match.Success)
+                {
+                    departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Active);
+                    UpdateDepList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure you've selected a department.");
             }
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string id = lbDepartmentInfo.SelectedItem.ToString();
-            Match match = Regex.Match(id, pattern);
-            
-
-            if (match.Success)
+            if (!(lbDepartmentInfo.SelectedItem == null))
             {
-                departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Inactive);
-                UpdateDepList();
+                string id = lbDepartmentInfo.SelectedItem.ToString();
+                Match match = Regex.Match(id, pattern);
+
+
+                if (match.Success)
+                {
+                    departmentManagement.UpdateStatus(match.Value, DepartmentStatus.Inactive);
+                    UpdateDepList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure you've selected a department.");
             }
         }
 
@@ -97,16 +113,26 @@ namespace Employee_Management_Alpha_1._0
 
         private void BtnAssignEmp_Click(object sender, EventArgs e)
         {
-            string name = lbDepartmentInfo.SelectedItem.ToString();
-            Match match = Regex.Match(name, patternName);
-            string id = lbEmployeeInfo.SelectedItem.ToString();
-            Match matchid = Regex.Match(id, pattern);
 
-            if (match.Success && matchid.Success)
+
+            if ((!(lbEmployeeInfo.SelectedItem == null)) && (!(lbDepartmentInfo.SelectedItem == null)))
             {
-                departmentManagement.AssignEmployee(match.Value, matchid.Value);
-                UpdateDepList();
-                UpdateEmpList();
+                string name = lbDepartmentInfo.SelectedItem.ToString();
+                Match match = Regex.Match(name, patternName);
+                string id = lbEmployeeInfo.SelectedItem.ToString();
+                Match matchid = Regex.Match(id, pattern);
+
+
+                if (match.Success && matchid.Success)
+                {
+                    departmentManagement.AssignEmployee(match.Value, matchid.Value);
+                    UpdateDepList();
+                    UpdateEmpList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure you've selected both a department and an employee.");
             }
         }
 
@@ -115,37 +141,70 @@ namespace Employee_Management_Alpha_1._0
         }
 
         private void btnViewEmployeesinDepartment_Click(object sender, EventArgs e)
-        {
-            string id = lbDepartmentInfo.SelectedItem.ToString();
-            Match match = Regex.Match(id, pattern);
-
-            if (match.Success)
+        {   if (!(lbDepartmentInfo.SelectedItem == null))
             {
-                lbEmployeeInfo.Items.Clear();
-                employeeManagement = new Employee_Management();
-                departmentManagement = new Department_Management();
-                MessageBox.Show($"Loading employees in department with ID: {match.Value}. Loading may take a while, please give it a few seconds.");
+                string id = lbDepartmentInfo.SelectedItem.ToString();
+                Match match = Regex.Match(id, pattern);
 
-                if (employeeManagement.GetAllEmployees() is null)
+                if (match.Success)
                 {
-                    MessageBox.Show("Database is empty.");
-                }
-                else
-                {
-                    for (int i = 0; i < employeeManagement.GetAllEmployees().Count(); i++)
+                    lbEmployeeInfo.Items.Clear();
+                    departmentManagement = new Department_Management();
+                    List<Employee> employees = new List<Employee>();
+                    employees = departmentManagement.ReturnEmployeesByDepartment(departmentManagement.FindDepbyID(Convert.ToInt32(match.Value)).Name);
+
+                    // Set cursor as hourglass
+                    // Set cursor as hourglass
+                    Cursor.Current = Cursors.WaitCursor;
+                    Application.DoEvents();
+                    if (employees is null)
+                    {
+                        MessageBox.Show("Database is empty.");
+                    }
+                    else
+                    {
+                        for (int i = 0; i < employees.Count(); i++)
                         {
-                            if (departmentManagement.FindDepbyID(Convert.ToInt32(match.Value)).Name == employeeManagement.GetAllEmployees()[i].departmentName)
-                            {
-                                lbEmployeeInfo.Items.Add(employeeManagement.GetAllEmployees()[i].GetEmployeeInfo());
-                            }
+                            lbEmployeeInfo.Items.Add(employees[i].GetEmployeeFullName());
                         }
+                    }
+                    // Set cursor as hourglass
+                    Cursor.Current = Cursors.Default;
+                    Application.DoEvents();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure you've selected a department.");
             }
         }
 
         private void btnViewAllEmployees_Click(object sender, EventArgs e)
         {
             UpdateEmpList();
+        }
+
+        private void btnUnassign_Click(object sender, EventArgs e)
+        {
+            if ((!(lbEmployeeInfo.SelectedItem == null)) && (!(lbDepartmentInfo.SelectedItem == null)))
+            {
+                string name = lbDepartmentInfo.SelectedItem.ToString();
+                Match match = Regex.Match(name, patternName);
+                string id = lbEmployeeInfo.SelectedItem.ToString();
+                Match matchid = Regex.Match(id, pattern);
+
+
+                if (match.Success && matchid.Success)
+                {
+                    departmentManagement.UnassignEmployee(match.Value, matchid.Value);
+                    UpdateDepList();
+                    UpdateEmpList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure you've selected both a department and an employee.");
+            }
         }
     }
 }
