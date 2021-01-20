@@ -131,7 +131,7 @@
             // 
             // gbGeneralScheduler
             // 
-            this.gbGeneralScheduler.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbGeneralScheduler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.gbGeneralScheduler.Controls.Add(this.btnAutoFill);
             this.gbGeneralScheduler.Controls.Add(this.btnLoadSchedule);
             this.gbGeneralScheduler.Controls.Add(this.label6);
@@ -144,6 +144,7 @@
             this.gbGeneralScheduler.Controls.Add(this.label1);
             this.gbGeneralScheduler.Controls.Add(this.cbCalWeek);
             this.gbGeneralScheduler.Controls.Add(this.pnlDates);
+            this.gbGeneralScheduler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbGeneralScheduler.Location = new System.Drawing.Point(6, 16);
             this.gbGeneralScheduler.Name = "gbGeneralScheduler";
             this.gbGeneralScheduler.Size = new System.Drawing.Size(1366, 550);
@@ -154,22 +155,30 @@
             // 
             // btnAutoFill
             // 
-            this.btnAutoFill.Location = new System.Drawing.Point(1153, 11);
+            this.btnAutoFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnAutoFill.FlatAppearance.BorderSize = 0;
+            this.btnAutoFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutoFill.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAutoFill.Location = new System.Drawing.Point(1154, 28);
             this.btnAutoFill.Name = "btnAutoFill";
-            this.btnAutoFill.Size = new System.Drawing.Size(199, 57);
+            this.btnAutoFill.Size = new System.Drawing.Size(199, 40);
             this.btnAutoFill.TabIndex = 16;
             this.btnAutoFill.Text = "Automatically fill week";
-            this.btnAutoFill.UseVisualStyleBackColor = true;
+            this.btnAutoFill.UseVisualStyleBackColor = false;
             this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
             // 
             // btnLoadSchedule
             // 
-            this.btnLoadSchedule.Location = new System.Drawing.Point(261, 90);
+            this.btnLoadSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnLoadSchedule.FlatAppearance.BorderSize = 0;
+            this.btnLoadSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadSchedule.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLoadSchedule.Location = new System.Drawing.Point(357, 28);
             this.btnLoadSchedule.Name = "btnLoadSchedule";
-            this.btnLoadSchedule.Size = new System.Drawing.Size(178, 23);
+            this.btnLoadSchedule.Size = new System.Drawing.Size(178, 40);
             this.btnLoadSchedule.TabIndex = 15;
             this.btnLoadSchedule.Text = "Load Schedule";
-            this.btnLoadSchedule.UseVisualStyleBackColor = true;
+            this.btnLoadSchedule.UseVisualStyleBackColor = false;
             this.btnLoadSchedule.Click += new System.EventHandler(this.btnLoadSchedule_Click);
             // 
             // label6
@@ -199,22 +208,22 @@
             "2030"});
             this.cbYear.Location = new System.Drawing.Point(191, 90);
             this.cbYear.Name = "cbYear";
-            this.cbYear.Size = new System.Drawing.Size(63, 24);
+            this.cbYear.Size = new System.Drawing.Size(122, 24);
             this.cbYear.TabIndex = 12;
             // 
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(162, 28);
+            this.cbDepartment.Location = new System.Drawing.Point(191, 28);
             this.cbDepartment.Name = "cbDepartment";
-            this.cbDepartment.Size = new System.Drawing.Size(93, 24);
+            this.cbDepartment.Size = new System.Drawing.Size(122, 24);
             this.cbDepartment.TabIndex = 11;
             this.cbDepartment.TextUpdate += new System.EventHandler(this.cbDepartment_TextUpdate);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 31);
+            this.label5.Location = new System.Drawing.Point(74, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 17);
             this.label5.TabIndex = 10;
@@ -250,7 +259,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 61);
+            this.label1.Location = new System.Drawing.Point(74, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 4;
@@ -314,7 +323,7 @@
             "52"});
             this.cbCalWeek.Location = new System.Drawing.Point(191, 61);
             this.cbCalWeek.Name = "cbCalWeek";
-            this.cbCalWeek.Size = new System.Drawing.Size(63, 24);
+            this.cbCalWeek.Size = new System.Drawing.Size(122, 24);
             this.cbCalWeek.TabIndex = 3;
             this.cbCalWeek.SelectedIndexChanged += new System.EventHandler(this.cbCalWeek_SelectedIndexChanged);
             // 
@@ -334,7 +343,7 @@
             // 
             // gbMonday
             // 
-            this.gbMonday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbMonday.BackColor = System.Drawing.SystemColors.ControlDark;
             this.gbMonday.Controls.Add(this.lblDateMon);
             this.gbMonday.Controls.Add(this.pnlEvenMonday);
             this.gbMonday.Controls.Add(this.pnlNoonMonday);
@@ -418,7 +427,7 @@
             // 
             // gbTuesday
             // 
-            this.gbTuesday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbTuesday.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gbTuesday.Controls.Add(this.lblDateTue);
             this.gbTuesday.Controls.Add(this.pnlEvenTuesday);
             this.gbTuesday.Controls.Add(this.pnlNoonTuesday);
@@ -501,7 +510,7 @@
             // 
             // gbWednesday
             // 
-            this.gbWednesday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbWednesday.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gbWednesday.Controls.Add(this.lblDateWed);
             this.gbWednesday.Controls.Add(this.pnlEvenWednesday);
             this.gbWednesday.Controls.Add(this.pnlNoonWednesday);
@@ -584,7 +593,7 @@
             // 
             // gbThursday
             // 
-            this.gbThursday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbThursday.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gbThursday.Controls.Add(this.lblDateThu);
             this.gbThursday.Controls.Add(this.pnlEvenThursday);
             this.gbThursday.Controls.Add(this.pnlNoonThursday);
@@ -667,7 +676,7 @@
             // 
             // gbFriday
             // 
-            this.gbFriday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbFriday.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gbFriday.Controls.Add(this.lblDateFri);
             this.gbFriday.Controls.Add(this.pnlEvenFriday);
             this.gbFriday.Controls.Add(this.pnlNoonFriday);
@@ -750,7 +759,7 @@
             // 
             // gbSaturday
             // 
-            this.gbSaturday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbSaturday.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gbSaturday.Controls.Add(this.lblDateSat);
             this.gbSaturday.Controls.Add(this.pnlEvenSaturday);
             this.gbSaturday.Controls.Add(this.pnlNoonSaturday);
@@ -833,7 +842,7 @@
             // 
             // gbSunday
             // 
-            this.gbSunday.BackColor = System.Drawing.SystemColors.Control;
+            this.gbSunday.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gbSunday.Controls.Add(this.lblDateSun);
             this.gbSunday.Controls.Add(this.pnlEvenSunday);
             this.gbSunday.Controls.Add(this.pnlNoonSunday);
@@ -918,6 +927,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(1370, 583);
             this.Controls.Add(this.gbGeneralScheduler);
             this.Name = "Scheduler";

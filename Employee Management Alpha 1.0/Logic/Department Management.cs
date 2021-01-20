@@ -181,7 +181,7 @@ namespace Employee_Management_Alpha_1._0
             List<Employee> employees = new List<Employee>();
             string sql = $@"SELECT * FROM `depemp`
                           INNER JOIN employee as e ON(e.ID = EmpID)
-                          WHERE Dep = '{name}' AND DepStatus = '1'";
+                          WHERE Dep = '{name}' AND DepStatus = '1' AND e.Status = 'Active'";
             MySqlCommand cmd = new MySqlCommand(sql, this.connect);
             connect.Open();
             MySqlDataReader rd = cmd.ExecuteReader();
