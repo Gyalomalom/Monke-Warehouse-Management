@@ -170,6 +170,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 }
                                 wasScheduled = true;
                             }
+
                         }
                         
                     }
@@ -178,10 +179,12 @@ namespace Employee_Management_Alpha_1._0.Logic
                 if (wasScheduled == false)
                 {
                     
-                    foreach (ScheduleItem hours in HrsScheduled)
-                        if (hours.empID == person.empID)
-                            if (hours.contracthours - hours.workhours > 0)
-                                Available.Add(hours);
+                    
+                        foreach (ScheduleItem hours in HrsScheduled)
+                            if (hours.empID == person.empID)
+                                if (hours.contracthours - hours.workhours > 0)                                    
+                                        Available.Add(hours);
+
                 }
             }
 
@@ -192,9 +195,46 @@ namespace Employee_Management_Alpha_1._0.Logic
         {
             List<ScheduleItem> items = new List<ScheduleItem>();
 
-            string sql = $@"SELECT e.Department, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name
-                            FROM employee as e 
-                            HAVING Status = 'Active' and e.Department = '{department}'";
+            string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours, k.ShiftsTotal, de.NrDep
+                            FROM employee as e
+                                INNER JOIN (SELECT Dep, EmpID, DepStatus FROM depemp WHERE Dep = '{department}' AND DepStatus = '1') as d
+                                    ON d.EmpID = e.ID
+                                INNER JOIN (SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours AS ShiftsContract, COALESCE(q.ShiftsTotal, 0) AS ShiftsTotal
+                            FROM employee as e
+                            LEFT JOIN (SELECT td.w, s.EmpID, d.Dep, e.WorkingHours AS shiftsContract, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS shiftsTotal
+                            FROM `schedule` as s
+                            INNER JOIN (SELECT y, w, id FROM `time_dimension` WHERE w = '{calWeek}' AND y = '{year}' ) as td
+
+                                ON(s.DateID = td.id)
+
+                                INNER JOIN `employee` as e
+
+                                ON(s.EmpID = e.ID)
+                                       
+                                	INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (d.EmpID = e.ID)
+                            GROUP BY s.EmpID) as q
+                                ON(e.ID = q.EmpID)
+                        INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (e.ID = d.EmpID) 
+                        HAVING d.Dep = '{department}' AND e.Status = 'Active'
+                        ORDER BY ShiftsTotal DESC, e.ID ASC) as k ON k.ID = e.ID 
+                        INNER JOIN (SELECT *
+									FROM employee as e
+									INNER JOIN (SELECT EmpID, COUNT(Dep) AS NrDep
+									FROM depemp
+									WHERE DepStatus = '1'
+									GROUP BY EmpID) as ed
+									ON ed.EmpID = e.ID) as de
+                                        ON (de.EmpID = e.ID)
+                            WHERE e.Status = 'Active'
+                            ORDER BY de.NrDep ASC, e.WorkingHours DESC, k.ShiftsTotal ASC;";
+            //string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours
+            //                FROM employee as e
+            //                    INNER JOIN (SELECT Dep, EmpID, DepStatus FROM depemp WHERE Dep = '{department}' AND DepStatus = '1') as d
+            //                        ON d.EmpID = e.ID
+            //                WHERE Status = 'Active'
+            //                ORDER BY e.WorkingHours DESC;";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
@@ -225,21 +265,21 @@ namespace Employee_Management_Alpha_1._0.Logic
             //morning code
             if (timeofday == "morning")
             {
-                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
-                            VALUES ({date}, {empID}, 1, 0, 0)
-                            ON DUPLICATE KEY UPDATE {timeofday} = 1;";
+                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening, Dep)
+                            VALUES ('{date}', '{empID}', '1', '0', '0', '{department}')
+                            ON DUPLICATE KEY UPDATE `{timeofday}` = 1;";
             }
             else if (timeofday == "afternoon")
             {
-                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
-                            VALUES ({date}, {empID}, 0, 1, 0)
-                            ON DUPLICATE KEY UPDATE {timeofday} = 1;";
+                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening, Dep)
+                            VALUES ('{date}', '{empID}', '0', '1', '0', '{department}')
+                            ON DUPLICATE KEY UPDATE `{timeofday}` = 1;";
             }
             else
             {
-                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening)
-                            VALUES ({date}, {empID}, 0, 0, 1)
-                            ON DUPLICATE KEY UPDATE {timeofday} = 1;";
+                sql = $@"INSERT INTO `schedule` (DateID, EmpID, morning, afternoon, evening, Dep)
+                            VALUES ('{date}', '{empID}', '0', '0', '1', '{department}')
+                            ON DUPLICATE KEY UPDATE `{timeofday}` = 1;";
             }
 
             
@@ -295,9 +335,9 @@ namespace Employee_Management_Alpha_1._0.Logic
         {
             List<ScheduleItem> employees = new List<ScheduleItem>();
             ScheduleItem placeholder;
-            string sql = $@"SELECT e.Department, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours AS ShiftsContract, COALESCE(q.ShiftsTotal, 0) AS ShiftsTotal
+            string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours AS ShiftsContract, COALESCE(q.ShiftsTotal, 0) AS ShiftsTotal, de.NrDep
                             FROM employee as e
-                            LEFT JOIN (SELECT td.w, s.EmpID, e.Department, e.WorkingHours AS shiftsContract, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS shiftsTotal
+                            LEFT JOIN (SELECT td.w, s.EmpID, d.Dep, e.WorkingHours AS shiftsContract, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS shiftsTotal
                             FROM `schedule` as s
                             INNER JOIN (SELECT y, w, id FROM `time_dimension` WHERE w = '{calWeek}' AND y = '{year}' ) as td
 
@@ -306,11 +346,23 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 INNER JOIN `employee` as e
 
                                 ON(s.EmpID = e.ID)
-                            GROUP BY s.EmpID
-                            HAVING e.Department = '{department}') as q
+                                       
+                                	INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (d.EmpID = e.ID)
+                            GROUP BY s.EmpID) as q
                                 ON(e.ID = q.EmpID)
-                        HAVING e.Department = '{department}' AND e.Status = 'Active'
-                        ORDER BY e.ID ASC;";
+                        INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
+                                    ON (e.ID = d.EmpID)
+                        INNER JOIN (SELECT *
+									FROM employee as e
+									INNER JOIN (SELECT EmpID, COUNT(Dep) AS NrDep
+									FROM depemp
+									WHERE DepStatus = '1'
+									GROUP BY EmpID) as ed
+									ON ed.EmpID = e.ID) as de
+                                    	ON (de.EmpID = e.ID)
+                        HAVING d.Dep = '{department}' AND e.Status = 'Active'
+                        ORDER BY de.NrDep ASC, ShiftsContract DESC, ShiftsTotal ASC, e.ID ASC;";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
@@ -340,11 +392,12 @@ namespace Employee_Management_Alpha_1._0.Logic
         {
             List<ScheduleItem> items = new List<ScheduleItem>();
 
-            string sql = $@"SELECT td.y, td.w, e. department, e.Status, s.DateID, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening
+            string sql = $@"SELECT td.y, td.w, d.Dep, e.Status, s.DateID, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening, s.Dep AS SchedDep
                             FROM schedule as s 
                             INNER JOIN employee as e ON s.EmpID = e.ID
+                            INNER JOIN (SELECT * FROM depemp WHERE Dep = '{department}' AND DepStatus = '1') as d ON d.EmpID = e.ID
                             INNER JOIN time_dimension as td on s.DateID = td.id
-                            HAVING e.Status = 'Active' AND td.y = '{year}' AND td.w = '{calWeek}' AND e.Department = '{department}'";
+                            HAVING e.Status = 'Active' AND td.y = '{year}' AND td.w = '{calWeek}'";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
@@ -352,7 +405,7 @@ namespace Employee_Management_Alpha_1._0.Logic
 
             while (dr.Read())
             {
-                items.Add(new ScheduleItem(Convert.ToInt32(dr["DateID"]), Convert.ToInt32(dr["EmpID"]), Convert.ToString(dr["Name"]), Convert.ToBoolean(dr["morning"]), Convert.ToBoolean(dr["afternoon"]), Convert.ToBoolean(dr["evening"])));
+                items.Add(new ScheduleItem(Convert.ToInt32(dr["DateID"]), Convert.ToInt32(dr["EmpID"]), Convert.ToString(dr["Name"]), Convert.ToBoolean(dr["morning"]), Convert.ToBoolean(dr["afternoon"]), Convert.ToBoolean(dr["evening"]), Convert.ToString(dr["SchedDep"])));
             }
             if (items.Count() >= 1)
 
