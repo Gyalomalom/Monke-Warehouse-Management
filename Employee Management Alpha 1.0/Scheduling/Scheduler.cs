@@ -189,7 +189,7 @@ namespace Employee_Management_Alpha_1._0
                                         
                                             foreach (ScheduleItem item in Items)
                                             {
-                                                if ((item.morning) && (item.dateID == RealDates[j]))
+                                                if ((item.morning) && (item.dateID == RealDates[j]) && (item.SchedDep == ReturnSelectedDepartmentName()))
                                                 {
                                                     label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
                                                     Noshift = false;
@@ -202,7 +202,7 @@ namespace Employee_Management_Alpha_1._0
                                         {
                                             foreach (ScheduleItem item in Items)
                                             {
-                                                if ((item.afternoon) && (item.dateID == RealDates[j]))
+                                                if ((item.afternoon) && (item.dateID == RealDates[j]) && (item.SchedDep == ReturnSelectedDepartmentName()))
                                                 {
                                                     label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
                                                     Noshift = false;
@@ -215,7 +215,7 @@ namespace Employee_Management_Alpha_1._0
                                         {
                                             foreach (ScheduleItem item in Items)
                                             {
-                                                if ((item.evening) && (item.dateID == RealDates[j]))
+                                                if ((item.evening) && (item.dateID == RealDates[j]) && (item.SchedDep == ReturnSelectedDepartmentName()))
                                                 {
                                                     label.Text += $"ID: {item.empID} {item.empName}{Environment.NewLine}";
                                                     Noshift = false;

@@ -17,7 +17,9 @@ namespace Employee_Management_Alpha_1._0
     {
         int superGlobalID = -1;
         int superGlobalIDAssigned = -1;
-        
+        int year;
+        int calWeek;
+        string department;
         ScheduleManagement scheduleManagement;
         
         string timeofday;
@@ -36,9 +38,9 @@ namespace Employee_Management_Alpha_1._0
                 timeofday = "afternoon";
             else
                 timeofday = "evening";
-             int year = Scheduler.Instance.ReturnSelectedYear();
-             int calWeek = Scheduler.Instance.ReturnSelectedCalWeek();
-             string department = Scheduler.Instance.ReturnSelectedDepartmentName();
+             year = Scheduler.Instance.ReturnSelectedYear();
+             calWeek = Scheduler.Instance.ReturnSelectedCalWeek();
+             department = Scheduler.Instance.ReturnSelectedDepartmentName();
             scheduleManagement = new ScheduleManagement(year, calWeek, department);
             Debug.WriteLine($"{year}   {calWeek}   {department}");
 
@@ -66,7 +68,7 @@ namespace Employee_Management_Alpha_1._0
             { if(items!=null)
                 foreach (ScheduleItem item in items)
                 {
-
+                      if (item.SchedDep == department)
                       lbAssignedEmp.Items.Add($"{item.empID} {item.empName}");
 
                 }

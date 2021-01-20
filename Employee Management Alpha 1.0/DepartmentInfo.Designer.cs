@@ -38,6 +38,7 @@
             this.lblEmployees = new System.Windows.Forms.Label();
             this.btnViewAllEmployees = new System.Windows.Forms.Button();
             this.btnViewEmployeesinDepartment = new System.Windows.Forms.Button();
+            this.btnUnassign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDepartmentInfo
@@ -57,7 +58,7 @@
             this.btnUpdateStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdateStatus.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdateStatus.Location = new System.Drawing.Point(70, 366);
+            this.btnUpdateStatus.Location = new System.Drawing.Point(70, 339);
             this.btnUpdateStatus.Name = "btnUpdateStatus";
             this.btnUpdateStatus.Size = new System.Drawing.Size(161, 48);
             this.btnUpdateStatus.TabIndex = 2;
@@ -95,7 +96,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(255, 366);
+            this.button1.Location = new System.Drawing.Point(255, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 48);
             this.button1.TabIndex = 5;
@@ -120,7 +121,7 @@
             this.btnAssignEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAssignEmp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAssignEmp.Location = new System.Drawing.Point(454, 366);
+            this.btnAssignEmp.Location = new System.Drawing.Point(454, 412);
             this.btnAssignEmp.Name = "btnAssignEmp";
             this.btnAssignEmp.Size = new System.Drawing.Size(161, 48);
             this.btnAssignEmp.TabIndex = 8;
@@ -146,11 +147,11 @@
             this.btnViewAllEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewAllEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnViewAllEmployees.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnViewAllEmployees.Location = new System.Drawing.Point(634, 366);
+            this.btnViewAllEmployees.Location = new System.Drawing.Point(634, 339);
             this.btnViewAllEmployees.Name = "btnViewAllEmployees";
-            this.btnViewAllEmployees.Size = new System.Drawing.Size(161, 48);
+            this.btnViewAllEmployees.Size = new System.Drawing.Size(161, 67);
             this.btnViewAllEmployees.TabIndex = 11;
-            this.btnViewAllEmployees.Text = "View all";
+            this.btnViewAllEmployees.Text = "View all employees";
             this.btnViewAllEmployees.UseVisualStyleBackColor = false;
             this.btnViewAllEmployees.Click += new System.EventHandler(this.btnViewAllEmployees_Click);
             // 
@@ -161,13 +162,28 @@
             this.btnViewEmployeesinDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewEmployeesinDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnViewEmployeesinDepartment.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnViewEmployeesinDepartment.Location = new System.Drawing.Point(255, 16);
+            this.btnViewEmployeesinDepartment.Location = new System.Drawing.Point(454, 339);
             this.btnViewEmployeesinDepartment.Name = "btnViewEmployeesinDepartment";
-            this.btnViewEmployeesinDepartment.Size = new System.Drawing.Size(161, 48);
+            this.btnViewEmployeesinDepartment.Size = new System.Drawing.Size(161, 67);
             this.btnViewEmployeesinDepartment.TabIndex = 12;
-            this.btnViewEmployeesinDepartment.Text = "View employees in selected department";
+            this.btnViewEmployeesinDepartment.Text = "View employees in selected dep.";
             this.btnViewEmployeesinDepartment.UseVisualStyleBackColor = false;
             this.btnViewEmployeesinDepartment.Click += new System.EventHandler(this.btnViewEmployeesinDepartment_Click);
+            // 
+            // btnUnassign
+            // 
+            this.btnUnassign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnUnassign.FlatAppearance.BorderSize = 0;
+            this.btnUnassign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnassign.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUnassign.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUnassign.Location = new System.Drawing.Point(634, 412);
+            this.btnUnassign.Name = "btnUnassign";
+            this.btnUnassign.Size = new System.Drawing.Size(161, 48);
+            this.btnUnassign.TabIndex = 13;
+            this.btnUnassign.Text = "Unassign";
+            this.btnUnassign.UseVisualStyleBackColor = false;
+            this.btnUnassign.Click += new System.EventHandler(this.btnUnassign_Click);
             // 
             // DepartmentInfo
             // 
@@ -175,6 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(822, 488);
+            this.Controls.Add(this.btnUnassign);
             this.Controls.Add(this.btnViewEmployeesinDepartment);
             this.Controls.Add(this.btnViewAllEmployees);
             this.Controls.Add(this.lblEmployees);
@@ -203,5 +220,6 @@
         private System.Windows.Forms.Label lblEmployees;
         private System.Windows.Forms.Button btnViewAllEmployees;
         private System.Windows.Forms.Button btnViewEmployeesinDepartment;
+        private System.Windows.Forms.Button btnUnassign;
     }
 }

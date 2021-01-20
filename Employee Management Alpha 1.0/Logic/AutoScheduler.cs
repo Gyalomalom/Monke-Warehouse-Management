@@ -57,11 +57,20 @@ namespace Employee_Management_Alpha_1._0.Logic
 
                 List<ScheduleItem> items = new List<ScheduleItem>();
 
-                string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours
+                string sql = $@"SELECT d.Dep, e.Status, e.ID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, e.WorkingHours, de.NrDep
                             FROM employee as e
                             INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') as d
                             ON e.ID = d.EmpID
-                            HAVING Status = 'Active';";
+                            INNER JOIN (SELECT *
+									FROM employee as e
+									INNER JOIN (SELECT EmpID, COUNT(Dep) AS NrDep
+									FROM depemp
+									WHERE DepStatus = '1'
+									GROUP BY EmpID) as ed
+									ON ed.EmpID = e.ID) as de
+                                    	ON (de.EmpID = e.ID)
+                            HAVING Status = 'Active'
+                            ORDER BY de.NrDep ASC, e.WorkingHours DESC;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, this.conn);
                 conn.Open();
@@ -97,7 +106,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                     ON (c.ID = l.EmpID)
                                 WHERE c.status = 'Active') AS e
                                 GROUP BY e.Dep) AS HoursNeeded
-                            FROM (SELECT td.id AS date, td.w, d.Dep, (COALESCE(SUM(s.morning), 0)*4) AS totalMorning, (COALESCE(SUM(s.afternoon), 0) * 4) AS totalAfternoon, (COALESCE(SUM(s.evening), 0) * 4) AS totalEvening, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS TotalHours
+                            FROM (SELECT td.id AS date, td.w, d.Dep, s.Dep AS SchedDep, (COALESCE(SUM(s.morning), 0)*4) AS totalMorning, (COALESCE(SUM(s.afternoon), 0) * 4) AS totalAfternoon, (COALESCE(SUM(s.evening), 0) * 4) AS totalEvening, (COALESCE(SUM(s.morning), 0) + COALESCE(SUM(s.afternoon), 0) + COALESCE(SUM(s.evening), 0)) * 4 AS TotalHours
                                 FROM `schedule` as s
                                 RIGHT JOIN (SELECT y, w, id FROM `time_dimension` WHERE w = '{calWeek}' AND y = '{year}' ) as td
 
@@ -109,7 +118,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                   	INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
                                     ON (e.ID = d.EmpID)
                                 GROUP BY date
-                             HAVING d.Dep = '{department}') as q";
+                             HAVING d.Dep = '{department}' AND SchedDep = '{department}') as q";
 
             List<ScheduleDay> days = new List<ScheduleDay>();
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
@@ -139,13 +148,13 @@ namespace Employee_Management_Alpha_1._0.Logic
         public List<ScheduleItem> ReturnScheduledEmployeesByDayExlShift(int date, string timeofday)
         {
             List<ScheduleItem> items = new List<ScheduleItem>();
-            string sql = $@"SELECT td.y, td.w,  d.Dep, e.Status, td.id, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening
+            string sql = $@"SELECT td.y, td.w,  d.Dep, e.Status, td.id, s.EmpID, CONCAT(e.FirstName, ' ' , e.LastName) AS Name, s.morning, s.afternoon, s.evening, s.Dep as SchedDep
                             FROM schedule as s 
                             INNER JOIN employee as e ON s.EmpID = e.ID
                             INNER JOIN time_dimension as td on s.DateID = td.id
                             INNER JOIN (SELECT * FROM `depemp` WHERE DepStatus = '1' AND Dep = '{department}') AS d 
                                     ON (e.ID = d.EmpID)
-                            HAVING e.Status = 'Active' AND td.id = '{date}' AND d.Dep = 'Cleaning' AND s.{timeofday} = 0  AND ((s.morning)+(s.afternoon)+(s.evening)>0);";
+                            HAVING e.Status = 'Active' AND td.id = '{date}' AND d.Dep = '{department}' AND s.{timeofday} = 0  AND ((s.morning)+(s.afternoon)+(s.evening)='1');";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
@@ -153,7 +162,7 @@ namespace Employee_Management_Alpha_1._0.Logic
 
             while (dr.Read())
             {
-                items.Add(new ScheduleItem(Convert.ToInt32(dr["id"]), Convert.ToInt32(dr["EmpID"]), Convert.ToString(dr["Name"]), Convert.ToBoolean(dr["morning"]), Convert.ToBoolean(dr["afternoon"]), Convert.ToBoolean(dr["evening"])));
+                items.Add(new ScheduleItem(Convert.ToInt32(dr["id"]), Convert.ToInt32(dr["EmpID"]), Convert.ToString(dr["Name"]), Convert.ToBoolean(dr["morning"]), Convert.ToBoolean(dr["afternoon"]), Convert.ToBoolean(dr["evening"]), Convert.ToString(dr["SchedDep"])));
             }
             if (items.Count() >= 1)
 
@@ -210,6 +219,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                             List<ScheduleItem> availableEmps = this.ReturnAvailableEmployees("morning", date);
                             List<ScheduleItem> schedTodayExShift = this.ReturnScheduledEmployeesByDayExlShift(date, "morning");
                             
+                            
                             if (availableEmps.Any())
                             {
                                 Debug.WriteLine("Looking for employees for date: " + date.ToString() + "morn");
@@ -219,15 +229,23 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 if (schedTodayExShift != null)
                                 for (int i = 0; i<availableEmps.Count(); i++)
                                 {
-                                    for (int j = 0; j<schedTodayExShift.Count(); j++)
-                                    {
-                                        if (availableEmps[i].empID != schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                        bool matched = false;
+                                        for (int j = 0; j<schedTodayExShift.Count(); j++)
+                                        {
+                                            if (availableEmps[i].empID == schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                            {
+                                                matched = true;
+                                            
+                                            }
+                                        }
+                                        if (matched == false)
                                         {
                                             preferredEmployee = availableEmps[i];
+                                            break;
                                         }
-                                    }
-                                    
                                 }
+                                
+
                                 
                                 //IF REACH END CYCLE AND NO EMPLOYEE AVAILABLE THAT IS NOT SCHEDULED TODAY, ADD FIRST EMPLOYEE IN LIST
                                 this.AddEmployeeToShift("morning", date, preferredEmployee.empID);
@@ -241,7 +259,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                             }
                             
                         }
-                        else if(dayPlaceholder.hoursNoon < hoursPerShift)
+                        if(dayPlaceholder.hoursNoon < hoursPerShift)
                         {
                             Debug.WriteLine("Looking for employees for date: " + date.ToString() + "noon");
                             //if employee is available, add them here
@@ -256,15 +274,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 if (schedTodayExShift != null)
                                 for (int i = 0; i < availableEmps.Count(); i++)
                                 {
-                                    for (int j = 0; j < schedTodayExShift.Count(); j++)
-                                    {
-                                        if (availableEmps[i].empID != schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                        bool matched = false;
+                                        for (int j = 0; j < schedTodayExShift.Count(); j++)
+                                        {
+                                            if (availableEmps[i].empID == schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                            {
+                                                matched = true;
+
+                                            }
+                                        }
+                                        if (matched == false)
                                         {
                                             preferredEmployee = availableEmps[i];
+                                            break;
                                         }
-                                    }
 
-                                }
+                                    }
 
                                 //IF REACH END CYCLE AND NO EMPLOYEE AVAILABLE THAT IS NOT SCHEDULED TODAY, ADD FIRST EMPLOYEE IN LIST
                                 this.AddEmployeeToShift("afternoon", date, preferredEmployee.empID);
@@ -277,7 +302,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 Debug.WriteLine("No available employees found.");
                             }
                         }
-                        else if(dayPlaceholder.hoursEvening < hoursPerShift)
+                        if(dayPlaceholder.hoursEvening < hoursPerShift)
                         {
                             Debug.WriteLine("Looking for employees for date: " + date.ToString() + "eve");
                             //if employee is available, add them here
@@ -292,15 +317,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 if (schedTodayExShift != null)
                                 for (int i = 0; i < availableEmps.Count(); i++)
                                 {
-                                    for (int j = 0; j < schedTodayExShift.Count(); j++)
-                                    {
-                                        if (availableEmps[i].empID != schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                        bool matched = false;
+                                        for (int j = 0; j < schedTodayExShift.Count(); j++)
+                                        {
+                                            if (availableEmps[i].empID == schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                            {
+                                                matched = true;
+
+                                            }
+                                        }
+                                        if (matched == false)
                                         {
                                             preferredEmployee = availableEmps[i];
+                                            break;
                                         }
-                                    }
 
-                                }
+                                    }
 
                                 //IF REACH END CYCLE AND NO EMPLOYEE AVAILABLE THAT IS NOT SCHEDULED TODAY, ADD FIRST EMPLOYEE IN LIST
                                 this.AddEmployeeToShift("evening", date, preferredEmployee.empID);
@@ -332,15 +364,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 if (schedTodayExShift != null)
                                 for (int i = 0; i < availableEmps.Count(); i++)
                                 {
-                                    for (int j = 0; j < schedTodayExShift.Count(); j++)
-                                    {
-                                        if (availableEmps[i].empID != schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                        bool matched = false;
+                                        for (int j = 0; j < schedTodayExShift.Count(); j++)
+                                        {
+                                            if (availableEmps[i].empID == schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                            {
+                                                matched = true;
+
+                                            }
+                                        }
+                                        if (matched == false)
                                         {
                                             preferredEmployee = availableEmps[i];
+                                            break;
                                         }
-                                    }
 
-                                }
+                                    }
 
                                 //IF REACH END CYCLE AND NO EMPLOYEE AVAILABLE THAT IS NOT SCHEDULED TODAY, ADD FIRST EMPLOYEE IN LIST
                                 this.AddEmployeeToShift("morning", date, preferredEmployee.empID);
@@ -353,7 +392,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 Debug.WriteLine("No available employees found.");
                             }
                         }
-                        else if (dayPlaceholder.hoursNoon < hoursPerShift)
+                        if (dayPlaceholder.hoursNoon < hoursPerShift)
                         {
                             Debug.WriteLine("Looking for employees for date: " + date.ToString() + "noon");
 
@@ -369,15 +408,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 if (schedTodayExShift != null)
                                 for (int i = 0; i < availableEmps.Count(); i++)
                                 {
-                                    for (int j = 0; j < schedTodayExShift.Count(); j++)
-                                    {
-                                        if (availableEmps[i].empID != schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                        bool matched = false;
+                                        for (int j = 0; j < schedTodayExShift.Count(); j++)
+                                        {
+                                            if (availableEmps[i].empID == schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                            {
+                                                matched = true;
+
+                                            }
+                                        }
+                                        if (matched == false)
                                         {
                                             preferredEmployee = availableEmps[i];
+                                            break;
                                         }
-                                    }
 
-                                }
+                                    }
 
                                 //IF REACH END CYCLE AND NO EMPLOYEE AVAILABLE THAT IS NOT SCHEDULED TODAY, ADD FIRST EMPLOYEE IN LIST
                                 this.AddEmployeeToShift("afternoon", date, preferredEmployee.empID);
@@ -390,7 +436,7 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 Debug.WriteLine("No available employees found.");
                             }
                         }
-                        else if (dayPlaceholder.hoursEvening < hoursPerShift)
+                        if (dayPlaceholder.hoursEvening < hoursPerShift)
                         {
                             Debug.WriteLine("Looking for employees for date: " + date.ToString() + "eve");
                             //if employee is available, add them here
@@ -405,15 +451,22 @@ namespace Employee_Management_Alpha_1._0.Logic
                                 if (schedTodayExShift != null)
                                 for (int i = 0; i < availableEmps.Count(); i++)
                                 {
-                                    for (int j = 0; j < schedTodayExShift.Count(); j++)
-                                    {
-                                        if (availableEmps[i].empID != schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                        bool matched = false;
+                                        for (int j = 0; j < schedTodayExShift.Count(); j++)
+                                        {
+                                            if (availableEmps[i].empID == schedTodayExShift[j].empID)//IF EMPLOYEE ISN'T Already scheduled today, they become preferred
+                                            {
+                                                matched = true;
+
+                                            }
+                                        }
+                                        if (matched == false)
                                         {
                                             preferredEmployee = availableEmps[i];
+                                            break;
                                         }
-                                    }
 
-                                }
+                                    }
 
                                 //IF REACH END CYCLE AND NO EMPLOYEE AVAILABLE THAT IS NOT SCHEDULED TODAY, ADD FIRST EMPLOYEE IN LIST
                                 this.AddEmployeeToShift("evening", date, preferredEmployee.empID);

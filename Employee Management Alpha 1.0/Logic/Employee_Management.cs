@@ -72,6 +72,34 @@ namespace Employee_Management_Alpha_1._0
 
         }
 
+        public List<Employee> GetAllActiveEmployees()
+        {
+            employees.Clear();
+            string sql = "SELECT * FROM employee WHERE `Status` = 'Active';";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                employees.Add(new Employee(Convert.ToInt32(dr[0]), Convert.ToString(dr[1]), Convert.ToString(dr[2]), Convert.ToString(dr[18]), Convert.ToString(dr[19])));
+            }
+            if (employees.Count() >= 1)
+
+            {
+                conn.Close();
+
+                return employees;
+            }
+            else
+            {
+                conn.Close();
+
+                return null;
+            }
+
+        }
+
         /*public string GetEmployeeAccount(string email, string password)
         {
             if (GetAllEmployees().Count > 0)//For cycle runs into an error if list is empty, so we check it here and skip the cycle if it's empty

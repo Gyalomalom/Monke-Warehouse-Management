@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockinApp", "ClockinApp\ClockinApp.csproj", "{14D7DA3E-7495-4006-889B-99B37DDD9BAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSchedulerTests", "AutoSchedulerTests\AutoSchedulerTests.csproj", "{3047C720-E705-4F99-AE13-E8DCD2F51070}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,10 +23,6 @@ Global
 		{14D7DA3E-7495-4006-889B-99B37DDD9BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14D7DA3E-7495-4006-889B-99B37DDD9BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14D7DA3E-7495-4006-889B-99B37DDD9BAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3047C720-E705-4F99-AE13-E8DCD2F51070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3047C720-E705-4F99-AE13-E8DCD2F51070}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3047C720-E705-4F99-AE13-E8DCD2F51070}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3047C720-E705-4F99-AE13-E8DCD2F51070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
