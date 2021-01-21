@@ -328,3 +328,4 @@ C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.DepoStocks.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.RequestsDepo.resources
 C:\Users\Geraldo\Documents\!fonty\Monke\Third\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.StatisticsView.resources
+C:\Users\alekn\source\repos\prj-cb02-6-team-monke\Employee Management Alpha 1.0\obj\Debug\Employee_Management_Alpha_1._0.StatisticsView.resources
