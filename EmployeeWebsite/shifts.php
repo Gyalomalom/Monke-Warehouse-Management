@@ -56,7 +56,9 @@ include_once ('Includes/dbh.inc.php');
 					while($row = mysqli_fetch_array($result))
 					{
 						
-						echo $row["DateID"]."<br />";
+						$newdate = substr_replace($row["DateID"], "/", 4, 0);
+						$DateID = substr_replace($newdate, "/", 7, 0);
+						echo $DateID."<br />";
 						
 					}
 			    }
