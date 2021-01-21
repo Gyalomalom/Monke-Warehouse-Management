@@ -406,7 +406,6 @@ namespace Employee_Management_Alpha_1._0
                 {
                     //MessageBox.Show("Data entered succesfully.");
                     MySqlCommand cmd = new MySqlCommand("INSERT INTO itemstock (Name, Quantity, PricePerUnit, Category) VALUES (@Name, @Quantity, @PricePerUnit, @Category)", connection);
-                    MessageBox.Show(cmd.CommandText);
                     //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
 
                     cmd.Parameters.AddWithValue("@Name", name);
@@ -438,7 +437,6 @@ namespace Employee_Management_Alpha_1._0
                 {
                     //MessageBox.Show("Data entered succesfully.");
                     MySqlCommand cmd = new MySqlCommand("INSERT INTO depostock (Name, Quantity, PricePerUnit, Category) VALUES (@Name, @Quantity, @PricePerUnit, @Category)", connection);
-                    MessageBox.Show(cmd.CommandText);
                     //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
 
                     cmd.Parameters.AddWithValue("@Name", name);
