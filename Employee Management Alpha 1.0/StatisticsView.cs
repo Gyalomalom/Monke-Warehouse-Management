@@ -64,20 +64,27 @@ namespace Employee_Management_Alpha_1._0
 
         public void UpdateStats()
         {
-            year = Convert.ToInt32(cbYear.Text);
-            calWeek = Convert.ToInt32(cbCalWeek.Text);
-            department = cbDepartment.Text;
+            if ((!string.IsNullOrEmpty(cbYear.Text))&& (!string.IsNullOrEmpty(cbCalWeek.Text))&& (!string.IsNullOrEmpty(cbDepartment.Text)))
+            { 
+                year = Convert.ToInt32(cbYear.Text);
+                calWeek = Convert.ToInt32(cbCalWeek.Text);
+                department = cbDepartment.Text;
 
-            autoscheduler = new AutoScheduler(year, calWeek, department);
-            List<int> weekDates = new List<int>();
-            weekDates = autoscheduler.ReturnDatesbyWeekAndYear();
-            List<ScheduleDay> scheduleDays = new List<ScheduleDay>();
-            scheduleDays = autoscheduler.GetScheduleDaysAndHours();
-            if (scheduleDays != null)
-                foreach (ScheduleDay day in scheduleDays)
-                {
-                    lbHours.Text += $"{day.hoursDone.ToString()} on {day.dateID} {Environment.NewLine}";
-                }
+                autoscheduler = new AutoScheduler(year, calWeek, department);
+                List<int> weekDates = new List<int>();
+                weekDates = autoscheduler.ReturnDatesbyWeekAndYear();
+                List<ScheduleDay> scheduleDays = new List<ScheduleDay>();
+                scheduleDays = autoscheduler.GetScheduleDaysAndHours();
+                if (scheduleDays != null)
+                    foreach (ScheduleDay day in scheduleDays)
+                    {
+                        lbHours.Text += $"{day.hoursDone.ToString()} on {day.dateID} {Environment.NewLine}";
+                    }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure all fields are filled.");
+            }
         }
 
 
