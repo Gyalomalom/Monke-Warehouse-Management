@@ -51,7 +51,13 @@ namespace Employee_Management_Alpha_1._0
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            employeeManagement.ChangeEmployeeTest(tbID.Text, tbFirstName.Text, tbLastName.Text);
+            DateTime dtfiller = DateTime.Now;
+            if ((!String.IsNullOrEmpty(tbFirstName.Text)) && (!String.IsNullOrEmpty(tbLastName.Text)) && (!String.IsNullOrEmpty(tbBSN.Text)) && (!String.IsNullOrEmpty(tbPosition.Text)) && (!String.IsNullOrEmpty(tbWorkingH.Text)) && (!String.IsNullOrEmpty(tbPhone.Text)) && (!String.IsNullOrEmpty(tbAddress.Text)) && (!String.IsNullOrEmpty(tbEmail.Text)) && (!String.IsNullOrEmpty(tbEmergencyN.Text)) && (!String.IsNullOrEmpty(tbContactR.Text)) && (!String.IsNullOrEmpty(tbEmergencyNr.Text)) && (!String.IsNullOrEmpty(tbCertifications.Text)) && (!String.IsNullOrEmpty(tbLanguage.Text)) && (!String.IsNullOrEmpty(tbContractType.Text)) && (!String.IsNullOrEmpty(tbDuration.Text)))
+                employeeManagement.ChangeEmployeeTest(Convert.ToInt32(tbID.Text), tbFirstName.Text, tbLastName.Text, dtfiller, tbBSN.Text, tbPosition.Text, Convert.ToInt32(tbWorkingH.Text), tbPhone.Text, tbAddress.Text, tbEmail.Text, tbEmergencyN.Text, tbContactR.Text, tbEmergencyNr.Text, tbCertifications.Text, tbLanguage.Text, tbContractType.Text, tbDuration.Text);
+            else
+            {
+                MessageBox.Show("Please make sure all information fields have been filled in.");
+            }
             UpdateList();
         }
 
@@ -73,9 +79,21 @@ namespace Employee_Management_Alpha_1._0
         {
             Employee employee;
             employee = new Employee();
-            employee = employeeManagement.GetEmployeebyID(Convert.ToInt32(tbID.Text));
+            employee = employeeManagement.ReturnEmployeeByID(Convert.ToInt32(tbID.Text));
             tbFirstName.Text = employee.Firstname;
             tbLastName.Text = employee.Lastname;
+            tbAddress.Text = employee.address;
+            tbBSN.Text = employee.bsn;
+            tbCertifications.Text = employee.certifications;
+            tbContactR.Text = employee.emergencyR;
+            tbEmergencyN.Text = employee.emergencyC;
+            tbEmergencyNr.Text = employee.emergencyNr;
+            tbLanguage.Text = employee.languages;
+            tbPosition.Text = employee.postion;
+            tbEmail.Text = employee.email;
+            tbContractType.Text = employee.contract;
+            tbDuration.Text = employee.duration;
+            tbWorkingH.Text = employee.workinghours.ToString();
         }
 
         private void AllEmployees_Load(object sender, EventArgs e)
