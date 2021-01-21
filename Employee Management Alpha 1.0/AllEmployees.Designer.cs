@@ -89,7 +89,7 @@
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(12, 137);
+            this.tbLastName.Location = new System.Drawing.Point(116, 137);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(179, 22);
             this.tbLastName.TabIndex = 24;
@@ -98,7 +98,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLastName.Location = new System.Drawing.Point(13, 117);
+            this.lblLastName.Location = new System.Drawing.Point(117, 117);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(78, 17);
             this.lblLastName.TabIndex = 23;
@@ -106,7 +106,7 @@
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(12, 92);
+            this.tbFirstName.Location = new System.Drawing.Point(116, 92);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(179, 22);
             this.tbFirstName.TabIndex = 22;
@@ -115,7 +115,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFirstName.Location = new System.Drawing.Point(12, 72);
+            this.lblFirstName.Location = new System.Drawing.Point(116, 72);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(78, 17);
             this.lblFirstName.TabIndex = 21;
@@ -128,7 +128,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnUpdate.ForeColor = System.Drawing.Color.Silver;
-            this.btnUpdate.Location = new System.Drawing.Point(15, 422);
+            this.btnUpdate.Location = new System.Drawing.Point(116, 422);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(179, 54);
             this.btnUpdate.TabIndex = 27;
@@ -138,7 +138,7 @@
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(12, 47);
+            this.tbID.Location = new System.Drawing.Point(116, 47);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(179, 22);
             this.tbID.TabIndex = 28;
@@ -148,7 +148,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(9, 14);
+            this.label1.Location = new System.Drawing.Point(113, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 17);
             this.label1.TabIndex = 29;
@@ -156,7 +156,7 @@
             // 
             // tbAddress
             // 
-            this.tbAddress.Location = new System.Drawing.Point(12, 391);
+            this.tbAddress.Location = new System.Drawing.Point(116, 391);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(179, 22);
             this.tbAddress.TabIndex = 69;
@@ -165,7 +165,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(9, 370);
+            this.label10.Location = new System.Drawing.Point(113, 370);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 17);
             this.label10.TabIndex = 68;
@@ -173,7 +173,7 @@
             // 
             // tbEmergencyN
             // 
-            this.tbEmergencyN.Location = new System.Drawing.Point(225, 277);
+            this.tbEmergencyN.Location = new System.Drawing.Point(329, 251);
             this.tbEmergencyN.Name = "tbEmergencyN";
             this.tbEmergencyN.Size = new System.Drawing.Size(179, 22);
             this.tbEmergencyN.TabIndex = 67;
@@ -182,7 +182,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(222, 256);
+            this.label9.Location = new System.Drawing.Point(326, 230);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(162, 17);
             this.label9.TabIndex = 66;
@@ -192,7 +192,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(222, 117);
+            this.label6.Location = new System.Drawing.Point(113, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 65;
@@ -200,7 +200,7 @@
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(225, 137);
+            this.tbEmail.Location = new System.Drawing.Point(116, 191);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(179, 22);
             this.tbEmail.TabIndex = 64;
@@ -209,7 +209,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(13, 228);
+            this.label5.Location = new System.Drawing.Point(117, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 17);
             this.label5.TabIndex = 63;
@@ -217,7 +217,7 @@
             // 
             // tbCertifications
             // 
-            this.tbCertifications.Location = new System.Drawing.Point(12, 253);
+            this.tbCertifications.Location = new System.Drawing.Point(116, 253);
             this.tbCertifications.Name = "tbCertifications";
             this.tbCertifications.Size = new System.Drawing.Size(179, 22);
             this.tbCertifications.TabIndex = 62;
@@ -226,7 +226,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(222, 396);
+            this.label4.Location = new System.Drawing.Point(326, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 17);
             this.label4.TabIndex = 61;
@@ -236,7 +236,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(222, 351);
+            this.label3.Location = new System.Drawing.Point(326, 325);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 17);
             this.label3.TabIndex = 60;
@@ -246,7 +246,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(222, 304);
+            this.label2.Location = new System.Drawing.Point(326, 278);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 59;
@@ -256,7 +256,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(222, 162);
+            this.label7.Location = new System.Drawing.Point(326, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(159, 17);
             this.label7.TabIndex = 58;
@@ -264,35 +264,35 @@
             // 
             // tbLanguage
             // 
-            this.tbLanguage.Location = new System.Drawing.Point(225, 416);
+            this.tbLanguage.Location = new System.Drawing.Point(329, 390);
             this.tbLanguage.Name = "tbLanguage";
             this.tbLanguage.Size = new System.Drawing.Size(179, 22);
             this.tbLanguage.TabIndex = 57;
             // 
             // tbWorkingH
             // 
-            this.tbWorkingH.Location = new System.Drawing.Point(225, 371);
+            this.tbWorkingH.Location = new System.Drawing.Point(329, 345);
             this.tbWorkingH.Name = "tbWorkingH";
             this.tbWorkingH.Size = new System.Drawing.Size(179, 22);
             this.tbWorkingH.TabIndex = 56;
             // 
             // tbPosition
             // 
-            this.tbPosition.Location = new System.Drawing.Point(225, 324);
+            this.tbPosition.Location = new System.Drawing.Point(329, 298);
             this.tbPosition.Name = "tbPosition";
             this.tbPosition.Size = new System.Drawing.Size(179, 22);
             this.tbPosition.TabIndex = 55;
             // 
             // tbContactR
             // 
-            this.tbContactR.Location = new System.Drawing.Point(225, 182);
+            this.tbContactR.Location = new System.Drawing.Point(329, 137);
             this.tbContactR.Name = "tbContactR";
             this.tbContactR.Size = new System.Drawing.Size(179, 22);
             this.tbContactR.TabIndex = 54;
             // 
             // tbEmergencyNr
             // 
-            this.tbEmergencyNr.Location = new System.Drawing.Point(225, 228);
+            this.tbEmergencyNr.Location = new System.Drawing.Point(329, 191);
             this.tbEmergencyNr.Name = "tbEmergencyNr";
             this.tbEmergencyNr.Size = new System.Drawing.Size(179, 22);
             this.tbEmergencyNr.TabIndex = 52;
@@ -301,7 +301,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(222, 207);
+            this.label8.Location = new System.Drawing.Point(326, 170);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 17);
             this.label8.TabIndex = 51;
@@ -309,7 +309,7 @@
             // 
             // tbDuration
             // 
-            this.tbDuration.Location = new System.Drawing.Point(12, 299);
+            this.tbDuration.Location = new System.Drawing.Point(116, 299);
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.Size = new System.Drawing.Size(179, 22);
             this.tbDuration.TabIndex = 50;
@@ -318,7 +318,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(9, 278);
+            this.label11.Location = new System.Drawing.Point(113, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 17);
             this.label11.TabIndex = 49;
@@ -326,7 +326,7 @@
             // 
             // tbContractType
             // 
-            this.tbContractType.Location = new System.Drawing.Point(12, 345);
+            this.tbContractType.Location = new System.Drawing.Point(116, 345);
             this.tbContractType.Name = "tbContractType";
             this.tbContractType.Size = new System.Drawing.Size(179, 22);
             this.tbContractType.TabIndex = 48;
@@ -335,7 +335,7 @@
             // 
             this.lblContractType.AutoSize = true;
             this.lblContractType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblContractType.Location = new System.Drawing.Point(9, 324);
+            this.lblContractType.Location = new System.Drawing.Point(113, 324);
             this.lblContractType.Name = "lblContractType";
             this.lblContractType.Size = new System.Drawing.Size(115, 17);
             this.lblContractType.TabIndex = 47;
@@ -343,7 +343,7 @@
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(225, 90);
+            this.tbPhone.Location = new System.Drawing.Point(329, 90);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(179, 22);
             this.tbPhone.TabIndex = 46;
@@ -352,7 +352,7 @@
             // 
             this.tbPhoneNumber.AutoSize = true;
             this.tbPhoneNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbPhoneNumber.Location = new System.Drawing.Point(222, 69);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(326, 69);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
             this.tbPhoneNumber.Size = new System.Drawing.Size(105, 17);
             this.tbPhoneNumber.TabIndex = 45;
@@ -360,7 +360,7 @@
             // 
             // tbBSN
             // 
-            this.tbBSN.Location = new System.Drawing.Point(225, 44);
+            this.tbBSN.Location = new System.Drawing.Point(329, 44);
             this.tbBSN.Name = "tbBSN";
             this.tbBSN.Size = new System.Drawing.Size(179, 22);
             this.tbBSN.TabIndex = 44;
@@ -369,7 +369,7 @@
             // 
             this.label.AutoSize = true;
             this.label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label.Location = new System.Drawing.Point(222, 23);
+            this.label.Location = new System.Drawing.Point(326, 23);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(40, 17);
             this.label.TabIndex = 43;
